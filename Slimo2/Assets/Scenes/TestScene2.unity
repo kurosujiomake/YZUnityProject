@@ -8237,8 +8237,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8221750487963548665, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
         type: 3}
+      propertyPath: GroundAttTriggerName.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8221750487963548665, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
+        type: 3}
+      propertyPath: BowAttTriggerName.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8221750487963548665, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
+        type: 3}
       propertyPath: m_btCD
       value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 8221750487963548665, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
+        type: 3}
+      propertyPath: GroundAttTriggerName
+      value: GAtt_a
+      objectReference: {fileID: 0}
+    - target: {fileID: 8221750487963548665, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
+        type: 3}
+      propertyPath: GroundAttTriggerName.Array.data[0]
+      value: GAtt_a
+      objectReference: {fileID: 0}
+    - target: {fileID: 8221750487963548665, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
+        type: 3}
+      propertyPath: BowAttTriggerName.Array.data[0]
+      value: BowAtt
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16a462e48b7ea5340b1aa2c5627f2e76, type: 3}

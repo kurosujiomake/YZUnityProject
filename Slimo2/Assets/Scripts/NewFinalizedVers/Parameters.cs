@@ -6,8 +6,9 @@ public class Parameters : MonoBehaviour
 {
     [Header("Variables Related to Attacking")]
     public float delayTimer = 0;
-    public string GroundAttTriggerName = null;
-    public string BowAttTriggerName = null;
+    public string[] GroundAttTriggerName = new string[3];
+    public string[] BowAttTriggerName = new string[2];
+    public int wepTypeID = 0;
     public string AttButtonName = null;
     public enum AtkType { dagger, bow, wand, sword, spear, axe};
     public AtkType AT;

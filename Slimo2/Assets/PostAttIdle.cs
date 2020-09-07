@@ -68,7 +68,7 @@ public class PostAttIdle : StateMachineBehaviour
                         if(pState.ReturnGround()) // ground bow attacks
                         {
                             animator.SetBool("IsAttacking", true);
-                            animator.SetTrigger(param.BowAttTriggerName);
+                            animator.SetTrigger(param.BowAttTriggerName[param.wepTypeID]);
                             switch (animator.GetInteger("ComboNum"))
                             {
                                 case 1:

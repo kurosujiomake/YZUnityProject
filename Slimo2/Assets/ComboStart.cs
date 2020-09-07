@@ -23,11 +23,11 @@ public class ComboStart : StateMachineBehaviour
             //move.SetMoveState(2);
             if(param.AT == Parameters.AtkType.sword)
             {
-                //animator.SetTrigger(param.GroundAttTriggerName);
+                animator.SetTrigger(param.GroundAttTriggerName[param.wepTypeID]);
             }
             if(param.AT == Parameters.AtkType.bow)
             {
-                animator.SetTrigger(param.BowAttTriggerName);
+                animator.SetTrigger(param.BowAttTriggerName[param.wepTypeID]);
 
                 animator.SetInteger("ComboNum", 1);
             }

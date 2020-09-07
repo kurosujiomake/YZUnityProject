@@ -49,7 +49,7 @@ public class AnimatorMovingState : StateMachineBehaviour
                     }
                     if (param.AT == Parameters.AtkType.bow)
                     {
-                        animator.SetTrigger(param.BowAttTriggerName);
+                        animator.SetTrigger(param.BowAttTriggerName[param.wepTypeID]);
                     }
 
                 }
