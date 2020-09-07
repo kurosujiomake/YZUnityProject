@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 810dfed439f930c419df58e7c29c94f8, type: 3}
+  m_Name: Slimeball
+  m_EditorClassIdentifier: 
+  UIImage: {fileID: -100257274695624252, guid: d5729fce64b245744808a536370db399, type: 3}
+  type: 0
+  desc: This is a hp potion
+  Stackable: 1
+  data:
+    Name: 
+    ID: 6
+    Stackable: 1
+    stBuffs: []
+  hpRestore: 5

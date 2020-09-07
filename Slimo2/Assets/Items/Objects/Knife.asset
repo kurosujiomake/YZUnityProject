@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38d7e74274bebdf43994b0bfa6002f90, type: 3}
+  m_Name: Knife
+  m_EditorClassIdentifier: 
+  ID: 0
+  UIImage: {fileID: -8431711720936575728, guid: c7b660263613a414bae6ea5d44ca5530,
+    type: 3}
+  type: 1
+  desc: this is a test sub weapon
+  wepType: 0
+  damageIncrease: 0

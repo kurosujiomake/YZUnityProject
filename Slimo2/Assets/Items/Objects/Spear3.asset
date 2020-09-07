@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38d7e74274bebdf43994b0bfa6002f90, type: 3}
+  m_Name: Spear3
+  m_EditorClassIdentifier: 
+  UIImage: {fileID: 21300000, guid: 2a0d709923ad1c14e96bc5a9af7e4b1d, type: 3}
+  type: 1
+  desc: 
+  Stackable: 0
+  data:
+    Name: 
+    ID: 12
+    Stackable: 0
+    stBuffs: []
+  wepType: 4
+  damageIncrease: 0

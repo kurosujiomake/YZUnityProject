@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59dd3b2363eff40479612fa562d9dab2, type: 3}
+  m_Name: Cloak
+  m_EditorClassIdentifier: 
+  ID: 3
+  UIImage: {fileID: -7851427602504550428, guid: 6530bbb6f4def6f4d99384f72487a24d,
+    type: 3}
+  type: 2
+  desc: This is a cloak with no additional effects
+  stBuffs:
+  - statBonus: 1
+    value: 0
+    min: 15
+    max: 60
+  - statBonus: 3
+    value: 0
+    min: 10
+    max: 45
+  DefenseBonus: 5
+  equipSlot: 0
+  otherEffect1ID: 0
+  otherEffect2ID: 0
