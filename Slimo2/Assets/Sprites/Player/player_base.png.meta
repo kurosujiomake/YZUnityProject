@@ -420,7 +420,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
-      bones: []
+      bones:
+      - name: bone_1
+        position: {x: 72.06848, y: 7.560608, z: 0}
+        rotation: {x: 0, y: 0, z: 0.6834504, w: 0.72999704}
+        length: 90.75961
+        parentId: -1
       spriteID: 060641510e6724750800000000000000
       internalID: 6287718734561042528
       vertices: []
