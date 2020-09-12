@@ -4074,12 +4074,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1055017099}
   m_CullTransparentMesh: 0
---- !u!4 &1058839903 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1904240604768086419, guid: 30ca940584867a544adeaaefc8f255e6,
-    type: 3}
-  m_PrefabInstance: {fileID: 1757666282}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1065772997 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5742574106862716428, guid: 19f74b7e1dd285143b7b4e21b4cedc96,
@@ -7389,7 +7383,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BoneTransforms.Array.data[0]
       value: 
-      objectReference: {fileID: 1058839903}
+      objectReference: {fileID: 0}
     - target: {fileID: -3945560412447912477, guid: 30ca940584867a544adeaaefc8f255e6,
         type: 3}
       propertyPath: m_Name
