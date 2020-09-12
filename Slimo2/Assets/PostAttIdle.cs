@@ -10,6 +10,8 @@ public class PostAttIdle : StateMachineBehaviour
     public pStates pState = null;
     [SerializeField]
     private bool isFinalPATT = false;
+    [SerializeField]
+    private bool attPressed = false;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -19,6 +21,7 @@ public class PostAttIdle : StateMachineBehaviour
         animator.SetBool("IsAttacking", false);
         param = animator.GetComponent<Parameters>();
         timer = param.delayTimer;
+        
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -60,8 +63,9 @@ public class PostAttIdle : StateMachineBehaviour
                     animator.SetTrigger("BackToIdle");
                     animator.SetInteger("ComboNum", 1);
                 }
-                if (Input.GetAxis(param.AttButtonName) > 0.2f) //if there are still combos player can immediately go to the next att
+                if (Input.GetAxis(param.AttButtonName) > 0.2f && !attPressed) //if there are still combos player can immediately go to the next att
                 {
+                    attPressed = true;
                     //move.SetMoveState(2);
                     if (param.AT == Parameters.AtkType.bow) //bow attacks
                     {
@@ -69,19 +73,7 @@ public class PostAttIdle : StateMachineBehaviour
                         {
                             animator.SetBool("IsAttacking", true);
                             animator.SetTrigger(param.BowAttTriggerName[param.wepTypeID]);
-                            switch (animator.GetInteger("ComboNum"))
-                            {
-                                case 1:
-                                    animator.SetInteger("ComboNum", 2);
-                                    break;
-                                case 2:
-                                    animator.SetInteger("ComboNum", 3);
-                                    break;
-                                case 3:
-                                    animator.SetInteger("ComboNum", 4);
-                                    break;
-
-                            }
+                            animator.SetInteger("ComboNum", animator.GetInteger("ComboNum") + 1); //adds 1 to the cur combo count
                         }
                         if(!pState.ReturnGround()) //aerial bow attacks
                         {
@@ -103,6 +95,7 @@ public class PostAttIdle : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         animator.ResetTrigger("BackToIdle");
+        attPressed = false;
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
