@@ -998,6 +998,104 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2014545967}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &341874946
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 341874950}
+  - component: {fileID: 341874949}
+  - component: {fileID: 341874948}
+  - component: {fileID: 341874947}
+  m_Layer: 0
+  m_Name: DamageTester
+  m_TagString: Untagged
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &341874947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 341874946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aed8c627c1854942a2da4f3a554ef5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hitCount: 5
+  _hitDelay: 0.2
+  _dir: 75
+  _force: 100
+  _dmg: 0
+  _dmgID: 1
+--- !u!61 &341874948
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 341874946}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!50 &341874949
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 341874946}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
+--- !u!4 &341874950
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 341874946}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -53.38, y: -11.87, z: -119.92414}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &352466475
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4528,10 +4626,10 @@ GameObject:
   - component: {fileID: 1097524671}
   - component: {fileID: 1097524670}
   - component: {fileID: 1097524669}
-  - component: {fileID: 1097524668}
   - component: {fileID: 1097524667}
+  - component: {fileID: 1097524668}
   m_Layer: 10
-  m_Name: EnemyTest (1)
+  m_Name: EnemyTester with new damage script
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4549,6 +4647,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 864995693}
+  - {fileID: 1204185939}
   m_Father: {fileID: 1323157904}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4574,33 +4673,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1097524665}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a63198043083b74428abeb570c5e29b3, type: 3}
+  m_Script: {fileID: 11500000, guid: 95dbb5904e49c104aaabb7e818d9cea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightKnockback:
-  - 0.05
-  - 1.5
-  aerialLightKnockback:
-  - 0.5
-  - 1
-  upwardsKnockback:
-  - 0
-  - 0
-  isHanging: 0
-  gotHitBy: {fileID: 0}
-  gotHitLeft: 0
-  hangDelayTime: 0
-  effectSpawnRotLimit:
-  - -15
-  - 15
-  slashEffect: {fileID: 1813745285629757085, guid: fb098d57d28f09c4bbc67e9082ca204e,
+  rig2D: {fileID: 0}
+  hitParticles: {fileID: 4266126521342258817, guid: b482720f7ba83aa49ad32f8451748f01,
     type: 3}
-  effectDuration: 1
-  effectOffsetRange:
-  - 0.1
-  - 1
-  - -0.1
-  - 0.1
+  point: {fileID: 1204185939}
+  dmgID: 0
 --- !u!50 &1097524669
 Rigidbody2D:
   serializedVersion: 4
@@ -5033,6 +5113,36 @@ MonoBehaviour:
   Target: {fileID: 4729056926130607351}
   useTag: 1
   tarName: PlayerCamFocus
+--- !u!1 &1204185938
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1204185939}
+  m_Layer: 10
+  m_Name: particle spawn point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1204185939
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204185938}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.24}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1097524666}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1213963904
 GameObject:
   m_ObjectHideFlags: 0
