@@ -45,7 +45,7 @@ public class AnimatorMovingState : StateMachineBehaviour
                     animator.GetComponent<pStates>().SetPState("attack");
                     if (param.AT == Parameters.AtkType.sword)
                     {
-                        //animator.SetTrigger(param.GroundAttTriggerName);
+                        animator.SetTrigger(param.GroundAttTriggerName[param.wepTypeID]);
                     }
                     if (param.AT == Parameters.AtkType.bow)
                     {
