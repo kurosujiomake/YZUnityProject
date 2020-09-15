@@ -66,6 +66,33 @@ public class PostAttIdle : StateMachineBehaviour
                 if (Input.GetAxis(param.AttButtonName) > 0.2f && !attPressed) //if there are still combos player can immediately go to the next att
                 {
                     attPressed = true;
+                    switch(param.AT)
+                    {
+                        case Parameters.AtkType.sword:
+                            if (pState.ReturnGround()) // ground sword attacks
+                            {
+                                animator.SetBool("IsAttacking", true);
+                                animator.SetTrigger(param.GroundAttTriggerName[param.wepTypeID]);
+                                animator.SetInteger("ComboNum", animator.GetInteger("ComboNum") + 1); //adds 1 to the cur combo count
+                            }
+                            if (!pState.ReturnGround()) //aerial sword attacks
+                            {
+
+                            }
+                            break;
+                        case Parameters.AtkType.bow:
+                            if (pState.ReturnGround()) // ground bow attacks
+                            {
+                                animator.SetBool("IsAttacking", true);
+                                animator.SetTrigger(param.BowAttTriggerName[param.wepTypeID]);
+                                animator.SetInteger("ComboNum", animator.GetInteger("ComboNum") + 1); //adds 1 to the cur combo count
+                            }
+                            if (!pState.ReturnGround()) //aerial bow attacks
+                            {
+
+                            }
+                            break;
+                    }
                     //move.SetMoveState(2);
                     if (param.AT == Parameters.AtkType.bow) //bow attacks
                     {
@@ -81,7 +108,7 @@ public class PostAttIdle : StateMachineBehaviour
                         }
                         
                     }
-
+                    
                 }
                 break;
         }
