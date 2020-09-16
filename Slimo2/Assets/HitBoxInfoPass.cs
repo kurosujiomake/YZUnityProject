@@ -45,7 +45,7 @@ public class HitBoxInfoPass : StateMachineBehaviour
                 _adjustedDir = _dir;
                 break;
             case false:
-                _adjustedDir = _dir + 90;
+                _adjustedDir = 180 - _dir;
                 break;
         }
         _dv.SetValues(_hitCount, _delay, _adjustedDir, _force, _param.AttackDamage);
