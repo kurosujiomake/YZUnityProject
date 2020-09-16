@@ -262,6 +262,7 @@ MonoBehaviour:
     type: 3}
   point: {fileID: 965394866}
   dmgID: 0
+  particleDuration: 0.05
 --- !u!114 &23377358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2059,6 +2060,7 @@ MonoBehaviour:
     type: 3}
   point: {fileID: 2069896302}
   dmgID: 0
+  particleDuration: 0.05
 --- !u!114 &396119429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5974,6 +5976,7 @@ MonoBehaviour:
     type: 3}
   point: {fileID: 1204185939}
   dmgID: 0
+  particleDuration: 0.05
 --- !u!50 &1097524669
 Rigidbody2D:
   serializedVersion: 4
@@ -8544,6 +8547,7 @@ MonoBehaviour:
     type: 3}
   point: {fileID: 1820621921}
   dmgID: 0
+  particleDuration: 0.05
 --- !u!114 &1637669771
 MonoBehaviour:
   m_ObjectHideFlags: 0

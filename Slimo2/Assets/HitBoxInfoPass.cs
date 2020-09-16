@@ -24,10 +24,14 @@ public class HitBoxInfoPass : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        _IdRandomized = false;
         _param = animator.GetComponent<Parameters>();
         _dv = _param.HitBoxes[0].GetComponent<DamageValues>();
-        while(!_IdRandomized)
+        StartDamageCalc();
+    }
+    public void StartDamageCalc() //puts it into a function so it can be easily called
+    {
+        _IdRandomized = false;
+        while (!_IdRandomized)
         {
             _hitBoxID = Random.Range(1, 99);
             if (_hitBoxID != _param.PrevHitBoxID[0] && _hitBoxID != _param.PrevHitBoxID[1])
@@ -37,9 +41,9 @@ public class HitBoxInfoPass : StateMachineBehaviour
                 _param.PrevHitBoxID[1] = _hitBoxID; //pushes new used hitbox id into the storage
                 _IdRandomized = true; //stops the loop
             }
-            
+
         }
-        switch(_param.facingRight)
+        switch (_param.facingRight) //reverses knockback direction based on y axis
         {
             case true:
                 _adjustedDir = _dir;
@@ -50,7 +54,6 @@ public class HitBoxInfoPass : StateMachineBehaviour
         }
         _dv.SetValues(_hitCount, _delay, _adjustedDir, _force, _param.AttackDamage);
     }
-
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     //{

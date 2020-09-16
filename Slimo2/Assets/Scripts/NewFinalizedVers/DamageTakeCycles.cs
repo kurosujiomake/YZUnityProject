@@ -10,6 +10,7 @@ public class DamageTakeCycles : MonoBehaviour
     public Transform point = null;
     [SerializeField]
     private int dmgID = 0;
+    public float particleDuration = 0;
     // Start is called before the first frame update
     void Awake()
     {
@@ -31,12 +32,18 @@ public class DamageTakeCycles : MonoBehaviour
             //do the hit stuff
             DamageCalculation(_dmg);
             DirectionalKnockBack(_dir, _force);
-            GameObject clone = Instantiate(hitParticles, point.position, Quaternion.identity) as GameObject; //spawns hit particle
+            StartCoroutine(particleSpawn(particleDuration));
             yield return new WaitForSeconds(_hitDelay);
-            Destroy(clone);
+            
             count--;
         }
 
+    }
+    private IEnumerator particleSpawn(float _dur)
+    {
+        GameObject clone = Instantiate(hitParticles, point.position, Quaternion.identity) as GameObject; //spawns hit particle
+        yield return new WaitForSeconds(_dur);
+        Destroy(clone);
     }
 
     private void DirectionalKnockBack(float _dir, float _force)
