@@ -116,6 +116,7 @@ public class PlayerConsolidatedControl : MonoBehaviour
     }
     private void VarResets() //some conditional variable resets
     {
+        m_param.facingRight = m_facingRight;
         if(Input.GetAxis("Jump") == 0) //resets jump button input
         {
             m_jumpPressed = false;

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Parameters : MonoBehaviour
 {
+    [Header("Hitboxes")]
+    public GameObject[] HitBoxes = new GameObject[3];
     [Header("Variables Related to Attacking")]
     public float delayTimer = 0;
     public string[] GroundAttTriggerName = new string[3];
@@ -13,6 +15,7 @@ public class Parameters : MonoBehaviour
     public enum AtkType { dagger, bow, wand, sword, spear, axe};
     public AtkType AT;
     public float AttackDamage = 0;
+    public int[] PrevHitBoxID = new int[2];
     [Header("Variables related to wand projectile type attacks")]
     public Transform m_projOrigin = null;
     public GameObject m_Projectile = null;
@@ -26,6 +29,7 @@ public class Parameters : MonoBehaviour
     [Header("Variables Related to Movement")]
     public float GHorizontalSpeed = 0;
     public float AHoriSpdMulti = 0;
+    public bool facingRight = true;
     [Header("Variables Related To Jumping")]
     public bool m_jumpPressed;
     public float VerticalSpeed = 0;

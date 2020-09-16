@@ -54,9 +54,11 @@ public class DamageTakeCycles : MonoBehaviour
     {
         if(collision.GetComponent<DamageValues>() != null)
         {
+            Debug.Log("Got Hit");
             DamageValues dv = collision.GetComponent<DamageValues>();
             if(dv.dmgID != dmgID) // makes it so that the object cannot get hit again by the same hitbox
             {
+                
                 StartCoroutine(HitCycles(dv.hitCount, dv.hitDelay, dv.dir, dv.force, dv.dmg));
                 dmgID = dv.dmgID;
             }
