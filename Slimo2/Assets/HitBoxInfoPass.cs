@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HitBoxInfoPass : StateMachineBehaviour
 {
+    public int _whichHitBox = 0;
     public Parameters _param = null;
     [SerializeField]
     private int _hitCount = 0;
@@ -20,16 +21,20 @@ public class HitBoxInfoPass : StateMachineBehaviour
     private DamageValues _dv = null;
     [SerializeField]
     private bool _IdRandomized = false;
+    [SerializeField]
+    private bool _passedInfoToActiveHitbox = false;
     
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        _passedInfoToActiveHitbox = false;
         _param = animator.GetComponent<Parameters>();
-        _dv = _param.HitBoxes[0].GetComponent<DamageValues>();
-        StartDamageCalc();
+        _dv = _param.HitBoxes[_whichHitBox].GetComponent<DamageValues>();
+        DamagePassToHitbox();
     }
-    public void StartDamageCalc() //puts it into a function so it can be easily called
+    public void DamagePassToHitbox() //puts it into a function so it can be easily called
     {
+        HitBoxReset();
         _IdRandomized = false;
         while (!_IdRandomized)
         {
@@ -53,17 +58,34 @@ public class HitBoxInfoPass : StateMachineBehaviour
                 break;
         }
         _dv.SetValues(_hitCount, _delay, _adjustedDir, _force, _param.AttackDamage);
+        _passedInfoToActiveHitbox = true;
     }
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-    //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
-
+    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        if (!_param.HitBoxes[_whichHitBox].GetComponent<CapsuleCollider2D>().enabled)
+        {
+            _passedInfoToActiveHitbox = false;
+        }
+        if (_param.HitBoxes[_whichHitBox].GetComponent<CapsuleCollider2D>().enabled)
+        {
+            if(!_passedInfoToActiveHitbox)
+            {
+                DamagePassToHitbox();
+            }
+        }
+        
+    }
+    private void HitBoxReset()
+    {
+        _dv.SetValues(0, 0, 0, 0, 0);
+        _dv.SetRandomHitID(0);
+    }
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         _IdRandomized = false;
+        HitBoxReset();
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
