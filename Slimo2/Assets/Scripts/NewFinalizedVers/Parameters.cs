@@ -55,7 +55,6 @@ public class Parameters : MonoBehaviour
     public bool m_isTPing = false;
     public Vector3[] m_offSet = new Vector3[2];
     public float[] m_randNoise = new float[2];
-    
 
     
 }
