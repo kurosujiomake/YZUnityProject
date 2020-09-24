@@ -3025,10 +3025,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followObj: {fileID: 0}
-  smoothingSpd: 5.5
+  smoothingSpd: 3.5
   followTarTag: PlayerCamFocus
   canTurnFollow: 0
   delayTimeTurning: 0.3
+  DashCamSpeed: 20
 --- !u!4 &741452474
 Transform:
   m_ObjectHideFlags: 0
@@ -5202,7 +5203,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 7.5349097
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -5249,7 +5250,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CameraSize: 5
   Camera_Mode: 1
-  FollowSpeed: 5.5
+  FollowSpeed: 10
   Target: {fileID: 4729056926130607351}
   useTag: 1
   tarName: CamSmoothingTar
@@ -5685,6 +5686,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1305231548}
   m_CullTransparentMesh: 0
+--- !u!1 &1311354188 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1784586896232657024, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
+    type: 3}
+  m_PrefabInstance: {fileID: 8221750487963548663}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1311354191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311354188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aed8c627c1854942a2da4f3a554ef5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hitCount: 0
+  _hitDelay: 0
+  _dir: 0
+  _force: 0
+  _dmg: 0
+  _dmgID: 0
 --- !u!1 &1323157903
 GameObject:
   m_ObjectHideFlags: 0
@@ -9011,6 +9036,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6834280880968985590, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6834280880968985590, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.24
       objectReference: {fileID: 0}
     - target: {fileID: 8221750487963548665, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
         type: 3}

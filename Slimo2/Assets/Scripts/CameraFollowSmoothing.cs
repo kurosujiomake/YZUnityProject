@@ -15,9 +15,14 @@ public class CameraFollowSmoothing : MonoBehaviour
     public float delayTimeTurning = 0;
     private bool curPFacing = false;
     private Camera c = null;
+    [SerializeField]
+    private float DashCamSpeed = 0;
     // Start is called before the first frame update
+    private Parameters p = null;
+    private float spd = 0;
     void Start()
     {
+        p = GameObject.FindGameObjectWithTag("Player").GetComponent<Parameters>();
         c = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         followObj = GameObject.FindGameObjectWithTag(followTarTag);
         pst = GameObject.FindGameObjectWithTag("Player").GetComponent<pStates>();
@@ -27,7 +32,7 @@ public class CameraFollowSmoothing : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Vector3 t = transform.position;
         t.y = followObj.transform.position.y;
@@ -46,6 +51,14 @@ public class CameraFollowSmoothing : MonoBehaviour
         {
             Smoothing();
         }
+        if(p.m_isDashing || p.m_isADashing)
+        {
+            spd = DashCamSpeed;
+        }
+        if(!p.m_isDashing && !p.m_isADashing)
+        {
+            spd = smoothingSpd;
+        }
     }
     private IEnumerator Timer(float time)
     {
@@ -58,7 +71,7 @@ public class CameraFollowSmoothing : MonoBehaviour
         if(followObj)
         {
             Vector3 tarLoc = followObj.transform.position;
-            transform.position = Vector3.Slerp(transform.position, tarLoc, smoothingSpd * Time.deltaTime);
+            transform.position = Vector3.Slerp(transform.position, tarLoc, spd * Time.deltaTime);
         }
     }
     public void SnapToWarpedArea() //in case of a warp
