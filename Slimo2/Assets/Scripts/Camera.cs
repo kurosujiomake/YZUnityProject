@@ -5,13 +5,15 @@ using UnityEngine;
 public class Camera : MonoBehaviour
 {
     public float CameraSize = 5;
-    public enum CMode { Fixed, follow};
+    public enum CMode { Fixed, follow, Snap};
     public CMode Camera_Mode;
     [SerializeField] private float FollowSpeed = 5;
     [SerializeField] private Transform Target;
     [Header ("Check if using GameObject Tag instead of Name, then input the target Name/Tag in Tar Name")]
     [SerializeField] private bool useTag = false;
     public string tarName;
+    public Transform fixedTarget = null;
+    public float fixedCamDistance = 0;
     // Start is called before the first frame update
     void Awake()
     {
@@ -21,18 +23,48 @@ public class Camera : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Camera_Mode == CMode.Fixed)
+        switch(Camera_Mode)
         {
-            //do the fixed camera thing here
+            case CMode.Fixed:
+                if(fixedTarget)
+                {
+                    Vector3 t = fixedTarget.position;
+                    t.z = -fixedCamDistance;
+                    transform.position = t;
+                }
+                break;
+            case CMode.follow:
+                if (Target != null)
+                {
+                    Vector3 tarLoc = Target.position;
+                    tarLoc.z = -10f;
+                    transform.position = Vector3.Slerp(transform.position, tarLoc, FollowSpeed * Time.deltaTime);
+                }
+                break;
+            case CMode.Snap:
+                if(Target)
+                {
+                    Vector3 t = Target.position;
+                    t.z = -10f;
+                    transform.position = t;
+                }
+                break;
         }
-        if(Camera_Mode == CMode.follow)
+        
+    }
+    public void ChangeMode(int i)
+    {
+        switch(i)
         {
-            if(Target != null)
-            {
-                Vector3 tarLoc = Target.position;
-                tarLoc.z = -10f;
-                transform.position = Vector3.Slerp(transform.position, tarLoc, FollowSpeed * Time.deltaTime);
-            }
+            case 0:
+                Camera_Mode = CMode.Fixed;
+                break;
+            case 1:
+                Camera_Mode = CMode.follow;
+                break;
+            case 2:
+                Camera_Mode = CMode.Snap;
+                break;
         }
     }
     public void FindTarget(string tar) // Use this to set which target to follow, use object name

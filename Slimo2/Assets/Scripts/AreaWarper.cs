@@ -65,13 +65,16 @@ public class AreaWarper : MonoBehaviour
             if(canWarp)
             {
                 Transform tempPlayer = col.GetComponent<Transform>();
+                Transform cFS = GameObject.FindGameObjectWithTag("CamSmoothingTar").transform;
                 if (useInt)
                 {
                     tempPlayer.transform.position = TeleTo(WarpDestInt).position;
+                    cFS.GetComponent<CameraFollowSmoothing>().SnapToWarpedArea();
                 }
                 else
                 {
                     tempPlayer.transform.position = TeleTo(WarpDest).position;
+                    cFS.GetComponent<CameraFollowSmoothing>().SnapToWarpedArea();
                 }
                 TriggerCD();
             }
