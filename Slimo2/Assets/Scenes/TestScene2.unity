@@ -9465,6 +9465,21 @@ PrefabInstance:
       propertyPath: invCanvas
       value: 
       objectReference: {fileID: 573843821}
+    - target: {fileID: 1870448518112566270, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1870448518112566270, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 2.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1870448518112566270, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.64
+      objectReference: {fileID: 0}
     - target: {fileID: 3727145088433499904, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
         type: 3}
       propertyPath: m_LocalPosition.x
