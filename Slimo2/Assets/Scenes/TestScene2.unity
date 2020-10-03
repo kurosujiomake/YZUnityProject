@@ -9295,7 +9295,7 @@ SpriteRenderer:
   m_Size: {x: 1.65, y: 1.68}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &2069896301
@@ -9599,6 +9599,26 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8474b20db5ca3fa4297b28f4a4182e7f, type: 2}
+    - target: {fileID: 1389243926, guid: 16a462e48b7ea5340b1aa2c5627f2e76, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1389243926, guid: 16a462e48b7ea5340b1aa2c5627f2e76, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 1389243926, guid: 16a462e48b7ea5340b1aa2c5627f2e76, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 1389243926, guid: 16a462e48b7ea5340b1aa2c5627f2e76, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 1.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 1389243926, guid: 16a462e48b7ea5340b1aa2c5627f2e76, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 3.93
+      objectReference: {fileID: 0}
     - target: {fileID: 1712022240, guid: 16a462e48b7ea5340b1aa2c5627f2e76, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

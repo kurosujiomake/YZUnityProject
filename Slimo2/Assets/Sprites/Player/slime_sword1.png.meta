@@ -210,8 +210,8 @@ TextureImporter:
         y: 493
         width: 260
         height: 324
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.64, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -315,8 +315,8 @@ TextureImporter:
         y: 652
         width: 350
         height: 166
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.78, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -329,36 +329,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime_sword1_8
-      rect:
-        serializedVersion: 2
-        x: 1419
-        y: 492
-        width: 569
-        height: 328
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f3382674131ab8340800000000000000
-      internalID: 4867161055327060799
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: slime_sword1_10
       rect:
         serializedVersion: 2
         x: 564
         y: 65
-        width: 271
+        width: 272
         height: 363
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.23, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -378,8 +357,8 @@ TextureImporter:
         y: 60
         width: 167
         height: 367
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.46, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -413,22 +392,43 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime_sword1_15
+      name: slime_sword1_7
       rect:
         serializedVersion: 2
-        x: 2
-        y: 74
-        width: 561
-        height: 355
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 1419
+        y: 492
+        width: 572
+        height: 328
+      alignment: 9
+      pivot: {x: 0.11, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a814ddca94503b40800000000000000
-      internalID: 5417923375581632675
+      spriteID: 55e0aeb280047c080800000000000000
+      internalID: -9167288112648679851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slime_sword1_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 74
+        width: 562
+        height: 362
+      alignment: 9
+      pivot: {x: 0.1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6eb947a23cdb3300800000000000000
+      internalID: 233021915852815981
       vertices: []
       indices: 
       edges: []
