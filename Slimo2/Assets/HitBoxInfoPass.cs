@@ -23,6 +23,9 @@ public class HitBoxInfoPass : StateMachineBehaviour
     private bool _IdRandomized = false;
     [SerializeField]
     private bool _passedInfoToActiveHitbox = false;
+    [Header("Manually input animation name here")]
+    [SerializeField]
+    private string AnimationName = null;
     
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -31,6 +34,9 @@ public class HitBoxInfoPass : StateMachineBehaviour
         _param = animator.GetComponent<Parameters>();
         _dv = _param.HitBoxes[_whichHitBox].GetComponent<DamageValues>();
         DamagePassToHitbox();
+        if(AnimationName != null)
+        animator.GetComponent<PlayerAttackMove>().curAtkName = AnimationName;
+        animator.GetComponent<PlayerAttackMove>().TimerStart = true;
     }
     public void DamagePassToHitbox() //puts it into a function so it can be easily called
     {
@@ -85,6 +91,7 @@ public class HitBoxInfoPass : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         _IdRandomized = false;
+        animator.GetComponent<PlayerAttackMove>().TimerStart = false;
         HitBoxReset();
     }
 

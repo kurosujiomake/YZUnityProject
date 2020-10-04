@@ -13,7 +13,7 @@ public class PlayerConsolidatedControl : MonoBehaviour
     private bool m_jumpPressed = false;
     private Animator anim = null;
     [SerializeField] private bool m_canMove = true;
-    
+    private bool m_atkPressed = false;
     private enum m_MoveType {player, none, forced};
     [SerializeField]
     private m_MoveType m_MType;
@@ -67,7 +67,7 @@ public class PlayerConsolidatedControl : MonoBehaviour
                 
                 break;
             case m_MoveType.none:
-                FreezeMovement();
+
                 break;
         }
         //print("Current direction stick is " + StickDir()); //remember to remove later
@@ -137,8 +137,10 @@ public class PlayerConsolidatedControl : MonoBehaviour
         if(anim.GetBool("IsAttacking")) //no input at all from the player
         {
             //print(anim.GetBool("IsAttacking"));
+            //FreezeMovement(); no longer needed
             m_MType = m_MoveType.none;
         }
+        
         
         if(!anim.GetBool("IsAttacking") && !m_Dashing && !m_aDashing) //sets the state back to player input control
         {
