@@ -27,6 +27,7 @@ public class PlayerConsolidatedControl : MonoBehaviour
     private bool m_BTP = false;
     public SpriteAfterImage[] m_dashEffectScripts = new SpriteAfterImage[4];
 
+
     //private bool m_canGDash = true;
     void Awake()
     {
@@ -40,6 +41,7 @@ public class PlayerConsolidatedControl : MonoBehaviour
     {
         return m_canMove;
     }
+    
     void FixedUpdate() //remember to always use fixed update for controls or else stutter happens
     {
         //things that should be running regardless of what state it is currently
@@ -62,11 +64,13 @@ public class PlayerConsolidatedControl : MonoBehaviour
                     AirMovement();
                     AirDashing();
                 }
+                
                 break;
             case m_MoveType.none:
-                //currently nothing should be happening
+
                 break;
         }
+        //print("Current direction stick is " + StickDir()); //remember to remove later
     }
     public bool ReturnFacingDir()
     {
@@ -87,6 +91,7 @@ public class PlayerConsolidatedControl : MonoBehaviour
                 d = "left";
                 m_param.HorV = 0;
             }
+            
         }
         if(Input.GetAxisRaw("Horizontal") < m_param.HoriBuffer && Input.GetAxisRaw("Horizontal") > -m_param.HoriBuffer) //ignores small inputs in horizontal stick
         {
@@ -100,8 +105,10 @@ public class PlayerConsolidatedControl : MonoBehaviour
                 d = "down";
                 m_param.HorV = 1;
             }
+            
         }
         return d;
+        
     }
     private void FreezeMovement()
     {
@@ -129,8 +136,12 @@ public class PlayerConsolidatedControl : MonoBehaviour
     {
         if(anim.GetBool("IsAttacking")) //no input at all from the player
         {
+            //print(anim.GetBool("IsAttacking"));
+            //FreezeMovement(); no longer needed
             m_MType = m_MoveType.none;
         }
+        
+        
         if(!anim.GetBool("IsAttacking") && !m_Dashing && !m_aDashing) //sets the state back to player input control
         {
             m_MType = m_MoveType.player;
@@ -161,6 +172,7 @@ public class PlayerConsolidatedControl : MonoBehaviour
             transform.localRotation = t;
             m_facingRight = !m_facingRight;
         }
+        
     }
     private void AirDashing()
     {
@@ -246,6 +258,7 @@ public class PlayerConsolidatedControl : MonoBehaviour
         {
             return gameObject;
         }
+
     }
     private GameObject FindClosest(string tag) //used to find closest gameobject based on tag, completely self contained and only need to be called once to use
     {
@@ -296,6 +309,7 @@ public class PlayerConsolidatedControl : MonoBehaviour
         m_MType = m_MoveType.player;
         SetLocks(0);
         StartCoroutine(BlinkCD());
+        
     }
     private IEnumerator GroundDash(string dir, float duration)
     {
@@ -354,6 +368,7 @@ public class PlayerConsolidatedControl : MonoBehaviour
             v.y = m_param.VerticalSpeed * Time.deltaTime * 100;
             m_rb.velocity = v;
         }
+
     }
     private void ForceMove(string dir, float spd)
     {
@@ -362,11 +377,13 @@ public class PlayerConsolidatedControl : MonoBehaviour
         {
             case "right":
                 v.x = spd * Time.deltaTime * 100;
+                
                 SetLocks(1);
                 m_rb.velocity = v;
                 break;
             case "left":
                 v.x = -spd * Time.deltaTime * 100;
+                
                 SetLocks(1);
                 m_rb.velocity = v;
                 break;
