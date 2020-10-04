@@ -6,24 +6,22 @@ using UnityEngine;
 public class PlayerAttackMove : MonoBehaviour
 {
     public AtkMoveParameters[] atks;
-    public AtkMoveParameters curAttack;
     public string curAtkName;
     private string prevAtkName;
-    public Animator pAnimator;
+    private Animator pAnimator;
     public float curAnimTime;
-    public bool canMove = false; //for inspector testing purposes, do not use this variable
     private bool b = false;
     private float a_dir = 0;
     private Rigidbody2D r2D = null;
     public bool TimerStart = false;
+    [Header("Do not input data below, this area is auto populated during gameplay")]
+    public AtkMoveParameters curAttack;
     // Start is called before the first frame update
     void Start()
     {
         pAnimator = GetComponent<Animator>();
         r2D = GetComponent<Rigidbody2D>();
     }
-
-    // Update is called once per frame
     void FixedUpdate()
     {
         if (TimerStart)
@@ -34,8 +32,6 @@ public class PlayerAttackMove : MonoBehaviour
         {
             curAnimTime = 0;
         }
-
-        //DebugBoolChanges();
         if (pAnimator.GetBool("IsAttacking"))
         {
             if(curAttack != null && curAttack.numOfMovements != 0)
@@ -50,7 +46,6 @@ public class PlayerAttackMove : MonoBehaviour
                         break;
                 }
             }
-            canMove = ReturnCanMove();
             if(ReturnCanMove())
             {
                 ForcedMovement();
@@ -100,27 +95,13 @@ public class PlayerAttackMove : MonoBehaviour
                 curAttack.curMovement++;
             }
         }
-        
         return cm;
     }
     private void Timer()
     {
         curAnimTime += Time.deltaTime;
     }
-    private void DebugBoolChanges()
-    {
-        if(canMove && !b)
-        {
-            Debug.Log("Can Atk Move");
-            b = true;
-        }
-        if(!canMove && b)
-        {
-            b = false;
-        }
-    }
 }
-
 [System.Serializable]
 public class AtkMoveParameters
 {
