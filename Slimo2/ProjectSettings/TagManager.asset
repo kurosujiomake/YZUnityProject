@@ -12,6 +12,7 @@ TagManager:
   - Warp
   - PlayerCamFocus
   - CamSmoothingTar
+  - pAnimSpriteCont
   layers:
   - Default
   - TransparentFX

@@ -14,6 +14,8 @@ public class PlayerAttackMove : MonoBehaviour
     private float a_dir = 0;
     private Rigidbody2D r2D = null;
     public bool TimerStart = false;
+    private Animator anim = null;
+    private bool paused = false;
     [Header("Do not input data below, this area is auto populated during gameplay")]
     public AtkMoveParameters curAttack;
     // Start is called before the first frame update
@@ -21,12 +23,17 @@ public class PlayerAttackMove : MonoBehaviour
     {
         pAnimator = GetComponent<Animator>();
         r2D = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>(); 
     }
     void FixedUpdate()
     {
         if (TimerStart)
         {
-            Timer();
+            if(!paused)
+            {
+                Timer();
+            }
+            
         }
         if(!TimerStart)
         {
@@ -44,6 +51,19 @@ public class PlayerAttackMove : MonoBehaviour
                     case false:
                         a_dir = 180 - curAttack.Direction[curAttack.curMovement];
                         break;
+                }
+                if(curAttack.hasPause)
+                {
+                    if(!GetComponent<GroundChecker>().ReturnSlamGroundDetect() && curAnimTime >= curAttack.whenPause)
+                    {
+                        anim.enabled = false;
+                        paused = true;    
+                    }
+                    else
+                    {
+                        anim.enabled = true;
+                        paused = false;
+                    }
                 }
             }
             if(ReturnCanMove())
@@ -111,4 +131,6 @@ public class AtkMoveParameters
     public float[] Direction;
     public float[] moveVelocity;
     public Vector2[] startEnd;
+    public bool hasPause;
+    public float whenPause;
 }

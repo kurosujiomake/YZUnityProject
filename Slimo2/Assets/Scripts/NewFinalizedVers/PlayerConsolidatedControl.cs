@@ -26,6 +26,9 @@ public class PlayerConsolidatedControl : MonoBehaviour
     [SerializeField]
     private bool m_BTP = false;
     public SpriteAfterImage[] m_dashEffectScripts = new SpriteAfterImage[4];
+    
+    [SerializeField]
+    private SpriteRenderer sp = null;
 
     //private bool m_canGDash = true;
     void Awake()
@@ -35,6 +38,7 @@ public class PlayerConsolidatedControl : MonoBehaviour
         m_rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         SetLocks(0);
+        sp = GameObject.FindGameObjectWithTag("pAnimSpriteCont").GetComponent<SpriteRenderer>();
     }
     public bool ReturnCanMove()
     {
@@ -151,13 +155,13 @@ public class PlayerConsolidatedControl : MonoBehaviour
         m_rb.velocity = v;
         if(hori > 0 && !m_facingRight) //flips player sprite
         {
-            t.y = 0;
+            sp.flipX = false;
             transform.localRotation = t;
             m_facingRight = !m_facingRight;
         }
-        if(hori < 0 && m_facingRight)
+        if (hori < 0 && m_facingRight)
         {
-            t.y += -180;
+            sp.flipX = true;
             transform.localRotation = t;
             m_facingRight = !m_facingRight;
         }
