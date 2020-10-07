@@ -483,10 +483,10 @@ AnimatorStateMachine:
     m_Position: {x: 1140, y: -240, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 7177243887211436712}
-    m_Position: {x: 1175, y: -175, z: 0}
+    m_Position: {x: 1280, y: -160, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -154240408149188235}
-    m_Position: {x: 1210, y: -110, z: 0}
+    m_Position: {x: 1280, y: -90, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -1353,7 +1353,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: swordAtt1 0
+  m_Name: sword_sp1_release
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -1366,7 +1366,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 8c92eb198b730d44ba08706f36196889, type: 2}
+  m_Motion: {fileID: 7400000, guid: 049b027e98734d84c9403330e07d6bae, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -2336,7 +2336,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: swordAtt1
+  m_Name: sword_sp1_windup
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -2349,7 +2349,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 8c92eb198b730d44ba08706f36196889, type: 2}
+  m_Motion: {fileID: 7400000, guid: 6343b3655ee972b45825f24e3267b38e, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
