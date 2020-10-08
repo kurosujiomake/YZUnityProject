@@ -30,6 +30,7 @@ public class PostAttIdle : StateMachineBehaviour
         switch(isFinalPATT)
         {
             case true:
+                timer = 0.05f;
                 animator.SetInteger("ComboNum", 1);
                 if (timer > 0)
                 {
