@@ -17,6 +17,11 @@ public enum SkillType
     Special,
     Ultimate
 }
+public enum SpeedType
+{
+    Slow,
+    Fast
+}
 public class BaseSkills : ScriptableObject
 {
     public Sprite UIImage;
@@ -26,4 +31,6 @@ public class BaseSkills : ScriptableObject
     public int SkillID;
     public float CD;
     public float[] CDModifiers;
+    public float BaseDamage;
+    public float DamageModifier;
 }

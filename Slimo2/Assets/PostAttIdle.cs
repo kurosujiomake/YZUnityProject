@@ -21,7 +21,6 @@ public class PostAttIdle : StateMachineBehaviour
         animator.SetBool("IsAttacking", false);
         param = animator.GetComponent<Parameters>();
         timer = param.delayTimer;
-        
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

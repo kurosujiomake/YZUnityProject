@@ -22,7 +22,7 @@ public class PlayerInventory : MonoBehaviour
     }
     private void Start()
     {
-        ToggleInventory();
+        StartCoroutine(ToggleTimer());
     }
 
     private void Update()
@@ -57,4 +57,10 @@ public class PlayerInventory : MonoBehaviour
         }
         invCanvas.gameObject.SetActive(true);
     }
+    private IEnumerator ToggleTimer()
+    {
+        yield return new WaitForSeconds(0.05f);
+        ToggleInventory();
+    }
+
 }
