@@ -22,5 +22,9 @@ public class SkillDatabase : ScriptableObject, ISerializationCallbackReceiver
     {
 
     }
+    public float returnCD(int ID)
+    {
+        return Skills[ID].CD;
+    }
 
 }

@@ -29,6 +29,7 @@ public class PostAttIdle : StateMachineBehaviour
         switch(isFinalPATT)
         {
             case true:
+                animator.ResetTrigger("SpAtk");
                 timer = 0.05f;
                 animator.SetInteger("ComboNum", 1);
                 if (timer > 0)
@@ -52,6 +53,7 @@ public class PostAttIdle : StateMachineBehaviour
                         animator.SetBool("IsMoving", true);
                     }
                 }
+                animator.GetComponent<SpecialAttackParameters>().PutSkillOnCD();
                     break;
             case false:
                 if (timer > 0)

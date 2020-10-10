@@ -9697,6 +9697,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SpAtkID: 0
   m_UltAtkID: 0
+  skDatabase: {fileID: 11400000, guid: 7a145e295caa6e24ebc58788929e4e01, type: 2}
+  skillCDs:
+  - 0
+  - 0
+  swapSkillCDs:
+  - 0
+  - 0
+  canUseAtks: 01000000
+  atkUsed: 00000000
 --- !u!1001 &8338234521068142502
 PrefabInstance:
   m_ObjectHideFlags: 0

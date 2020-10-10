@@ -19,8 +19,10 @@ MonoBehaviour:
     Can be repeated up to 4
     times before skill goes on cooldown'
   SkillID: 0
-  CD: 5
+  CD: 10
   CDModifiers:
   - 0
+  BaseDamage: 0
+  DamageModifier: 0
   wep: 0
   useCDMod: 1
