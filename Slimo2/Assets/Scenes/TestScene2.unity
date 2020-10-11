@@ -9501,6 +9501,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 427844043, guid: 16a462e48b7ea5340b1aa2c5627f2e76, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1221579001, guid: 16a462e48b7ea5340b1aa2c5627f2e76, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1320624554, guid: 16a462e48b7ea5340b1aa2c5627f2e76, type: 3}
       propertyPath: m_TagString
       value: pAnimSpriteCont
@@ -9509,6 +9517,10 @@ PrefabInstance:
       propertyPath: sp
       value: 
       objectReference: {fileID: 440641806}
+    - target: {fileID: 1712022239, guid: 16a462e48b7ea5340b1aa2c5627f2e76, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2029075672, guid: 16a462e48b7ea5340b1aa2c5627f2e76, type: 3}
       propertyPath: atks.Array.data[3].startEnd.Array.data[0].x
       value: 0.35
