@@ -20,7 +20,7 @@ public class SpAtk : StateMachineBehaviour
         if(animator.GetInteger("swSp1Counter") > maxSlashes)
         {
             animator.SetInteger("swSp1Counter", 1);
-            animator.GetComponent<SpecialAttackParameters>().DisableAtk(skillID);
+            animator.GetComponent<SpecialAttackParameters>().DisableSPAtk();
             Debug.Log("Disabling sp Atk");
         }
         
@@ -31,7 +31,7 @@ public class SpAtk : StateMachineBehaviour
     {
         if (animator.GetInteger("swSp1Counter") > maxSlashes - 1)
         {
-            animator.GetComponent<SpecialAttackParameters>().DisableAtk(skillID);
+            animator.GetComponent<SpecialAttackParameters>().DisableSPAtk();
             Debug.Log("Disabling sp Atk");
         }
     }
@@ -47,7 +47,7 @@ public class SpAtk : StateMachineBehaviour
         if(animator.GetInteger("swSp1Counter") >= maxSlashes)
         {
             animator.SetInteger("swSp1Counter", 1);
-            animator.GetComponent<SpecialAttackParameters>().DisableAtk(skillID);
+            animator.GetComponent<SpecialAttackParameters>().DisableSPAtk();
         }
         
         

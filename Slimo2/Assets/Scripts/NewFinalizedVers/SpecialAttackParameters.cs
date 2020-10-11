@@ -4,30 +4,36 @@ using UnityEngine;
 
 public class SpecialAttackParameters : MonoBehaviour
 {
-    public int m_SpAtkID = 0;
-    public int m_UltAtkID = 0;
+    public int CurrentSpAtk = 0;
     private Animator anim = null;
     private bool spAtkPressed = false;
     public SkillDatabase skDatabase;
-    public float[] skillCDs = new float[2];
-    public float[] swapSkillCDs = new float[2];
     private bool startCD = false;
-    [SerializeField]
-    private bool[] canUseAtks = new bool[4];
-    [SerializeField]
-    private bool[] atkUsed = new bool[4];
+    public SkillsContainer[] skill = new SkillsContainer[3];
+    public SkillsContainer spAtk;
+    public SkillsContainer ultAtk;
+    
+    private bool cdStarted = false;
 
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
-        GetSkillData();
-        
+        //GetSkillData();
+        SkillsUpdate();
+        SetCurrentSkill(CurrentSpAtk);
+        UpdateSkillIDs(spAtk.skillID, ultAtk.skillID);
     }
 
     void FixedUpdate()
     {
-        if(Input.GetAxisRaw("SpAtk") != 0 && canUseAtks[0])
+        SetCDBools();
+        if (startCD == true)
+        {
+            StartCoroutine(CDRest(spAtk.skCD, spAtk.skillID));
+            cdStarted = true;
+        }
+        if (Input.GetAxisRaw("SpAtk") != 0 && spAtk.CanUseAtk)
         {
             if(!spAtkPressed)
             {
@@ -36,7 +42,6 @@ public class SpecialAttackParameters : MonoBehaviour
             }
             anim.SetBool("IsAttacking", true);
             anim.SetBool("spAtkHeld", true);
-            atkUsed[0] = true;
         }
         if(Input.GetAxisRaw("SpAtk") == 0)
         {
@@ -46,61 +51,88 @@ public class SpecialAttackParameters : MonoBehaviour
                 spAtkPressed = false;
             }
         }
-        if(startCD == true)
+        
+    }
+    public void SetCDBools()
+    {
+        spAtk.CanUseAtk = skill[CurrentSpAtk].CanUseAtk;
+    }
+
+    public void SkillsUpdate()
+    {
+        //do this part later when equipment is set
+        skill[0].skCD = skDatabase.returnCD(0);
+        skill[0].SkillName = skDatabase.returnName(0);
+        skill[0].skillID = skDatabase.Skills[0].SkillID;
+        for(int i = 0; i < skill.Length; i++)
         {
-            if(atkUsed[0] == true)
+            if(skill[i].SkillName != null)
             {
-                StartCoroutine(CDRest(0, skillCDs[0]));
-                startCD = false;
+                skill[i].CanUseAtk = true;
             }
         }
     }
-    private IEnumerator CDRest(int whichCD, float cd)
+    public void SetCurrentSkill(int wepSet)
     {
-        switch(whichCD)
+        switch(wepSet)
         {
             case 0:
-
-                yield return new WaitForSeconds(cd);
-                canUseAtks[0] = true;
+                spAtk = skill[0];
+                //set ult here too
                 break;
             case 1:
-
-                yield return new WaitForSeconds(cd);
-
-                break;
-            case 2:
-
-                yield return new WaitForSeconds(cd);
-
-                break;
-            case 3:
-
-                yield return new WaitForSeconds(cd);
-
+                //set here for weapon swap
                 break;
         }
     }
+    private IEnumerator CDRest(float _cd, int _skillID)
+    {
+        startCD = false;
+        
+        yield return new WaitForSeconds(_cd);
+        for(int i = 0; i < skill.Length; i++)
+        {
+            if(skill[i].skillID == _skillID)
+            {
+                skill[i].CanUseAtk = true;
+            }
+        }
+        cdStarted = false;
+    }
     public void GetSkillData()
     {
-        skillCDs[0] = skDatabase.returnCD(m_SpAtkID);
+        //
     }
     public void UpdateSkillIDs(int _spAtk, int _ultAtk)
     {
-        m_SpAtkID = _spAtk;
-        m_UltAtkID = _ultAtk;
         anim.SetInteger("spID", _spAtk);
         anim.SetInteger("ultID", _ultAtk);
     }
     public void PutSkillOnCD()
     {
+        if(!cdStarted)
         startCD = true;
     }
-    public void DisableAtk(int _atkID)
+    public void DisableSPAtk()
     {
-        if(m_SpAtkID == _atkID)
+        for(int i = 0; i < skill.Length; i++)
         {
-            canUseAtks[0] = false;
+            if(skill[i].skillID == spAtk.skillID)
+            {
+                skill[i].CanUseAtk = false;
+            }
         }
     }
+}
+
+[System.Serializable]
+public class SkillsContainer
+{
+    public string SkillName;
+    public int skillID;
+    public float skCD;
+    public bool CanUseAtk;
+    
+
+    
 }

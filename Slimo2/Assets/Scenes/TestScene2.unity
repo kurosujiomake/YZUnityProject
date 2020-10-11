@@ -9695,17 +9695,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07f4e3ecb78ffe84e889effc8adf9500, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SpAtkID: 0
-  m_UltAtkID: 0
+  CurrentSpAtk: 0
   skDatabase: {fileID: 11400000, guid: 7a145e295caa6e24ebc58788929e4e01, type: 2}
-  skillCDs:
-  - 0
-  - 0
-  swapSkillCDs:
-  - 0
-  - 0
-  canUseAtks: 01000000
-  atkUsed: 00000000
+  skill:
+  - SkillName: 
+    skillID: 0
+    skCD: 0
+    CanUseAtk: 0
+  - SkillName: 
+    skillID: -1
+    skCD: 0
+    CanUseAtk: 0
+  - SkillName: 
+    skillID: -1
+    skCD: 0
+    CanUseAtk: 0
+  spAtk:
+    SkillName: 
+    skillID: 0
+    skCD: 0
+    CanUseAtk: 0
+  ultAtk:
+    SkillName: 
+    skillID: 0
+    skCD: 0
+    CanUseAtk: 0
 --- !u!1001 &8338234521068142502
 PrefabInstance:
   m_ObjectHideFlags: 0

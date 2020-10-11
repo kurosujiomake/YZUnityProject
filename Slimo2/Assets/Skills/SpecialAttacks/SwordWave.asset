@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdb8c04c76d16004187227beab46b47c, type: 3}
   m_Name: SwordWave
   m_EditorClassIdentifier: 
+  Name: Sword Wave
   UIImage: {fileID: 0}
   type: 0
   Description: 'Shoots out a bladewave with a slash
@@ -19,7 +20,7 @@ MonoBehaviour:
     Can be repeated up to 4
     times before skill goes on cooldown'
   SkillID: 0
-  CD: 10
+  CD: 4
   CDModifiers:
   - 0
   BaseDamage: 0

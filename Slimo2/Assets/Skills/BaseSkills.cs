@@ -24,6 +24,7 @@ public enum SpeedType
 }
 public class BaseSkills : ScriptableObject
 {
+    public string Name;
     public Sprite UIImage;
     public SkillType type;
     [TextArea(15, 20)]
