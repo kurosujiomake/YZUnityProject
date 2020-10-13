@@ -651,6 +651,6 @@ PlayerSettings:
   projectName: Slimo2
   organizationId: yuu-1470659
   cloudEnabled: 0
-  enableNativePlatformBackendsForNewInputSystem: 0
+  enableNativePlatformBackendsForNewInputSystem: 1
   disableOldInputManagerSupport: 0
   legacyClampBlendShapeWeights: 0
