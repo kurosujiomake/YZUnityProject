@@ -38,14 +38,31 @@ public class SpriteAfterImage : MonoBehaviour
         trailLifetime = 0;
         stop = false;
     }
-    public void StartTrail()
+    public void StartTrail(bool faceRight)
     {
         trailLifetime = .25f;
         stop = false;
+        SpriteRotReset();
+        switch(faceRight)
+        {
+            case true:
+                foreach (SpriteRenderer r in readyObjects)
+                {
+                    r.flipX = false;
+                }
+                break;
+            case false:
+                foreach (SpriteRenderer r in readyObjects)
+                {
+                    r.flipX = true;
+                }
+                break;
+        }
     }
     public void StopTrail()
     {
         stop = true;
+        SpriteRotReset();
     }
     private void Update()
     {

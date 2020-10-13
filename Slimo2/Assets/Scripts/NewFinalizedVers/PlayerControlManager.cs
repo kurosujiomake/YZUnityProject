@@ -74,19 +74,7 @@ public class PlayerControlManager : MonoBehaviour
         pad = Gamepad.current;
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        if(pad != null)
-        {
-            leftStickRead = pad.leftStick.ReadValue();
-            rightStickRead = pad.rightStick.ReadValue();
-        }
-        //DebugTesting();
-        ButtonReads();
-        curLStickDir = ReturnDir(0);
-        curRStickDir = ReturnDir(1);
-    }
+    
     void DebugTesting()
     {
         if(a_button_pressed)
@@ -96,7 +84,6 @@ public class PlayerControlManager : MonoBehaviour
     }
     void ButtonReads()
     {
-        KeyHeld();
         a_button_pressed = pad.aButton.wasPressedThisFrame;
         a_button_released = pad.aButton.wasReleasedThisFrame;
         b_button_pressed = pad.bButton.wasPressedThisFrame;
@@ -124,6 +111,7 @@ public class PlayerControlManager : MonoBehaviour
     }
     void KeyHeld()
     {
+        ButtonReads();
         if(a_button_pressed)
         {
             a_button_held = true;
@@ -223,6 +211,11 @@ public class PlayerControlManager : MonoBehaviour
     }
     Direction ReturnDir(int stick)
     {
+        if (pad != null)
+        {
+            leftStickRead = pad.leftStick.ReadValue();
+            rightStickRead = pad.rightStick.ReadValue();
+        }
         horiL = leftStickRead.x;
         vertL = leftStickRead.y;
         horiR = rightStickRead.x;
@@ -284,6 +277,7 @@ public class PlayerControlManager : MonoBehaviour
 
     public bool GetButtonDown(string which)
     {
+        KeyHeld();
         bool b = false;
         string btn = kb.ReturnBtn(which);
         switch(btn)
@@ -312,13 +306,13 @@ public class PlayerControlManager : MonoBehaviour
             case "right":
                 b = right_pressed;
                 break;
-            case "Lbumper":
+            case "LBumper":
                 b = Lbumper_pressed;
                 break;
             case "LTrigger":
                 b = LTrigger_pressed;
                 break;
-            case "Rbumper":
+            case "RBumper":
                 b = Rbumper_pressed;
                 break;
             case "RTrigger":
@@ -329,6 +323,7 @@ public class PlayerControlManager : MonoBehaviour
     }
     public bool GetButtonUp(string which)
     {
+        KeyHeld();
         bool b = false;
         string btn = kb.ReturnBtn(which);
         switch (btn)
@@ -357,13 +352,13 @@ public class PlayerControlManager : MonoBehaviour
             case "right":
                 b = right_released;
                 break;
-            case "Lbumper":
+            case "LBumper":
                 b = Lbumper_released;
                 break;
             case "LTrigger":
                 b = LTrigger_released;
                 break;
-            case "Rbumper":
+            case "RBumper":
                 b = Rbumper_released;
                 break;
             case "RTrigger":
@@ -374,6 +369,7 @@ public class PlayerControlManager : MonoBehaviour
     }
     public bool GetButtonHeld(string which)
     {
+        KeyHeld();
         bool b = false;
         string btn = kb.ReturnBtn(which);
         switch (btn)
@@ -402,13 +398,13 @@ public class PlayerControlManager : MonoBehaviour
             case "right":
                 b = right_held;
                 break;
-            case "Lbumper":
+            case "LBumper":
                 b = Lbumper_held;
                 break;
             case "LTrigger":
                 b = LTrigger_held;
                 break;
-            case "Rbumper":
+            case "RBumper":
                 b = Rbumper_held;
                 break;
             case "RTrigger":
@@ -419,6 +415,7 @@ public class PlayerControlManager : MonoBehaviour
     }
     public string GetDirectionL()
     {
+        curLStickDir = ReturnDir(0);
         string s = "n"; 
         switch(curLStickDir)
         {
@@ -439,9 +436,10 @@ public class PlayerControlManager : MonoBehaviour
                 break;
         }
         return s;
-    } // returns string u, d, l, r for up, down, left, right
+    } // returns string u, d, l, r, n for up, down, left, right, neutral
     public string GetdirectionR()
     {
+        curRStickDir = ReturnDir(1);
         string s = "n";
         switch (curRStickDir)
         {
@@ -462,7 +460,7 @@ public class PlayerControlManager : MonoBehaviour
                 break;
         }
         return s;
-    }  // returns right stick in u, d, l ,r
+    }  // returns right stick in u, d, l ,r, n
     public float ReturnAxis(string which, string axis)
     {
         float f = 0;

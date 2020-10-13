@@ -155,7 +155,7 @@ public class PlayerConsolidatedControl : MonoBehaviour
                 foreach (SpriteAfterImage sp in m_dashEffectScripts) //should start the dash afterimage effect
                 {
                     sp.SpriteRotReset();
-                    sp.StartTrail();
+                    //sp.StartTrail();
                 }
                 StartCoroutine(AerialDash(pCM.GetDirectionL(), m_param.m_ADTime));
             }
@@ -176,7 +176,7 @@ public class PlayerConsolidatedControl : MonoBehaviour
             foreach(SpriteAfterImage sp in m_dashEffectScripts) //should start the dash afterimage effect
             {
                 sp.SpriteRotReset();
-                sp.StartTrail();
+                //sp.StartTrail();
             }
             if(m_facingRight)
             {

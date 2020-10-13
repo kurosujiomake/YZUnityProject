@@ -820,6 +820,12 @@ Transform:
   m_Father: {fileID: 364021736}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &234618526 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5754908070949525643, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
+    type: 3}
+  m_PrefabInstance: {fileID: 8221750487963548663}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &240253091
 GameObject:
   m_ObjectHideFlags: 0
@@ -9060,6 +9066,29 @@ Transform:
   m_Father: {fileID: 548664761}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2005546680 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1320624554, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
+    type: 3}
+  m_PrefabInstance: {fileID: 8221750487963548663}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2005546683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2005546680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d9031b3b56fb5147b2ae2179132eeac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  finalColor: {r: 1, g: 0.5545753, b: 0.1273585, a: 0}
+  trailLifetime: 0.25
+  distancePerSpawn: 0.1
+  spawnOnStart: 0
+  readyObjects: []
 --- !u!1001 &2014545967
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9284,12 +9313,27 @@ PrefabInstance:
     - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
         type: 3}
       propertyPath: stickDeadzoneL.Array.data[0]
-      value: 0.45
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
         type: 3}
       propertyPath: stickDeadzoneL.Array.data[1]
-      value: 0.45
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
+        type: 3}
+      propertyPath: kb.Atk1_btn
+      value: y
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
+        type: 3}
+      propertyPath: kb.Jump_btn
+      value: a
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
+        type: 3}
+      propertyPath: kb.Dash_btn
+      value: RBumper
       objectReference: {fileID: 0}
     - target: {fileID: 2374169362876929646, guid: b9d2a7211a311ef458007fdcebcac8b7,
         type: 3}
@@ -9514,6 +9558,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 199465334998370276, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
+        type: 3}
+      propertyPath: hitBoxContainer
+      value: 
+      objectReference: {fileID: 234618526}
     - target: {fileID: 814470021636217456, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
         type: 3}
       propertyPath: invCanvas
