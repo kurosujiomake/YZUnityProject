@@ -9,7 +9,7 @@ public class CameraFollowSmoothing : MonoBehaviour
     public float smoothingSpd = 0;
     public string followTarTag = null;
     private pStates pst = null;
-    private PlayerConsolidatedControl pc = null;
+    private PlayerControllerNew pc = null;
     [SerializeField]
     private bool canTurnFollow = false;
     public float delayTimeTurning = 0;
@@ -26,8 +26,8 @@ public class CameraFollowSmoothing : MonoBehaviour
         c = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         followObj = GameObject.FindGameObjectWithTag(followTarTag);
         pst = GameObject.FindGameObjectWithTag("Player").GetComponent<pStates>();
-        pc = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerConsolidatedControl>();
-        curPFacing = pc.ReturnFacingDir();
+        pc = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerNew>();
+        curPFacing = pc.facingRight;
         canTurnFollow = true;
     }
 
@@ -37,12 +37,12 @@ public class CameraFollowSmoothing : MonoBehaviour
         Vector3 t = transform.position;
         t.y = followObj.transform.position.y;
         transform.position = t;
-        if (pc.ReturnFacingDir() != curPFacing)
+        if (pc.facingRight != curPFacing)
         {
             canTurnFollow = false;
             StartCoroutine(Timer(delayTimeTurning));
         }
-        if(pc.ReturnFacingDir() == curPFacing)
+        if(pc.facingRight == curPFacing)
         {
             canTurnFollow = true;
             StopAllCoroutines();
@@ -64,7 +64,7 @@ public class CameraFollowSmoothing : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         canTurnFollow = true;
-        curPFacing = pc.ReturnFacingDir();
+        curPFacing = pc.facingRight;
     }
     private void Smoothing()
     {

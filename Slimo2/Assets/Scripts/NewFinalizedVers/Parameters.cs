@@ -23,15 +23,13 @@ public class Parameters : MonoBehaviour
     public float projDuration = 0;
     [Header("Variables related to Bow type attacks, note for Reference to Obj only")]
     public GameObject[] bowAttacks = new GameObject[4];
-    [Header("Stick Input buffer for aerial dashing")]
-    public float VertBuffer = 0;
-    public float HoriBuffer = 0;
     [Header("Variables Related to Movement")]
     public float GHorizontalSpeed = 0;
     public float AHoriSpdMulti = 0;
     public bool facingRight = true;
     [Header("Variables Related To Jumping")]
     public bool m_jumpPressed;
+    public bool m_canJump;
     public float VerticalSpeed = 0;
     [Header("Variables Related To Grounded Dash")]
     public float m_GDCD = 0;

@@ -8,6 +8,7 @@ public class PlayerInventory : MonoBehaviour
     public Canvas invCanvas;
     public InventoryObject inventory;
     public InventoryObject equipment;
+    public PlayerControlManager pCM;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         var item = collision.GetComponent<GroundItem>();
@@ -23,6 +24,8 @@ public class PlayerInventory : MonoBehaviour
     private void Start()
     {
         StartCoroutine(ToggleTimer());
+        pCM = GameObject.FindGameObjectWithTag("pControlManager").GetComponent<PlayerControlManager>();
+
     }
 
     private void Update()
@@ -37,7 +40,7 @@ public class PlayerInventory : MonoBehaviour
             inventory.Load();
             equipment.Load();
         }
-        if(Input.GetKeyDown(KeyCode.H))
+        if(pCM.GetButtonDown("Inv"))
         {
             ToggleInventory();
         }

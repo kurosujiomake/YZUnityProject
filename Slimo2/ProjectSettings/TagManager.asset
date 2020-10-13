@@ -13,6 +13,7 @@ TagManager:
   - PlayerCamFocus
   - CamSmoothingTar
   - pAnimSpriteCont
+  - pControlManager
   layers:
   - Default
   - TransparentFX

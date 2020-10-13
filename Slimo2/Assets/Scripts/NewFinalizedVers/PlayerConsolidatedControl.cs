@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerConsolidatedControl : MonoBehaviour
 {
+    public PlayerControlManager pCM;
     private pStates m_pSt;
     private Parameters m_param;
     public bool m_isGrounded = false;
@@ -23,8 +24,6 @@ public class PlayerConsolidatedControl : MonoBehaviour
     private bool m_aDashing = false;
     [SerializeField]
     private int m_curADashes = 0;
-    [SerializeField]
-    private bool m_BTP = false;
     public SpriteAfterImage[] m_dashEffectScripts = new SpriteAfterImage[4];
     
     [SerializeField]
@@ -39,6 +38,7 @@ public class PlayerConsolidatedControl : MonoBehaviour
         anim = GetComponent<Animator>();
         SetLocks(0);
         sp = GameObject.FindGameObjectWithTag("pAnimSpriteCont").GetComponent<SpriteRenderer>();
+        pCM = GameObject.FindGameObjectWithTag("pControlManager").GetComponent<PlayerControlManager>();
     }
     public bool ReturnCanMove()
     {
@@ -76,37 +76,6 @@ public class PlayerConsolidatedControl : MonoBehaviour
     {
         return m_facingRight;
     }
-    private string StickDir() //returns which current direction the stick is pointed at
-    {
-        string d = "neutral";
-        if (Input.GetAxisRaw("Vertical") < m_param.VertBuffer && Input.GetAxisRaw("Vertical") > -m_param.VertBuffer) //ignores some small inputs in vertical stick
-        {
-            if(Input.GetAxisRaw("Horizontal") >= m_param.HoriBuffer)
-            {
-                d = "right";
-                m_param.HorV = 0;
-            }
-            if(Input.GetAxisRaw("Horizontal") <= -m_param.HoriBuffer)
-            {
-                d = "left";
-                m_param.HorV = 0;
-            }
-        }
-        if(Input.GetAxisRaw("Horizontal") < m_param.HoriBuffer && Input.GetAxisRaw("Horizontal") > -m_param.HoriBuffer) //ignores small inputs in horizontal stick
-        {
-            if(Input.GetAxisRaw("Vertical") >= m_param.VertBuffer)
-            {
-                d = "up";
-                m_param.HorV = 1;
-            }
-            if(Input.GetAxisRaw("Vertical") <= -m_param.VertBuffer)
-            {
-                d = "down";
-                m_param.HorV = 1;
-            }
-        }
-        return d;
-    }
     private void FreezeMovement()
     {
         m_rb.velocity = Vector2.zero; // freezes movement
@@ -114,19 +83,11 @@ public class PlayerConsolidatedControl : MonoBehaviour
     private void VarResets() //some conditional variable resets
     {
         m_param.facingRight = m_facingRight;
-        if(Input.GetAxis("Jump") == 0) //resets jump button input
-        {
-            m_jumpPressed = false;
-        }
         m_param.m_jumpPressed = m_jumpPressed;
         if(m_isGrounded)
         {
             m_curADashes = m_param.m_DashMax;
             m_param.m_canADash = true;
-        }
-        if(Input.GetAxis("Dash") == 0)
-        {
-            m_BTP = false;
         }
     }
     private void MoveCheck()
@@ -148,7 +109,7 @@ public class PlayerConsolidatedControl : MonoBehaviour
     }
     private void GroundMovement() //moving on the ground
     {
-        float hori = Input.GetAxis("Horizontal"); //get the input so we can just type hori
+        float hori = pCM.ReturnAxis("left", "hori"); //get the input so we can just type hori
         Vector2 v = m_rb.velocity;
         Quaternion t = transform.localRotation;
         v.x = hori * m_param.GHorizontalSpeed * Time.deltaTime * 100;
@@ -168,12 +129,11 @@ public class PlayerConsolidatedControl : MonoBehaviour
     }
     private void AirDashing()
     {
-        if(StickDir() == "neutral")
+        if(pCM.GetDirectionL() == "neutral")
         {
-            if(Input.GetAxisRaw("Dash") != 0 && m_param.m_canBTP && !m_BTP)
+            if(pCM.GetButtonDown("Dash") && m_param.m_canBTP)
             {
                 m_param.m_canBTP = false;
-                m_BTP = true;
                 m_MType = m_MoveType.forced;
                 foreach (SpriteAfterImage sp in m_dashEffectScripts) //stops the dash afterimage effect
                 {
@@ -186,7 +146,7 @@ public class PlayerConsolidatedControl : MonoBehaviour
         }
         else
         {
-            if(Input.GetAxisRaw("Dash") != 0 && m_param.m_canADash && !m_param.m_isTPing)
+            if(pCM.GetButtonDown("Dash") && m_param.m_canADash && !m_param.m_isTPing)
             {
                 m_param.m_canADash = false;
                 m_aDashing = true;
@@ -197,7 +157,7 @@ public class PlayerConsolidatedControl : MonoBehaviour
                     sp.SpriteRotReset();
                     sp.StartTrail();
                 }
-                StartCoroutine(AerialDash(StickDir(), m_param.m_ADTime));
+                StartCoroutine(AerialDash(pCM.GetDirectionL(), m_param.m_ADTime));
             }
         }
     }
@@ -208,7 +168,7 @@ public class PlayerConsolidatedControl : MonoBehaviour
     }
     private void GroundDashing()
     {
-        if(Input.GetAxisRaw("Dash") != 0 && m_param.m_canGDash && !m_param.m_isTPing)
+        if(pCM.GetButtonDown("Dash") && m_param.m_canGDash && !m_param.m_isTPing)
         {
             m_param.m_canGDash = false;
             m_Dashing = true;
@@ -342,7 +302,7 @@ public class PlayerConsolidatedControl : MonoBehaviour
     }
     private void AirMovement() //same as ground move but slightly slower and no turning
     {
-        float hori = Input.GetAxis("Horizontal");
+        float hori = pCM.ReturnAxis("left", "hori");
         Vector2 v = m_rb.velocity;
         Vector3 t = transform.localScale;
         v.x = hori * m_param.GHorizontalSpeed * Time.deltaTime * m_param.AHoriSpdMulti;
@@ -350,11 +310,10 @@ public class PlayerConsolidatedControl : MonoBehaviour
     }
     private void Jump() //all jumping consolidated
     {
-        float jmp = Input.GetAxis("Jump");
+        bool jmp = pCM.GetButtonDown("Jump");
         Vector2 v = m_rb.velocity;
-        if(jmp != 0 && !m_jumpPressed) //jump pressed variable is used to turn getaxis into a getaxis down
+        if(jmp) //jump pressed variable is used to turn getaxis into a getaxis down
         {
-            m_jumpPressed = true;
             v.y = m_param.VerticalSpeed * Time.deltaTime * 100;
             m_rb.velocity = v;
         }
