@@ -90,14 +90,9 @@ public class PlayerControllerNew : MonoBehaviour
         if (pCM.GetButtonDown("Dash"))
         {
             if(pCM.GetDirectionL() == "n")
-            {
                 BlinkTeleport();
-            }
             else
-            {
                 AirDash();
-            }
-            
         }
     }
     void Jump()
@@ -306,6 +301,21 @@ public class PlayerControllerNew : MonoBehaviour
                 break;
             case 3: // freeze everything
                 r2D.constraints = RigidbodyConstraints2D.FreezeAll;
+                break;
+        }
+    }
+    public void SetPState(int state) //0 = freeze, 1 = player, 2 = no player
+    {
+        switch(state)
+        {
+            case 0:
+                pControl = controlType.freeze;
+                break;
+            case 1:
+                pControl = controlType.player;
+                break;
+            case 2:
+                pControl = controlType.noPlayer;
                 break;
         }
     }

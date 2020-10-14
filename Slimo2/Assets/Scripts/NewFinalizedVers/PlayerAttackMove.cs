@@ -16,6 +16,7 @@ public class PlayerAttackMove : MonoBehaviour
     public bool TimerStart = false;
     private Animator anim = null;
     private bool paused = false;
+    private Parameters param = null;
     [Header("Do not input data below, this area is auto populated during gameplay")]
     public AtkMoveParameters curAttack;
     // Start is called before the first frame update
@@ -23,7 +24,8 @@ public class PlayerAttackMove : MonoBehaviour
     {
         pAnimator = GetComponent<Animator>();
         r2D = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>(); 
+        anim = GetComponent<Animator>();
+        param = GetComponent<Parameters>();
     }
     void FixedUpdate()
     {

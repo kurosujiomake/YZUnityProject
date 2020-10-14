@@ -2,38 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ComboStart : StateMachineBehaviour
+public class ComboPass : StateMachineBehaviour
 {
-    public Parameters param = null;
-    public PlayerControlManager pCM = null;
-    public PlayerControllerNew pCN = null;
-    //public pMove move = null;
+    private bool numInc = false;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        param = animator.GetComponent<Parameters>();
-        pCM = GameObject.FindGameObjectWithTag("pControlManager").GetComponent<PlayerControlManager>();
-        pCN = animator.GetComponent<PlayerControllerNew>();
-        animator.SetInteger("ComboNum", 1);
+        numInc = false; 
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if(pCM.GetButtonDown("Atk1"))
+        if(!numInc)
         {
-            switch(param.AT)
-            {
-                case Parameters.AtkType.sword:
-                    animator.SetTrigger("GAtt_a");
-                    pCN.SetPState(2);
-                    break;
-                case Parameters.AtkType.bow:
-
-                    break;
-                //add the other wep types later
-            }
-            
+            numInc = true;
+            animator.SetInteger("ComboNum", animator.GetInteger("ComboNum") + 1);
         }
     }
 
