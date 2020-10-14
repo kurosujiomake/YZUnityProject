@@ -36,7 +36,6 @@ public class PlayerControllerNew : MonoBehaviour
         playerSprite = GetComponentInChildren<SpriteRenderer>();
         sp = GetComponentInChildren<SpriteAfterImage>();
     }
-    
     void FixedUpdate()
     {
         isGrounded = g.ReturnGroundCheck();
@@ -59,32 +58,17 @@ public class PlayerControllerNew : MonoBehaviour
                     case true:
                         GroundMovement();
                         Jump();
-                        
                         break;
                     case false:
                         AirMovement();
                         break;
                 }
                 break;
-            case controlType.noPlayer:
-
+            case controlType.noPlayer: //no player is not supposed to run any code from this script
                 break;
             case controlType.freeze:
                 SetLocks(3);
                 break;
-        }
-        //DebugTest();
-    }
-
-    void DebugTest()
-    {
-        if(pCM.GetButtonHeld("Dash"))
-        {
-            Debug.Log("Dash held");
-        }
-        if(pCM.GetButtonUp("Jump"))
-        {
-            Debug.Log("Jump button released");
         }
     }
     void GroundMovement()
@@ -100,16 +84,20 @@ public class PlayerControllerNew : MonoBehaviour
     }
     void AirMovement()
     {
-        Vector2 v = r2D.velocity;
-        v.x = pCM.ReturnAxis("left", "hori") * m_param.AHoriSpdMulti;
-        r2D.velocity = v;
-        if(pCM.GetButtonDown("Dash"))
+        Vector2 a = r2D.velocity;
+        a.x = pCM.ReturnAxis("left", "hori") * m_param.AHoriSpdMulti;
+        r2D.velocity = a;
+        if (pCM.GetButtonDown("Dash"))
         {
             if(pCM.GetDirectionL() == "n")
             {
                 BlinkTeleport();
             }
-            AirDash();
+            else
+            {
+                AirDash();
+            }
+            
         }
     }
     void Jump()

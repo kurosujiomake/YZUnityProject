@@ -5,27 +5,34 @@ using UnityEngine;
 public class AerialAnimations : StateMachineBehaviour
 {
     public Parameters m_param = null;
-    [SerializeField]
-    private int HorV = 0;
+    private PlayerControlManager pCM = null;
+    private GroundChecker g = null;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         m_param = animator.GetComponent<Parameters>();
-        HorV = m_param.HorV;
+        pCM = GameObject.FindGameObjectWithTag("pControlManager").GetComponent<PlayerControlManager>();
+        g = animator.GetComponent<GroundChecker>();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         animator.SetBool("IsADashing", m_param.m_isADashing);
-        if(Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0)
-        {
-            if(Input.GetAxisRaw("Dash") != 0)
-            {
-                animator.SetTrigger("Blink");
-            }
-        }
         animator.SetBool("IsTPing", m_param.m_isTPing);
+        animator.SetBool("OnGround", g.ReturnGroundCheck());
+        if (pCM.GetDirectionL() == "l" || pCM.GetDirectionL() == "r")
+        {
+            animator.SetInteger("H or V", 0);
+        }
+        if (pCM.GetDirectionL() == "u" || pCM.GetDirectionL() == "d")
+        {
+            animator.SetInteger("H or V", 1);
+        }
+        if(pCM.GetDirectionL() == "n" && m_param.m_canBTP && pCM.GetButtonDown("Dash"))
+        {
+            animator.SetTrigger("Blink");
+        }
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state

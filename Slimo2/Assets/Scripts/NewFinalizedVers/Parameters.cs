@@ -43,7 +43,6 @@ public class Parameters : MonoBehaviour
     public float m_ADTime = 0;
     public bool m_canADash = true;
     public bool m_isADashing = false;
-    public int HorV = 0;
     [Header("Variables Related to Blink Teleport")]
     public bool m_canBTP = true;
     public float m_maxTeleDist = 0;

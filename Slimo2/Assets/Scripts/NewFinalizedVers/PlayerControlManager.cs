@@ -211,15 +211,7 @@ public class PlayerControlManager : MonoBehaviour
     }
     Direction ReturnDir(int stick)
     {
-        if (pad != null)
-        {
-            leftStickRead = pad.leftStick.ReadValue();
-            rightStickRead = pad.rightStick.ReadValue();
-        }
-        horiL = leftStickRead.x;
-        vertL = leftStickRead.y;
-        horiR = rightStickRead.x;
-        vertR = rightStickRead.y;
+        StickReads();
         Direction d = Direction.neutral;
         switch(stick)
         {
@@ -274,7 +266,18 @@ public class PlayerControlManager : MonoBehaviour
         }
         return d;
     }
-
+    void StickReads()
+    {
+        if (pad != null)
+        {
+            leftStickRead = pad.leftStick.ReadValue();
+            rightStickRead = pad.rightStick.ReadValue();
+        }
+        horiL = leftStickRead.x;
+        vertL = leftStickRead.y;
+        horiR = rightStickRead.x;
+        vertR = rightStickRead.y;
+    }
     public bool GetButtonDown(string which)
     {
         KeyHeld();
@@ -463,6 +466,7 @@ public class PlayerControlManager : MonoBehaviour
     }  // returns right stick in u, d, l ,r, n
     public float ReturnAxis(string which, string axis)
     {
+        StickReads();
         float f = 0;
         switch(which)
         {

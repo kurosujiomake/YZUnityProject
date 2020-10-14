@@ -6,44 +6,34 @@ public class AnimatorMove : StateMachineBehaviour
 {
     //private pMove move = null;
     private Parameters param = null;
+    private GroundChecker g = null;
+    public PlayerControlManager pCM = null;
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        //move = animator.GetComponent<pMove>();
         param = animator.GetComponent<Parameters>();
+        g = animator.GetComponent<GroundChecker>();
+        pCM = GameObject.FindGameObjectWithTag("pControlManager").GetComponent<PlayerControlManager>();
         //reset variables, this should only be called once whenever it gets into this state
-        //animator.SetBool("IsIdle", true);
         animator.SetBool("IsMoving", false); //double make sure if player is idle then ismoving is false
-        //animator.SetBool("InAir", false);
         animator.SetBool("IsDashing", false); //double make sure player is not dashing
-        animator.GetComponent<pStates>().SetPState("idle");
-
     }
-
-    
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        animator.SetBool("IsDashing", param.m_isDashing);
+        animator.SetBool("OnGround", g.ReturnGroundCheck());
         //check for player stick inputs here to see which animation should the player move to
-        if(animator.GetComponent<pStates>().ReturnGround()) //if player is grounded
+        if (g.ReturnGroundCheck()) //if player is grounded
         {
-            if(Input.GetAxis("Horizontal") != 0) //if player inputs horizontal stick for movement
+            animator.SetBool("OnGround", true);
+            if(pCM.ReturnAxis("left", "hori") != 0)
             {
                 animator.SetBool("IsMoving", true);
-                //animator.SetBool("IsIdle", false);
-                //move.SetMoveState(0);
-                animator.GetComponent<pStates>().SetPState("move");
             }
-            if(Input.GetAxis("Jump") != 0 && !param.m_jumpPressed)
+            if(pCM.GetButtonDown("Jump"))
             {
                 animator.SetTrigger("Jump");
             }
-            
         }
-        if(!animator.GetComponent<pStates>().ReturnGround()) //if player is not grounded
-        {
-            animator.GetComponent<pStates>().SetPState("jump");
-        }
-        animator.SetBool("IsDashing", param.m_isDashing);
-        
     }
     
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

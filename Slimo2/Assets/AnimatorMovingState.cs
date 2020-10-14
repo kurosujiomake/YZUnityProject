@@ -5,60 +5,34 @@ using UnityEngine;
 public class AnimatorMovingState : StateMachineBehaviour
 {
     private Parameters param = null;
-    private PlayerConsolidatedControl pC = null;
+    private PlayerControlManager pCM = null;
+    private GroundChecker g = null;
     //private pMove move = null; depreciated
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         param = animator.GetComponent<Parameters>();
-        //move = animator.GetComponent<pMove>();
-        pC = animator.GetComponent<PlayerConsolidatedControl>();
-
+        pCM = GameObject.FindGameObjectWithTag("pControlManager").GetComponent<PlayerControlManager>();
+        g = animator.GetComponent<GroundChecker>();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         animator.SetBool("IsDashing", param.m_isDashing);
-        if(pC.ReturnCanMove()) //check if it accepts player input
+        animator.SetBool("OnGround", g.ReturnGroundCheck());
+        if(g.ReturnGroundCheck())
         {
-            if (animator.GetComponent<pStates>().ReturnGround()) //if player is grounded
+            if(pCM.ReturnAxis("left", "hori") == 0)
             {
-                if (Input.GetAxis("Horizontal") == 0) //if player stopped horizontal input
-                {
-                    if (Input.GetAxis(param.AttButtonName) == 0) //if player did not input attack
-                    {
-                        animator.SetBool("IsMoving", false);
-                        //animator.SetBool("IsIdle", true);
-                    }
-                    
-                }
-                if(Input.GetAxisRaw("Jump") != 0 && !param.m_jumpPressed)
-                {
-                    animator.SetTrigger("Jump");
-                }
-                if (Input.GetAxis(param.AttButtonName) != 0) //if player inputted attack, directly transition into attack state
-                {
-                    animator.SetBool("IsAttacking", true);
-                    animator.SetBool("IsMoving", false);
-                    //move.SetMoveState(2);
-                    animator.GetComponent<pStates>().SetPState("attack");
-                    if (param.AT == Parameters.AtkType.sword)
-                    {
-                        animator.SetTrigger(param.GroundAttTriggerName[param.wepTypeID]);
-                    }
-                    if (param.AT == Parameters.AtkType.bow)
-                    {
-                        animator.SetTrigger(param.BowAttTriggerName[param.wepTypeID]);
-                    }
-
-                }
-                
+                animator.SetBool("IsMoving", false);
+            }
+            if(pCM.GetButtonDown("Jump"))
+            {
+                animator.SetTrigger("Jump");
             }
         }
-        
     }
-
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
