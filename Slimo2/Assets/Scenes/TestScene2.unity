@@ -5079,7 +5079,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -56.07, y: 5.95}
+  m_AnchoredPosition: {x: -53.12, y: 6.45}
   m_SizeDelta: {x: 621.2, y: 172.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1097524665
@@ -9558,6 +9558,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 427844043, guid: 16a462e48b7ea5340b1aa2c5627f2e76, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1221579001, guid: 16a462e48b7ea5340b1aa2c5627f2e76, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1712022239, guid: 16a462e48b7ea5340b1aa2c5627f2e76, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 199465334998370276, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
         type: 3}
       propertyPath: hitBoxContainer
