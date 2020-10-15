@@ -28,6 +28,9 @@ public class HitBoxInfoPass : StateMachineBehaviour
     private string AnimationName = null;
     [SerializeField]
     private bool isWindup = false;
+    [SerializeField]
+    private bool timerStarted = false;
+    private PlayerAttackMove pAtkMv = null;
     
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -36,9 +39,9 @@ public class HitBoxInfoPass : StateMachineBehaviour
         _param = animator.GetComponent<Parameters>();
         _dv = _param.HitBoxes[_whichHitBox].GetComponent<DamageValues>();
         DamagePassToHitbox();
-        if(AnimationName != null)
-        animator.GetComponent<PlayerAttackMove>().curAtkName = AnimationName;
-        animator.GetComponent<PlayerAttackMove>().TimerStart = true;
+        pAtkMv = animator.GetComponent<PlayerAttackMove>();
+        timerStarted = false;
+        
     }
     public void DamagePassToHitbox() //puts it into a function so it can be easily called
     {
@@ -85,6 +88,15 @@ public class HitBoxInfoPass : StateMachineBehaviour
         if(isWindup)
         {
             animator.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        }
+        if (AnimationName != null)
+        {
+            pAtkMv.curAtkName = AnimationName;
+            if (!timerStarted)
+            {
+                pAtkMv.TimerStart = true;
+                timerStarted = false;
+            }
         }
     }
     private void HitBoxReset()

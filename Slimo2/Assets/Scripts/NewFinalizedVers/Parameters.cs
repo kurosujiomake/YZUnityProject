@@ -7,6 +7,7 @@ public class Parameters : MonoBehaviour
     [Header("Hitboxes")]
     public GameObject[] HitBoxes = new GameObject[3];
     [Header("Variables Related to Attacking")]
+    public bool isAttacking = false;
     public float afterAtkDelayTimer = 0;
     public float finalAtkDelayTimer = 0;
     public string[] GroundAttTriggerName = new string[3];

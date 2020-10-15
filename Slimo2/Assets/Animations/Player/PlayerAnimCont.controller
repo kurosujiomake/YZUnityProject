@@ -1328,6 +1328,7 @@ MonoBehaviour:
   _passedInfoToActiveHitbox: 0
   AnimationName: 
   isWindup: 0
+  timerStarted: 0
 --- !u!1101 &-1719172434151884563
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -2348,6 +2349,7 @@ MonoBehaviour:
   _passedInfoToActiveHitbox: 0
   AnimationName: Sw_atk1
   isWindup: 0
+  timerStarted: 0
 --- !u!1101 &3848445180773847845
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -2689,6 +2691,7 @@ MonoBehaviour:
   _passedInfoToActiveHitbox: 0
   AnimationName: Sp1_atkWindup
   isWindup: 1
+  timerStarted: 0
 --- !u!1101 &6692879456822851183
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -3011,6 +3014,7 @@ MonoBehaviour:
   _passedInfoToActiveHitbox: 0
   AnimationName: Sw_atk2
   isWindup: 0
+  timerStarted: 0
 --- !u!1102 &8106312648561146982
 AnimatorState:
   serializedVersion: 5
@@ -3100,6 +3104,7 @@ MonoBehaviour:
   _passedInfoToActiveHitbox: 0
   AnimationName: Sw_atk4
   isWindup: 0
+  timerStarted: 0
 --- !u!1101 &8344415073567237005
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -3265,6 +3270,7 @@ MonoBehaviour:
   _passedInfoToActiveHitbox: 0
   AnimationName: Sw_atk3
   isWindup: 0
+  timerStarted: 0
 --- !u!114 &9046783701462608556
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3289,3 +3295,4 @@ MonoBehaviour:
   _passedInfoToActiveHitbox: 0
   AnimationName: 
   isWindup: 0
+  timerStarted: 0
