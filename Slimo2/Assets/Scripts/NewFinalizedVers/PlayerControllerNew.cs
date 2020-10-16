@@ -67,7 +67,7 @@ public class PlayerControllerNew : MonoBehaviour
             case controlType.noPlayer: //no player is not supposed to run any code from this script
                 break;
             case controlType.freeze:
-                SetLocks(3);
+                r2D.velocity = Vector2.zero;
                 break;
         }
     }

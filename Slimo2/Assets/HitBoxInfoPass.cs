@@ -41,7 +41,6 @@ public class HitBoxInfoPass : StateMachineBehaviour
         DamagePassToHitbox();
         pAtkMv = animator.GetComponent<PlayerAttackMove>();
         timerStarted = false;
-        
     }
     public void DamagePassToHitbox() //puts it into a function so it can be easily called
     {
@@ -95,6 +94,7 @@ public class HitBoxInfoPass : StateMachineBehaviour
             if (!timerStarted)
             {
                 pAtkMv.TimerStart = true;
+                pAtkMv.isAttacking = true;
                 timerStarted = false;
             }
         }
@@ -108,7 +108,9 @@ public class HitBoxInfoPass : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         _IdRandomized = false;
-        animator.GetComponent<PlayerAttackMove>().TimerStart = false;
+        pAtkMv.TimerStart = false;
+        pAtkMv.isAttacking = false;
+        Debug.Log("Timer is stopped");
         HitBoxReset();
     }
 

@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlayerAttackMove : MonoBehaviour
 {
+    private PlayerControllerNew pCN = null;
+    private GroundChecker g = null;
     public AtkMoveParameters[] atks;
     public string curAtkName;
     private string prevAtkName;
@@ -16,7 +18,7 @@ public class PlayerAttackMove : MonoBehaviour
     public bool TimerStart = false;
     private Animator anim = null;
     private bool paused = false;
-    private Parameters param = null;
+    public bool isAttacking = false;
     [Header("Do not input data below, this area is auto populated during gameplay")]
     public AtkMoveParameters curAttack;
     // Start is called before the first frame update
@@ -25,7 +27,8 @@ public class PlayerAttackMove : MonoBehaviour
         pAnimator = GetComponent<Animator>();
         r2D = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        param = GetComponent<Parameters>();
+        pCN = GetComponent<PlayerControllerNew>();
+        g = GetComponent<GroundChecker>();
     }
     void FixedUpdate()
     {
@@ -41,11 +44,11 @@ public class PlayerAttackMove : MonoBehaviour
         {
             curAnimTime = 0;
         }
-        if (pAnimator.GetBool("IsAttacking"))
+        if (isAttacking)
         {
             if(curAttack != null && curAttack.numOfMovements != 0)
             {
-                switch (GetComponent<PlayerConsolidatedControl>().ReturnFacingDir())
+                switch (pCN.facingRight)
                 {
                     case true:
                         a_dir = curAttack.Direction[curAttack.curMovement];
@@ -56,7 +59,7 @@ public class PlayerAttackMove : MonoBehaviour
                 }
                 if(curAttack.hasPause)
                 {
-                    if(!GetComponent<GroundChecker>().ReturnSlamGroundDetect() && curAnimTime >= curAttack.whenPause)
+                    if(!g.ReturnGroundCheck() && curAnimTime >= curAttack.whenPause)
                     {
                         anim.enabled = false;
                         paused = true;    
@@ -70,16 +73,18 @@ public class PlayerAttackMove : MonoBehaviour
             }
             if(ReturnCanMove())
             {
+                Debug.Log("the att should be force moving player");
                 ForcedMovement();
+                pCN.SetPState(2);
             }
             if(!ReturnCanMove())
             {
-                r2D.velocity = Vector2.zero;
+                Debug.Log("Cant Move Yet");
+                pCN.SetPState(0);
             }
         }
-        if(!pAnimator.GetBool("IsAttacking"))
+        if(!isAttacking)
         {
-            curAnimTime = 0;
             curAtkName = "No Atk";
         }
         if (curAtkName != prevAtkName)
@@ -95,6 +100,7 @@ public class PlayerAttackMove : MonoBehaviour
             prevAtkName = curAtkName;
         }
     }
+
     private void ForcedMovement()
     {
         float d = a_dir * Mathf.Deg2Rad;
