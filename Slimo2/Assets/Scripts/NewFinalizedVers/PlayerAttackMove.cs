@@ -12,7 +12,6 @@ public class PlayerAttackMove : MonoBehaviour
     private string prevAtkName;
     private Animator pAnimator;
     public float curAnimTime;
-    private bool b = false;
     private float a_dir = 0;
     private Rigidbody2D r2D = null;
     public bool TimerStart = false;

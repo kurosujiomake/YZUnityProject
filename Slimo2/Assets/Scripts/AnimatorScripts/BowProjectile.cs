@@ -6,8 +6,6 @@ public class BowProjectile : StateMachineBehaviour
 {
     [SerializeField]
     private Parameters m_param = null;
-    [SerializeField]
-    private PlayerConsolidatedControl m_pCon = null;
     public float m_projDelayTime = 0;
     [SerializeField]
     private float m_timer = 0;
@@ -22,7 +20,6 @@ public class BowProjectile : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         m_param = animator.GetComponent<Parameters>();
-        m_pCon = animator.GetComponent<PlayerConsolidatedControl>();
         m_timer = m_projDelayTime;
     }
 

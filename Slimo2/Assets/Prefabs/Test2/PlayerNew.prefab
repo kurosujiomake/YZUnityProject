@@ -1143,10 +1143,8 @@ GameObject:
   - component: {fileID: 3727145088433499904}
   - component: {fileID: 3727145088433499910}
   - component: {fileID: 4729056926130607349}
-  - component: {fileID: 4729056926130607352}
   - component: {fileID: 8221750487963548665}
   - component: {fileID: 199465334998370276}
-  - component: {fileID: 1403190467}
   - component: {fileID: 814470021636217456}
   - component: {fileID: 1389243926}
   - component: {fileID: 1403190457}
@@ -1228,20 +1226,6 @@ MonoBehaviour:
   - {fileID: 1948362889}
   - {fileID: 774998403}
   slamAtkDist: 1
---- !u!114 &4729056926130607352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3727145088433499907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6dcd86b521190664086872e7ba27fb9a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isGrounded: 0
-  pState: 0
 --- !u!114 &8221750487963548665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1258,7 +1242,9 @@ MonoBehaviour:
   - {fileID: 1784586896232657024}
   - {fileID: 0}
   - {fileID: 0}
-  delayTimer: 1
+  isAttacking: 0
+  afterAtkDelayTimer: 0
+  finalAtkDelayTimer: 0
   GroundAttTriggerName:
   - GAtt_a
   - 
@@ -1296,7 +1282,6 @@ MonoBehaviour:
   m_ADTime: 0.16
   m_canADash: 1
   m_isADashing: 0
-  HorV: 0
   m_canBTP: 1
   m_maxTeleDist: 150
   m_teleTargetTag: TeleTarget
@@ -1325,35 +1310,12 @@ MonoBehaviour:
   facingRight: 1
   playerSprite: {fileID: 0}
   isGrounded: 0
+  hitBoxContainer: {fileID: 0}
   cameraPoints:
   - {fileID: 1753084368}
   - {fileID: 663823698}
   cameraFollowPoint: {fileID: 1328773328}
   pControl: 0
---- !u!114 &1403190467
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3727145088433499907}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87162ca366c25a04bbd992a9c1c4631e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pCM: {fileID: 0}
-  m_isGrounded: 0
-  m_facingRight: 1
-  m_canMove: 1
-  m_MType: 0
-  m_Dashing: 0
-  m_aDashing: 0
-  m_curADashes: 3
-  m_dashEffectScripts:
-  - {fileID: 8221750487963548669}
-  - {fileID: 8221750487963548668}
-  sp: {fileID: 1870448518112566270}
 --- !u!114 &814470021636217456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1495,6 +1457,7 @@ MonoBehaviour:
   curAtkName: 
   curAnimTime: 0
   TimerStart: 0
+  isAttacking: 0
   curAttack:
     atkName: 
     numOfMovements: 0

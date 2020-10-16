@@ -7,7 +7,6 @@ public class PostAttIdle : StateMachineBehaviour
 {
     public Parameters param = null; //gets info from parameter script so you dont have to set every single one here
     public float timer = 0;
-    public pStates pState = null;
     private PlayerControlManager pCM = null;
     private PlayerControllerNew pCN = null;
     private GroundChecker g = null;

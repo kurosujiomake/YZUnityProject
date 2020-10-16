@@ -8,7 +8,6 @@ public class CameraFollowSmoothing : MonoBehaviour
     private GameObject followObj = null;
     public float smoothingSpd = 0;
     public string followTarTag = null;
-    private pStates pst = null;
     private PlayerControllerNew pc = null;
     [SerializeField]
     private bool canTurnFollow = false;
@@ -25,7 +24,6 @@ public class CameraFollowSmoothing : MonoBehaviour
         p = GameObject.FindGameObjectWithTag("Player").GetComponent<Parameters>();
         c = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         followObj = GameObject.FindGameObjectWithTag(followTarTag);
-        pst = GameObject.FindGameObjectWithTag("Player").GetComponent<pStates>();
         pc = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerNew>();
         curPFacing = pc.facingRight;
         canTurnFollow = true;
