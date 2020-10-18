@@ -37,7 +37,6 @@ public class PlayerAttackMove : MonoBehaviour
             {
                 Timer();
             }
-            
         }
         if(!TimerStart)
         {
@@ -72,13 +71,11 @@ public class PlayerAttackMove : MonoBehaviour
             }
             if(ReturnCanMove())
             {
-                Debug.Log("the att should be force moving player");
                 ForcedMovement();
                 pCN.SetPState(2);
             }
             if(!ReturnCanMove())
             {
-                Debug.Log("Cant Move Yet");
                 pCN.SetPState(0);
             }
         }
@@ -97,6 +94,7 @@ public class PlayerAttackMove : MonoBehaviour
                 }
             }
             prevAtkName = curAtkName;
+            curAnimTime = 0;
         }
     }
 

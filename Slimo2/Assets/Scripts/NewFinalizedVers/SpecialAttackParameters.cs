@@ -1,126 +1,84 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.AssetImporters;
 using UnityEngine;
 
 public class SpecialAttackParameters : MonoBehaviour
 {
-    public int CurrentSpAtk = 0;
-    private Animator anim = null;
-    private bool spAtkPressed = false;
-    public SkillDatabase skDatabase;
-    private bool startCD = false;
-    public SkillsContainer[] skill = new SkillsContainer[3];
-    public SkillsContainer spAtk;
-    public SkillsContainer ultAtk;
-    
-    private bool cdStarted = false;
+    public SkillsContainer[] SpAtks = new SkillsContainer[2];
+    public SkillsContainer UltAtk;
+    public SkillDatabase Data;
 
-    // Start is called before the first frame update
+
     void Start()
     {
-        anim = GetComponent<Animator>();
-        //GetSkillData();
-        SkillsUpdate();
-        SetCurrentSkill(CurrentSpAtk);
-        UpdateSkillIDs(spAtk.skillID, ultAtk.skillID);
+        UpdateSkillIDS(0, -1, -1);
+        EnableSkill(0);
     }
-
-    void FixedUpdate()
+    public void GetSpATKData(int _spATK1ID, int _spATK2ID)
     {
-        SetCDBools();
-        if (startCD == true)
+        var skDB = Data.Skills;
+        if (_spATK1ID != -1)
         {
-            StartCoroutine(CDRest(spAtk.skCD, spAtk.skillID));
-            cdStarted = true;
-        }
-        if (Input.GetAxisRaw("SpAtk") != 0 && spAtk.CanUseAtk)
-        {
-            if(!spAtkPressed)
+            for (int i = 0; i < skDB.Length; i++)
             {
-                spAtkPressed = true;
-                anim.SetTrigger("SpAtk");
+                if (skDB[i].SkillID == _spATK1ID)
+                {
+                    SpAtks[0].CD = skDB[i].CD;
+                    SpAtks[0].SkillName = skDB[i].Name;
+                }
             }
-            anim.SetBool("IsAttacking", true);
-            anim.SetBool("spAtkHeld", true);
         }
-        if(Input.GetAxisRaw("SpAtk") == 0)
+        if(_spATK2ID != -1)
         {
-            anim.SetBool("spAtkHeld", false);
-            if(spAtkPressed)
+            for (int i = 0; i < skDB.Length; i++)
             {
-                spAtkPressed = false;
+                if (skDB[i].SkillID == _spATK2ID)
+                {
+                    SpAtks[1].CD = skDB[i].CD;
+                    SpAtks[1].SkillName = skDB[i].Name;
+                }
             }
         }
         
     }
-    public void SetCDBools()
-    {
-        spAtk.CanUseAtk = skill[CurrentSpAtk].CanUseAtk;
-    }
 
-    public void SkillsUpdate()
+    public void UpdateSkillIDS(int _sk1, int _sk2, int _ult)
     {
-        //do this part later when equipment is set
-        skill[0].skCD = skDatabase.returnCD(0);
-        skill[0].SkillName = skDatabase.returnName(0);
-        skill[0].skillID = skDatabase.Skills[0].SkillID;
-        for(int i = 0; i < skill.Length; i++)
-        {
-            if(skill[i].SkillName != null)
-            {
-                skill[i].CanUseAtk = true;
-            }
-        }
+        GetSpATKData(_sk1, _sk2);
+        //Add ult data push here later
     }
-    public void SetCurrentSkill(int wepSet)
+    public void EnableSkill(int whichSlot)
     {
-        switch(wepSet)
+        SpAtks[whichSlot].CanUseAtk = true;
+    }
+    //Animator scripts cannot start coroutines directly, we input it here
+    //0 means special atk 1, 1 means special atk 2, and 3 means ultimate
+    public void StartCD(int whichAtk) 
+    {
+        StartCoroutine(SkillsCD(whichAtk)); 
+    }
+    IEnumerator SkillsCD(int whichSkill)
+    {
+        switch(whichSkill)
         {
             case 0:
-                spAtk = skill[0];
-                //set ult here too
+                SpAtks[0].CanUseAtk = false;
+                Debug.Log("CD called");
+                yield return new WaitForSeconds(SpAtks[0].CD);
+                Debug.Log("CD complete");
+                SpAtks[0].CanUseAtk = true;
                 break;
             case 1:
-                //set here for weapon swap
+                SpAtks[1].CanUseAtk = false;
+                yield return new WaitForSeconds(SpAtks[1].CD);
+                SpAtks[1].CanUseAtk = true;
                 break;
-        }
-    }
-    private IEnumerator CDRest(float _cd, int _skillID)
-    {
-        startCD = false;
-        
-        yield return new WaitForSeconds(_cd);
-        for(int i = 0; i < skill.Length; i++)
-        {
-            if(skill[i].skillID == _skillID)
-            {
-                skill[i].CanUseAtk = true;
-            }
-        }
-        cdStarted = false;
-    }
-    public void GetSkillData()
-    {
-        //
-    }
-    public void UpdateSkillIDs(int _spAtk, int _ultAtk)
-    {
-        anim.SetInteger("spID", _spAtk);
-        anim.SetInteger("ultID", _ultAtk);
-    }
-    public void PutSkillOnCD()
-    {
-        if(!cdStarted)
-        startCD = true;
-    }
-    public void DisableSPAtk()
-    {
-        for(int i = 0; i < skill.Length; i++)
-        {
-            if(skill[i].skillID == spAtk.skillID)
-            {
-                skill[i].CanUseAtk = false;
-            }
+            case 2:
+                UltAtk.CanUseAtk = false;
+                yield return new WaitForSeconds(UltAtk.CD);
+                UltAtk.CanUseAtk = true;
+                break;
         }
     }
 }
@@ -130,9 +88,6 @@ public class SkillsContainer
 {
     public string SkillName;
     public int skillID;
-    public float skCD;
+    public float CD;
     public bool CanUseAtk;
-    
-
-    
 }

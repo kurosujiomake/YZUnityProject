@@ -7,6 +7,7 @@ public class ComboStart : StateMachineBehaviour
     public Parameters param = null;
     public PlayerControlManager pCM = null;
     public PlayerControllerNew pCN = null;
+    public SpecialAttackParameters spParam = null;
     //public pMove move = null;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -14,6 +15,7 @@ public class ComboStart : StateMachineBehaviour
         param = animator.GetComponent<Parameters>();
         pCM = GameObject.FindGameObjectWithTag("pControlManager").GetComponent<PlayerControlManager>();
         pCN = animator.GetComponent<PlayerControllerNew>();
+        spParam = animator.GetComponent<SpecialAttackParameters>();
         animator.SetInteger("ComboNum", 1);
     }
 
@@ -34,6 +36,13 @@ public class ComboStart : StateMachineBehaviour
                 //add the other wep types later
             }
             
+        }
+        if(pCM.GetButtonDown("Atk2"))
+        {
+            if(spParam.SpAtks[0].CanUseAtk)
+            {
+                animator.SetTrigger("SpAtk");
+            }
         }
     }
 

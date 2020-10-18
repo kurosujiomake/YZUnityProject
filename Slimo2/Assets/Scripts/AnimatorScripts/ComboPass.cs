@@ -5,19 +5,29 @@ using UnityEngine;
 public class ComboPass : StateMachineBehaviour
 {
     private bool numInc = false;
+    private PlayerControlManager pCM;
+    private SpecialAttackParameters spParam;
+    [SerializeField] private bool isFinalAtk = false;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        numInc = false; 
+        numInc = false;
+        pCM = GameObject.FindGameObjectWithTag("pControlManager").GetComponent<PlayerControlManager>();
+        spParam = animator.GetComponent<SpecialAttackParameters>();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if(!numInc)
+        animator.SetBool("OnGround", animator.GetComponent<GroundChecker>().ReturnGroundCheck());
+        if (!numInc && !isFinalAtk)
         {
             numInc = true;
             animator.SetInteger("ComboNum", animator.GetInteger("ComboNum") + 1);
+        }
+        if(pCM.GetButtonDown("Atk2") && spParam.SpAtks[0].CanUseAtk)
+        {
+            animator.SetTrigger("SpAtk");
         }
     }
 

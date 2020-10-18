@@ -12,10 +12,12 @@ public class PostAttIdle : StateMachineBehaviour
     private GroundChecker g = null;
     [SerializeField] private bool isFinalPATT = false;
     [SerializeField] private bool attPressed = false;
+    private SpecialAttackParameters spParam;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         pCN = animator.GetComponent<PlayerControllerNew>();
+        spParam = animator.GetComponent<SpecialAttackParameters>();
         pCM = GameObject.FindGameObjectWithTag("pControlManager").GetComponent<PlayerControlManager>();
         g = animator.GetComponent<GroundChecker>();
         //animator.SetBool("IsAttacking", false);
@@ -40,7 +42,11 @@ public class PostAttIdle : StateMachineBehaviour
         animator.SetBool("OnGround", g.ReturnGroundCheck());
         if(timer > 0)
             timer -= Time.deltaTime;
-        switch(isFinalPATT)
+        if (pCM.GetButtonDown("Atk2") && spParam.SpAtks[0].CanUseAtk && animator.GetInteger("ComboNum") >= 4)
+        {
+            animator.SetTrigger("SpAtk");
+        }
+        switch (isFinalPATT)
         {
             case true:
                 animator.ResetTrigger("SpAtk");
@@ -53,7 +59,7 @@ public class PostAttIdle : StateMachineBehaviour
                     if (pCM.ReturnAxis("left", "hori") != 0)
                         animator.SetBool("IsMoving", true);
                 }
-                animator.GetComponent<SpecialAttackParameters>().PutSkillOnCD();
+                //animator.GetComponent<SpecialAttackParameters>().PutSkillOnCD();
                     break;
             case false:
                 if (pCM.ReturnAxis("left", "hori") != 0)
@@ -83,6 +89,7 @@ public class PostAttIdle : StateMachineBehaviour
                             break;
                     }
                 }
+                
                 break;
         }
         
@@ -92,6 +99,7 @@ public class PostAttIdle : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         animator.ResetTrigger("BackToIdle");
+        animator.ResetTrigger("SpAtk");
         attPressed = false;
     }
 
