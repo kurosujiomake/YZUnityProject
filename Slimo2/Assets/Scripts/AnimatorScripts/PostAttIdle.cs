@@ -70,7 +70,7 @@ public class PostAttIdle : StateMachineBehaviour
                     animator.SetInteger("ComboNum", 1);
                     pCN.SetPState(1); //if somehow it skipped enter
                 }
-                if (pCM.GetButtonDown("Atk1")) //if there are still combos player can immediately go to the next att
+                if (pCM.GetButtonDown("Atk1") && g.ReturnGroundCheck()) //if there are still combos player can immediately go to the next att
                 {
                     if(!attPressed)
                     {
