@@ -20,7 +20,7 @@ public class AnimatorMovingState : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         animator.SetBool("IsDashing", param.m_isDashing);
-        animator.SetBool("OnGround", g.ReturnGroundCheck());
+        //animator.SetBool("OnGround", g.ReturnGroundCheck());
         if(g.ReturnGroundCheck())
         {
             if(pCM.ReturnAxis("left", "hori") == 0)
@@ -31,6 +31,7 @@ public class AnimatorMovingState : StateMachineBehaviour
             {
                 animator.SetTrigger("Jump");
             }
+            animator.SetInteger("AComboNum", 1);
         }
     }
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state

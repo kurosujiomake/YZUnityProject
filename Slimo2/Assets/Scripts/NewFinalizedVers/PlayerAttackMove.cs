@@ -82,6 +82,7 @@ public class PlayerAttackMove : MonoBehaviour
         if(!isAttacking)
         {
             curAtkName = "No Atk";
+            pCN.SetPState(1);
         }
         if (curAtkName != prevAtkName)
         {

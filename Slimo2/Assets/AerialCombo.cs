@@ -47,10 +47,6 @@ public class AerialCombo : StateMachineBehaviour
             case false:
                 if(pCM.GetButtonDown("Atk1"))
                 {
-                    if(!comNumSet)
-                    {
-                        animator.SetInteger("AComboNum", animator.GetInteger("AComboNum") + 1);
-                    }
                     if(animator.GetInteger("AComboNum") < maxAirCombo - 1)
                     {
                         animator.SetTrigger("AAtt_a");
@@ -65,7 +61,12 @@ public class AerialCombo : StateMachineBehaviour
     {
         comNumSet = false;
         animator.ResetTrigger("GAtt_a");
+        if(!isNotAtkState)
+        {
+            animator.SetInteger("AComboNum", animator.GetInteger("AComboNum") + 1);
+        }
     }
+
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
     //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

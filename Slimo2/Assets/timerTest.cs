@@ -2,36 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Dashing : StateMachineBehaviour
+public class timerTest : StateMachineBehaviour
 {
-    private Parameters m_param = null;
-    private GroundChecker g = null;
-    
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        m_param = animator.GetComponent<Parameters>();
-        g = animator.GetComponent<GroundChecker>();
+        animator.GetComponent<SkillAnimationTimerTest>().timer = 0;
+        animator.GetComponent<SkillAnimationTimerTest>().start = true;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-        animator.SetBool("IsTPing", m_param.m_isTPing);
-        animator.SetBool("IsDashing", m_param.m_isDashing);
-        animator.SetBool("IsADashing", m_param.m_isADashing);
-        //animator.SetBool("OnGround", g.ReturnGroundCheck());
-        if(m_param.m_isTPing)
-        {
-            animator.SetTrigger("Blink");
-        }
-    }
-
-    // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     //{
     //    
     //}
+
+    // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
+    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        animator.GetComponent<SkillAnimationTimerTest>().start = false;
+    }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
     //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

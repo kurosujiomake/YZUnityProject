@@ -20,7 +20,7 @@ public class AerialAnimations : StateMachineBehaviour
     {
         animator.SetBool("IsADashing", m_param.m_isADashing);
         animator.SetBool("IsTPing", m_param.m_isTPing);
-        animator.SetBool("OnGround", g.ReturnGroundCheck());
+        //animator.SetBool("OnGround", g.ReturnGroundCheck());
         if (pCM.GetDirectionL() == "l" || pCM.GetDirectionL() == "r")
         {
             animator.SetInteger("H or V", 0);

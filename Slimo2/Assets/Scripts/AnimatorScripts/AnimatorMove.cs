@@ -20,11 +20,11 @@ public class AnimatorMove : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         animator.SetBool("IsDashing", param.m_isDashing);
-        animator.SetBool("OnGround", g.ReturnGroundCheck());
+        //animator.SetBool("OnGround", g.ReturnGroundCheck());
         //check for player stick inputs here to see which animation should the player move to
         if (g.ReturnGroundCheck()) //if player is grounded
         {
-            animator.SetBool("OnGround", true);
+            //animator.SetBool("OnGround", true);
             if(pCM.ReturnAxis("left", "hori") != 0)
             {
                 animator.SetBool("IsMoving", true);
@@ -33,6 +33,7 @@ public class AnimatorMove : StateMachineBehaviour
             {
                 animator.SetTrigger("Jump");
             }
+            animator.SetInteger("AComboNum", 1);
         }
     }
     

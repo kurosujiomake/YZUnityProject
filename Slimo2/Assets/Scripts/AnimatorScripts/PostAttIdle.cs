@@ -39,7 +39,7 @@ public class PostAttIdle : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.SetBool("OnGround", g.ReturnGroundCheck());
+        //animator.SetBool("OnGround", g.ReturnGroundCheck());
         if(timer > 0)
             timer -= Time.deltaTime;
         if (pCM.GetButtonDown("Atk2") && spParam.SpAtks[0].CanUseAtk && animator.GetInteger("ComboNum") >= 4)

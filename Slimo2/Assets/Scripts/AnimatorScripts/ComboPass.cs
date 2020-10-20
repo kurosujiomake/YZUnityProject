@@ -19,7 +19,7 @@ public class ComboPass : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.SetBool("OnGround", animator.GetComponent<GroundChecker>().ReturnGroundCheck());
+        //animator.SetBool("OnGround", animator.GetComponent<GroundChecker>().ReturnGroundCheck());
         if (!numInc && !isFinalAtk)
         {
             numInc = true;

@@ -39,6 +39,7 @@ public class PlayerControllerNew : MonoBehaviour
     void FixedUpdate()
     {
         isGrounded = g.ReturnGroundCheck();
+        GetComponent<Animator>().SetBool("OnGround", isGrounded);
         m_param.facingRight = facingRight;
         if(isGrounded)
         {
@@ -75,7 +76,8 @@ public class PlayerControllerNew : MonoBehaviour
     {
         Vector2 v = r2D.velocity;
         v.x = pCM.ReturnAxis("left", "hori") * m_param.GHorizontalSpeed;
-        r2D.velocity = v;
+        if(!m_param.m_isDashing)
+            r2D.velocity = v;
         FlipSprite();
         if(pCM.GetButtonDown("Dash"))
         {
@@ -86,7 +88,8 @@ public class PlayerControllerNew : MonoBehaviour
     {
         Vector2 a = r2D.velocity;
         a.x = pCM.ReturnAxis("left", "hori") * m_param.AHoriSpdMulti;
-        r2D.velocity = a;
+        if(!m_param.m_isADashing)
+            r2D.velocity = a;
         if (pCM.GetButtonDown("Dash"))
         {
             if(pCM.GetDirectionL() == "n")

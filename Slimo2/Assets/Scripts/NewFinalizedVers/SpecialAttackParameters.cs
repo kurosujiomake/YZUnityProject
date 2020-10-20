@@ -24,8 +24,8 @@ public class SpecialAttackParameters : MonoBehaviour
             {
                 if (skDB[i].SkillID == _spATK1ID)
                 {
-                    SpAtks[0].CD = skDB[i].CD;
-                    SpAtks[0].SkillName = skDB[i].Name;
+                    SpAtks[0].CD = Data.returnCD(_spATK1ID);
+                    SpAtks[0].SkillName = Data.returnName(_spATK1ID);
                 }
             }
         }
@@ -35,8 +35,8 @@ public class SpecialAttackParameters : MonoBehaviour
             {
                 if (skDB[i].SkillID == _spATK2ID)
                 {
-                    SpAtks[1].CD = skDB[i].CD;
-                    SpAtks[1].SkillName = skDB[i].Name;
+                    SpAtks[1].CD = Data.returnCD(_spATK2ID);
+                    SpAtks[1].SkillName = Data.returnName(_spATK2ID);
                 }
             }
         }

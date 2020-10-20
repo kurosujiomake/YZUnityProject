@@ -110,7 +110,7 @@ public class HitBoxInfoPass : StateMachineBehaviour
         _IdRandomized = false;
         pAtkMv.TimerStart = false;
         pAtkMv.isAttacking = false;
-        Debug.Log("Timer is stopped");
+        //Debug.Log("Timer is stopped");
         HitBoxReset();
     }
 
