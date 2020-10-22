@@ -9072,6 +9072,51 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8221750487963548663}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1992590772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992590771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97247ff839016214e8a1687cbfa9bbd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isAttacking: 0
+  atkMoves:
+  - Name: Sw_atk1
+    moveParam:
+    - moveNum: 0
+      direction: 0
+      velocity: 35
+      hasPause: 0
+  - Name: Sw_atk2
+    moveParam:
+    - moveNum: 0
+      direction: 0
+      velocity: 35
+      hasPause: 0
+  - Name: Sw_atk3
+    moveParam:
+    - moveNum: 0
+      direction: 0
+      velocity: 0
+      hasPause: 0
+  - Name: Sw_atk4
+    moveParam:
+    - moveNum: 0
+      direction: 85
+      velocity: 950
+      hasPause: 0
+    - moveNum: 1
+      direction: 270
+      velocity: 1100
+      hasPause: 1
+  curAtk:
+    Name: 
+    moveParam: []
 --- !u!114 &1992590782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9104,6 +9149,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edab0f3d122047c43af2dff165ce3dbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveActive: 0
+  moveNum: 0
+  canPause: 0
 --- !u!114 &2005546683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9966,7 +10014,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2029075672, guid: 16a462e48b7ea5340b1aa2c5627f2e76, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 199465334998370276, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
         type: 3}

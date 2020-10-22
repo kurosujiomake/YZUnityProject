@@ -4,15 +4,7 @@ using UnityEngine;
 
 public class AtkMoveTransferScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public bool moveActive = false;
+    public int moveNum = 0;
+    public bool canPause = false;
 }

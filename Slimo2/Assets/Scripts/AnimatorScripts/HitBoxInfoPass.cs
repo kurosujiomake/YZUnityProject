@@ -31,7 +31,8 @@ public class HitBoxInfoPass : StateMachineBehaviour
     [SerializeField]
     private bool timerStarted = false;
     private PlayerAttackMove pAtkMv = null;
-    
+    private NewAtkMove nAM = null;
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -40,6 +41,8 @@ public class HitBoxInfoPass : StateMachineBehaviour
         _dv = _param.HitBoxes[_whichHitBox].GetComponent<DamageValues>();
         DamagePassToHitbox();
         pAtkMv = animator.GetComponent<PlayerAttackMove>();
+        nAM = animator.GetComponent<NewAtkMove>();
+        nAM.SetAtkName(AnimationName);
         timerStarted = false;
     }
     public void DamagePassToHitbox() //puts it into a function so it can be easily called
@@ -90,13 +93,15 @@ public class HitBoxInfoPass : StateMachineBehaviour
         }
         if (AnimationName != null)
         {
-            pAtkMv.curAtkName = AnimationName;
-            if (!timerStarted)
-            {
-                pAtkMv.TimerStart = true;
-                pAtkMv.isAttacking = true;
-                timerStarted = false;
-            }
+            //pAtkMv.curAtkName = AnimationName;
+            //if (!timerStarted)
+            //{
+                //pAtkMv.TimerStart = true;
+                //pAtkMv.isAttacking = true;
+                //timerStarted = false;
+            //}
+            nAM.SetAtkName(AnimationName);
+            nAM.isAttacking = true;
         }
     }
     private void HitBoxReset()
@@ -108,10 +113,11 @@ public class HitBoxInfoPass : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         _IdRandomized = false;
-        pAtkMv.TimerStart = false;
-        pAtkMv.isAttacking = false;
+        //pAtkMv.TimerStart = false;
+        //pAtkMv.isAttacking = false;
         //Debug.Log("Timer is stopped");
         HitBoxReset();
+        nAM.isAttacking = false;
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
