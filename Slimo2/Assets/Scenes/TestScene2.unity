@@ -9090,13 +9090,13 @@ MonoBehaviour:
     moveParam:
     - moveNum: 0
       direction: 0
-      velocity: 35
+      velocity: 75
       hasPause: 0
   - Name: Sw_atk2
     moveParam:
     - moveNum: 0
       direction: 0
-      velocity: 35
+      velocity: 115
       hasPause: 0
   - Name: Sw_atk3
     moveParam:
@@ -9108,11 +9108,41 @@ MonoBehaviour:
     moveParam:
     - moveNum: 0
       direction: 85
-      velocity: 950
+      velocity: 1175
       hasPause: 0
     - moveNum: 1
       direction: 270
-      velocity: 1100
+      velocity: 2000
+      hasPause: 1
+  - Name: SwAir_1
+    moveParam:
+    - moveNum: 0
+      direction: 85
+      velocity: 995
+      hasPause: 0
+  - Name: SwAir_2
+    moveParam:
+    - moveNum: 0
+      direction: 90
+      velocity: 875
+      hasPause: 0
+    - moveNum: 1
+      direction: 90
+      velocity: 675
+      hasPause: 0
+    - moveNum: 2
+      direction: 90
+      velocity: 475
+      hasPause: 0
+  - Name: SwAir_3
+    moveParam:
+    - moveNum: 0
+      direction: 85
+      velocity: 775
+      hasPause: 0
+    - moveNum: 1
+      direction: 270
+      velocity: 2000
       hasPause: 1
   curAtk:
     Name: 
@@ -9131,6 +9161,72 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: 0
   start: 0
+--- !u!1 &1995444527
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1995444528}
+  - component: {fileID: 1995444530}
+  - component: {fileID: 1995444529}
+  m_Layer: 11
+  m_Name: Hitbox2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1995444528
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995444527}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 234618526}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1995444529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995444527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aed8c627c1854942a2da4f3a554ef5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hitCount: 0
+  _hitDelay: 0
+  _dir: 0
+  _force: 0
+  _dmg: 0
+  _dmgID: 0
+--- !u!70 &1995444530
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995444527}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.5, y: 1}
+  m_Direction: 1
 --- !u!1 &2005546680 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1320624554, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
