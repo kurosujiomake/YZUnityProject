@@ -9756,6 +9756,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1805649365, guid: 16a462e48b7ea5340b1aa2c5627f2e76, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1805649366, guid: 16a462e48b7ea5340b1aa2c5627f2e76, type: 3}
+      propertyPath: m_PointLightInnerAngle
+      value: 360
+      objectReference: {fileID: 0}
+    - target: {fileID: 1805649366, guid: 16a462e48b7ea5340b1aa2c5627f2e76, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 5.2
+      objectReference: {fileID: 0}
     - target: {fileID: 2029075672, guid: 16a462e48b7ea5340b1aa2c5627f2e76, type: 3}
       propertyPath: atks.Array.size
       value: 10
