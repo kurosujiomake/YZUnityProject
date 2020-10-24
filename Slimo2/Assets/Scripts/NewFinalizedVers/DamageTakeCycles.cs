@@ -26,9 +26,11 @@ public class DamageTakeCycles : MonoBehaviour
     //dir = direction of knockback in degrees
     private IEnumerator HitCycles(int _hitCount, float _hitDelay, float _dir, float _force, float _dmg) 
     {
+        Debug.Log(_hitCount);
         int count = _hitCount;
         while(count > 0)
         {
+            Debug.Log("Doing hit cycles");
             //do the hit stuff
             DamageCalculation(_dmg);
             DirectionalKnockBack(_dir, _force);
@@ -50,7 +52,7 @@ public class DamageTakeCycles : MonoBehaviour
     {
         float dir = _dir * Mathf.Deg2Rad;
         Vector2 v = new Vector2(Mathf.Cos(dir), Mathf.Sin(dir));
-        rig2D.AddForce(v * _force, ForceMode2D.Force);
+        rig2D.velocity = v;
     }
 
     private void DamageCalculation(float _dmg)

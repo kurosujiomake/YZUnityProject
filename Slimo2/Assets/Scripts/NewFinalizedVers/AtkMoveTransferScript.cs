@@ -7,4 +7,5 @@ public class AtkMoveTransferScript : MonoBehaviour
     public bool moveActive = false;
     public int moveNum = 0;
     public bool canPause = false;
+    public int hitBoxNum = 0;
 }

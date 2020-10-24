@@ -46,6 +46,10 @@ public class PostAttIdle : StateMachineBehaviour
         {
             animator.SetTrigger("SpAtk");
         }
+        if(pCM.GetButtonDown("Jump"))
+        {
+            animator.SetTrigger("Jump");
+        }
         switch (isFinalPATT)
         {
             case true:

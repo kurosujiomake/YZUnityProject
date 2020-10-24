@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class HitBoxInfoPass : StateMachineBehaviour
 {
-    public int _whichHitBox = 0;
+    //public int[] _whichHitBox;
+    public int curHitBox = 0;
     public Parameters _param = null;
     [SerializeField]
-    private int _hitCount = 0;
+    private int[] _hitCount;
     [SerializeField]
-    private float _delay = 0;
+    private float[] _delay;
     [SerializeField]
-    private float _dir = 0;
+    private float[] _dir;
     private float _adjustedDir = 0;
     [SerializeField]
-    private float _force = 0;
+    private float[] _force;
     public GameObject hitBox = null;
     [SerializeField]
     private int _hitBoxID = 0;
@@ -32,21 +33,24 @@ public class HitBoxInfoPass : StateMachineBehaviour
     private bool timerStarted = false;
     private PlayerAttackMove pAtkMv = null;
     private NewAtkMove nAM = null;
+    [SerializeField]private AtkMoveTransferScript atkT;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         _passedInfoToActiveHitbox = false;
+        atkT = animator.GetComponentInChildren<AtkMoveTransferScript>();
         _param = animator.GetComponent<Parameters>();
-        _dv = _param.HitBoxes[_whichHitBox].GetComponent<DamageValues>();
-        DamagePassToHitbox();
+        DamagePassToHitbox(curHitBox); ;
         pAtkMv = animator.GetComponent<PlayerAttackMove>();
         nAM = animator.GetComponent<NewAtkMove>();
         nAM.SetAtkName(AnimationName);
         timerStarted = false;
+        curHitBox = atkT.hitBoxNum;
     }
-    public void DamagePassToHitbox() //puts it into a function so it can be easily called
+    public void DamagePassToHitbox(int hitBoxNum) //puts it into a function so it can be easily called
     {
+        _dv = _param.HitBoxes[hitBoxNum].GetComponent<DamageValues>();
         HitBoxReset();
         _IdRandomized = false;
         while (!_IdRandomized)
@@ -64,27 +68,31 @@ public class HitBoxInfoPass : StateMachineBehaviour
         switch (_param.facingRight) //reverses knockback direction based on y axis
         {
             case true:
-                _adjustedDir = _dir;
+                _adjustedDir = _dir[curHitBox];
                 break;
             case false:
-                _adjustedDir = 180 - _dir;
+                _adjustedDir = 180 - _dir[curHitBox];
                 break;
         }
-        _dv.SetValues(_hitCount, _delay, _adjustedDir, _force, _param.AttackDamage);
+        _dv.SetValues(_hitCount[curHitBox], _delay[curHitBox], _adjustedDir, _force[curHitBox], _param.AttackDamage);
         _passedInfoToActiveHitbox = true;
     }
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (!_param.HitBoxes[_whichHitBox].GetComponent<CapsuleCollider2D>().enabled)
+        curHitBox = atkT.hitBoxNum;
+        _dv = _param.HitBoxes[curHitBox].GetComponent<DamageValues>();
+        if (!_param.HitBoxes[curHitBox].GetComponent<CapsuleCollider2D>().enabled)
         {
             _passedInfoToActiveHitbox = false;
+            HitBoxReset();
         }
-        if (_param.HitBoxes[_whichHitBox].GetComponent<CapsuleCollider2D>().enabled)
+        if (_param.HitBoxes[curHitBox].GetComponent<CapsuleCollider2D>().enabled)
         {
             if(!_passedInfoToActiveHitbox)
             {
-                DamagePassToHitbox();
+                //Debug.Log("HitBoxEnabled and passing to hitbox " + curHitBox);
+                DamagePassToHitbox(curHitBox);
             }
         }
         if(isWindup)

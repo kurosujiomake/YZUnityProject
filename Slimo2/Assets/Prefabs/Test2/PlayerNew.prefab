@@ -335,6 +335,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1320624555}
   - component: {fileID: 1870448518112566270}
+  - component: {fileID: 2005546681}
+  - component: {fileID: 2005546683}
   m_Layer: 9
   m_Name: Animations
   m_TagString: pAnimSpriteCont
@@ -410,6 +412,39 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2005546681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1320624554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edab0f3d122047c43af2dff165ce3dbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveActive: 0
+  moveNum: 0
+  canPause: 0
+  hitBoxNum: 0
+--- !u!114 &2005546683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1320624554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d9031b3b56fb5147b2ae2179132eeac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  finalColor: {r: 1, g: 0.5545753, b: 0.1273585, a: 0}
+  trailLifetime: 0.25
+  distancePerSpawn: 0.1
+  spawnOnStart: 0
+  readyObjects: []
 --- !u!1 &1328773327
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,7 +630,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1805649364}
   m_LocalRotation: {x: -0, y: -0, z: -0.018471004, w: 0.9998294}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 3.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3727145088433499904}
@@ -629,7 +664,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 11.202715
+  m_PointLightOuterRadius: 5.2
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5
@@ -672,6 +707,72 @@ Transform:
   m_Father: {fileID: 3727145088433499904}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1995444527
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1995444528}
+  - component: {fileID: 1995444530}
+  - component: {fileID: 1995444529}
+  m_Layer: 11
+  m_Name: Hitbox2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1995444528
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995444527}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5754908070949525643}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &1995444530
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995444527}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.5, y: 1}
+  m_Direction: 1
+--- !u!114 &1995444529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995444527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aed8c627c1854942a2da4f3a554ef5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hitCount: 0
+  _hitDelay: 0
+  _dir: 0
+  _force: 0
+  _dmg: 0
+  _dmgID: 0
 --- !u!1 &540348650387715261
 GameObject:
   m_ObjectHideFlags: 0
@@ -970,8 +1071,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.5, y: 1}
+  m_Offset: {x: -2.55, y: 0.38}
+  m_Size: {x: 5.86, y: 2.95}
   m_Direction: 1
 --- !u!114 &1311354191
 MonoBehaviour:
@@ -1151,6 +1252,8 @@ GameObject:
   - component: {fileID: 2029075672}
   - component: {fileID: 2029075663}
   - component: {fileID: 5066319322877277166}
+  - component: {fileID: 1992590772}
+  - component: {fileID: 1992590782}
   m_Layer: 9
   m_Name: PlayerNew
   m_TagString: Player
@@ -1240,11 +1343,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HitBoxes:
   - {fileID: 1784586896232657024}
-  - {fileID: 0}
+  - {fileID: 1995444527}
   - {fileID: 0}
   isAttacking: 0
-  afterAtkDelayTimer: 0
-  finalAtkDelayTimer: 0
+  afterAtkDelayTimer: 0.9
+  finalAtkDelayTimer: 0.2
   GroundAttTriggerName:
   - GAtt_a
   - 
@@ -1310,7 +1413,7 @@ MonoBehaviour:
   facingRight: 1
   playerSprite: {fileID: 0}
   isGrounded: 0
-  hitBoxContainer: {fileID: 0}
+  hitBoxContainer: {fileID: 5754908070949525643}
   cameraPoints:
   - {fileID: 1753084368}
   - {fileID: 663823698}
@@ -1404,7 +1507,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3727145088433499907}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bacd19be8e4fa0942b17d1bc52ef42fb, type: 3}
   m_Name: 
@@ -1454,6 +1557,84 @@ MonoBehaviour:
     - {x: 0.7, y: 1.1}
     hasPause: 1
     whenPause: 0.9
+  - atkName: Sp1_atkWindup
+    numOfMovements: 0
+    curMovement: 0
+    Direction:
+    - 75
+    - 275
+    moveVelocity:
+    - 375
+    - 700
+    startEnd:
+    - {x: 0.35, y: 0.65}
+    - {x: 0.7, y: 1.1}
+    hasPause: 0
+    whenPause: 0
+  - atkName: SwSp1_1
+    numOfMovements: 0
+    curMovement: 0
+    Direction:
+    - 75
+    - 275
+    moveVelocity:
+    - 375
+    - 700
+    startEnd:
+    - {x: 0.35, y: 0.65}
+    - {x: 0.7, y: 1.1}
+    hasPause: 0
+    whenPause: 0.9
+  - atkName: SwSp1_2
+    numOfMovements: 0
+    curMovement: 0
+    Direction:
+    - 75
+    - 275
+    moveVelocity:
+    - 375
+    - 700
+    startEnd:
+    - {x: 0.35, y: 0.65}
+    - {x: 0.7, y: 1.1}
+    hasPause: 0
+    whenPause: 0
+  - atkName: SwAir_1
+    numOfMovements: 1
+    curMovement: 0
+    Direction:
+    - 90
+    moveVelocity:
+    - 375
+    startEnd:
+    - {x: 0.1, y: 0.17}
+    hasPause: 0
+    whenPause: 0
+  - atkName: SwAir_2
+    numOfMovements: 1
+    curMovement: 0
+    Direction:
+    - 80
+    moveVelocity:
+    - 375
+    startEnd:
+    - {x: 0.1, y: 0.79}
+    hasPause: 0
+    whenPause: 0
+  - atkName: SwAir_3
+    numOfMovements: 2
+    curMovement: 0
+    Direction:
+    - 89
+    - 270
+    moveVelocity:
+    - 500
+    - 1500
+    startEnd:
+    - {x: 0.12, y: 0.24}
+    - {x: 0.6, y: 1.27}
+    hasPause: 1
+    whenPause: 0.75
   curAtkName: 
   curAnimTime: 0
   TimerStart: 0
@@ -1498,31 +1679,110 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07f4e3ecb78ffe84e889effc8adf9500, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentSpAtk: 0
-  skDatabase: {fileID: 11400000, guid: 7a145e295caa6e24ebc58788929e4e01, type: 2}
-  skill:
+  SpAtks:
   - SkillName: 
     skillID: 0
-    skCD: 0
+    CD: 0
     CanUseAtk: 0
   - SkillName: 
-    skillID: -1
-    skCD: 0
+    skillID: 0
+    CD: 0
     CanUseAtk: 0
-  - SkillName: 
-    skillID: -1
-    skCD: 0
-    CanUseAtk: 0
-  spAtk:
+  UltAtk:
     SkillName: 
     skillID: 0
-    skCD: 0
+    CD: 0
     CanUseAtk: 0
-  ultAtk:
-    SkillName: 
-    skillID: 0
-    skCD: 0
-    CanUseAtk: 0
+  Data: {fileID: 11400000, guid: 7a145e295caa6e24ebc58788929e4e01, type: 2}
+--- !u!114 &1992590772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3727145088433499907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97247ff839016214e8a1687cbfa9bbd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isAttacking: 0
+  atkMoves:
+  - Name: Sw_atk1
+    moveParam:
+    - moveNum: 0
+      direction: 0
+      velocity: 75
+      hasPause: 0
+  - Name: Sw_atk2
+    moveParam:
+    - moveNum: 0
+      direction: 0
+      velocity: 115
+      hasPause: 0
+  - Name: Sw_atk3
+    moveParam:
+    - moveNum: 0
+      direction: 0
+      velocity: 0
+      hasPause: 0
+  - Name: Sw_atk4
+    moveParam:
+    - moveNum: 0
+      direction: 85
+      velocity: 1175
+      hasPause: 0
+    - moveNum: 1
+      direction: 270
+      velocity: 2000
+      hasPause: 1
+  - Name: SwAir_1
+    moveParam:
+    - moveNum: 0
+      direction: 85
+      velocity: 775
+      hasPause: 0
+  - Name: SwAir_2
+    moveParam:
+    - moveNum: 0
+      direction: 90
+      velocity: 875
+      hasPause: 0
+    - moveNum: 1
+      direction: 90
+      velocity: 675
+      hasPause: 0
+    - moveNum: 2
+      direction: 90
+      velocity: 475
+      hasPause: 0
+  - Name: SwAir_3
+    moveParam:
+    - moveNum: 0
+      direction: 85
+      velocity: 775
+      hasPause: 0
+    - moveNum: 1
+      direction: 270
+      velocity: 2000
+      hasPause: 1
+  curAtk:
+    Name: 
+    moveParam: []
+--- !u!114 &1992590782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3727145088433499907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3de42793fee77b245addfc12019a19b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 0
+  start: 0
 --- !u!1 &3772932790477469332
 GameObject:
   m_ObjectHideFlags: 0
@@ -1609,6 +1869,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1688448280969379170}
+  - {fileID: 1995444528}
   m_Father: {fileID: 3727145088433499904}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
