@@ -268,6 +268,7 @@ MonoBehaviour:
   point: {fileID: 965394866}
   dmgID: 0
   particleDuration: 0.05
+  kbDatabase: {fileID: 0}
 --- !u!114 &23377358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1450,6 +1451,7 @@ MonoBehaviour:
   point: {fileID: 2069896302}
   dmgID: 0
   particleDuration: 0.05
+  kbDatabase: {fileID: 0}
 --- !u!114 &396119429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5144,6 +5146,7 @@ MonoBehaviour:
   point: {fileID: 1204185939}
   dmgID: 0
   particleDuration: 0.05
+  kbDatabase: {fileID: 11400000, guid: 8755d63d46f82d348b13a4db7f9f220d, type: 2}
 --- !u!50 &1097524669
 Rigidbody2D:
   serializedVersion: 4
@@ -7466,6 +7469,7 @@ MonoBehaviour:
   point: {fileID: 1820621921}
   dmgID: 0
   particleDuration: 0.05
+  kbDatabase: {fileID: 0}
 --- !u!114 &1637669771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9539,20 +9543,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1995444530, guid: 16a462e48b7ea5340b1aa2c5627f2e76, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 814470021636217456, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
         type: 3}
       propertyPath: invCanvas
       value: 
       objectReference: {fileID: 573843821}
-    - target: {fileID: 1688448280969379170, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3727145088433499904, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
         type: 3}
       propertyPath: m_LocalPosition.x

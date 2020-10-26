@@ -93,6 +93,14 @@ public class NewAtkMove : MonoBehaviour
         Vector2 v = new Vector2(Mathf.Cos(d) * _vel * Time.deltaTime, Mathf.Sin(d) * _vel * Time.deltaTime);
         r2D.velocity = v;
     }
+    public void ActivateAtk()
+    {
+        isAttacking = true;
+    }
+    public void DeactivateAtk()
+    {
+        isAttacking = false;
+    }
 }
 [System.Serializable]
 public class AtkMoveParam

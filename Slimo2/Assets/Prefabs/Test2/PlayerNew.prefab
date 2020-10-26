@@ -1036,7 +1036,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1688448280969379170}
   - component: {fileID: 3581208946597028758}
-  - component: {fileID: 1311354191}
+  - component: {fileID: 1096420705386054874}
+  - component: {fileID: 8221750487963548666}
   m_Layer: 11
   m_Name: Hitbox1
   m_TagString: Untagged
@@ -1074,7 +1075,7 @@ CapsuleCollider2D:
   m_Offset: {x: -2.55, y: 0.38}
   m_Size: {x: 5.86, y: 2.95}
   m_Direction: 1
---- !u!114 &1311354191
+--- !u!114 &1096420705386054874
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1083,15 +1084,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 1784586896232657024}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6aed8c627c1854942a2da4f3a554ef5a, type: 3}
+  m_Script: {fileID: 11500000, guid: f4634a6ba2026024f8d6ebc02e8e9134, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hitCount: 0
-  _hitDelay: 0
-  _dir: 0
-  _force: 0
-  _dmg: 0
-  _dmgID: 0
+--- !u!114 &8221750487963548666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784586896232657024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88bfae07d120b24d8263c332849c0a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Hit_ID: 0
+  KB_ID: 0
 --- !u!1 &2915095451567410515
 GameObject:
   m_ObjectHideFlags: 0
@@ -1249,11 +1258,9 @@ GameObject:
   - component: {fileID: 814470021636217456}
   - component: {fileID: 1389243926}
   - component: {fileID: 1403190457}
-  - component: {fileID: 2029075672}
   - component: {fileID: 2029075663}
   - component: {fileID: 5066319322877277166}
   - component: {fileID: 1992590772}
-  - component: {fileID: 1992590782}
   m_Layer: 9
   m_Name: PlayerNew
   m_TagString: Player
@@ -1500,154 +1507,6 @@ MonoBehaviour:
     value:
       baseValue: 0
       modifiedValue: 0
---- !u!114 &2029075672
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3727145088433499907}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bacd19be8e4fa0942b17d1bc52ef42fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  atks:
-  - atkName: Sw_atk1
-    numOfMovements: 1
-    curMovement: 0
-    Direction:
-    - 0
-    moveVelocity:
-    - 70
-    startEnd:
-    - {x: 0.5, y: 0.7}
-    hasPause: 0
-    whenPause: 0
-  - atkName: Sw_atk2
-    numOfMovements: 1
-    curMovement: 0
-    Direction:
-    - 0
-    moveVelocity:
-    - 70
-    startEnd:
-    - {x: 0.6, y: 0.7}
-    hasPause: 0
-    whenPause: 0
-  - atkName: Sw_atk3
-    numOfMovements: 0
-    curMovement: 0
-    Direction: []
-    moveVelocity: []
-    startEnd: []
-    hasPause: 0
-    whenPause: 0
-  - atkName: Sw_atk4
-    numOfMovements: 2
-    curMovement: 0
-    Direction:
-    - 75
-    - 275
-    moveVelocity:
-    - 375
-    - 700
-    startEnd:
-    - {x: 0.35, y: 0.65}
-    - {x: 0.7, y: 1.1}
-    hasPause: 1
-    whenPause: 0.9
-  - atkName: Sp1_atkWindup
-    numOfMovements: 0
-    curMovement: 0
-    Direction:
-    - 75
-    - 275
-    moveVelocity:
-    - 375
-    - 700
-    startEnd:
-    - {x: 0.35, y: 0.65}
-    - {x: 0.7, y: 1.1}
-    hasPause: 0
-    whenPause: 0
-  - atkName: SwSp1_1
-    numOfMovements: 0
-    curMovement: 0
-    Direction:
-    - 75
-    - 275
-    moveVelocity:
-    - 375
-    - 700
-    startEnd:
-    - {x: 0.35, y: 0.65}
-    - {x: 0.7, y: 1.1}
-    hasPause: 0
-    whenPause: 0.9
-  - atkName: SwSp1_2
-    numOfMovements: 0
-    curMovement: 0
-    Direction:
-    - 75
-    - 275
-    moveVelocity:
-    - 375
-    - 700
-    startEnd:
-    - {x: 0.35, y: 0.65}
-    - {x: 0.7, y: 1.1}
-    hasPause: 0
-    whenPause: 0
-  - atkName: SwAir_1
-    numOfMovements: 1
-    curMovement: 0
-    Direction:
-    - 90
-    moveVelocity:
-    - 375
-    startEnd:
-    - {x: 0.1, y: 0.17}
-    hasPause: 0
-    whenPause: 0
-  - atkName: SwAir_2
-    numOfMovements: 1
-    curMovement: 0
-    Direction:
-    - 80
-    moveVelocity:
-    - 375
-    startEnd:
-    - {x: 0.1, y: 0.79}
-    hasPause: 0
-    whenPause: 0
-  - atkName: SwAir_3
-    numOfMovements: 2
-    curMovement: 0
-    Direction:
-    - 89
-    - 270
-    moveVelocity:
-    - 500
-    - 1500
-    startEnd:
-    - {x: 0.12, y: 0.24}
-    - {x: 0.6, y: 1.27}
-    hasPause: 1
-    whenPause: 0.75
-  curAtkName: 
-  curAnimTime: 0
-  TimerStart: 0
-  isAttacking: 0
-  curAttack:
-    atkName: 
-    numOfMovements: 0
-    curMovement: 0
-    Direction: []
-    moveVelocity: []
-    startEnd: []
-    hasPause: 0
-    whenPause: 0
 --- !u!95 &2029075663
 Animator:
   serializedVersion: 3
@@ -1769,20 +1628,6 @@ MonoBehaviour:
   curAtk:
     Name: 
     moveParam: []
---- !u!114 &1992590782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3727145088433499907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3de42793fee77b245addfc12019a19b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timer: 0
-  start: 0
 --- !u!1 &3772932790477469332
 GameObject:
   m_ObjectHideFlags: 0

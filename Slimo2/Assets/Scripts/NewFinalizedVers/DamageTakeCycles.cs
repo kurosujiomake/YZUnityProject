@@ -11,16 +11,12 @@ public class DamageTakeCycles : MonoBehaviour
     [SerializeField]
     private int dmgID = 0;
     public float particleDuration = 0;
+    public KBDatabase kbDatabase = null;
+
     // Start is called before the first frame update
     void Awake()
     {
         rig2D = GetComponent<Rigidbody2D>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
     //hitCount = how many times it hits, hitDelay = delay between hits
     //dir = direction of knockback in degrees
@@ -47,31 +43,37 @@ public class DamageTakeCycles : MonoBehaviour
         yield return new WaitForSeconds(_dur);
         Destroy(clone);
     }
-
+    private IEnumerator GroundedKB(float _dir, float _vel, float _dur)
+    {
+        DirectionalKnockBack(_dir, _vel);
+        yield return new WaitForSeconds(_dur);
+        StopMovement();
+    }
     private void DirectionalKnockBack(float _dir, float _force)
     {
         float dir = _dir * Mathf.Deg2Rad;
         Vector2 v = new Vector2(Mathf.Cos(dir), Mathf.Sin(dir));
         rig2D.velocity = v;
     }
-
+    private void StopMovement()
+    {
+        rig2D.velocity = Vector2.zero;
+    }
     private void DamageCalculation(float _dmg)
     {
         //subtract hp from hp total
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.GetComponent<DamageValues>() != null)
-        {
-            //Debug.Log("Got Hit");
-            DamageValues dv = collision.GetComponent<DamageValues>();
-            if(dv.dmgID != dmgID) // makes it so that the object cannot get hit again by the same hitbox
+        
+            if(collision.GetComponent<KBInfoPass>() != null)
             {
                 
-                StartCoroutine(HitCycles(dv.hitCount, dv.hitDelay, dv.dir, dv.force, dv.dmg));
-                dmgID = dv.dmgID;
             }
+            //Debug.Log("Got Hit");
             
-        }
+            
+            
+        
     }
 }

@@ -7,8 +7,9 @@ public class AerialCombo : StateMachineBehaviour
     private PlayerControlManager pCM;
     private PlayerControllerNew pCN;
     private Parameters param;
-    private PlayerAttackMove pAMove;
-    [SerializeField] private bool isNotAtkState = true;
+    private NewAtkMove nAM;
+    [SerializeField] 
+    private bool isNotAtkState = true;
     private bool comNumSet = false;
     public int maxAirCombo = 3;
 
@@ -19,15 +20,18 @@ public class AerialCombo : StateMachineBehaviour
         pCM = GameObject.FindGameObjectWithTag("pControlManager").GetComponent<PlayerControlManager>();
         pCN = animator.GetComponent<PlayerControllerNew>();
         param = animator.GetComponent<Parameters>();
-        pAMove = animator.GetComponent<PlayerAttackMove>();
+        if(nAM == null)
+        {
+            nAM = animator.GetComponent<NewAtkMove>();
+        }
         switch(isNotAtkState)
         {
             case true:
-                pAMove.isAttacking = false;
+                nAM.DeactivateAtk();
                 break;
             case false:
-                pAMove.isAttacking = true;
-                break;
+                nAM.ActivateAtk();
+                break; 
         }
     }
 
