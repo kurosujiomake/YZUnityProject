@@ -13,6 +13,7 @@ public class DamageTakeCycles : MonoBehaviour
     public float particleDuration = 0;
     public KBDatabase kbDatabase = null;
     public int KBID;
+    private bool enemyFacingRight = true;
 
     // Start is called before the first frame update
     void Awake()
@@ -43,7 +44,7 @@ public class DamageTakeCycles : MonoBehaviour
     }
     private IEnumerator GroundedKB(int _KBID)
     {
-        Debug.Log("Knockback is being applied");
+        //Debug.Log("Knockback is being applied");
         DirectionalKnockBack(kbDatabase.Dir(_KBID), kbDatabase.Vel(_KBID));
         yield return new WaitForSeconds(kbDatabase.KBDur(_KBID));
         StopMovement();
@@ -68,7 +69,13 @@ public class DamageTakeCycles : MonoBehaviour
     }
     private void DirectionalKnockBack(float _dir, float _force)
     {
-        float dir = _dir * Mathf.Deg2Rad;
+        float dir = _dir;
+        if(!enemyFacingRight) //if the player is facing left, flip the angles
+        {
+            dir = 180 - _dir;
+            Debug.Log("Flipped KB angle");
+        }
+        dir *= Mathf.Deg2Rad;
         Vector2 v = new Vector2(Mathf.Cos(dir) * _force, Mathf.Sin(dir) * _force);
         rig2D.velocity = v;
     }
@@ -85,12 +92,18 @@ public class DamageTakeCycles : MonoBehaviour
         if(collision.GetComponent<KBInfoPass>() != null)
         {
             var h = collision.GetComponent<KBInfoPass>();
+            if (collision.GetComponentInParent<PlayerControllerNew>() != null)
+            {
+                var f = collision.GetComponentInParent<PlayerControllerNew>();
+                enemyFacingRight = f.facingRight;
+            }
             if(h.Hit_ID != curHitID) //this object has not been hit already
             {
-                Debug.Log("DetectedHitbox");
+                //Debug.Log("DetectedHitbox");
                 KBID = h.KB_ID;
                 curHitID = h.Hit_ID;
                 StartKBCycle();
+                Debug.Log("Got hit with kb id of " + KBID);
             }
         }
     }

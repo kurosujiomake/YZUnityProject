@@ -47,14 +47,16 @@ public class MovementAndHitBoxInfo: StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if(kbInfo.SetHitID == false)
-        {
-            hasSetID = false;
-        }
         if(kbInfo.SetHitID && !hasSetID)
         {
             kbInfo.KB_ID = kbIDs[kbInfo.curKBNum];
             kbInfo.Hit_ID = IDRandomizer();
+            Debug.Log("Setting New ID in update");
+        }
+        if (kbInfo.SetHitID == false)
+        {
+            hasSetID = false;
+            Debug.Log("ID has already been set in update");
         }
     }
     

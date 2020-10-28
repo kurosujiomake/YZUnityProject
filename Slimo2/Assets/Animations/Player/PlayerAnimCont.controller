@@ -3535,7 +3535,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackName: Sw_atk2
-  kbIDs: 
+  kbIDs: 01000000
   nAM: {fileID: 0}
   HitIDs: 0000000000000000
   hasSetID: 0
@@ -3647,7 +3647,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackName: Sw_atk4
-  kbIDs: 
+  kbIDs: 01000000
   nAM: {fileID: 0}
   HitIDs: 0000000000000000
   hasSetID: 0
@@ -3868,7 +3868,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackName: Sw_atk3
-  kbIDs: 
+  kbIDs: 0000000001000000
   nAM: {fileID: 0}
   HitIDs: 0000000000000000
   hasSetID: 0
