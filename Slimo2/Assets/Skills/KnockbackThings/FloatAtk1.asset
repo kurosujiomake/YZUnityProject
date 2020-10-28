@@ -10,13 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f5f30a7d5a6f4844396eed55c55f32e6, type: 3}
-  m_Name: Atk1Basic
+  m_Name: FloatAtk1
   m_EditorClassIdentifier: 
-  ID: 1
-  Desciption: Basic attack knockback 1
-  Dir: 5
+  ID: 3
+  Desciption: a kb set to be used by basic aerial attacks that keep enemies in the
+    air
+  Dir: 90
   Velocity: 5
-  KBDuration: 0.05
+  KBDuration: 0.7
   type: 0
-  FloatsTarget: 0
-  FloatDuration: 0
+  FloatsTarget: 1
+  FloatDuration: 2

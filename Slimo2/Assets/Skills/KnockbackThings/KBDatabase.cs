@@ -16,6 +16,10 @@ public class KBDatabase : ScriptableObject, ISerializationCallbackReceiver
             }
         }
     }
+    public KBBase KBdata(int _ID)
+    {
+        return knockBacks[_ID];
+    }
     public float Dir(int _ID)
     {
         return knockBacks[_ID].Dir;

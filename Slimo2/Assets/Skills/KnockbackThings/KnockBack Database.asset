@@ -13,4 +13,7 @@ MonoBehaviour:
   m_Name: KnockBack Database
   m_EditorClassIdentifier: 
   knockBacks:
+  - {fileID: 11400000, guid: d8bcc8a75b037cc45b4ee59f80648e44, type: 2}
   - {fileID: 11400000, guid: 635c79ebf6643cd468d2b19b3a6b9305, type: 2}
+  - {fileID: 11400000, guid: 3906c74bc65de534182a91c03ee4e80f, type: 2}
+  - {fileID: 11400000, guid: 7250c21537b4c614a9950276e65a7529, type: 2}
