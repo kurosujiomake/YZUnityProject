@@ -79,6 +79,23 @@ public class DamageTakeCycles : MonoBehaviour
         Vector2 v = new Vector2(Mathf.Cos(dir) * _force, Mathf.Sin(dir) * _force);
         rig2D.velocity = v;
     }
+
+    private void DirectionalKnockBackF(float _dir, float _force) //this one uses addforce instead of setting vel
+    {
+        float d = 0;
+        switch (enemyFacingRight)
+        {
+            case true:
+                d = _dir * Mathf.Deg2Rad;
+                break;
+            case false:
+                d = (180 - _dir) * Mathf.Deg2Rad;
+                break;
+        }
+        Vector2 v = new Vector2(Mathf.Cos(d), Mathf.Sin(d));
+        rig2D.AddRelativeForce(v * _force * Time.deltaTime, ForceMode2D.Impulse);
+    }
+
     private void StopMovement()
     {
         rig2D.velocity = Vector2.zero;

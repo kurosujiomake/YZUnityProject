@@ -8,6 +8,7 @@ public class ComboPass : StateMachineBehaviour
     private PlayerControlManager pCM;
     private SpecialAttackParameters spParam;
     [SerializeField] private bool isFinalAtk = false;
+    [SerializeField] private bool isRegularAtk = false;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -19,6 +20,10 @@ public class ComboPass : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        if(isRegularAtk && pCM.GetButtonDown("Atk1"))
+        {
+            animator.SetTrigger("GAtt_a");
+        }
         //animator.SetBool("OnGround", animator.GetComponent<GroundChecker>().ReturnGroundCheck());
         if (!numInc && !isFinalAtk)
         {
