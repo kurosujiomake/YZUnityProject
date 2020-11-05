@@ -9574,33 +9574,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
         type: 3}
-      propertyPath: stickDeadzoneL.Array.data[0]
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
-        type: 3}
-      propertyPath: stickDeadzoneL.Array.data[1]
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
-        type: 3}
-      propertyPath: kb.Atk1_btn
-      value: x
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
-        type: 3}
-      propertyPath: kb.Jump_btn
-      value: a
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
-        type: 3}
-      propertyPath: kb.Dash_btn
-      value: RBumper
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
-        type: 3}
-      propertyPath: kb.Atk2_btn
-      value: b
+      propertyPath: kb.Atk1_Key
+      value: A
       objectReference: {fileID: 0}
     - target: {fileID: 2374169362876929646, guid: b9d2a7211a311ef458007fdcebcac8b7,
         type: 3}
@@ -9660,7 +9635,7 @@ PrefabInstance:
     - target: {fileID: 2374169362876929647, guid: b9d2a7211a311ef458007fdcebcac8b7,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9d2a7211a311ef458007fdcebcac8b7, type: 3}

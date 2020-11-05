@@ -1,12 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Controls;
 using UnityEngine.Rendering;
 
 public class PlayerControlManager : MonoBehaviour
 {
+    private Event e;
     private Gamepad pad;
+    private Keyboard board;
+    public enum ControlType
+    {
+        controller,
+        keyboard,
+        both
+    }
+    public ControlType curControlType;
     public KeyBinding kb;
     public enum Direction
     {
@@ -72,9 +83,10 @@ public class PlayerControlManager : MonoBehaviour
     void Awake()
     {
         pad = Gamepad.current;
+        board = Keyboard.current;
+        e = Event.current;
     }
 
-    
     void DebugTesting()
     {
         if(a_button_pressed)
@@ -495,12 +507,30 @@ public class PlayerControlManager : MonoBehaviour
         }
         return f;
     }
+    
+
+    public bool GetKeyDown(string which)
+    {
+        bool b = false;
+        switch(which)
+        {
+            case "Atk1":
+                b = ((KeyControl)board[kb.Atk1_Key]).wasPressedThisFrame;
+                break;
+            case "Atk2":
+                break;
+            case "Atk3":
+                break;
+    
+        }
+        return b;
+    }
 }
 
 [System.Serializable]
 public class KeyBinding
 {
-    [Header("Set your key bindings here")]
+    [Header("Set your key bindings here if you are using controller")]
     public string Atk1_btn;
     public string Atk2_btn;
     public string Atk3_btn;
@@ -509,6 +539,14 @@ public class KeyBinding
     public string SwapWep_btn;
     public string Inv_btn;
 
+    [Header("Set your keybindings for keyboard here")]
+    public string Atk1_Key;
+    public string Atk2_Key;
+    public string Atk3_Key;
+    public string Jump_Key;
+    public string Dash_Key;
+    public string SwapWep_Key;
+    public string Inv_Key;
     public string ReturnBtn(string which)
     {
         string s = "";

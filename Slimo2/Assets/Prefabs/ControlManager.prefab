@@ -45,11 +45,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   kb:
-    Atk1_btn: a
-    Atk2_btn: x
+    Atk1_btn: x
+    Atk2_btn: b
     Atk3_btn: 
-    Jump_btn: b
-    Dash_btn: y
+    Jump_btn: a
+    Dash_btn: RBumper
     SwapWep_btn: down
     Inv_btn: LTrigger
   curLStickDir: 0
@@ -105,7 +105,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2374169362876929644}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c68a1d8563c3f0f46bcd20a0b8ac306a, type: 3}
   m_Name: 
