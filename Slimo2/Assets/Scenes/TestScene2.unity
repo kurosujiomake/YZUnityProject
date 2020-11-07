@@ -9574,8 +9574,88 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
         type: 3}
+      propertyPath: kb.Directional_Key.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
+        type: 3}
       propertyPath: kb.Atk1_Key
       value: A
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
+        type: 3}
+      propertyPath: curControlType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
+        type: 3}
+      propertyPath: kb.Directional_Key.Array.data[0]
+      value: RightArrow
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
+        type: 3}
+      propertyPath: kb.Directional_Key.Array.data[1]
+      value: LeftArrow
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
+        type: 3}
+      propertyPath: kb.Directional_Key.Array.data[2]
+      value: UpArrow
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
+        type: 3}
+      propertyPath: kb.Directional_Key.Array.data[3]
+      value: DownArrow
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
+        type: 3}
+      propertyPath: kb.Atk2_Key
+      value: B
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
+        type: 3}
+      propertyPath: kb.Atk3_Key
+      value: C
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
+        type: 3}
+      propertyPath: kb.Jump_Key
+      value: D
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
+        type: 3}
+      propertyPath: kb.Dash_Key
+      value: E
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
+        type: 3}
+      propertyPath: kb.SwapWep_Key
+      value: F
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
+        type: 3}
+      propertyPath: kb.Inv_Key
+      value: G
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
+        type: 3}
+      propertyPath: kb.Atk3_btn
+      value: y
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
+        type: 3}
+      propertyPath: kb.Dash_btn
+      value: rightshoulder
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
+        type: 3}
+      propertyPath: kb.Inv_btn
+      value: leftshoulder
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
+        type: 3}
+      propertyPath: kb.SwapWep_btn
+      value: dpad/down
       objectReference: {fileID: 0}
     - target: {fileID: 2374169362876929646, guid: b9d2a7211a311ef458007fdcebcac8b7,
         type: 3}
@@ -9894,6 +9974,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlayerNew
+      objectReference: {fileID: 0}
+    - target: {fileID: 8221750487963548665, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
+        type: 3}
+      propertyPath: m_btTime
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 8221750487963548666, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
         type: 3}

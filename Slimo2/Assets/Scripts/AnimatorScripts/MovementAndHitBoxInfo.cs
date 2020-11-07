@@ -51,12 +51,12 @@ public class MovementAndHitBoxInfo: StateMachineBehaviour
         {
             kbInfo.KB_ID = kbIDs[kbInfo.curKBNum];
             kbInfo.Hit_ID = IDRandomizer();
-            Debug.Log("Setting New ID in update");
+            //Debug.Log("Setting New ID in update");
         }
         if (kbInfo.SetHitID == false)
         {
             hasSetID = false;
-            Debug.Log("ID has already been set in update");
+            //Debug.Log("ID has already been set in update");
         }
     }
     

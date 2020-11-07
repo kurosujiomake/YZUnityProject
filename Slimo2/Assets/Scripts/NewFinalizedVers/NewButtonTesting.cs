@@ -14,10 +14,7 @@ public class NewButtonTesting : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(ct.GetKeyDown("Atk1"))
-        {
-            Debug.Log("Atk1 pressed");
-        }
-
+        
+        
     }
 }

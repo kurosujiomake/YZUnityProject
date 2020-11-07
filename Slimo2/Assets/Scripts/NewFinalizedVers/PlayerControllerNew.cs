@@ -277,7 +277,7 @@ public class PlayerControllerNew : MonoBehaviour
                 break;
             case "u":
             case "up":
-                v.y = spd * Time.deltaTime * 50;
+                v.y = spd * Time.deltaTime * 65;
                 SetLocks(2);
                 r2D.velocity = v;
                 break;
