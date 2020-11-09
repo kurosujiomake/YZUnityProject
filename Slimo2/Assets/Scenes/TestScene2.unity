@@ -9885,6 +9885,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1992590772, guid: 16a462e48b7ea5340b1aa2c5627f2e76, type: 3}
+      propertyPath: atkMoves.Array.data[3].moveParam.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1992590772, guid: 16a462e48b7ea5340b1aa2c5627f2e76, type: 3}
+      propertyPath: atkMoves.Array.data[3].moveParam.Array.data[0].direction
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1992590772, guid: 16a462e48b7ea5340b1aa2c5627f2e76, type: 3}
+      propertyPath: atkMoves.Array.data[3].moveParam.Array.data[0].velocity
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2005546681, guid: 16a462e48b7ea5340b1aa2c5627f2e76, type: 3}
+      propertyPath: moveActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 814470021636217456, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
         type: 3}
       propertyPath: invCanvas
@@ -9914,6 +9930,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.x
       value: 5.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 3581208946597028758, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3727145088433499904, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
         type: 3}
