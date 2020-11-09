@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: a30132e1def79134587105f0b9fdee4f
+guid: e171c4bd8c2a9474b910a06dec884a7b
 TextureImporter:
   internalIDToNameTable:
   - first:
       213: 8523718432916692385
-    second: 1
+    second: slime_swordAir3_0
   - first:
       213: -6611368812945640984
-    second: 2
+    second: slime_swordAir3_2
   - first:
       213: -2687790048243938932
     second: slime_swordAir3_2
@@ -16,28 +16,28 @@ TextureImporter:
     second: slime_swordAir3_3
   - first:
       213: -8809314924199822979
-    second: 3
+    second: slime_swordAir3_4
   - first:
       213: 8197308805180534774
-    second: 4
+    second: slime_swordAir3_5
   - first:
       213: -5619544717190971618
-    second: slime_swordAir3_6
+    second: slime_swordAir3_5
   - first:
       213: 751645584458784769
-    second: slime_swordAir3_7
+    second: slime_swordAir3_6
   - first:
       213: -7979816378734664304
-    second: slime_swordAir3_8
+    second: slime_swordAir3_7
   - first:
       213: -2472828270099202326
-    second: slime_swordAir3_9
+    second: slime_swordAir3_8
   - first:
       213: 7607230119876464965
-    second: slime_swordAir3_10
+    second: slime_swordAir3_9
   - first:
       213: 522675237561198835
-    second: 5
+    second: slime_swordAir3_10
   - first:
       213: -8370033122909780110
     second: slime_swordAir3_12
@@ -46,187 +46,37 @@ TextureImporter:
     second: slime_swordAir3_13
   - first:
       213: 7409711473572235736
-    second: slime_swordAir3_14
+    second: slime_swordAir3_13
   - first:
       213: 9175524362328623963
-    second: 6
+    second: slime_swordAir3_15
   - first:
       213: -8233276027231168842
-    second: slime_swordAir3_16
+    second: slime_swordAir3_14
   - first:
       213: -7984407611430641048
-    second: slime_swordAir3_17
+    second: slime_swordAir3_15
   - first:
       213: 2453521056905747174
-    second: slime_swordAir3_18
+    second: slime_swordAir3_16
   - first:
       213: -3211162779348708416
-    second: slime_swordAir3_19
+    second: slime_swordAir3_17
   - first:
       213: -8481698369791162758
-    second: slime_swordAir3_20
+    second: slime_swordAir3_18
   - first:
       213: 6713587572971114135
-    second: 8
+    second: slime_swordAir3_19
   - first:
       213: 4767147881912700821
-    second: slime_swordAir3_22
+    second: slime_swordAir3_4
   - first:
       213: 1609328668717826425
-    second: slime_swordAir3_23
+    second: slime_swordAir3_11
   - first:
       213: -1799940589718253813
-    second: 7
-  - first:
-      213: 7011542160804308593
-    second: slime_swordAir3_25
-  - first:
-      213: 7857924154747581024
-    second: slime_swordAir3_26
-  - first:
-      213: -5497794520002514911
-    second: slime_swordAir3_27
-  - first:
-      213: -5251278518563467091
-    second: 10
-  - first:
-      213: -1278756848873490583
-    second: slime_swordAir3_29
-  - first:
-      213: 7946738943656773120
-    second: 9
-  - first:
-      213: 5853808839571818230
-    second: slime_swordAir3_31
-  - first:
-      213: 1172226255032182068
-    second: slime_swordAir3_32
-  - first:
-      213: 7994466822846010425
-    second: slime_swordAir3_33
-  - first:
-      213: -8530157173157898161
-    second: slime_swordAir3_34
-  - first:
-      213: 9093812266296680199
-    second: slime_swordAir3_35
-  - first:
-      213: -1883662764833680037
-    second: slime_swordAir3_36
-  - first:
-      213: -5073110517983008577
-    second: slime_swordAir3_37
-  - first:
-      213: 1841124581592033496
-    second: slime_swordAir3_38
-  - first:
-      213: -8851670372320527788
-    second: slime_swordAir3_39
-  - first:
-      213: -4224326762584239980
-    second: slime_swordAir3_40
-  - first:
-      213: -7143498501875824004
-    second: slime_swordAir3_41
-  - first:
-      213: 8038238934139559404
-    second: slime_swordAir3_42
-  - first:
-      213: -4776115418912511886
-    second: slime_swordAir3_43
-  - first:
-      213: 8386366323583052967
-    second: slime_swordAir3_44
-  - first:
-      213: -4168556913575954153
-    second: slime_swordAir3_45
-  - first:
-      213: -1594889154043402546
-    second: slime_swordAir3_46
-  - first:
-      213: 7683381234889694513
-    second: slime_swordAir3_47
-  - first:
-      213: -5489181608962163207
-    second: slime_swordAir3_48
-  - first:
-      213: -6816004994388037237
-    second: 11
-  - first:
-      213: -2325114869119264977
-    second: slime_swordAir3_50
-  - first:
-      213: 1625493745139260477
-    second: 12
-  - first:
-      213: -2114135897066017522
-    second: slime_swordAir3_52
-  - first:
-      213: -6024131685281386613
-    second: slime_swordAir3_53
-  - first:
-      213: -482256377527969474
-    second: slime_swordAir3_54
-  - first:
-      213: -8832845543701212853
-    second: slime_swordAir3_55
-  - first:
-      213: -7963966605600242720
-    second: slime_swordAir3_56
-  - first:
-      213: -3581190084845758591
-    second: slime_swordAir3_57
-  - first:
-      213: -1068413273795482770
-    second: slime_swordAir3_58
-  - first:
-      213: -6372277587766100504
-    second: slime_swordAir3_59
-  - first:
-      213: 2806181135651214498
-    second: slime_swordAir3_60
-  - first:
-      213: -1462462232514155226
-    second: slime_swordAir3_61
-  - first:
-      213: 6686544003447222220
-    second: slime_swordAir3_62
-  - first:
-      213: -5306555191031287410
-    second: slime_swordAir3_63
-  - first:
-      213: 3072870557248876040
-    second: slime_swordAir3_64
-  - first:
-      213: -7221761821512176791
-    second: slime_swordAir3_65
-  - first:
-      213: -6122626633424659797
-    second: slime_swordAir3_66
-  - first:
-      213: -811405314311772585
-    second: slime_swordAir3_67
-  - first:
-      213: -6940669226236261069
-    second: slime_swordAir3_68
-  - first:
-      213: 4122701592669400274
-    second: slime_swordAir3_69
-  - first:
-      213: 7701407607937578934
-    second: slime_swordAir3_70
-  - first:
-      213: 6992766400567712516
-    second: slime_swordAir3_71
-  - first:
-      213: -1718568903866761458
-    second: slime_swordAir3_72
-  - first:
-      213: -9112698098201961504
-    second: slime_swordAir3_73
-  - first:
-      213: 6759586427334330754
-    second: slime_swordAir3_74
+    second: slime_swordAir3_12
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -359,15 +209,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 1
+      name: slime_swordAir3_0
       rect:
         serializedVersion: 2
-        x: 18
-        y: 2271
-        width: 427
-        height: 211
+        x: 6
+        y: 306
+        width: 415
+        height: 188
       alignment: 9
-      pivot: {x: 0.82, y: 0}
+      pivot: {x: 0.87, y: 0.06}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -380,15 +230,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 2
+      name: slime_swordAir3_2
       rect:
         serializedVersion: 2
-        x: 461
-        y: 1977
-        width: 337
-        height: 505
+        x: 423
+        y: 266
+        width: 395
+        height: 228
       alignment: 9
-      pivot: {x: 0.79, y: 0}
+      pivot: {x: 0.88, y: 0.17}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -401,57 +251,141 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3
+      name: slime_swordAir3_3
       rect:
         serializedVersion: 2
-        x: 816
-        y: 2009
-        width: 619
-        height: 472
+        x: 821
+        y: 109
+        width: 339
+        height: 385
       alignment: 9
-      pivot: {x: 0.41, y: 0}
+      pivot: {x: 0.84, y: 0.02}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d79b58c00c60fb580800000000000000
-      internalID: -8809314924199822979
+      spriteID: e66ebaf45d65a98f0800000000000000
+      internalID: -533018131725293970
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 4
+      name: slime_swordAir3_5
       rect:
         serializedVersion: 2
-        x: 1452
-        y: 2233
-        width: 472
-        height: 252
+        x: 1504
+        y: 232
+        width: 417
+        height: 262
       alignment: 9
-      pivot: {x: 0.11, y: 0}
+      pivot: {x: 0.63, y: 0.45}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ffa7f65de0b2c170800000000000000
-      internalID: 8197308805180534774
+      spriteID: e1fb8647add5302b0800000000000000
+      internalID: -5619544717190971618
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 5
+      name: slime_swordAir3_6
       rect:
         serializedVersion: 2
-        x: 18
-        y: 1451
-        width: 707
-        height: 508
+        x: 1928
+        y: 109
+        width: 334
+        height: 385
       alignment: 9
-      pivot: {x: 0.15, y: 0}
+      pivot: {x: 0.82, y: 0.03}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10028aa3da16e6a00800000000000000
+      internalID: 751645584458784769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slime_swordAir3_7
+      rect:
+        serializedVersion: 2
+        x: 2262
+        y: 158
+        width: 308
+        height: 336
+      alignment: 9
+      pivot: {x: 0.69, y: 0.03}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0952dac484ff14190800000000000000
+      internalID: -7979816378734664304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slime_swordAir3_8
+      rect:
+        serializedVersion: 2
+        x: 2570
+        y: 169
+        width: 315
+        height: 325
+      alignment: 9
+      pivot: {x: 0.72, y: 0.03}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aee713a3acfbeadd0800000000000000
+      internalID: -2472828270099202326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slime_swordAir3_9
+      rect:
+        serializedVersion: 2
+        x: 2886
+        y: 169
+        width: 318
+        height: 325
+      alignment: 9
+      pivot: {x: 0.72, y: 0.03}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54193eb3d7f429960800000000000000
+      internalID: 7607230119876464965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slime_swordAir3_10
+      rect:
+        serializedVersion: 2
+        x: 3205
+        y: 183
+        width: 337
+        height: 311
+      alignment: 9
+      pivot: {x: 0.72, y: 0.03}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -464,36 +398,141 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 6
+      name: slime_swordAir3_13
       rect:
         serializedVersion: 2
-        x: 738
-        y: 1420
-        width: 887
-        height: 231
+        x: 4273
+        y: 399
+        width: 560
+        height: 92
       alignment: 9
-      pivot: {x: 0.12, y: 0}
+      pivot: {x: 0.18, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5b4a842bc2065f70800000000000000
-      internalID: 9175524362328623963
+      spriteID: 8d9c86ea35594d660800000000000000
+      internalID: 7409711473572235736
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 8
+      name: slime_swordAir3_14
       rect:
         serializedVersion: 2
-        x: 947
-        y: 1067
-        width: 938
-        height: 338
+        x: 4837
+        y: 403
+        width: 642
+        height: 91
+      alignment: 9
+      pivot: {x: 0.16, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b6952333178dbd80800000000000000
+      internalID: -8233276027231168842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slime_swordAir3_15
+      rect:
+        serializedVersion: 2
+        x: 5479
+        y: 407
+        width: 527
+        height: 87
+      alignment: 9
+      pivot: {x: 0.19, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86260c2a49fa13190800000000000000
+      internalID: -7984407611430641048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slime_swordAir3_16
+      rect:
+        serializedVersion: 2
+        x: 6006
+        y: 149
+        width: 431
+        height: 345
       alignment: 9
       pivot: {x: 0.11, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6eadec5e668ac0220800000000000000
+      internalID: 2453521056905747174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slime_swordAir3_17
+      rect:
+        serializedVersion: 2
+        x: 6437
+        y: 269
+        width: 448
+        height: 225
+      alignment: 9
+      pivot: {x: 0.14, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c3d6f43778af63d0800000000000000
+      internalID: -3211162779348708416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slime_swordAir3_18
+      rect:
+        serializedVersion: 2
+        x: 6886
+        y: 334
+        width: 419
+        height: 160
+      alignment: 9
+      pivot: {x: 0.17, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7686984544fa4a80800000000000000
+      internalID: -8481698369791162758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slime_swordAir3_19
+      rect:
+        serializedVersion: 2
+        x: 7309
+        y: 329
+        width: 222
+        height: 165
+      alignment: 9
+      pivot: {x: 0.31, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -506,15 +545,57 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 7
+      name: slime_swordAir3_4
       rect:
         serializedVersion: 2
-        x: 18
-        y: 851
-        width: 922
-        height: 554
+        x: 1160
+        y: 53
+        width: 339
+        height: 440
       alignment: 9
-      pivot: {x: 0.12, y: 0}
+      pivot: {x: 0.12, y: 0.27}
+      border: {x: 4, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59f892dbdbf482240800000000000000
+      internalID: 4767147881912700821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slime_swordAir3_11
+      rect:
+        serializedVersion: 2
+        x: 3546
+        y: 120
+        width: 258
+        height: 376
+      alignment: 9
+      pivot: {x: 0.2, y: 0.03}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97147c9c5eb755610800000000000000
+      internalID: 1609328668717826425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slime_swordAir3_12
+      rect:
+        serializedVersion: 2
+        x: 3806
+        y: 117
+        width: 463
+        height: 376
+      alignment: 9
+      pivot: {x: 0.11, y: 0.03}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -522,90 +603,6 @@ TextureImporter:
       bones: []
       spriteID: b0f4905f1935507e0800000000000000
       internalID: -1799940589718253813
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 10
-      rect:
-        serializedVersion: 2
-        x: 928
-        y: 453
-        width: 938
-        height: 381
-      alignment: 9
-      pivot: {x: 0.09, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: da092648206bf17b0800000000000000
-      internalID: -5251278518563467091
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 9
-      rect:
-        serializedVersion: 2
-        x: 17
-        y: 459
-        width: 905
-        height: 377
-      alignment: 9
-      pivot: {x: 0.06, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 006cc6337fc784e60800000000000000
-      internalID: 7946738943656773120
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 11
-      rect:
-        serializedVersion: 2
-        x: 18
-        y: 80
-        width: 931
-        height: 357
-      alignment: 9
-      pivot: {x: 0.07, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b817632029fa861a0800000000000000
-      internalID: -6816004994388037237
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 12
-      rect:
-        serializedVersion: 2
-        x: 967
-        y: 59
-        width: 158
-        height: 377
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d3c15afe2f9ee8610800000000000000
-      internalID: 1625493745139260477
       vertices: []
       indices: 
       edges: []

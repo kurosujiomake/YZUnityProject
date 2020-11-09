@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7eea56d2af7716f41be91a51f1c1ed2a
+guid: cc1e3d29c7c518744b0d7302c9a0b061
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -10,16 +10,16 @@ TextureImporter:
     second: slime_sword_knockup_1
   - first:
       213: 3811883609651522482
-    second: 2
+    second: 4
   - first:
       213: 250378096557603385
-    second: 3
+    second: 2
   - first:
       213: -7997967703707090654
-    second: slime_sword_knockup_4
+    second: 3
   - first:
       213: 2914517660276081296
-    second: 4
+    second: slime_sword_knockup_5
   - first:
       213: 5641393531401825817
     second: slime_sword_knockup_6
@@ -177,8 +177,8 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 151
-        y: 2255
-        width: 299
+        y: 855
+        width: 300
         height: 340
       alignment: 9
       pivot: {x: 0.68, y: 0}
@@ -194,15 +194,36 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 2
+      name: slime_sword_knockup_1
       rect:
         serializedVersion: 2
-        x: 1057
-        y: 2255
-        width: 361
-        height: 302
+        x: 1123
+        y: 1139
+        width: 34
+        height: 18
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7aebc4a9ee42e6e40800000000000000
+      internalID: 5651495189606088359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4
+      rect:
+        serializedVersion: 2
+        x: 3119
+        y: 783
+        width: 754
+        height: 406
       alignment: 9
-      pivot: {x: 0.74, y: 0}
+      pivot: {x: 0.19, y: 0.18}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -215,15 +236,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3
+      name: 2
       rect:
         serializedVersion: 2
-        x: 8
-        y: 1535
-        width: 440
-        height: 165
+        x: 1057
+        y: 855
+        width: 362
+        height: 282
       alignment: 9
-      pivot: {x: 0.78, y: 0.05}
+      pivot: {x: 0.74, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -236,22 +257,22 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 4
+      name: 3
       rect:
         serializedVersion: 2
-        x: 1185
-        y: 1468
-        width: 752
-        height: 406
+        x: 1943
+        y: 848
+        width: 448
+        height: 170
       alignment: 9
-      pivot: {x: 0.19, y: 0.18}
+      pivot: {x: 0.77, y: 0.06}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 092cb58ce52727820800000000000000
-      internalID: 2914517660276081296
+      spriteID: 2210e7f9fb2810190800000000000000
+      internalID: -7997967703707090654
       vertices: []
       indices: 
       edges: []
@@ -260,12 +281,12 @@ TextureImporter:
       name: 5
       rect:
         serializedVersion: 2
-        x: 300
-        y: 826
-        width: 653
-        height: 607
+        x: 299
+        y: 142
+        width: 655
+        height: 608
       alignment: 9
-      pivot: {x: 0.09, y: 0}
+      pivot: {x: 0.095, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -281,12 +302,12 @@ TextureImporter:
       name: 6
       rect:
         serializedVersion: 2
-        x: 1208
-        y: 825
-        width: 426
-        height: 636
+        x: 1211
+        y: 142
+        width: 415
+        height: 640
       alignment: 9
-      pivot: {x: 0.265, y: 0}
+      pivot: {x: 0.25, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -302,10 +323,10 @@ TextureImporter:
       name: 7
       rect:
         serializedVersion: 2
-        x: 277
-        y: 110
-        width: 157
-        height: 405
+        x: 2213
+        y: 141
+        width: 158
+        height: 404
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

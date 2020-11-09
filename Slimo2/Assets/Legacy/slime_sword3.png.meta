@@ -1,40 +1,52 @@
 fileFormatVersion: 2
-guid: 637acd4f4393c9e45a65491a9e78ec47
+guid: efecb0ad8da88ce49ade5a18e173d328
 TextureImporter:
   internalIDToNameTable:
   - first:
       213: -8682428949484693593
-    second: 1
+    second: slime_sword3_0
   - first:
       213: -800306250862195768
-    second: 2
+    second: slime_sword3_1
   - first:
       213: 8216526446120277604
-    second: 3
+    second: slime_sword3_2
   - first:
       213: -1730844917010502987
-    second: 4
+    second: slime_sword3_3
   - first:
       213: 4768651762087477392
-    second: 5
+    second: slime_sword3_4
   - first:
       213: -3250618394606291356
-    second: 6
+    second: slime_sword3_5
   - first:
       213: -9029640571783548386
-    second: 7
+    second: slime_sword3_6
   - first:
       213: 1258395877935560241
     second: slime_sword3_7
   - first:
       213: 2552887838162226788
-    second: 8
+    second: slime_sword3_8
   - first:
       213: 8020691232951100638
-    second: 9
+    second: slime_sword3_9
   - first:
       213: 1690200160353043471
-    second: 10
+    second: slime_sword3_10
+  - first:
+      213: 6736707962054028469
+    second: slime_sword3_11
+  - first:
+      213: -977080294175025058
+    second: slime_sword3_12
+  - first:
+      213: 1448945856376454776
+    second: slime_sword3_13
+  - first:
+      213: 5255155261237523392
+    second: slime_sword3_14
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -167,15 +179,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 1
+      name: slime_sword3_0
       rect:
         serializedVersion: 2
-        x: 19
-        y: 743
-        width: 305
-        height: 337
-      alignment: 9
-      pivot: {x: 0.72, y: 0}
+        x: 2
+        y: 1057
+        width: 188
+        height: 381
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -188,15 +200,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 2
+      name: slime_sword3_1
       rect:
         serializedVersion: 2
-        x: 343
-        y: 900
-        width: 371
-        height: 178
-      alignment: 9
-      pivot: {x: 0.79, y: 0}
+        x: 192
+        y: 1101
+        width: 170
+        height: 337
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -209,15 +221,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3
+      name: slime_sword3_2
       rect:
         serializedVersion: 2
-        x: 733
-        y: 857
-        width: 789
-        height: 224
+        x: 364
+        y: 1281
+        width: 349
+        height: 157
       alignment: 9
-      pivot: {x: 0.11, y: 0}
+      pivot: {x: 0.25, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -230,15 +242,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 4
+      name: slime_sword3_3
       rect:
         serializedVersion: 2
-        x: 1541
-        y: 868
-        width: 451
-        height: 213
+        x: 715
+        y: 1281
+        width: 349
+        height: 157
       alignment: 9
-      pivot: {x: 0.77, y: 0}
+      pivot: {x: 0.28, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -251,15 +263,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 5
+      name: slime_sword3_4
       rect:
         serializedVersion: 2
-        x: 20
-        y: 480
-        width: 380
-        height: 244
+        x: 1066
+        y: 1280
+        width: 349
+        height: 158
       alignment: 9
-      pivot: {x: 0.77, y: 0}
+      pivot: {x: 0.29, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -272,36 +284,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 6
+      name: slime_sword3_6
       rect:
         serializedVersion: 2
-        x: 419
-        y: 542
-        width: 421
-        height: 180
+        x: 1434
+        y: 1295
+        width: 564
+        height: 143
       alignment: 9
-      pivot: {x: 0.81, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4663429eacb73e2d0800000000000000
-      internalID: -3250618394606291356
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 7
-      rect:
-        serializedVersion: 2
-        x: 860
-        y: 475
-        width: 764
-        height: 252
-      alignment: 9
-      pivot: {x: 0.1, y: 0}
+      pivot: {x: 0.09, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -314,15 +305,36 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 8
+      name: slime_sword3_7
       rect:
         serializedVersion: 2
-        x: 19
-        y: 208
-        width: 640
-        height: 248
+        x: 2
+        y: 910
+        width: 554
+        height: 145
       alignment: 9
-      pivot: {x: 0.53, y: 0}
+      pivot: {x: 0.12, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1363a2b3268b67110800000000000000
+      internalID: 1258395877935560241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slime_sword3_8
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 915
+        width: 491
+        height: 140
+      alignment: 9
+      pivot: {x: 0.12, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -335,13 +347,55 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 9
+      name: slime_sword3_11
       rect:
         serializedVersion: 2
-        x: 680
-        y: 100
-        width: 186
-        height: 355
+        x: 1051
+        y: 715
+        width: 491
+        height: 348
+      alignment: 9
+      pivot: {x: 0.1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bca6c9e2389d7d50800000000000000
+      internalID: 6736707962054028469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slime_sword3_12
+      rect:
+        serializedVersion: 2
+        x: 1542
+        y: 654
+        width: 479
+        height: 404
+      alignment: 9
+      pivot: {x: 0.14, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e58d9a436a6b072f0800000000000000
+      internalID: -977080294175025058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slime_sword3_13
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 241
+        width: 166
+        height: 410
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -349,29 +403,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed4e3215e283f4f60800000000000000
-      internalID: 8020691232951100638
+      spriteID: 87eb71c5490bb1410800000000000000
+      internalID: 1448945856376454776
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 10
+      name: slime_sword3_14
       rect:
         serializedVersion: 2
-        x: 886
-        y: 86
-        width: 176
-        height: 369
-      alignment: 9
-      pivot: {x: 0.44, y: 0}
+        x: 171
+        y: 245
+        width: 165
+        height: 406
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f04c62d371cc47710800000000000000
-      internalID: 1690200160353043471
+      spriteID: 0c37699fddf0ee840800000000000000
+      internalID: 5255155261237523392
       vertices: []
       indices: 
       edges: []
