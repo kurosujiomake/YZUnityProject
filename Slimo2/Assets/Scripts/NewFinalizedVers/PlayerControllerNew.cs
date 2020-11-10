@@ -322,4 +322,8 @@ public class PlayerControllerNew : MonoBehaviour
                 break;
         }
     }
+    public void InterruptDash()
+    {
+        StopAllCoroutines();
+    }
 }

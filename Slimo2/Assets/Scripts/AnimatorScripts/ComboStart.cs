@@ -22,21 +22,38 @@ public class ComboStart : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if(pCM.GetButtonDown("Atk1"))
+        switch(pCM.GetDirectionL())
         {
-            switch(param.AT)
-            {
-                case Parameters.AtkType.sword:
-                    animator.SetTrigger("GAtt_a");
-                    pCN.SetPState(2);
-                    break;
-                case Parameters.AtkType.bow:
+            case "n":
+                if (pCM.GetButtonDown("Atk1"))
+                {
+                    switch (param.AT)
+                    {
+                        case Parameters.AtkType.sword:
+                            animator.SetTrigger("GAtt_a");
+                            pCN.SetPState(2);
+                            break;
+                        case Parameters.AtkType.bow:
 
-                    break;
-                //add the other wep types later
-            }
-            
+                            break;
+                            //add the other wep types later
+                    }
+                }
+                break;
+            case "l":
+            case "r":
+                switch(param.AT)
+                {
+                    case Parameters.AtkType.sword:
+
+                        break;
+                    case Parameters.AtkType.bow:
+
+                        break;
+                }
+                break;
         }
+        
         if(pCM.GetButtonDown("Atk2"))
         {
             if(spParam.SpAtks[0].CanUseAtk)
@@ -44,6 +61,7 @@ public class ComboStart : StateMachineBehaviour
                 animator.SetTrigger("SpAtk");
             }
         }
+
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
