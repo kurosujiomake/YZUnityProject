@@ -412,7 +412,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Hit_ID: 1
-  KB_ID: 0
   SetHitID: 0
   curKBNum: 0
 --- !u!70 &29057013
@@ -6916,7 +6915,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Hit_ID: 2
-  KB_ID: 2
   SetHitID: 0
   curKBNum: 0
 --- !u!70 &1453289867
@@ -9527,7 +9525,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Hit_ID: 3
-  KB_ID: 2
   SetHitID: 0
   curKBNum: 0
 --- !u!70 &2118748322

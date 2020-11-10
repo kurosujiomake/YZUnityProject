@@ -335,43 +335,6 @@ AnimationClip:
       - serializedVersion: 3
         time: 0
         value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 69
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 0.15
-        value: 0
-        inSlope: -0
-        outSlope: 6.6666665
-        tangentMode: 69
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 0.3
-        value: 1
-        inSlope: 6.6666665
-        outSlope: 0
-        tangentMode: 69
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: curKBNum
-    path: Hitboxes/Hitbox1
-    classID: 114
-    script: {fileID: 11500000, guid: a88bfae07d120b24d8263c332849c0a7, type: 3}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -418,6 +381,43 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: SetHitID
+    path: Hitboxes/Hitbox1
+    classID: 114
+    script: {fileID: 11500000, guid: a88bfae07d120b24d8263c332849c0a7, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 69
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.55
+        value: 1
+        inSlope: -0
+        outSlope: -60.000057
+        tangentMode: 69
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.56666666
+        value: 0
+        inSlope: -60.000057
+        outSlope: 0
+        tangentMode: 69
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: curKBNum
     path: Hitboxes/Hitbox1
     classID: 114
     script: {fileID: 11500000, guid: a88bfae07d120b24d8263c332849c0a7, type: 3}
@@ -508,14 +508,14 @@ AnimationClip:
       isPPtrCurve: 0
     - serializedVersion: 2
       path: 3904258276
-      attribute: 3331187205
+      attribute: 3672710545
       script: {fileID: 11500000, guid: a88bfae07d120b24d8263c332849c0a7, type: 3}
       typeID: 114
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
       path: 3904258276
-      attribute: 3672710545
+      attribute: 3331187205
       script: {fileID: 11500000, guid: a88bfae07d120b24d8263c332849c0a7, type: 3}
       typeID: 114
       customType: 0
@@ -877,43 +877,6 @@ AnimationClip:
       - serializedVersion: 3
         time: 0
         value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 69
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 0.15
-        value: 0
-        inSlope: -0
-        outSlope: 6.6666665
-        tangentMode: 69
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 0.3
-        value: 1
-        inSlope: 6.6666665
-        outSlope: 0
-        tangentMode: 69
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: curKBNum
-    path: Hitboxes/Hitbox1
-    classID: 114
-    script: {fileID: 11500000, guid: a88bfae07d120b24d8263c332849c0a7, type: 3}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -960,6 +923,43 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: SetHitID
+    path: Hitboxes/Hitbox1
+    classID: 114
+    script: {fileID: 11500000, guid: a88bfae07d120b24d8263c332849c0a7, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 69
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.55
+        value: 1
+        inSlope: -0
+        outSlope: -60.000057
+        tangentMode: 69
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.56666666
+        value: 0
+        inSlope: -60.000057
+        outSlope: 0
+        tangentMode: 69
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: curKBNum
     path: Hitboxes/Hitbox1
     classID: 114
     script: {fileID: 11500000, guid: a88bfae07d120b24d8263c332849c0a7, type: 3}

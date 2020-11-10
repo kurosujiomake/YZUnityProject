@@ -117,7 +117,7 @@ public class DamageTakeCycles : MonoBehaviour
             if(h.Hit_ID != curHitID) //this object has not been hit already
             {
                 //Debug.Log("DetectedHitbox");
-                KBID = h.KB_ID;
+                KBID = h.curKBNum;
                 curHitID = h.Hit_ID;
                 StartKBCycle();
                 Debug.Log("Got hit with kb id of " + KBID);

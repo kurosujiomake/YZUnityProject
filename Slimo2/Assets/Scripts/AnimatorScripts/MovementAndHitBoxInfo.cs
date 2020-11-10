@@ -23,7 +23,7 @@ public class MovementAndHitBoxInfo: StateMachineBehaviour
         nAM.ActivateAtk();
         if(!hasSetID && kbInfo.SetHitID)
         {
-            kbInfo.KB_ID = kbIDs[kbInfo.curKBNum];
+            //kbInfo.KB_ID = kbIDs[kbInfo.curKBNum];
             kbInfo.Hit_ID = IDRandomizer();
         }
     }
@@ -49,7 +49,7 @@ public class MovementAndHitBoxInfo: StateMachineBehaviour
     {
         if(kbInfo.SetHitID && !hasSetID)
         {
-            kbInfo.KB_ID = kbIDs[kbInfo.curKBNum];
+            //kbInfo.KB_ID = kbIDs[kbInfo.curKBNum];
             kbInfo.Hit_ID = IDRandomizer();
             //Debug.Log("Setting New ID in update");
         }
