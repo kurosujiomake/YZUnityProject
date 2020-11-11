@@ -2,45 +2,44 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Dashing : StateMachineBehaviour
+public class DashAtkFollowUp : StateMachineBehaviour
 {
-    private Parameters m_param = null;
-    private GroundChecker g = null;
+    private Parameters param = null;
     private PlayerControlManager pCM = null;
-    
+    private float timer = 0;
+    private float heldTimeToTrigger = 0.07f;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         pCM = GameObject.FindGameObjectWithTag("pControlManager").GetComponent<PlayerControlManager>();
-        m_param = animator.GetComponent<Parameters>();
-        g = animator.GetComponent<GroundChecker>();
+        param = animator.GetComponent<Parameters>();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.SetBool("IsTPing", m_param.m_isTPing);
-        animator.SetBool("IsDashing", m_param.m_isDashing);
-        animator.SetBool("IsADashing", m_param.m_isADashing);
-        //animator.SetBool("OnGround", g.ReturnGroundCheck());
-        if(m_param.m_isTPing)
+        switch(param.AT)
         {
-            animator.SetTrigger("Blink");
+            case Parameters.AtkType.sword:
+                if(pCM.GetButtonHeld("Atk1"))
+                {
+                    timer += Time.deltaTime;
+                }
+                break;
+                //add other types later
         }
-        
-        if(pCM.GetButtonDown("Atk1")) //ground dash atk is able to be performed out of a gdash
+        if(timer >= heldTimeToTrigger)
         {
-            animator.SetTrigger("GDashAtk");
+            animator.SetBool("GDashAtkF", true);
         }
-                
-        
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
+    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        
+        timer = 0;
+    }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
     //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

@@ -20,10 +20,7 @@ public class ComboPass : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if(isRegularAtk && pCM.GetButtonDown("Atk1"))
-        {
-            animator.SetTrigger("GAtt_a");
-        }
+        
         //animator.SetBool("OnGround", animator.GetComponent<GroundChecker>().ReturnGroundCheck());
         if (!numInc && !isFinalAtk)
         {
@@ -34,6 +31,26 @@ public class ComboPass : StateMachineBehaviour
         {
             animator.SetTrigger("SpAtk");
         }
+        switch(pCM.GetDirectionL())
+        {
+            case "u":
+            case "d":
+                break;
+            case "n":
+                if (isRegularAtk && pCM.GetButtonDown("Atk1"))
+                {
+                    animator.SetTrigger("GAtt_a");
+                }
+                break;
+            case "l":
+            case "r":
+                if(pCM.GetButtonDown("Atk1"))
+                {
+                    animator.SetTrigger("GDashAtk");
+                }
+                break;
+        }
+
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state

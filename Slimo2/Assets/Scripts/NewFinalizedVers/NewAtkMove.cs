@@ -90,7 +90,7 @@ public class NewAtkMove : MonoBehaviour
                 d = (180 - _dir) * Mathf.Deg2Rad;
                 break;
         }
-        Vector2 v = new Vector2(Mathf.Cos(d) * _vel * Time.deltaTime, Mathf.Sin(d) * _vel * Time.deltaTime);
+        Vector2 v = new Vector2(Mathf.Cos(d) * _vel, Mathf.Sin(d) * _vel);
         r2D.velocity = v;
     }
     public void ActivateAtk()

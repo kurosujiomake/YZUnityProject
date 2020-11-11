@@ -50,6 +50,22 @@ public class PostAttIdle : StateMachineBehaviour
         {
             animator.SetTrigger("Jump");
         }
+        switch (pCM.GetDirectionL())
+        {
+            case "u":
+            case "d":
+                break;
+            case "n":
+                
+                break;
+            case "l":
+            case "r":
+                if (pCM.GetButtonDown("Atk1"))
+                {
+                    animator.SetTrigger("GDashAtk");
+                }
+                break;
+        }
         switch (isFinalPATT)
         {
             case true:
@@ -96,6 +112,7 @@ public class PostAttIdle : StateMachineBehaviour
                 
                 break;
         }
+        animator.SetBool("IsDashing", param.m_isDashing);
         
     }
 
@@ -104,6 +121,7 @@ public class PostAttIdle : StateMachineBehaviour
     {
         animator.ResetTrigger("BackToIdle");
         animator.ResetTrigger("SpAtk");
+        animator.ResetTrigger("GDashAtk");
         attPressed = false;
     }
 

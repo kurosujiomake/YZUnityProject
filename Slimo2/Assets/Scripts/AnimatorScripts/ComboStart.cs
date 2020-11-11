@@ -42,14 +42,17 @@ public class ComboStart : StateMachineBehaviour
                 break;
             case "l":
             case "r":
-                switch(param.AT)
+                if(pCM.GetButtonDown("Atk1"))
                 {
-                    case Parameters.AtkType.sword:
+                    switch (param.AT)
+                    {
+                        case Parameters.AtkType.sword:
+                            animator.SetTrigger("GDashAtk");
+                            break;
+                        case Parameters.AtkType.bow:
 
-                        break;
-                    case Parameters.AtkType.bow:
-
-                        break;
+                            break;
+                    }
                 }
                 break;
         }
