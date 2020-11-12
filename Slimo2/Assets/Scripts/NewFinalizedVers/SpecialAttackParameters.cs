@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.AssetImporters;
+//using UnityEditor.Experimental.AssetImporters;
 using UnityEngine;
 
 public class SpecialAttackParameters : MonoBehaviour
