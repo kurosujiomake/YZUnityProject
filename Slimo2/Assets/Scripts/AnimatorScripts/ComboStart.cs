@@ -24,6 +24,7 @@ public class ComboStart : StateMachineBehaviour
     {
         switch(pCM.GetDirectionL())
         {
+            case "d":
             case "n":
                 if (pCM.GetButtonDown("Atk1"))
                 {
@@ -52,6 +53,18 @@ public class ComboStart : StateMachineBehaviour
                         case Parameters.AtkType.bow:
 
                             break;
+                    }
+                }
+                break;
+            case "u":
+                if(pCM.GetButtonDown("Atk1"))
+                {
+                    switch(param.AT)
+                    {
+                        case Parameters.AtkType.sword:
+                            animator.SetTrigger("SwKnockUp");
+                            break;
+                            //add other weapon types stuff later
                     }
                 }
                 break;

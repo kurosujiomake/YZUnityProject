@@ -5,7 +5,7 @@ using UnityEngine;
 public class MovementAndHitBoxInfo: StateMachineBehaviour
 {
     public string AttackName = null;
-    public int[] kbIDs;
+    //public int[] kbIDs;
     public NewAtkMove nAM = null;
     public int[] HitIDs = new int[2];
     public bool hasSetID = false;

@@ -21,9 +21,13 @@ public class DashAtkFollowUp : StateMachineBehaviour
         switch(param.AT)
         {
             case Parameters.AtkType.sword:
-                if(pCM.GetButtonHeld("Atk1"))
+                if(pCM.GetButtonHeld("Atk1") && pCM.GetDirectionL() != "u")
                 {
                     timer += Time.deltaTime;
+                }
+                if (pCM.GetDirectionL() == "u")
+                {
+                    animator.SetTrigger("SwKnockUp");
                 }
                 break;
                 //add other types later
@@ -32,6 +36,7 @@ public class DashAtkFollowUp : StateMachineBehaviour
         {
             animator.SetBool("GDashAtkF", true);
         }
+        
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state

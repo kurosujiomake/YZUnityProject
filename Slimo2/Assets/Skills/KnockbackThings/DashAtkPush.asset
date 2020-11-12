@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f5f30a7d5a6f4844396eed55c55f32e6, type: 3}
-  m_Name: LargeKnockback
+  m_Name: DashAtkPush
   m_EditorClassIdentifier: 
-  ID: 4
-  Desciption: attack that sends enemies away fromt he player
+  ID: 5
+  Desciption: attack that pushes enemies forward with the player
   Dir: 3
-  Velocity: 17
-  KBDuration: 0.4
+  Velocity: 35
+  KBDuration: 0.27
   type: 0
   FloatsTarget: 0
   FloatDuration: 0

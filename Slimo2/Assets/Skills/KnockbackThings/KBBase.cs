@@ -18,4 +18,5 @@ public class KBBase : ScriptableObject
     public KBType type;
     public bool FloatsTarget;
     public float FloatDuration;
+    public bool UseForce;
 }

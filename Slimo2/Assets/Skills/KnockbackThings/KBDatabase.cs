@@ -40,6 +40,10 @@ public class KBDatabase : ScriptableObject, ISerializationCallbackReceiver
     {
         return knockBacks[_ID].FloatDuration;
     }
+    public bool IsForce(int _ID)
+    {
+        return knockBacks[_ID].UseForce;
+    }
     public void OnBeforeSerialize()
     {
 

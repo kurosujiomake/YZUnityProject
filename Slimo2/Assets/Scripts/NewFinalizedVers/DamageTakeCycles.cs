@@ -28,11 +28,13 @@ public class DamageTakeCycles : MonoBehaviour
         if(!kbDatabase.Aerial(KBID)) //the kb is not a knockup float type
         {
             StopAllCoroutines(); //stops previous knockbacks in case player animation cancels
+            rig2D.gravityScale = 1; //resets gravity scale
             StartCoroutine(GroundedKB(KBID));
         }
         if(kbDatabase.Aerial(KBID))
         {
             StopAllCoroutines();
+            rig2D.gravityScale = 1; //resets gravity scale
             StartCoroutine(AerialKB(KBID));
         }
     }
@@ -79,7 +81,17 @@ public class DamageTakeCycles : MonoBehaviour
         Vector2 v = new Vector2(Mathf.Cos(dir) * _force, Mathf.Sin(dir) * _force);
         rig2D.velocity = v;
     }
-
+    private IEnumerator ForceBasedGroundKB(int _KBID)
+    {
+        float startTime = Time.time;
+        float now = startTime;
+        while (startTime + kbDatabase.KBDur(_KBID) <= now)
+        {
+            DirectionalKnockBackF(kbDatabase.Dir(_KBID), kbDatabase.Vel(_KBID));
+            yield return new WaitForEndOfFrame();
+            now = Time.time;
+        }
+    }
     private void DirectionalKnockBackF(float _dir, float _force) //this one uses addforce instead of setting vel
     {
         float d = 0;

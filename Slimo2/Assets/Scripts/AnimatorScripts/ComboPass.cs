@@ -34,6 +34,11 @@ public class ComboPass : StateMachineBehaviour
         switch(pCM.GetDirectionL())
         {
             case "u":
+                if(isRegularAtk && pCM.GetButtonDown("Atk1"))
+                {
+                    animator.SetTrigger("SwKnockUp");
+                }
+                break;
             case "d":
                 break;
             case "n":
