@@ -398,7 +398,7 @@ GameObject:
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &29057012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -413,7 +413,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Hit_ID: 1
   SetHitID: 1
-  curKBNum: 5
+  curKBNum: 6
 --- !u!70 &29057013
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -6899,7 +6899,7 @@ GameObject:
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1453289866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12474,15 +12474,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1992590772, guid: 16a462e48b7ea5340b1aa2c5627f2e76, type: 3}
       propertyPath: atkMoves.Array.data[5].moveParam.Array.data[0].velocity
-      value: 3
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1992590772, guid: 16a462e48b7ea5340b1aa2c5627f2e76, type: 3}
       propertyPath: atkMoves.Array.data[5].moveParam.Array.data[2].velocity
-      value: 3
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 1992590772, guid: 16a462e48b7ea5340b1aa2c5627f2e76, type: 3}
       propertyPath: atkMoves.Array.data[5].moveParam.Array.data[1].velocity
-      value: 3
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1992590772, guid: 16a462e48b7ea5340b1aa2c5627f2e76, type: 3}
       propertyPath: atkMoves.Array.data[6].moveParam.Array.data[0].direction

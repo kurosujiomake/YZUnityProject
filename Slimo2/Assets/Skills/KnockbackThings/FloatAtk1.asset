@@ -17,7 +17,8 @@ MonoBehaviour:
     air
   Dir: 90
   Velocity: 5
-  KBDuration: 0.7
+  KBDuration: 0.4
   type: 0
   FloatsTarget: 1
   FloatDuration: 2
+  UseForce: 0

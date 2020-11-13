@@ -78,6 +78,8 @@ public class DamageTakeCycles : MonoBehaviour
             Debug.Log("Flipped KB angle");
         }
         dir *= Mathf.Deg2Rad;
+        print(dir * 57.3f);
+        print("Input degrees is "+_dir);
         Vector2 v = new Vector2(Mathf.Cos(dir) * _force, Mathf.Sin(dir) * _force);
         rig2D.velocity = v;
     }
@@ -99,9 +101,11 @@ public class DamageTakeCycles : MonoBehaviour
         {
             case true:
                 d = _dir * Mathf.Deg2Rad;
+                print(d * 57.3f);
                 break;
             case false:
                 d = (180 - _dir) * Mathf.Deg2Rad;
+                print(d * 57.3f);
                 break;
         }
         Vector2 v = new Vector2(Mathf.Cos(d), Mathf.Sin(d));
