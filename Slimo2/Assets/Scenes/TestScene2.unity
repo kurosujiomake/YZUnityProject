@@ -12518,6 +12518,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1870448518112566270, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 3581208946597028758, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
         type: 3}
       propertyPath: m_Offset.x
@@ -12606,7 +12611,7 @@ PrefabInstance:
     - target: {fileID: 8221750487963548665, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
         type: 3}
       propertyPath: m_btTime
-      value: 0.02
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 8221750487963548666, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
         type: 3}
