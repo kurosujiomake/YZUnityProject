@@ -2,38 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Dashing : StateMachineBehaviour
+public class ResetCombo : StateMachineBehaviour
 {
-    private Parameters m_param = null;
-    private GroundChecker g = null;
-    private PlayerControlManager pCM = null;
-    
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        pCM = GameObject.FindGameObjectWithTag("pControlManager").GetComponent<PlayerControlManager>();
-        m_param = animator.GetComponent<Parameters>();
-        g = animator.GetComponent<GroundChecker>();
+        animator.SetInteger("AComboNum", 1);
+        animator.SetInteger("ComboNum", 1);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.SetBool("IsTPing", m_param.m_isTPing);
-        animator.SetBool("IsDashing", m_param.m_isDashing);
-        animator.SetBool("IsADashing", m_param.m_isADashing);
-        //animator.SetBool("OnGround", g.ReturnGroundCheck());
-        if(m_param.m_isTPing)
-        {
-            animator.SetTrigger("Blink");
-        }
-        
-        if(pCM.GetButtonDown("Atk1")) //ground dash atk is able to be performed out of a gdash
-        {
-            animator.SetTrigger("GDashAtk");
-        }
-        animator.SetBool("OnGround", animator.GetComponent<GroundChecker>().ReturnGroundCheck());        
-        
+        animator.SetInteger("AComboNum", 1);
+        animator.SetInteger("ComboNum", 1);
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state

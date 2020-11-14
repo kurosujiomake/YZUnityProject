@@ -7,6 +7,7 @@ public class DashAtkFollowUp : StateMachineBehaviour
     private Parameters param = null;
     private PlayerControlManager pCM = null;
     private float timer = 0;
+    [SerializeField]
     private float heldTimeToTrigger = 0.07f;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -18,6 +19,7 @@ public class DashAtkFollowUp : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        animator.SetBool("OnGround", animator.GetComponent<GroundChecker>().ReturnGroundCheck());
         switch(param.AT)
         {
             case Parameters.AtkType.sword:

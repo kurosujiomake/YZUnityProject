@@ -33,6 +33,7 @@ public class AerialAnimations : StateMachineBehaviour
         {
             animator.SetTrigger("Blink");
         }
+        
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state

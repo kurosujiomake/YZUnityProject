@@ -14,6 +14,7 @@ public class resetBool : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         animator.SetBool("GDashAtkF", false);
+        animator.SetBool("OnGround", animator.GetComponent<GroundChecker>().ReturnGroundCheck());
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
