@@ -50,12 +50,24 @@ public class NewAtkMove : MonoBehaviour
                 if (atkTransfer.moveActive)
                 {
                     pCN.SetPState(2);
-                    ForcedMovement(curAtk.moveParam[atkTransfer.moveNum].direction, curAtk.moveParam[atkTransfer.moveNum].velocity);
+                    if (atkTransfer.canfollowUpMove && curAtk.moveParam[atkTransfer.moveNum].canFollow) //checks to see if this atk has a conditional followup
+                    {
+                        if(atkTransfer.followUpMoveStartEnd)
+                        {
+                            ForcedMovement(curAtk.moveParam[curAtk.moveParam[atkTransfer.moveNum].followMoveNum].direction, curAtk.moveParam[curAtk.moveParam[atkTransfer.moveNum].followMoveNum].velocity);
+                        }
+                    }
+                    if(!atkTransfer.canfollowUpMove || !curAtk.moveParam[atkTransfer.moveNum].canFollow)
+                    {
+                        ForcedMovement(curAtk.moveParam[atkTransfer.moveNum].direction, curAtk.moveParam[atkTransfer.moveNum].velocity);
+                    }
+                    
                 }
                 if (!atkTransfer.moveActive)
                 {
                     pCN.SetPState(0);
                 }
+                
                 break;
             case false:
                 pCN.SetPState(1);
@@ -115,4 +127,6 @@ public class MoveGroup
     public float direction;
     public float velocity;
     public bool hasPause;
+    public bool canFollow;
+    public int followMoveNum;
 }

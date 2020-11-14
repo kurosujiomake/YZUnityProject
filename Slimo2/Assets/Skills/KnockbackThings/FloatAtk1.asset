@@ -16,7 +16,7 @@ MonoBehaviour:
   Desciption: a kb set to be used by basic aerial attacks that keep enemies in the
     air
   Dir: 90
-  Velocity: 5
+  Velocity: 3.7
   KBDuration: 0.4
   type: 0
   FloatsTarget: 1

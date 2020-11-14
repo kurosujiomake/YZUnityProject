@@ -8,4 +8,6 @@ public class AtkMoveTransferScript : MonoBehaviour
     public int moveNum = 0;
     public bool canPause = false;
     public int hitBoxNum = 0;
+    public bool canfollowUpMove = false;
+    public bool followUpMoveStartEnd = false;
 }
