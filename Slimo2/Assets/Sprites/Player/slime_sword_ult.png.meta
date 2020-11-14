@@ -4,40 +4,40 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 2171664208104673084
-    second: slime_sword_ult_0
+    second: 1
   - first:
       213: -7076700003244939635
-    second: slime_sword_ult_1
+    second: 2
   - first:
       213: -1722006658016674287
-    second: slime_sword_ult_2
+    second: 3
   - first:
       213: 7861754705046027268
-    second: slime_sword_ult_3
+    second: 4
   - first:
       213: -7780164555116576374
-    second: slime_sword_ult_4
+    second: 5
   - first:
       213: -3324529527415021612
-    second: slime_sword_ult_5
+    second: 6
   - first:
       213: 207529255480499923
-    second: slime_sword_ult_6
+    second: 7
   - first:
       213: 2020398602380744460
-    second: slime_sword_ult_7
+    second: 8
   - first:
       213: -7461860148542321465
-    second: slime_sword_ult_8
+    second: 9
   - first:
       213: -2278267865870888348
-    second: slime_sword_ult_9
+    second: 10
   - first:
       213: 3370068982838221136
-    second: slime_sword_ult_10
+    second: 11
   - first:
       213: 6171917054279995155
-    second: slime_sword_ult_11
+    second: 12
   - first:
       213: -3581521784117451084
     second: slime_sword_ult_12
@@ -2015,7 +2015,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: slime_sword_ult_0
+      name: 1
       rect:
         serializedVersion: 2
         x: 25
@@ -2036,7 +2036,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime_sword_ult_1
+      name: 2
       rect:
         serializedVersion: 2
         x: 1212
@@ -2057,7 +2057,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime_sword_ult_2
+      name: 3
       rect:
         serializedVersion: 2
         x: 2134
@@ -2078,7 +2078,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime_sword_ult_3
+      name: 4
       rect:
         serializedVersion: 2
         x: 2
@@ -2099,7 +2099,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime_sword_ult_4
+      name: 5
       rect:
         serializedVersion: 2
         x: 1137
@@ -2120,7 +2120,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime_sword_ult_5
+      name: 6
       rect:
         serializedVersion: 2
         x: 2111
@@ -2128,7 +2128,7 @@ TextureImporter:
         width: 966
         height: 408
       alignment: 9
-      pivot: {x: 0.73, y: 0}
+      pivot: {x: 0.15848862, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2141,7 +2141,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime_sword_ult_6
+      name: 7
       rect:
         serializedVersion: 2
         x: 6
@@ -2162,7 +2162,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime_sword_ult_7
+      name: 8
       rect:
         serializedVersion: 2
         x: 1067
@@ -2170,7 +2170,7 @@ TextureImporter:
         width: 900
         height: 440
       alignment: 9
-      pivot: {x: 0.3, y: 0}
+      pivot: {x: 0.12122222, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2183,7 +2183,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime_sword_ult_8
+      name: 9
       rect:
         serializedVersion: 2
         x: 1972
@@ -2191,7 +2191,7 @@ TextureImporter:
         width: 889
         height: 386
       alignment: 9
-      pivot: {x: 0.11, y: 0}
+      pivot: {x: 0.113160856, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2204,7 +2204,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime_sword_ult_9
+      name: 10
       rect:
         serializedVersion: 2
         x: 2877
@@ -2225,7 +2225,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime_sword_ult_10
+      name: 11
       rect:
         serializedVersion: 2
         x: 8
@@ -2246,7 +2246,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime_sword_ult_11
+      name: 12
       rect:
         serializedVersion: 2
         x: 1113
