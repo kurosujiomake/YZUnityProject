@@ -36,7 +36,7 @@ public class PlayerControllerNew : MonoBehaviour
         playerSprite = GetComponentInChildren<SpriteRenderer>();
         sp = GetComponentInChildren<SpriteAfterImage>();
     }
-    void FixedUpdate()
+    void Update()
     {
         isGrounded = g.ReturnGroundCheck();
         GetComponent<Animator>().SetBool("OnGround", isGrounded);
@@ -92,10 +92,25 @@ public class PlayerControllerNew : MonoBehaviour
             r2D.velocity = a;
         if (pCM.GetButtonDown("Dash"))
         {
-            if(pCM.GetDirectionL() == "n")
+            print("dash pressed");
+            if (pCM.GetDirectionL() == "n")
                 BlinkTeleport();
             else
-                AirDash();
+            {
+                cADash++;
+                //print(cADash);
+                if(cADash <= m_param.m_DashMax)
+                {
+                    m_param.m_canADash = true;
+                    AirDash();
+                }
+                if(cADash > m_param.m_DashMax)
+                {
+                    m_param.m_canADash = false;
+                }
+                
+            }
+                
         }
     }
     void Jump()
@@ -147,17 +162,11 @@ public class PlayerControllerNew : MonoBehaviour
     }
     void AirDash()
     {
-        if(cADash == m_param.m_DashMax + 1)
-        {
-            m_param.m_canADash = false;
-        }
-        if(m_param.m_canADash)
-        {
-            m_param.m_isADashing = true;
-            sp.StartTrail(facingRight);
-            StartCoroutine(DashCycle(pCM.GetDirectionL(), m_param.m_ADSpd, m_param.m_ADTime, 1));
-            pControl = controlType.noPlayer;
-        }
+        m_param.m_isADashing = true;
+        sp.StartTrail(facingRight);
+        StartCoroutine(DashCycle(pCM.GetDirectionL(), m_param.m_ADSpd, m_param.m_ADTime, 1));
+        pControl = controlType.noPlayer;
+        r2D.gravityScale = 0;
     }
     void BlinkTeleport()
     {
@@ -232,12 +241,14 @@ public class PlayerControllerNew : MonoBehaviour
     }
     IEnumerator DashCycle(string dir, float force, float dur, int type)//handles all ground and air dash needs
     {
+        r2D.velocity = Vector2.zero;
         ForceMove(dir, force);
         yield return new WaitForSeconds(dur);
         SetLocks(0);
         m_param.m_isDashing = false;
         m_param.m_isADashing = false;
         sp.StopTrail();
+        r2D.gravityScale = 5;
         pControl = controlType.player;
         switch(type)
         {
@@ -245,11 +256,7 @@ public class PlayerControllerNew : MonoBehaviour
                 StartCoroutine(GDCD());
                 break;
             case 1:
-                cADash++;
-                if(cADash == m_param.m_DashMax + 1)
-                {
-                    m_param.m_canADash = false;
-                }
+                print("used 1 airdash");
                 break;
         }
     }
@@ -265,26 +272,50 @@ public class PlayerControllerNew : MonoBehaviour
         {
             case "r":
             case "right":
-                v.x = spd * Time.deltaTime * 100;
+                v.x = spd;
                 SetLocks(1);
                 r2D.velocity = v;
                 break;
             case "l":
             case "left":
-                v.x = -spd * Time.deltaTime * 100;
+                v.x = -spd;
                 SetLocks(1);
                 r2D.velocity = v;
                 break;
             case "u":
             case "up":
-                v.y = spd * Time.deltaTime * 65;
+                v.y = spd *0.4f;
                 SetLocks(2);
                 r2D.velocity = v;
                 break;
             case "d":
             case "down":
-                v.y = -spd * Time.deltaTime * 100;
+                v.y = -spd;
                 SetLocks(2);
+                r2D.velocity = v;
+                break;
+            case "ul":
+            case "upleft":
+                v.x = -spd * 0.45f;
+                v.y = spd * 0.45f;
+                r2D.velocity = v;
+                break;
+            case "ur":
+            case "upright":
+                v.x = spd * 0.45f;
+                v.y = spd * 0.45f;
+                r2D.velocity = v;
+                break;
+            case "dl":
+            case "downleft":
+                v.x = -spd;
+                v.y = -spd;
+                r2D.velocity = v;
+                break;
+            case "dr":
+            case "downright":
+                v.x = spd;
+                v.y = -spd;
                 r2D.velocity = v;
                 break;
         }

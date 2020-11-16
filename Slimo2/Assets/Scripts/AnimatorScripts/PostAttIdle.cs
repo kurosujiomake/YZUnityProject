@@ -53,6 +53,12 @@ public class PostAttIdle : StateMachineBehaviour
         switch (pCM.GetDirectionL())
         {
             case "u":
+                if(pCM.GetButtonDown("Atk1"))
+                {
+                    animator.ResetTrigger("GAtt_a");
+                    animator.SetTrigger("SwKnockUp");
+                }
+                break;
             case "d":
                 break;
             case "n":

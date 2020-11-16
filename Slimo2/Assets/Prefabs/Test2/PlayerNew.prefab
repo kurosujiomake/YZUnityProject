@@ -428,6 +428,8 @@ MonoBehaviour:
   moveNum: 0
   canPause: 0
   hitBoxNum: 0
+  canfollowUpMove: 0
+  followUpMoveStartEnd: 0
 --- !u!114 &2005546683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -621,7 +623,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1805649365
 Transform:
   m_ObjectHideFlags: 0
@@ -1306,9 +1308,9 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.5
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 5
   m_Material: {fileID: 6200000, guid: bc4690a618d99ba44ae1810eac8c3f97, type: 2}
   m_Interpolate: 0
@@ -1385,13 +1387,13 @@ MonoBehaviour:
   m_canJump: 0
   VerticalSpeed: 16
   m_GDCD: 2
-  m_GDSpd: 15
-  m_GDTime: 0.15
+  m_GDSpd: 45
+  m_GDTime: 2.49
   m_canGDash: 1
   m_isDashing: 0
-  m_DashMax: 3
-  m_ADSpd: 16
-  m_ADTime: 0.16
+  m_DashMax: 4
+  m_ADSpd: 30
+  m_ADTime: 3
   m_canADash: 1
   m_isADashing: 0
   m_canBTP: 1
@@ -1575,68 +1577,98 @@ MonoBehaviour:
       direction: 0
       velocity: 5
       hasPause: 0
+      canFollow: 0
+      followMoveNum: 0
   - Name: Sw_atk2
     moveParam:
     - moveNum: 0
       direction: 0
       velocity: 7
       hasPause: 0
+      canFollow: 0
+      followMoveNum: 0
   - Name: Sw_atk3
     moveParam:
     - moveNum: 0
       direction: 0
       velocity: 0
       hasPause: 0
+      canFollow: 0
+      followMoveNum: 0
   - Name: Sw_atk4
     moveParam:
     - moveNum: 0
       direction: 0
       velocity: 4
       hasPause: 0
+      canFollow: 0
+      followMoveNum: 0
   - Name: SwAir_1
     moveParam:
     - moveNum: 0
       direction: 85
       velocity: 7
       hasPause: 0
+      canFollow: 0
+      followMoveNum: 0
   - Name: SwAir_2
     moveParam:
     - moveNum: 0
       direction: 90
       velocity: 7
       hasPause: 0
+      canFollow: 0
+      followMoveNum: 0
     - moveNum: 1
       direction: 90
       velocity: 7
       hasPause: 0
+      canFollow: 0
+      followMoveNum: 0
     - moveNum: 2
       direction: 90
       velocity: 21
       hasPause: 0
+      canFollow: 0
+      followMoveNum: 0
   - Name: SwAir_3
     moveParam:
     - moveNum: 0
       direction: 272
       velocity: 35
       hasPause: 1
+      canFollow: 0
+      followMoveNum: 0
   - Name: SwDashAtk
     moveParam:
     - moveNum: 0
       direction: 0
       velocity: 35
       hasPause: 0
+      canFollow: 0
+      followMoveNum: 0
   - Name: SwDashFinish
     moveParam:
     - moveNum: 0
       direction: 0
       velocity: 2
       hasPause: 0
+      canFollow: 0
+      followMoveNum: 0
   - Name: SwKnockUp
     moveParam:
     - moveNum: 0
       direction: 0
       velocity: 2
-      hasPause: 1
+      hasPause: 0
+      canFollow: 1
+      followMoveNum: 1
+    - moveNum: 1
+      direction: 90
+      velocity: 37
+      hasPause: 0
+      canFollow: 0
+      followMoveNum: 0
   curAtk:
     Name: 
     moveParam: []

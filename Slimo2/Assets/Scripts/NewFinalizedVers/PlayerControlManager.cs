@@ -26,7 +26,11 @@ public class PlayerControlManager : MonoBehaviour
         up,
         down,
         left,
-        right
+        right,
+        upleft,
+        upright,
+        downleft,
+        downright
     }
     [Header("Analog sticks")]
     public Direction curLStickDir;
@@ -105,6 +109,7 @@ public class PlayerControlManager : MonoBehaviour
                         d = Direction.right;
                     }
                 }
+                
                 if (Mathf.Abs(horiL) < Mathf.Abs(vertL)) // more vertical than horizontal
                 {
                     if(vertL < -stickDeadzoneL[1])
@@ -116,6 +121,36 @@ public class PlayerControlManager : MonoBehaviour
                         d = Direction.up;
                     }
                 }
+                if (Mathf.Abs(horiL) > 0.5 || Mathf.Abs(horiL) < -0.5)
+                {
+                    if(Mathf.Abs(vertL) > 0.5 || Mathf.Abs(vertL) < -0.5)
+                    {
+                        if (vertL > 0)
+                        {
+                            if (horiL > 0)
+                            {
+                                d = Direction.upright;
+                            }
+                            if (horiL < 0)
+                            {
+                                d = Direction.upleft;
+                            }
+                        }
+                        if (vertL < 0)
+                        {
+                            if (horiL > 0)
+                            {
+                                d = Direction.downright;
+                            }
+                            if (horiL < 0)
+                            {
+                                d = Direction.downleft;
+                            }
+                        }
+                    }
+                }
+                    
+                
                     break;
             case 1: //right stick direction
                 if (Mathf.Abs(horiR) > Mathf.Abs(vertR)) //more horizontal than vertical
@@ -257,6 +292,10 @@ public class PlayerControlManager : MonoBehaviour
             d = "u";
         if (DownKey_Held)
             d = "d";
+        if(LeftKey_Held && UpKey_Held)
+        {
+            d = "dl";
+        }
         return d;
     }
     public string GetDirectionL()
@@ -282,6 +321,19 @@ public class PlayerControlManager : MonoBehaviour
                 case Direction.right:
                     s = "r";
                     break;
+                case Direction.upright:
+                    s = "ur";
+                    break;
+                case Direction.upleft:
+                    s = "ul";
+                    break;
+                case Direction.downleft:
+                    s = "dl";
+                    break;
+                case Direction.downright:
+                    s = "dr";
+                    break;
+
             }
         }
         if (curControlType == ControlType.keyboard || curControlType == ControlType.both)
