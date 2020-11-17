@@ -46,6 +46,13 @@ public class PostAttIdle : StateMachineBehaviour
         {
             animator.SetTrigger("SpAtk");
         }
+        if(pCM.GetButtonDown("Atk3"))
+        {
+            animator.SetTrigger("SwordUlt");
+            animator.ResetTrigger("GAtt_a");
+            animator.ResetTrigger("SwKnockUp");
+            animator.ResetTrigger("GDashAtk");
+        }
         if(pCM.GetButtonDown("Jump"))
         {
             animator.SetTrigger("Jump");

@@ -22,6 +22,10 @@ public class ComboStart : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        if(pCM.GetButtonDown("Atk3"))
+        {
+            animator.SetTrigger("SwordUlt");
+        }
         switch(pCM.GetDirectionL())
         {
             case "d":
@@ -57,6 +61,8 @@ public class ComboStart : StateMachineBehaviour
                 }
                 break;
             case "u":
+            case "ul":
+            case "ur":
                 if(pCM.GetButtonDown("Atk1"))
                 {
                     switch(param.AT)

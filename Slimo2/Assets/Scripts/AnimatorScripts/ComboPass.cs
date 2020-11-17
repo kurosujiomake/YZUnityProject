@@ -9,60 +9,90 @@ public class ComboPass : StateMachineBehaviour
     private SpecialAttackParameters spParam;
     [SerializeField] private bool isFinalAtk = false;
     [SerializeField] private bool isRegularAtk = false;
+    [SerializeField] private bool isSwUlt = false;
+    [SerializeField] private bool toConti = false;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         numInc = false;
         pCM = GameObject.FindGameObjectWithTag("pControlManager").GetComponent<PlayerControlManager>();
         spParam = animator.GetComponent<SpecialAttackParameters>();
+        animator.ResetTrigger("SwordUlt");
+        toConti = false;
+        animator.SetTrigger("SwordUltFinish");
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        
-        //animator.SetBool("OnGround", animator.GetComponent<GroundChecker>().ReturnGroundCheck());
-        if (!numInc && !isFinalAtk)
+        if (!isSwUlt) //code for non-sword ult atts go here
         {
-            numInc = true;
-            animator.SetInteger("ComboNum", animator.GetInteger("ComboNum") + 1);
+            //animator.SetBool("OnGround", animator.GetComponent<GroundChecker>().ReturnGroundCheck());
+            if (!numInc && !isFinalAtk)
+            {
+                numInc = true;
+                animator.SetInteger("ComboNum", animator.GetInteger("ComboNum") + 1);
+            }
+            if (pCM.GetButtonDown("Atk2") && spParam.SpAtks[0].CanUseAtk)
+            {
+                animator.SetTrigger("SpAtk");
+            }
+            if(pCM.GetButtonDown("Atk3"))
+            {
+                animator.SetTrigger("SwordUlt");
+                animator.ResetTrigger("GAtt_a");
+            }
+            switch (pCM.GetDirectionL())
+            {
+                case "u":
+                    if (isRegularAtk && pCM.GetButtonDown("Atk1"))
+                    {
+                        animator.SetTrigger("SwKnockUp");
+                    }
+                    break;
+                case "d":
+                    break;
+                case "n":
+                    if (isRegularAtk && pCM.GetButtonDown("Atk1"))
+                    {
+                        animator.SetTrigger("GAtt_a");
+                    }
+                    break;
+                case "l":
+                case "r":
+                    if (pCM.GetButtonDown("Atk1"))
+                    {
+                        animator.SetTrigger("GDashAtk");
+                    }
+                    break;
+            }
         }
-        if(pCM.GetButtonDown("Atk2") && spParam.SpAtks[0].CanUseAtk)
+        if(isSwUlt) // code for sword atks go here
         {
-            animator.SetTrigger("SpAtk");
+            if(pCM.GetButtonDown("Atk3"))
+            {
+                animator.SetTrigger("SwordUlt");
+                animator.ResetTrigger("GAtt_a");
+                animator.ResetTrigger("GDashAtk");
+                toConti = true;
+            }
         }
-        switch(pCM.GetDirectionL())
-        {
-            case "u":
-                if(isRegularAtk && pCM.GetButtonDown("Atk1"))
-                {
-                    animator.SetTrigger("SwKnockUp");
-                }
-                break;
-            case "d":
-                break;
-            case "n":
-                if (isRegularAtk && pCM.GetButtonDown("Atk1"))
-                {
-                    animator.SetTrigger("GAtt_a");
-                }
-                break;
-            case "l":
-            case "r":
-                if(pCM.GetButtonDown("Atk1"))
-                {
-                    animator.SetTrigger("GDashAtk");
-                }
-                break;
-        }
-
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
+    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        if(!toConti)
+        {
+            animator.ResetTrigger("SwordUlt");
+            animator.SetTrigger("SwordUltFinish");
+            toConti = false;
+        }
+        if(toConti)
+        {
+            animator.SetTrigger("SwordUlt");
+        }
+    }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
     //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
