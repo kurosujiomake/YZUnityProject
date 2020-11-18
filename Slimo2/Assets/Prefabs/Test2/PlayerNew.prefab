@@ -1264,6 +1264,7 @@ GameObject:
   - component: {fileID: 2029075663}
   - component: {fileID: 5066319322877277166}
   - component: {fileID: 1992590772}
+  - component: {fileID: 1499148894918841658}
   - component: {fileID: 7145002463949802156}
   m_Layer: 9
   m_Name: PlayerNew
@@ -1388,12 +1389,12 @@ MonoBehaviour:
   VerticalSpeed: 16
   m_GDCD: 2
   m_GDSpd: 45
-  m_GDTime: 2.49
+  m_GDTime: 0.15
   m_canGDash: 1
   m_isDashing: 0
   m_DashMax: 4
   m_ADSpd: 30
-  m_ADTime: 3
+  m_ADTime: 0.2
   m_canADash: 1
   m_isADashing: 0
   m_canBTP: 1
@@ -1575,7 +1576,7 @@ MonoBehaviour:
     moveParam:
     - moveNum: 0
       direction: 0
-      velocity: 5
+      velocity: 2.5
       hasPause: 0
       canFollow: 0
       followMoveNum: 0
@@ -1583,7 +1584,7 @@ MonoBehaviour:
     moveParam:
     - moveNum: 0
       direction: 0
-      velocity: 7
+      velocity: 2.5
       hasPause: 0
       canFollow: 0
       followMoveNum: 0
@@ -1669,9 +1670,43 @@ MonoBehaviour:
       hasPause: 0
       canFollow: 0
       followMoveNum: 0
+  - Name: SwUlt
+    moveParam:
+    - moveNum: 0
+      direction: 0
+      velocity: 0.5
+      hasPause: 0
+      canFollow: 0
+      followMoveNum: 0
   curAtk:
     Name: 
     moveParam: []
+--- !u!114 &1499148894918841658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3727145088433499907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20329367e9d51c24e9b05248ce56434b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skDB: {fileID: 0}
+  sk:
+  - name: 
+    ID: 0
+    CD: 0
+    canUseSkill: 0
+  - name: 
+    ID: 0
+    CD: 0
+    canUseSkill: 0
+  - name: 
+    ID: 0
+    CD: 0
+    canUseSkill: 0
 --- !u!82 &7145002463949802156
 AudioSource:
   m_ObjectHideFlags: 0

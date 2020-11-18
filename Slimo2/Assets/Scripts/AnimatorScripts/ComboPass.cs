@@ -11,10 +11,13 @@ public class ComboPass : StateMachineBehaviour
     [SerializeField] private bool isRegularAtk = false;
     [SerializeField] private bool isSwUlt = false;
     [SerializeField] private bool toConti = false;
+    private NewSpUltAktParam nSP = null;
+    
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         numInc = false;
+        nSP = animator.GetComponent<NewSpUltAktParam>();
         pCM = GameObject.FindGameObjectWithTag("pControlManager").GetComponent<PlayerControlManager>();
         spParam = animator.GetComponent<SpecialAttackParameters>();
         animator.ResetTrigger("SwordUlt");
@@ -39,8 +42,12 @@ public class ComboPass : StateMachineBehaviour
             }
             if(pCM.GetButtonDown("Atk3"))
             {
-                animator.SetTrigger("SwordUlt");
-                animator.ResetTrigger("GAtt_a");
+                if(nSP.ReturnCanUse(2))
+                {
+                    animator.SetTrigger("SwordUlt");
+                    animator.ResetTrigger("GAtt_a");
+                }
+                
             }
             switch (pCM.GetDirectionL())
             {
@@ -86,6 +93,11 @@ public class ComboPass : StateMachineBehaviour
         {
             animator.ResetTrigger("SwordUlt");
             animator.SetTrigger("SwordUltFinish");
+            if(isSwUlt)
+            {
+                nSP.PutSkillOnCD(2);
+                nSP.StartCD(2);
+            }
             toConti = false;
         }
         if(toConti)

@@ -8,11 +8,13 @@ public class ComboStart : StateMachineBehaviour
     public PlayerControlManager pCM = null;
     public PlayerControllerNew pCN = null;
     public SpecialAttackParameters spParam = null;
+    public NewSpUltAktParam nSP = null;
     //public pMove move = null;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         param = animator.GetComponent<Parameters>();
+        nSP = animator.GetComponent<NewSpUltAktParam>();
         pCM = GameObject.FindGameObjectWithTag("pControlManager").GetComponent<PlayerControlManager>();
         pCN = animator.GetComponent<PlayerControllerNew>();
         spParam = animator.GetComponent<SpecialAttackParameters>();
@@ -24,7 +26,11 @@ public class ComboStart : StateMachineBehaviour
     {
         if(pCM.GetButtonDown("Atk3"))
         {
-            animator.SetTrigger("SwordUlt");
+            if(nSP.ReturnCanUse(2))
+            {
+                animator.SetTrigger("SwordUlt");
+            }
+            
         }
         switch(pCM.GetDirectionL())
         {
@@ -78,7 +84,7 @@ public class ComboStart : StateMachineBehaviour
         
         if(pCM.GetButtonDown("Atk2"))
         {
-            if(spParam.SpAtks[0].CanUseAtk)
+            if(nSP.ReturnCanUse(0))
             {
                 animator.SetTrigger("SpAtk");
             }

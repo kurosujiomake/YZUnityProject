@@ -12,7 +12,7 @@ public class SpecialAttackParameters : MonoBehaviour
 
     void Start()
     {
-        UpdateSkillIDS(0, -1, -1);
+        UpdateSkillIDS(0, -1, 1);
         EnableSkill(0);
     }
     public void GetSpATKData(int _spATK1ID, int _spATK2ID)
@@ -43,7 +43,7 @@ public class SpecialAttackParameters : MonoBehaviour
         
     }
 
-    public void UpdateSkillIDS(int _sk1, int _sk2, int _ult)
+    public void UpdateSkillIDS(int _sk1, int _sk2, int _ult) //use -1 for not implemented skills
     {
         GetSpATKData(_sk1, _sk2);
         //Add ult data push here later

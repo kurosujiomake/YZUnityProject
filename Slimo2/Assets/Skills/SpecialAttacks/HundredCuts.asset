@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0490709bb8c9834dac4e0806d9df5fd, type: 3}
   m_Name: HundredCuts
   m_EditorClassIdentifier: 
+  Name: HundredCuts
   UIImage: {fileID: 0}
   type: 1
-  Description: 
-  SkillID: 0
-  CD: 0
+  Description: Unleash a flurry of attacks,
+  SkillID: 1
+  CD: 10
   CDModifiers: []
   BaseDamage: 0
   DamageModifier: 0
