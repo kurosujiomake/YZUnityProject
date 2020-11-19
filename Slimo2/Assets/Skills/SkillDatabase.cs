@@ -30,5 +30,20 @@ public class SkillDatabase : ScriptableObject, ISerializationCallbackReceiver
     {
         return Skills[ID].Name;
     }
-
+    public bool returnHasProj(int ID)
+    {
+        return Skills[ID].spawnsObj;
+    }
+    public GameObject returnSpawnObj(int ID)
+    {
+        return Skills[ID].spawn;
+    }
+    public float returnProjSpd(int ID)
+    {
+        return Skills[ID].projSpd;
+    }
+    public float returnProjDur(int ID)
+    {
+        return Skills[ID].projDur;
+    }
 }

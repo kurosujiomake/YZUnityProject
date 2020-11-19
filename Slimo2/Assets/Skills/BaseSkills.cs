@@ -34,4 +34,8 @@ public class BaseSkills : ScriptableObject
     public float[] CDModifiers;
     public float BaseDamage;
     public float DamageModifier;
+    public bool spawnsObj;
+    public GameObject spawn;
+    public float projSpd;
+    public float projDur;
 }

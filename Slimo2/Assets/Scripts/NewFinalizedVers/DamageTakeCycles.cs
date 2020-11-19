@@ -130,6 +130,11 @@ public class DamageTakeCycles : MonoBehaviour
                 var f = collision.GetComponentInParent<PlayerControllerNew>();
                 enemyFacingRight = f.facingRight;
             }
+            if(collision.GetComponentInParent<PlayerControllerNew>() == null)
+            {
+                var f = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerNew>();
+                enemyFacingRight = f.facingRight;
+            }
             if(h.Hit_ID != curHitID) //this object has not been hit already
             {
                 //Debug.Log("DetectedHitbox");

@@ -7,7 +7,6 @@ public class UltimateAttacks : BaseSkills
 {
     public WepClass Weapon;
     public bool useCDMod;
-
     public void Awake()
     {
         type = SkillType.Ultimate;
