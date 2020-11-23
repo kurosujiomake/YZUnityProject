@@ -27,6 +27,24 @@ public class RangedWepProjSpawn : MonoBehaviour
     IEnumerator FireOnce(int _projID)
     {
         GameObject clone = Instantiate(Proj[_projID], originPoints[OriginPID].position, Quaternion.identity);
+        switch(clone.GetComponent<ProjType>().Proj_Type)
+        {
+            case ProjType.Type.Bullet:
+
+                break;
+            case ProjType.Type.Area:
+
+                break;
+            case ProjType.Type.Other:
+
+                break;
+        }
         yield return new WaitForSeconds(0);
     }
+
+    void KBEffectAddon()
+    {
+
+    }
 }
+
