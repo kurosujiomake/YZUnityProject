@@ -11,13 +11,9 @@ public class AtkProjSpawns : MonoBehaviour
     private bool projSpawned = false;
     private int[] HitIDs = new int[2];
     public bool isFinisher = false;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    public SpawnDatabase sDB;
+    private float dirCorrected;
+    
     void Update()
     {
         if(!projSpawned)
@@ -52,30 +48,49 @@ public class AtkProjSpawns : MonoBehaviour
     }
     void SpawnProj()
     {
+        float d = sDB.ReturnBDir(db.returnProjID(skillID));
+        
         GameObject clone = null;
+        float spd = 0;
         switch(GetComponentInParent<PlayerControllerNew>().facingRight)
         {
             case true:
-                clone = Instantiate(db.returnSpawnObj(skillID), transform.position, Quaternion.identity);
+                dirCorrected = d * Mathf.Deg2Rad;
+                switch (isFinisher)
+                {
+                    case true:
+                        clone = Instantiate(sDB.ReturnSpawnObj(db.returnProjFinisherID(skillID)), transform.position, Quaternion.identity);
+                        clone.GetComponent<KBInfoPass>().StartProjTimer(sDB.ReturnBLifetime(db.returnProjFinisherID(skillID)));
+                        spd = sDB.ReturnBSpeed(db.returnProjFinisherID(skillID));
+                        break;
+                    case false:
+                        clone = Instantiate(sDB.ReturnSpawnObj(db.returnProjID(skillID)), transform.position, Quaternion.identity);
+                        clone.GetComponent<KBInfoPass>().StartProjTimer(sDB.ReturnBLifetime(db.returnProjID(skillID)));
+                        spd = sDB.ReturnBSpeed(db.returnProjID(skillID));
+                        break;
+                }
                 clone.GetComponent<KBInfoPass>().Hit_ID = IDRandomizer();
                 clone.GetComponent<KBInfoPass>().curKBNum = KBNum;
-                clone.GetComponent<Rigidbody2D>().velocity = new Vector2(db.returnProjSpd(skillID), 0);
-                clone.GetComponent<KBInfoPass>().StartProjTimer(db.returnProjDur(skillID));
-                if(isFinisher)
-                {
-                    clone.transform.localScale = new Vector3(1.7f, 2.8f, 1);
-                }
+                clone.GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Cos(dirCorrected) * spd, Mathf.Sin(dirCorrected) * spd);
                 break;
             case false:
-                clone = Instantiate(db.returnSpawnObj(skillID), transform.position, Quaternion.Euler(0, 180, 0));
+                dirCorrected = (180 - d) * Mathf.Deg2Rad;
+                switch (isFinisher)
+                {
+                    case true:
+                        clone = Instantiate(sDB.ReturnSpawnObj(db.returnProjFinisherID(skillID)), transform.position, Quaternion.Euler(0,180,0));
+                        clone.GetComponent<KBInfoPass>().StartProjTimer(sDB.ReturnBLifetime(db.returnProjFinisherID(skillID)));
+                        spd = sDB.ReturnBSpeed(db.returnProjFinisherID(skillID));
+                        break;
+                    case false:
+                        clone = Instantiate(sDB.ReturnSpawnObj(db.returnProjID(skillID)), transform.position, Quaternion.Euler(0,180,0));
+                        clone.GetComponent<KBInfoPass>().StartProjTimer(sDB.ReturnBLifetime(db.returnProjID(skillID)));
+                        spd = sDB.ReturnBSpeed(db.returnProjID(skillID));
+                        break;
+                }
                 clone.GetComponent<KBInfoPass>().Hit_ID = IDRandomizer();
                 clone.GetComponent<KBInfoPass>().curKBNum = KBNum;
-                clone.GetComponent<Rigidbody2D>().velocity = new Vector2(-db.returnProjSpd(skillID), 0);
-                clone.GetComponent<KBInfoPass>().StartProjTimer(db.returnProjDur(skillID));
-                if (isFinisher)
-                {
-                    clone.transform.localScale = new Vector3(1.7f, 2.8f, 1);
-                }
+                clone.GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Cos(dirCorrected) * spd, Mathf.Sin(dirCorrected) * spd);
                 break;
         }
         projSpawned = true;

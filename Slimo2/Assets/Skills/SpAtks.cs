@@ -6,6 +6,9 @@ public class SpAtks : BaseSkills
 {
     public WepClass wep;
     public bool useCDMod;
+    public bool spawnsProj;
+    public int projID;
+    public int projIDFinisher;
     public void Awake()
     {
         type = SkillType.Special;

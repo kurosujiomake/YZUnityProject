@@ -9881,6 +9881,12 @@ PrefabInstance:
       propertyPath: isFinisher
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1031696716268936581, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
+        type: 3}
+      propertyPath: sDB
+      value: 
+      objectReference: {fileID: 11400000, guid: 04e2a0315ec9dca4aaed6ed3962b0353,
+        type: 2}
     - target: {fileID: 3060304689116764726, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
         type: 3}
       propertyPath: m_LocalPosition.y

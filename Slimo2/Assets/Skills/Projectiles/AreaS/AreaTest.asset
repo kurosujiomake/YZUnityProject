@@ -9,14 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a85cd4914668cf4fb2dd867e1479833, type: 3}
-  m_Name: SwordWave
+  m_Script: {fileID: 11500000, guid: f9d6c5db2869d964cafb5f9d70034a89, type: 3}
+  m_Name: AreaTest
   m_EditorClassIdentifier: 
-  P_ID: 1
+  P_ID: 0
   P_Name: 
   Description: 
-  SpawnType: 0
-  Prefab: {fileID: 6904058883651388153, guid: d470fdeb0180be34dbf2173c03a8736e, type: 3}
-  speed: 35
-  lifespan: 0.5
-  direction: 0
+  SpawnType: 1
+  Prefab: {fileID: 0}
+  aType: 0
+  Radius: 0
+  setupDur: 0
+  lifeTime: 0

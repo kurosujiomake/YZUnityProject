@@ -16,7 +16,7 @@ MonoBehaviour:
   P_Name: 
   Description: The Finisher atk of sword wave special
   SpawnType: 0
-  Prefab: {fileID: 0}
-  speed: 0
-  lifespan: 0
+  Prefab: {fileID: 8353587715616662687, guid: 3cf07399aceee074c8f8b304b13d79d9, type: 3}
+  speed: 33
+  lifespan: 1
   direction: 0

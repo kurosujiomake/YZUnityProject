@@ -25,9 +25,8 @@ MonoBehaviour:
   - 0
   BaseDamage: 0
   DamageModifier: 0
-  spawnsObj: 1
-  spawn: {fileID: 6904058883651388153, guid: d470fdeb0180be34dbf2173c03a8736e, type: 3}
-  projSpd: 40
-  projDur: 2
   wep: 0
   useCDMod: 1
+  spawnsProj: 1
+  projID: 1
+  projIDFinisher: 2

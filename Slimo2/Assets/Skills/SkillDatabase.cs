@@ -30,20 +30,50 @@ public class SkillDatabase : ScriptableObject, ISerializationCallbackReceiver
     {
         return Skills[ID].Name;
     }
+    
     public bool returnHasProj(int ID)
     {
-        return Skills[ID].spawnsObj;
+        bool b = false;
+        if(Skills[ID] is SpAtks)
+        {
+            SpAtks s = Skills[ID] as SpAtks;
+            b = s.spawnsProj;
+        }
+        if(Skills[ID] is UltimateAttacks)
+        {
+            UltimateAttacks u = Skills[ID] as UltimateAttacks;
+            b = u.spawnsProj;
+        }
+        return b;
     }
-    public GameObject returnSpawnObj(int ID)
+    public int returnProjID(int ID)
     {
-        return Skills[ID].spawn;
+        int i = -1;
+        if (Skills[ID] is SpAtks)
+        {
+            SpAtks s = Skills[ID] as SpAtks;
+            i = s.projID;
+        }
+        if (Skills[ID] is UltimateAttacks)
+        {
+            UltimateAttacks u = Skills[ID] as UltimateAttacks;
+            i = u.projID;
+        }
+        return i;
     }
-    public float returnProjSpd(int ID)
+    public int returnProjFinisherID(int ID)
     {
-        return Skills[ID].projSpd;
-    }
-    public float returnProjDur(int ID)
-    {
-        return Skills[ID].projDur;
+        int i = -1;
+        if (Skills[ID] is SpAtks)
+        {
+            SpAtks s = Skills[ID] as SpAtks;
+            i = s.projIDFinisher;
+        }
+        if (Skills[ID] is UltimateAttacks)
+        {
+            UltimateAttacks u = Skills[ID] as UltimateAttacks;
+            i = u.projIDFinisher;
+        }
+        return i;
     }
 }
