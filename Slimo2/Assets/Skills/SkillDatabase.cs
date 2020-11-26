@@ -76,4 +76,43 @@ public class SkillDatabase : ScriptableObject, ISerializationCallbackReceiver
         }
         return i;
     }
+    public int returnAerialProjID(int ID, bool _isFinisher)
+    {
+        int i = -1;
+        switch(_isFinisher)
+        {
+            case true:
+                if (Skills[ID] is SpAtks)
+                {
+                    SpAtks s = Skills[ID] as SpAtks;
+                    i = s.a_projIDFinisher;
+                }
+                if (Skills[ID] is UltimateAttacks)
+                {
+                    UltimateAttacks u = Skills[ID] as UltimateAttacks;
+                    i = u.a_projIDFinisher;
+                }
+                break;
+            case false:
+                if(Skills[ID] is SpAtks)
+                {
+                    SpAtks s = Skills[ID] as SpAtks;
+                    i = s.a_projID;
+                }
+                if(Skills[ID] is UltimateAttacks)
+                {
+                    UltimateAttacks u = Skills[ID] as UltimateAttacks;
+                    i = u.a_projID;
+                }
+                break;
+        }
+
+        return i;
+    }
+
+    public bool returnCanAerial(int ID)
+    {
+        return Skills[ID].canAerial;
+    }
+
 }

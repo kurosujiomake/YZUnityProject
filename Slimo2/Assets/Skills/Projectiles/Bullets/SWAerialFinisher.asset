@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7a85cd4914668cf4fb2dd867e1479833, type: 3}
-  m_Name: SwWaveFInisher
+  m_Name: SWAerialFinisher
   m_EditorClassIdentifier: 
-  P_ID: 2
+  P_ID: 5
   P_Name: 
-  Description: The Finisher atk of sword wave special
+  Description: 
   SpawnType: 0
-  Prefab: {fileID: 6579297243224688275, guid: eaf4b0bda9db796418e53b3266eae0b0, type: 3}
-  speed: 33
-  lifespan: 1
+  Prefab: {fileID: 3219782405019368117, guid: 49c78f46ebeee0b458348651e429d4eb, type: 3}
+  speed: 0
+  lifespan: 0
   direction: 0

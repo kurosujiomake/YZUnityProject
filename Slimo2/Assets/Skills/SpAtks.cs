@@ -9,6 +9,8 @@ public class SpAtks : BaseSkills
     public bool spawnsProj;
     public int projID;
     public int projIDFinisher;
+    public int a_projID;
+    public int a_projIDFinisher;
     public void Awake()
     {
         type = SkillType.Special;
