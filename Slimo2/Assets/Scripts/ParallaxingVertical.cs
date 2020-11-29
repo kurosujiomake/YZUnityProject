@@ -9,14 +9,14 @@ public class ParallaxingVertical : MonoBehaviour
     private float[] parallaxScales;         // The proportion of the camera's movement to move the backgrounds by.
     public float smoothing = 1f;            // How smooth the parallax will be.
 
-    public Transform cam;                   // Choose which camera paralax applies to.
+    public Transform camera;                // Choose which camera paralax applies to.
     private Vector3 previousCamPosY;        // The position of the camera in previous frame.
 
 
     void Start()
     {
         // The previous camera position corresponding with the current camera position.
-        previousCamPosY = cam.position;
+        previousCamPosY = camera.position;
 
         // Asigning coresponding parallaxing for multiple layers.
         parallaxScales = new float[backgrounds.Length];
@@ -34,7 +34,7 @@ public class ParallaxingVertical : MonoBehaviour
         for (int i = 0; i < backgrounds.Length; i++)
         {
             // Parallax is the opposite of the camera movement because the previous frame is multiplied by the scale.
-            float parallax = (previousCamPosY.y - cam.position.y) * parallaxScales[i];
+            float parallax = (previousCamPosY.y - camera.position.y) * parallaxScales[i];
 
             // Set a target y position which is the current position + the parallax.
             float backgroundTargetPosY = backgrounds[i].position.y + parallax;
@@ -47,6 +47,6 @@ public class ParallaxingVertical : MonoBehaviour
         }
 
         // set the previousCamPos to the camera's position at the end of the frame.
-        previousCamPosY = cam.position;
+        previousCamPosY = camera.position;
     }
 }

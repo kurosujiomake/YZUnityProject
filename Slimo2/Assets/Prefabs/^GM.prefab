@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5528744769927224360}
   - component: {fileID: 5528744769927224362}
   m_Layer: 0
-  m_Name: _GM
+  m_Name: ^GM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,8 +48,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  smoothing: 1
-  cam: {fileID: 0}
+  smoothing: 0.25
+  camera: {fileID: 0}
 --- !u!114 &5528744769927224362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,5 +66,5 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  smoothing: 10
-  cam: {fileID: 0}
+  smoothing: 0.25
+  camera: {fileID: 0}
