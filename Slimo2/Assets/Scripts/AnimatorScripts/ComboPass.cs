@@ -12,6 +12,7 @@ public class ComboPass : StateMachineBehaviour
     [SerializeField] private bool isSwUlt = false;
     [SerializeField] private bool toConti = false;
     private NewSpUltAktParam nSP = null;
+    private Parameters param = null;
     
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -20,6 +21,7 @@ public class ComboPass : StateMachineBehaviour
         nSP = animator.GetComponent<NewSpUltAktParam>();
         pCM = GameObject.FindGameObjectWithTag("pControlManager").GetComponent<PlayerControlManager>();
         spParam = animator.GetComponent<SpecialAttackParameters>();
+        param = animator.GetComponent<Parameters>();
         animator.ResetTrigger("SwordUlt");
         toConti = false;
         animator.SetTrigger("SwordUltFinish");

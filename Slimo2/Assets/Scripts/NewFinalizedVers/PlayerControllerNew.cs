@@ -18,7 +18,11 @@ public class PlayerControllerNew : MonoBehaviour
     public Transform cameraFollowPoint;
     private int cADash = 0;
     private SpriteAfterImage sp;
-    
+    private Animator anim = null;
+    [SerializeField]
+    private GameObject c = null;
+    private float distx = 100;
+    private float disty = 100;
     public enum controlType
     {
         player,
@@ -35,9 +39,20 @@ public class PlayerControllerNew : MonoBehaviour
         g = GetComponent<GroundChecker>();
         playerSprite = GetComponentInChildren<SpriteRenderer>();
         sp = GetComponentInChildren<SpriteAfterImage>();
+        anim = GetComponent<Animator>();
     }
     void Update()
     {
+        IsNearEnemy();
+        switch(m_param.AT)
+        {
+            case Parameters.AtkType.sword:
+                anim.SetInteger("WepType", 0);
+                break;
+            case Parameters.AtkType.bow:
+                anim.SetInteger("WepType", 1);
+                break;
+        }
         isGrounded = g.ReturnGroundCheck();
         GetComponent<Animator>().SetBool("OnGround", isGrounded);
         m_param.facingRight = facingRight;
@@ -70,6 +85,27 @@ public class PlayerControllerNew : MonoBehaviour
             case controlType.freeze:
                 r2D.velocity = Vector2.zero;
                 break;
+        }
+    }
+    void IsNearEnemy()
+    {
+        if(c == null)
+        {
+            c = FindClosest("Enemy");
+        }
+        if(c != null)
+        {
+            distx = Mathf.Abs(c.transform.position.x - transform.position.x);
+            disty = Mathf.Abs(c.transform.position.y - transform.position.y);
+        }
+        if(distx < m_param.enemyProx && disty < m_param.enemyProx)
+        {
+            anim.SetBool("IsNearEnemy", true);
+        }
+        if(distx > m_param.enemyProx || disty > m_param.enemyProx)
+        {
+            anim.SetBool("IsNearEnemy", false);
+            c = null;
         }
     }
     void GroundMovement()

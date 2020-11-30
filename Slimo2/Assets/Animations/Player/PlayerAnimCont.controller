@@ -152,6 +152,12 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: GDashAtk
     m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: OnGround
+    m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: WepType
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -6754213944149576868}
   m_Solo: 0
@@ -176,6 +182,9 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 1
     m_ConditionEvent: GAtt_a
+    m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: WepType
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 3370392493471097855}
@@ -261,6 +270,12 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 1
     m_ConditionEvent: GDashAtk
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: OnGround
+    m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: WepType
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -6754213944149576868}
@@ -354,6 +369,12 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 1
     m_ConditionEvent: SwKnockUp
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: OnGround
+    m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: WepType
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1937813274013017350}
@@ -548,7 +569,7 @@ AnimatorStateTransition:
     m_ConditionEvent: IsNearEnemy
     m_EventTreshold: 0
   - m_ConditionMode: 1
-    m_ConditionEvent: BowAtt
+    m_ConditionEvent: GAtt_a
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -1625558571517789406}
@@ -606,6 +627,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 6
     m_ConditionEvent: AComboNum
     m_EventTreshold: 2
+  - m_ConditionMode: 6
+    m_ConditionEvent: WepType
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -6934555823357745222}
   m_Solo: 0
@@ -654,6 +678,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 6
     m_ConditionEvent: AComboNum
     m_EventTreshold: 1
+  - m_ConditionMode: 6
+    m_ConditionEvent: WepType
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8631467352515170703}
   m_Solo: 0
@@ -1560,6 +1587,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: DownAtk
     m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: WepType
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -9187402655387035964}
   m_Solo: 0
@@ -1621,6 +1651,9 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
+  - m_ConditionMode: 6
+    m_ConditionEvent: WepType
+    m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: OnGround
     m_EventTreshold: 0
@@ -1686,6 +1719,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 6
     m_ConditionEvent: ComboNum
     m_EventTreshold: 1
+  - m_ConditionMode: 6
+    m_ConditionEvent: WepType
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 3370392493471097855}
   m_Solo: 0
@@ -1876,6 +1912,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: GDashAtk
     m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: WepType
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -6754213944149576868}
   m_Solo: 0
@@ -1903,6 +1942,9 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: GDashAtk
+    m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: WepType
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -6754213944149576868}
@@ -2034,6 +2076,12 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 1
     m_ConditionEvent: GDashAtk
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: OnGround
+    m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: WepType
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -6754213944149576868}
@@ -2179,6 +2227,9 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: GDashAtkF
+    m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: WepType
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -2661738358759311319}
@@ -3013,6 +3064,12 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
+  - m_Name: WepType
+    m_Type: 3
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -3171,6 +3228,9 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: DownAtk
+    m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: WepType
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -9187402655387035964}
@@ -3358,6 +3418,12 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 1
     m_ConditionEvent: SwKnockUp
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: OnGround
+    m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: WepType
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1937813274013017350}
@@ -4089,6 +4155,12 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: GDashAtk
     m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: OnGround
+    m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: WepType
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -6754213944149576868}
   m_Solo: 0
@@ -4579,14 +4651,17 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: OnGround
-    m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: WepType
+    m_EventTreshold: 1
   - m_ConditionMode: 1
     m_ConditionEvent: IsNearEnemy
     m_EventTreshold: 0
   - m_ConditionMode: 1
-    m_ConditionEvent: BowAtt
+    m_ConditionEvent: GAtt_a
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: OnGround
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -1625558571517789406}
@@ -4798,6 +4873,12 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: GDashAtk
     m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: OnGround
+    m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: WepType
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -6754213944149576868}
   m_Solo: 0
@@ -4916,6 +4997,12 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 1
     m_ConditionEvent: GAtt_a
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: OnGround
+    m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: WepType
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 3370392493471097855}
@@ -5373,6 +5460,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 6
     m_ConditionEvent: AComboNum
     m_EventTreshold: 3
+  - m_ConditionMode: 6
+    m_ConditionEvent: WepType
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -9187402655387035964}
   m_Solo: 0
@@ -5439,17 +5529,26 @@ AnimatorStateTransition:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 
-  m_Conditions: []
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: OnGround
+    m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: WepType
+    m_EventTreshold: 1
+  - m_ConditionMode: 1
+    m_ConditionEvent: GAtt_a
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 2206126130704744839}
   m_Solo: 0
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.25
+  m_TransitionDuration: 0
   m_TransitionOffset: 0
-  m_ExitTime: 0.40000004
-  m_HasExitTime: 1
+  m_ExitTime: 0.0000000015228657
+  m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
@@ -5526,6 +5625,9 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: SwKnockUp
+    m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: WepType
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1937813274013017350}

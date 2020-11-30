@@ -14,6 +14,7 @@ public class Parameters : MonoBehaviour
     public string[] BowAttTriggerName = new string[2];
     public int wepTypeID = 0;
     public string AttButtonName = null;
+    public float enemyProx = 0;
     public enum AtkType { dagger, bow, wand, sword, spear, axe};
     public AtkType AT;
     public float AttackDamage = 0;

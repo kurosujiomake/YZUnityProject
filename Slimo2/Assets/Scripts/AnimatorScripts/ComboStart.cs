@@ -38,17 +38,7 @@ public class ComboStart : StateMachineBehaviour
             case "n":
                 if (pCM.GetButtonDown("Atk1"))
                 {
-                    switch (param.AT)
-                    {
-                        case Parameters.AtkType.sword:
-                            animator.SetTrigger("GAtt_a");
-                            pCN.SetPState(2);
-                            break;
-                        case Parameters.AtkType.bow:
-
-                            break;
-                            //add the other wep types later
-                    }
+                     animator.SetTrigger("GAtt_a");
                 }
                 break;
             case "l":
