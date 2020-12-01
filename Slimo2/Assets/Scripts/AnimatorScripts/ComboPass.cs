@@ -13,6 +13,7 @@ public class ComboPass : StateMachineBehaviour
     [SerializeField] private bool toConti = false;
     private NewSpUltAktParam nSP = null;
     private Parameters param = null;
+    private bool bowMelee = false;
     
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -25,6 +26,7 @@ public class ComboPass : StateMachineBehaviour
         animator.ResetTrigger("SwordUlt");
         toConti = false;
         animator.SetTrigger("SwordUltFinish");
+        bowMelee = false;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -32,48 +34,136 @@ public class ComboPass : StateMachineBehaviour
     {
         if (!isSwUlt) //code for non-sword ult atts go here
         {
-            //animator.SetBool("OnGround", animator.GetComponent<GroundChecker>().ReturnGroundCheck());
-            if (!numInc && !isFinalAtk)
+            if (!numInc && isRegularAtk)
             {
                 numInc = true;
                 animator.SetInteger("ComboNum", animator.GetInteger("ComboNum") + 1);
             }
-            if (pCM.GetButtonDown("Atk2") && spParam.SpAtks[0].CanUseAtk)
+            switch (param.AT) //directional influenced triggers
+            {
+                case Parameters.AtkType.bow: //directional att triggers for bow
+                    switch (pCM.GetDirectionL())
+                    {
+                        case "d":
+                        case "dl":
+                        case "dr":
+                            //jumpback att goes here
+                            break;
+                        case "n":
+                        case "l":
+                        case "r":
+                        case "u":
+                        case "ul":
+                        case "ur":
+                            if (pCM.GetButtonDown("Atk1"))
+                            {
+                                animator.SetTrigger("GAtt_a");
+                                if(animator.GetBool("IsNearEnemy"))
+                                {
+                                    bowMelee = true;
+                                }
+                            }
+                            break;
+                    }
+                    break;
+                case Parameters.AtkType.sword: //directional att triggers for sword
+                    switch (pCM.GetDirectionL())
+                    {
+                        case "d":
+                        case "dl":
+                        case "dr":
+                        case "n":
+                            if (pCM.GetButtonDown("Atk1"))
+                            {
+                                animator.SetTrigger("GAtt_a");
+                            }
+                            break;
+                        case "l":
+                        case "r":
+                            if (pCM.GetButtonDown("Atk1"))
+                            {
+                                animator.SetTrigger("GDashAtk");
+                            }
+                            break;
+                        case "u":
+                        case "ul":
+                        case "ur":
+                            if (pCM.GetButtonDown("Atk1"))
+                            {
+                                animator.SetTrigger("SwKnockUp");
+                            }
+                            break;
+                    }
+                    break;
+                case Parameters.AtkType.axe: //directional att triggers for axe
+                    switch (pCM.GetDirectionL())
+                    {
+                        case "d":
+                        case "dl":
+                        case "dr":
+                        case "n":
+                        case "l":
+                        case "r":
+                        case "u":
+                        case "ul":
+                        case "ur":
+                            break;
+                    }
+                    break;
+                case Parameters.AtkType.spear: //directional att triggers for spear
+                    switch (pCM.GetDirectionL())
+                    {
+                        case "d":
+                        case "dl":
+                        case "dr":
+                        case "n":
+                        case "l":
+                        case "r":
+                        case "u":
+                        case "ul":
+                        case "ur":
+                            break;
+                    }
+                    break;
+                case Parameters.AtkType.dagger: //directional att triggers for dagger
+                    switch (pCM.GetDirectionL())
+                    {
+                        case "d":
+                        case "dl":
+                        case "dr":
+                        case "n":
+                        case "l":
+                        case "r":
+                        case "u":
+                        case "ul":
+                        case "ur":
+                            break;
+                    }
+                    break;
+                case Parameters.AtkType.wand: //directional att triggers for wand
+                    switch (pCM.GetDirectionL())
+                    {
+                        case "d":
+                        case "dl":
+                        case "dr":
+                        case "n":
+                        case "l":
+                        case "r":
+                        case "u":
+                        case "ul":
+                        case "ur":
+                            break;
+                    }
+                    break;
+            }
+            if (pCM.GetButtonDown("Atk2") && nSP.ReturnCanUse(0))
             {
                 animator.SetTrigger("SpAtk");
             }
-            if(pCM.GetButtonDown("Atk3"))
+            if (pCM.GetButtonDown("Atk3") && nSP.ReturnCanUse(2))
             {
-                if(nSP.ReturnCanUse(2))
-                {
-                    animator.SetTrigger("SwordUlt");
-                    animator.ResetTrigger("GAtt_a");
-                }
-                
-            }
-            switch (pCM.GetDirectionL())
-            {
-                case "u":
-                    if (isRegularAtk && pCM.GetButtonDown("Atk1"))
-                    {
-                        animator.SetTrigger("SwKnockUp");
-                    }
-                    break;
-                case "d":
-                    break;
-                case "n":
-                    if (isRegularAtk && pCM.GetButtonDown("Atk1"))
-                    {
-                        animator.SetTrigger("GAtt_a");
-                    }
-                    break;
-                case "l":
-                case "r":
-                    if (pCM.GetButtonDown("Atk1"))
-                    {
-                        animator.SetTrigger("GDashAtk");
-                    }
-                    break;
+                animator.SetTrigger("SwordUlt");
+                animator.ResetTrigger("GAtt_a");
             }
         }
         if(isSwUlt) // code for sword atks go here
@@ -105,6 +195,11 @@ public class ComboPass : StateMachineBehaviour
         if(toConti)
         {
             animator.SetTrigger("SwordUlt");
+        }
+        if(bowMelee)
+        {
+            animator.ResetTrigger("GAtt_a");
+            bowMelee = false;
         }
     }
 

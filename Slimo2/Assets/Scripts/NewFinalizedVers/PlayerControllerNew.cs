@@ -23,13 +23,20 @@ public class PlayerControllerNew : MonoBehaviour
     private GameObject c = null;
     private float distx = 100;
     private float disty = 100;
+    public GameObject dashEffect= null;
     public enum controlType
     {
         player,
         noPlayer,
         freeze
     }
+    public enum cutsceneC
+    {
+        player,
+        noPlayer
+    }
     public controlType pControl;
+    public cutsceneC pContC;
     // Start is called before the first frame update
     void Awake()
     {
@@ -43,6 +50,18 @@ public class PlayerControllerNew : MonoBehaviour
     }
     void Update()
     {
+        switch(pContC)
+        {
+            case cutsceneC.player:
+                if(pCM.GetButtonDown("SwapWep"))
+                {
+                    SwapWeps();
+                }
+                break;
+            case cutsceneC.noPlayer:
+
+                break;
+        }
         IsNearEnemy();
         switch(m_param.AT)
         {
@@ -84,6 +103,18 @@ public class PlayerControllerNew : MonoBehaviour
                 break;
             case controlType.freeze:
                 r2D.velocity = Vector2.zero;
+                break;
+        }
+    }
+    void SwapWeps()//change this later when equip detection is working
+    {
+        switch(m_param.AT)
+        {
+            case Parameters.AtkType.sword:
+                m_param.AT = Parameters.AtkType.bow;
+                break;
+            case Parameters.AtkType.bow:
+                m_param.AT = Parameters.AtkType.sword;
                 break;
         }
     }
@@ -275,10 +306,41 @@ public class PlayerControllerNew : MonoBehaviour
             return gameObject;
         }
     }
+    void DashEffect(string dir)
+    {
+        switch(dir)
+        {
+            case "u":
+                Instantiate(dashEffect, transform.position, Quaternion.Euler(0, 0, 0));
+                break;
+            case "d":
+                Instantiate(dashEffect, transform.position, Quaternion.Euler(0, 0, 180));
+                break;
+            case "l":
+                Instantiate(dashEffect, transform.position, Quaternion.Euler(0, 0, 90));
+                break;
+            case "r":
+                Instantiate(dashEffect, transform.position, Quaternion.Euler(0, 0, -90));
+                break;
+            case "ur":
+                Instantiate(dashEffect, transform.position, Quaternion.Euler(0, 0, -45));
+                break;
+            case "ul":
+                Instantiate(dashEffect, transform.position, Quaternion.Euler(0, 0, 45));
+                break;
+            case "dr":
+                Instantiate(dashEffect, transform.position, Quaternion.Euler(0, 0, -135));
+                break;
+            case "dl":
+                Instantiate(dashEffect, transform.position, Quaternion.Euler(0, 0, 135));
+                break;
+        }
+    }
     IEnumerator DashCycle(string dir, float force, float dur, int type)//handles all ground and air dash needs
     {
         r2D.velocity = Vector2.zero;
         ForceMove(dir, force);
+        DashEffect(dir);
         yield return new WaitForSeconds(dur);
         SetLocks(0);
         m_param.m_isDashing = false;

@@ -39,8 +39,121 @@ public class PostAttIdle : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        //animator.SetBool("OnGround", g.ReturnGroundCheck());
-        if(timer > 0)
+        switch (param.AT) //directional influenced triggers
+        {
+            case Parameters.AtkType.bow: //directional att triggers for bow
+                switch (pCM.GetDirectionL())
+                {
+                    case "d":
+                    case "dl":
+                    case "dr":
+                        //jumpback att goes here
+                        break;
+                    case "n":
+                    case "l":
+                    case "r":
+                    case "u":
+                    case "ul":
+                    case "ur":
+                        if (pCM.GetButtonDown("Atk1"))
+                        {
+                            animator.SetTrigger("GAtt_a");
+                        }
+                        break;
+                }
+                break;
+            case Parameters.AtkType.sword: //directional att triggers for sword
+                switch (pCM.GetDirectionL())
+                {
+                    case "d":
+                    case "dl":
+                    case "dr":
+                    case "n":
+                        if (pCM.GetButtonDown("Atk1"))
+                        {
+                            animator.SetTrigger("GAtt_a");
+                        }
+                        break;
+                    case "l":
+                    case "r":
+                        if (pCM.GetButtonDown("Atk1"))
+                        {
+                            animator.SetTrigger("GDashAtk");
+                        }
+                        break;
+                    case "u":
+                    case "ul":
+                    case "ur":
+                        if (pCM.GetButtonDown("Atk1"))
+                        {
+                            animator.ResetTrigger("GAtt_a");
+                            animator.SetTrigger("SwKnockUp");
+                        }
+                        break;
+                }
+                break;
+            case Parameters.AtkType.axe: //directional att triggers for axe
+                switch (pCM.GetDirectionL())
+                {
+                    case "d":
+                    case "dl":
+                    case "dr":
+                    case "n":
+                    case "l":
+                    case "r":
+                    case "u":
+                    case "ul":
+                    case "ur":
+                        break;
+                }
+                break;
+            case Parameters.AtkType.spear: //directional att triggers for spear
+                switch (pCM.GetDirectionL())
+                {
+                    case "d":
+                    case "dl":
+                    case "dr":
+                    case "n":
+                    case "l":
+                    case "r":
+                    case "u":
+                    case "ul":
+                    case "ur":
+                        break;
+                }
+                break;
+            case Parameters.AtkType.dagger: //directional att triggers for dagger
+                switch (pCM.GetDirectionL())
+                {
+                    case "d":
+                    case "dl":
+                    case "dr":
+                    case "n":
+                    case "l":
+                    case "r":
+                    case "u":
+                    case "ul":
+                    case "ur":
+                        break;
+                }
+                break;
+            case Parameters.AtkType.wand: //directional att triggers for wand
+                switch (pCM.GetDirectionL())
+                {
+                    case "d":
+                    case "dl":
+                    case "dr":
+                    case "n":
+                    case "l":
+                    case "r":
+                    case "u":
+                    case "ul":
+                    case "ur":
+                        break;
+                }
+                break;
+        }
+        if (timer > 0)
             timer -= Time.deltaTime;
         if (pCM.GetButtonDown("Atk2") && spParam.SpAtks[0].CanUseAtk && animator.GetInteger("ComboNum") >= 4)
         {
@@ -56,28 +169,6 @@ public class PostAttIdle : StateMachineBehaviour
         if(pCM.GetButtonDown("Jump"))
         {
             animator.SetTrigger("Jump");
-        }
-        switch (pCM.GetDirectionL())
-        {
-            case "u":
-                if(pCM.GetButtonDown("Atk1"))
-                {
-                    animator.ResetTrigger("GAtt_a");
-                    animator.SetTrigger("SwKnockUp");
-                }
-                break;
-            case "d":
-                break;
-            case "n":
-                
-                break;
-            case "l":
-            case "r":
-                if (pCM.GetButtonDown("Atk1"))
-                {
-                    animator.SetTrigger("GDashAtk");
-                }
-                break;
         }
         switch (isFinalPATT)
         {
