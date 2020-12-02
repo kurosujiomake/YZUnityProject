@@ -64,7 +64,7 @@ MonoBehaviour:
   Hit_ID: 0
   SetHitID: 0
   curKBNum: 0
-  isProj: 0
+  isProj: 1
 --- !u!50 &5584057220639538177
 Rigidbody2D:
   serializedVersion: 4
@@ -179,6 +179,11 @@ PrefabInstance:
       propertyPath: m_RenderingLayerMask
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 8353587715616662685, guid: 3cf07399aceee074c8f8b304b13d79d9,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8353587715616662687, guid: 3cf07399aceee074c8f8b304b13d79d9,
         type: 3}
       propertyPath: m_Name
@@ -272,6 +277,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RenderingLayerMask
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 8353587715616662685, guid: 3cf07399aceee074c8f8b304b13d79d9,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8353587715616662687, guid: 3cf07399aceee074c8f8b304b13d79d9,
         type: 3}
