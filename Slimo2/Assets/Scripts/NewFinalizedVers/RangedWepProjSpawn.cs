@@ -41,6 +41,12 @@ public class RangedWepProjSpawn : MonoBehaviour
         if(FireOne && !hasFiredOne)
         {
             StartCoroutine(FireOnce(ProjID, angle));
+            hasFiredOne = true;
+        }
+        if(FireCont && !hasFiredCont)
+        {
+            StartCoroutine(FireMultiple());
+            hasFiredCont = true;
         }
     }
     int IDRandomizer()
@@ -93,7 +99,79 @@ public class RangedWepProjSpawn : MonoBehaviour
         
         yield return new WaitForSeconds(0);
     }
+    IEnumerator FireMultiple()
+    {
+        bool b = true;
+        int i = 0;
+        int im = MaxProj;
+        while(b)
+        {
+            float spd = sDB.ReturnBSpeed(ProjID);
+            float d = 0;
+            float ed = 0;
+            switch(useMultipleAngles)
+            {
+                case false:
+                    switch (GetComponentInParent<PlayerControllerNew>().facingRight) //adjusts angle based on player facing direction and adds random deviation
+                    {
+                        case true:
+                            ed = (Random.Range(-deviation, deviation) + angle);
+                            d = ed * Mathf.Deg2Rad;
+                            break;
+                        case false:
+                            ed = (180 - (Random.Range(-deviation, deviation) + angle));
+                            d = ed * Mathf.Deg2Rad;
+                            break;
+                    }
+                    GameObject Clone = Instantiate(sDB.ReturnSpawnObj(ProjID), originPoints[OriginPID].position, Quaternion.Euler(0, 0, ed));
+                    Clone.GetComponent<KBInfoPass>().Hit_ID = IDRandomizer();
+                    Clone.GetComponent<KBInfoPass>().curKBNum = KBNum;
+                    switch (Clone.GetComponent<ProjType>().Proj_Type)
+                    {
+                        case ProjType.Type.Bullet:
+                            Clone.GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Cos(d) * spd, Mathf.Sin(d) * spd);
+                            Clone.GetComponent<KBInfoPass>().StartProjTimer(sDB.ReturnBLifetime(ProjID));
+                            break;
+                        case ProjType.Type.Area:
 
+                            break;
+                        case ProjType.Type.Other:
+
+                            break;
+                    }
+                    break;
+                case true:
+                    float d2 = 0;
+                    switch (GetComponent<PlayerControllerNew>().facingRight) //adjusts angle based on player facing direction and adds random deviation
+                    {
+                        case true:
+                            d = (Random.Range(-deviation, deviation) + angle) * Mathf.Deg2Rad;
+                            break;
+                        case false:
+                            d = (180 - (Random.Range(-deviation, deviation) + angle)) * Mathf.Deg2Rad;
+                            break;
+                    }
+                    switch (GetComponent<PlayerControllerNew>().facingRight) //adjusts angle 2
+                    {
+                        case true:
+                            d2 = (Random.Range(-deviation, deviation) + angle) * Mathf.Deg2Rad;
+                            break;
+                        case false:
+                            d2 = (180 - (Random.Range(-deviation, deviation) + angle)) * Mathf.Deg2Rad;
+                            break;
+                    }
+                    break;
+            }
+            yield return new WaitForSeconds(projDelay);
+            i++;
+            if(i >= im)
+            {
+                b = false;
+            }
+            print("i is " + i);
+            print("Max projectiles is " + im);
+        }
+    }
     void KBEffectAddon()
     {
 
