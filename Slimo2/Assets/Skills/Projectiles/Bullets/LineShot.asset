@@ -17,6 +17,6 @@ MonoBehaviour:
   Description: 
   SpawnType: 0
   Prefab: {fileID: 1658218157092018777, guid: 7e48faaaa353cac4385d9e77a408805c, type: 3}
-  speed: 72
-  lifespan: 0.2
+  speed: 100
+  lifespan: 0.31
   direction: 0
