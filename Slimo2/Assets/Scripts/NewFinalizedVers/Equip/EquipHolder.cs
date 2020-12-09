@@ -14,6 +14,8 @@ public class EquipHolder : MonoBehaviour
     public int spID2;
     public int ultID;
 
+    public WepObject[] WeaponsInv = new WepObject[40]; //the capacity is 40 for now
+
     // Start is called before the first frame update
     void Start()
     {
