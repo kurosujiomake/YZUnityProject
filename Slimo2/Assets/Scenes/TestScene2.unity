@@ -4203,7 +4203,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &832291773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10657,6 +10657,12 @@ PrefabInstance:
       propertyPath: pCM
       value: 
       objectReference: {fileID: 1212791305}
+    - target: {fileID: 1870448518112566270, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 5463189583543264802, guid: fcb3d2d4e96ab1b4eafd77a7d2d97c1a,
+        type: 3}
     - target: {fileID: 3727145088433499904, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
         type: 3}
       propertyPath: m_LocalPosition.x
