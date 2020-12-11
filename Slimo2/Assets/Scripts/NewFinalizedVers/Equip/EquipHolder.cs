@@ -5,33 +5,28 @@ using UnityEngine;
 public class EquipHolder : MonoBehaviour
 {
     public PlayerControlManager pCM = null;
-    public ObjDatabase ItemDB;
+    public BaseObj[] inv;
 
-    public int MainWp;
-    public int SubWp;
+    public WepObject mainWep;
+    public WepObject subWep;
 
-    public int spID1;
-    public int spID2;
-    public int ultID;
 
-    public WepObject[] WeaponsInv = new WepObject[40]; //the capacity is 40 for now
 
-    // Start is called before the first frame update
-    void Start()
+    public void PickUpEquip(BaseObj equip)
     {
-        GetIDs();
-    }
+        for (int i= 0; i< inv.Length; i++)
+        {
+            if(inv[i] == null)
+            {
+                inv[i] = equip;
+                break;
+            }
+            else //if it gets to this point, aka inv is full
+            {
+                print("inv is full"); //add a ui display later
+            }
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    public void GetIDs()
-    {
-        spID1 = ItemDB.ReturnSpAtkID(MainWp);
-        spID2 = ItemDB.ReturnSpAtkID(SubWp);
-        ultID = ItemDB.ReturnUltAtkID(MainWp);
     }
 
 }

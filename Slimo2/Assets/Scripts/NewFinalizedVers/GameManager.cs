@@ -15,8 +15,10 @@ public class GameManager : MonoBehaviour
     }
     public GameState gState;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        EquipUI.GetComponent<EquipUINew>().UpdateCursor();
+        EquipUI.GetComponent<EquipUINew>().SlotIDSet();
         EquipUI.SetActive(false);
     }
 
@@ -39,6 +41,7 @@ public class GameManager : MonoBehaviour
                 break;
             case GameState.EquipUIOpen:
                 Time.timeScale = 0;
+                SelectionChangeInput();
                 Player.GetComponent<Animator>().SetBool("IsGamePlay", false);
                 Player.GetComponent<Animator>().speed = 0;
                 Player.GetComponent<PlayerControllerNew>().SetPState(0);
@@ -82,6 +85,7 @@ public class GameManager : MonoBehaviour
             if(!EquipUI.gameObject.activeSelf)
             {
                 EquipUI.SetActive(true);
+                EquipUI.GetComponent<EquipUINew>().ResetSelection();
             }
         }
         if(gState == GameState.EquipUIOpen)
@@ -95,5 +99,20 @@ public class GameManager : MonoBehaviour
     public void SendEquipUItoggle() //when player presses decline at main equip screen, call this function
     {
         ToggleEquipUI();
+    }
+
+    void SelectionChangeInput()
+    {
+        EquipUINew e = EquipUI.GetComponent<EquipUINew>();
+        if (pCM.GetButtonDown("UIUp"))
+            e.ChangeSelection("u");
+        if (pCM.GetButtonDown("UIDown"))
+            e.ChangeSelection("d");
+        if (pCM.GetButtonDown("UIRight"))
+            e.ChangeSelection("r");
+        if (pCM.GetButtonDown("UILeft"))
+            e.ChangeSelection("l");
+        
+
     }
 }

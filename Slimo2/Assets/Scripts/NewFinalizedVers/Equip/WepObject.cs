@@ -24,6 +24,8 @@ public class WepObject : BaseObj
     [SerializeField]
     private float DamageMultiplier;
     public float FinalDamage;
+    public int WepTier;
+    public float[] BonusDmgStats;
     void Awake()
     {
         ObjectType = ObjType.Weapon;
@@ -33,5 +35,27 @@ public class WepObject : BaseObj
     public void DamageCalc()
     {
         FinalDamage = BaseDmg * DamageMultiplier;
+    }
+
+    public void RandomnizeBonusStats()
+    {
+        switch(WepTier)
+        {
+            case 0:
+
+                break;
+            case 1:
+
+                break;
+            case 2:
+
+                break;
+            case 3:
+
+                break;
+            case 4:
+
+                break;
+        }
     }
 }

@@ -811,7 +811,7 @@ PrefabInstance:
     - target: {fileID: 6566249406144528180, guid: 782edf5991210414492f424e7237f055,
         type: 3}
       propertyPath: m_Name
-      value: EquipInvSlot (8)
+      value: EquipInvSlot (9)
       objectReference: {fileID: 0}
     - target: {fileID: 7184959848350920348, guid: 782edf5991210414492f424e7237f055,
         type: 3}
@@ -851,7 +851,7 @@ PrefabInstance:
     - target: {fileID: 7184959848350920348, guid: 782edf5991210414492f424e7237f055,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7184959848350920348, guid: 782edf5991210414492f424e7237f055,
         type: 3}
@@ -4300,40 +4300,53 @@ MonoBehaviour:
   - isSelected: 0
     UIPrefab: {fileID: 1176691980}
     selectCursor: {fileID: 0}
+    slotID: 0
   - isSelected: 0
     UIPrefab: {fileID: 950078500}
     selectCursor: {fileID: 0}
+    slotID: 0
   - isSelected: 0
     UIPrefab: {fileID: 2021758591}
     selectCursor: {fileID: 0}
+    slotID: 0
   - isSelected: 0
     UIPrefab: {fileID: 115386624}
     selectCursor: {fileID: 0}
+    slotID: 0
   - isSelected: 0
     UIPrefab: {fileID: 808188613}
     selectCursor: {fileID: 0}
+    slotID: 0
   - isSelected: 0
     UIPrefab: {fileID: 624853937}
     selectCursor: {fileID: 0}
+    slotID: 0
   - isSelected: 0
     UIPrefab: {fileID: 477131891}
     selectCursor: {fileID: 0}
+    slotID: 0
   - isSelected: 0
     UIPrefab: {fileID: 436774741}
     selectCursor: {fileID: 0}
-  - isSelected: 0
-    UIPrefab: {fileID: 519547483}
-    selectCursor: {fileID: 0}
-  - isSelected: 0
-    UIPrefab: {fileID: 1372507990}
-    selectCursor: {fileID: 0}
+    slotID: 0
   - isSelected: 0
     UIPrefab: {fileID: 828493117}
     selectCursor: {fileID: 0}
+    slotID: 0
+  - isSelected: 0
+    UIPrefab: {fileID: 519547483}
+    selectCursor: {fileID: 0}
+    slotID: 0
+  - isSelected: 0
+    UIPrefab: {fileID: 1372507990}
+    selectCursor: {fileID: 0}
+    slotID: 0
   - isSelected: 0
     UIPrefab: {fileID: 1290394563}
     selectCursor: {fileID: 0}
+    slotID: 0
   UIActive: 1
+  currentSelection: 0
 --- !u!1 &849464912
 GameObject:
   m_ObjectHideFlags: 0
@@ -4598,7 +4611,7 @@ PrefabInstance:
     - target: {fileID: 6566249406144528180, guid: 782edf5991210414492f424e7237f055,
         type: 3}
       propertyPath: m_Name
-      value: EquipInvSlot (10)
+      value: EquipInvSlot (8)
       objectReference: {fileID: 0}
     - target: {fileID: 7184959848350920348, guid: 782edf5991210414492f424e7237f055,
         type: 3}
@@ -4638,7 +4651,7 @@ PrefabInstance:
     - target: {fileID: 7184959848350920348, guid: 782edf5991210414492f424e7237f055,
         type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7184959848350920348, guid: 782edf5991210414492f424e7237f055,
         type: 3}
@@ -5128,9 +5141,9 @@ RectTransform:
   - {fileID: 624853938}
   - {fileID: 477131892}
   - {fileID: 436774742}
+  - {fileID: 828493118}
   - {fileID: 519547484}
   - {fileID: 1372507991}
-  - {fileID: 828493118}
   - {fileID: 1290394564}
   m_Father: {fileID: 832291776}
   m_RootOrder: 0
@@ -6087,7 +6100,7 @@ PrefabInstance:
     - target: {fileID: 6566249406144528180, guid: 782edf5991210414492f424e7237f055,
         type: 3}
       propertyPath: m_Name
-      value: EquipInvSlot (9)
+      value: EquipInvSlot (10)
       objectReference: {fileID: 0}
     - target: {fileID: 7184959848350920348, guid: 782edf5991210414492f424e7237f055,
         type: 3}
@@ -6127,7 +6140,7 @@ PrefabInstance:
     - target: {fileID: 7184959848350920348, guid: 782edf5991210414492f424e7237f055,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 7184959848350920348, guid: 782edf5991210414492f424e7237f055,
         type: 3}
