@@ -1,27 +1,12 @@
 fileFormatVersion: 2
-guid: 54a2aa5264c31f342b85aab902dfc2b1
+guid: 4454980854c125f4883e5829fc98ee7f
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 3392966208300966758
-    second: slime_jump_0
-  - first:
-      213: -7020169640972223087
-    second: slime_jump_1
-  - first:
-      213: -5139682283570628478
-    second: slime_jump_2
-  - first:
-      213: -8482318855872546559
-    second: slime_jump_3
-  - first:
-      213: -7050137547198369393
-    second: slime_jump_4
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 0
+    enableMipMap: 1
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -55,7 +40,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -64,9 +49,9 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 1
+  alphaIsTransparency: 0
   spriteTessellationDetail: -1
-  textureType: 8
+  textureType: 0
   textureShape: 1
   singleChannelComponent: 0
   maxTextureSizeSet: 0
@@ -147,112 +132,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: slime_jump_0
-      rect:
-        serializedVersion: 2
-        x: 9
-        y: 78
-        width: 171
-        height: 163
-      alignment: 9
-      pivot: {x: 0.47, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 663eeac2acc361f20800000000000000
-      internalID: 3392966208300966758
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: slime_jump_1
-      rect:
-        serializedVersion: 2
-        x: 189
-        y: 38
-        width: 141
-        height: 203
-      alignment: 9
-      pivot: {x: 0.44, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 19d7edee7e8539e90800000000000000
-      internalID: -7020169640972223087
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: slime_jump_2
-      rect:
-        serializedVersion: 2
-        x: 339
-        y: 33
-        width: 133
-        height: 208
-      alignment: 9
-      pivot: {x: 0.41, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 288776db13e2ca8b0800000000000000
-      internalID: -5139682283570628478
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: slime_jump_3
-      rect:
-        serializedVersion: 2
-        x: 481
-        y: 31
-        width: 130
-        height: 210
-      alignment: 9
-      pivot: {x: 0.38, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1097e1c11ffb84a80800000000000000
-      internalID: -8482318855872546559
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: slime_jump_4
-      rect:
-        serializedVersion: 2
-        x: 621
-        y: 30
-        width: 131
-        height: 211
-      alignment: 9
-      pivot: {x: 0.38, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f81f8990141e82e90800000000000000
-      internalID: -7050137547198369393
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -262,9 +142,7 @@ TextureImporter:
     indices: 
     edges: []
     weights: []
-    secondaryTextures:
-    - texture: {fileID: 2800000, guid: b2a1ba83ac21556499cc1e832752f17f, type: 3}
-      name: _Emission
+    secondaryTextures: []
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

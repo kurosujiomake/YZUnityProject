@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: player
+  m_Name: slime_idle
   m_Shader: {fileID: -6465566751694194690, guid: 68df88a4183b7124f88d25b8ac6ff3a5,
     type: 3}
   m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
@@ -21,13 +21,13 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Emission:
-        m_Texture: {fileID: 2800000, guid: de59846729cd3d94580677ed066a3db2, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: fcb3d2d4e96ab1b4eafd77a7d2d97c1a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
     m_Colors:
-    - Color_E9144870: {r: 0.13679245, g: 0.2735849, b: 0, a: 1}
+    - Color_E9144870: {r: 0.08284314, g: 0.125, b: 0, a: 0.19607843}
