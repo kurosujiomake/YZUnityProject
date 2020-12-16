@@ -14,7 +14,7 @@ public class ParticleLauncher : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        particleLauncher.Emit(0);
+        //particleLauncher.Emit(0);
     }
 
     public void PrintEvent(string s)
