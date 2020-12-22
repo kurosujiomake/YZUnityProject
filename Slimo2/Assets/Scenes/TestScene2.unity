@@ -330,6 +330,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: efx_hit
       objectReference: {fileID: 0}
+    - target: {fileID: 2048862485936091876, guid: 5505453c66843364ba34d85274ede68c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3199669264439648353, guid: 5505453c66843364ba34d85274ede68c,
         type: 3}
       propertyPath: m_IsActive
