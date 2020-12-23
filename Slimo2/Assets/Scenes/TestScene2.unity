@@ -1253,7 +1253,7 @@ GameObject:
   - component: {fileID: 136881380}
   - component: {fileID: 136881379}
   m_Layer: 0
-  m_Name: DamageNum1
+  m_Name: Total Damage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1275,8 +1275,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 88.998, y: 26.787}
+  m_AnchoredPosition: {x: 1.53, y: 3.7}
+  m_SizeDelta: {x: 105.297, y: 32.539}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &136881379
 MonoBehaviour:
@@ -1298,18 +1298,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
-    m_FontSize: 8
+    m_FontSize: 26
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 0
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1255234
+  m_Text: Total Damage
 --- !u!222 &136881380
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2333,7 +2333,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -63.86, y: -9.69}
+  m_AnchoredPosition: {x: -62.64, y: -9.84}
   m_SizeDelta: {x: 13.797, y: 16.87}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &379910883
@@ -2351,16 +2351,16 @@ MonoBehaviour:
   Duration: 0
   dmgTest: 0
   DisplayDmgText:
-  - Name: 
-    DisplayText: 
+  - Name: Hit Damage
+    DisplayText: ' Hit Damage'
     TxtObj: {fileID: 579728650}
     Active: 0
-  - Name: 
-    DisplayText: 
+  - Name: Total Damage
+    DisplayText: ' Total Damage'
     TxtObj: {fileID: 136881379}
     Active: 0
-  - Name: 
-    DisplayText: 
+  - Name: Combo Count
+    DisplayText: ' Hits!'
     TxtObj: {fileID: 994384502}
     Active: 0
   - Name: 
@@ -2371,6 +2371,7 @@ MonoBehaviour:
     DisplayText: 
     TxtObj: {fileID: 0}
     Active: 0
+  totalDmg: 0
 --- !u!1001 &384354190
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3397,7 +3398,7 @@ GameObject:
   - component: {fileID: 579728651}
   - component: {fileID: 579728650}
   m_Layer: 0
-  m_Name: DamageNum0
+  m_Name: Hit Damage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3419,8 +3420,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 88.998, y: 26.787}
+  m_AnchoredPosition: {x: 0.0000017881, y: 2.21}
+  m_SizeDelta: {x: 73.179, y: 10.968}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &579728650
 MonoBehaviour:
@@ -3442,18 +3443,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
-    m_FontSize: 8
+    m_FontSize: 6
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 0
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1255234
+  m_Text: Hit Damage
 --- !u!222 &579728651
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5634,7 +5635,7 @@ GameObject:
   - component: {fileID: 994384503}
   - component: {fileID: 994384502}
   m_Layer: 0
-  m_Name: DamageNum2
+  m_Name: Combo Number
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5656,8 +5657,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 88.998, y: 26.787}
+  m_AnchoredPosition: {x: 0.36, y: 1.27}
+  m_SizeDelta: {x: 78.452, y: 12.406}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &994384502
 MonoBehaviour:
@@ -5679,18 +5680,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
-    m_FontSize: 8
+    m_FontSize: 6
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 0
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1255234
+  m_Text: Combo
 --- !u!222 &994384503
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8653,7 +8654,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.65, y: -6.25}
+  m_AnchoredPosition: {x: -0.15, y: -5.84}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &1533643521 stripped
@@ -8954,7 +8955,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 2.52}
+  m_AnchoredPosition: {x: -1.01, y: 2.21}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1623878674
