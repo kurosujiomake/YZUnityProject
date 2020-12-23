@@ -2247,6 +2247,7 @@ GameObject:
   - component: {fileID: 379910881}
   - component: {fileID: 379910880}
   - component: {fileID: 379910879}
+  - component: {fileID: 379910883}
   m_Layer: 0
   m_Name: Damage Num Canvas
   m_TagString: Untagged
@@ -2335,6 +2336,41 @@ RectTransform:
   m_AnchoredPosition: {x: -63.86, y: -9.69}
   m_SizeDelta: {x: 13.797, y: 16.87}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &379910883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379910878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d38fd774580223949bd8890518a29a68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0
+  dmgTest: 0
+  DisplayDmgText:
+  - Name: 
+    DisplayText: 
+    TxtObj: {fileID: 579728650}
+    Active: 0
+  - Name: 
+    DisplayText: 
+    TxtObj: {fileID: 136881379}
+    Active: 0
+  - Name: 
+    DisplayText: 
+    TxtObj: {fileID: 994384502}
+    Active: 0
+  - Name: 
+    DisplayText: 
+    TxtObj: {fileID: 1925516181}
+    Active: 0
+  - Name: 
+    DisplayText: 
+    TxtObj: {fileID: 0}
+    Active: 0
 --- !u!1001 &384354190
 PrefabInstance:
   m_ObjectHideFlags: 0
