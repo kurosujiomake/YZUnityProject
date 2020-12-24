@@ -75,43 +75,12 @@ public class DamageTakeCycles : MonoBehaviour
         if(!enemyFacingRight) //if the player is facing left, flip the angles
         {
             dir = 180 - _dir;
-            Debug.Log("Flipped KB angle");
         }
         dir *= Mathf.Deg2Rad;
-        print(dir * 57.3f);
-        print("Input degrees is "+_dir);
         Vector2 v = new Vector2(Mathf.Cos(dir) * _force, Mathf.Sin(dir) * _force);
         rig2D.velocity = v;
     }
-    private IEnumerator ForceBasedGroundKB(int _KBID)
-    {
-        float startTime = Time.time;
-        float now = startTime;
-        while (startTime + kbDatabase.KBDur(_KBID) <= now)
-        {
-            DirectionalKnockBackF(kbDatabase.Dir(_KBID), kbDatabase.Vel(_KBID));
-            yield return new WaitForEndOfFrame();
-            now = Time.time;
-        }
-    }
-    private void DirectionalKnockBackF(float _dir, float _force) //this one uses addforce instead of setting vel
-    {
-        float d = 0;
-        switch (enemyFacingRight)
-        {
-            case true:
-                d = _dir * Mathf.Deg2Rad;
-                print(d * 57.3f);
-                break;
-            case false:
-                d = (180 - _dir) * Mathf.Deg2Rad;
-                print(d * 57.3f);
-                break;
-        }
-        Vector2 v = new Vector2(Mathf.Cos(d), Mathf.Sin(d));
-        rig2D.AddRelativeForce(v * _force * Time.deltaTime, ForceMode2D.Impulse);
-    }
-
+    
     private void StopMovement()
     {
         rig2D.velocity = Vector2.zero;
@@ -141,7 +110,7 @@ public class DamageTakeCycles : MonoBehaviour
                 KBID = h.curKBNum;
                 curHitID = h.Hit_ID;
                 StartKBCycle();
-                Debug.Log("Got hit with kb id of " + KBID);
+                //Debug.Log("Got hit with kb id of " + KBID);
             }
         }
     }

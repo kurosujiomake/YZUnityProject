@@ -7,46 +7,67 @@ public class DamageNumberMain : MonoBehaviour
 {
     public float Duration;
     public float dmgTest;
-    public DmgText[] DisplayDmgText = new DmgText[5];
+    public DmgText[] DisplayDmgText = new DmgText[4];
     [SerializeField]
     private float totalDmg;
+    [SerializeField]
+    private int ComboCounter;
 
     void Start()
     {
         DeactivateAllText();
     }
-    public void HitDamageUpdate(float dmg)
+    
+    public void DisplayUpdate(float hitDmg, int hitCount) //other scripts should call this
     {
-        DisplayDmgText[0].Activate();
-        DisplayDmgText[0].TxtObj.text = Mathf.RoundToInt(dmg).ToString() + DisplayDmgText[0].DisplayText;
+        StopAllCoroutines();
+        ComboCounterInc(hitCount);
+        AddTotalDmg(hitDmg);
+        HitDamageUpdate(hitDmg);
+        StartCoroutine(ComboTimer());
     }
-    public void TotalDmgUpdate(float input)
+
+    public void TotalDmgUpdate(float input) //updates the display text for total damage
     {
         DisplayDmgText[1].Activate();
         DisplayDmgText[1].TxtObj.text = Mathf.RoundToInt(input).ToString() + DisplayDmgText[0].DisplayText;
     }
+    public void HitDamageUpdate(float dmg) //updates the display text for hit damage
+    {
+        DisplayDmgText[0].Activate();
+        DisplayDmgText[0].TxtObj.text = Mathf.RoundToInt(dmg).ToString() + DisplayDmgText[0].DisplayText;
+    }
+    public void HitCounterInc(int input)
+    {
+        DisplayDmgText[2].Activate();
+        DisplayDmgText[2].TxtObj.text = input + DisplayDmgText[2].DisplayText;
+    }
     public void AddTotalDmg(float input)
     {
         totalDmg += input;
-
+        TotalDmgUpdate(totalDmg);
     }
     public void ResetTotalDmg()
     {
         DisplayDmgText[1].Deactivate();
         totalDmg = 0;
-
+    }
+    public void ComboCounterInc(int input)
+    {
+        ComboCounter += input;
+        HitCounterInc(ComboCounter);
     }
 
     IEnumerator ComboTimer()
     {
+        print("Started fade countdown");
         yield return new WaitForSeconds(Duration);
+        print("Fade time reached, turning off all displays");
         DeactivateAllText();
         ResetTotalDmg();
+        ComboCounter = 0;
     }
-    void Update()
-    {
-        HitDamageUpdate(dmgTest);
-    }
+    
     void DeactivateAllText()
     {
         foreach (DmgText d in DisplayDmgText)

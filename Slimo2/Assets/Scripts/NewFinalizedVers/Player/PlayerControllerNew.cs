@@ -167,7 +167,7 @@ public class PlayerControllerNew : MonoBehaviour
             r2D.velocity = a;
         if (pCM.GetButtonDown("Dash"))
         {
-            print("dash pressed");
+            //print("dash pressed");
             if (pCM.GetDirectionL() == "n")
                 BlinkTeleport();
             else
@@ -362,7 +362,7 @@ public class PlayerControllerNew : MonoBehaviour
                 StartCoroutine(GDCD());
                 break;
             case 1:
-                print("used 1 airdash");
+                //print("used 1 airdash");
                 break;
         }
     }

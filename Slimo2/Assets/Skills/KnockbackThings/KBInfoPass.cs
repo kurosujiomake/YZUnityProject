@@ -9,7 +9,8 @@ public class KBInfoPass : MonoBehaviour
     public bool SetHitID;
     public int curKBNum;
     public bool isProj;
-    
+    public int HitCount = 1;
+    public float Damage = 251;
     public void StartProjTimer(float dur)
     {
         StartCoroutine(Timer(dur));
