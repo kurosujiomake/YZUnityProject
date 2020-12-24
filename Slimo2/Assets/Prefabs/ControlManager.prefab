@@ -44,14 +44,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7db7a1c59bd7cf4d914c72e36de2072, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  curControlType: 0
   kb:
     Atk1_btn: x
-    Atk2_btn: b
-    Atk3_btn: 
+    Atk2_btn: leftShoulder
+    Atk2_2_btn: rightShoulder
+    Atk3_btn: y
     Jump_btn: a
-    Dash_btn: RBumper
-    SwapWep_btn: down
-    Inv_btn: LTrigger
+    Dash_btn: b
+    SwapWep_btn: leftTrigger
+    Inv_btn: select
+    UIUp_btn: dpad/up
+    UIDown_btn: dpad/down
+    UIRight_btn: dpad/right
+    UILeft_btn: dpad/left
+    UIAccept_btn: b
+    UIDecline_btn: a
+    UIAlt1_btn: leftShoulder
+    UIAlt2_btn: rightShoulder
+    UIAlt3_btn: rightTrigger
+    Atk1_Key: J
+    Atk2_Key: K
+    Atk2_2_Key: E
+    Atk3_Key: R
+    Jump_Key: Space
+    Dash_Key: LeftShift
+    SwapWep_Key: LeftAlt
+    Inv_Key: I
+    UIUp_Key: UpArrow
+    UIDown_Key: DownArrow
+    UIRight_Key: RightArrow
+    UILeft_Key: LeftArrow
+    UIAccept_Key: Enter
+    UIDecline_Key: P
+    UIAlt1_Key: B
+    UIAlt2_Key: N
+    UIAlt3_Key: M
+    Directional_Key:
+    - D
+    - A
+    - W
+    - S
   curLStickDir: 0
   curRStickDir: 0
   leftStickRead: {x: 0, y: 0}
@@ -62,42 +95,69 @@ MonoBehaviour:
   stickDeadzoneR:
   - 0.25
   - 0.25
-  a_button_pressed: 0
-  a_button_held: 0
-  a_button_released: 0
-  b_button_pressed: 0
-  b_button_held: 0
-  b_button_released: 0
-  x_button_pressed: 0
-  x_button_held: 0
-  x_button_released: 0
-  y_button_pressed: 0
-  y_button_held: 0
-  y_button_released: 0
-  up_pressed: 0
-  up_held: 0
-  up_released: 0
-  down_pressed: 0
-  down_held: 0
-  down_released: 0
-  left_pressed: 0
-  left_held: 0
-  left_released: 0
-  right_pressed: 0
-  right_held: 0
-  right_released: 0
-  Lbumper_pressed: 0
-  Lbumper_held: 0
-  Lbumper_released: 0
-  LTrigger_pressed: 0
-  LTrigger_held: 0
-  LTrigger_released: 0
-  Rbumper_pressed: 0
-  Rbumper_held: 0
-  Rbumper_released: 0
-  RTrigger_pressed: 0
-  RTrigger_held: 0
-  RTrigger_released: 0
+  Atk1_pressed: 0
+  Atk1_held: 0
+  Atk1_released: 0
+  Atk2_pressed: 0
+  Atk2_held: 0
+  Atk2_released: 0
+  Atk2_2_pressed: 0
+  Atk2_2_held: 0
+  Atk2_2_released: 0
+  Atk3_pressed: 0
+  Atk3_held: 0
+  Atk3_released: 0
+  Jump_pressed: 0
+  Jump_held: 0
+  Jump_released: 0
+  Dash_pressed: 0
+  Dash_held: 0
+  Dash_released: 0
+  SwapWep_pressed: 0
+  SwapWep_held: 0
+  SwapWep_released: 0
+  Inv_pressed: 0
+  Inv_held: 0
+  Inv_released: 0
+  UIUp_pressed: 0
+  UIUp_held: 0
+  UIUp_released: 0
+  UIDown_pressed: 0
+  UIDown_held: 0
+  UIDown_released: 0
+  UIRight_pressed: 0
+  UIRight_held: 0
+  UIRight_released: 0
+  UILeft_pressed: 0
+  UILeft_held: 0
+  UILeft_released: 0
+  UIAccept_pressed: 0
+  UIAccept_held: 0
+  UIAccept_released: 0
+  UIDecline_pressed: 0
+  UIDecline_held: 0
+  UIDecline_released: 0
+  UIAlt1_pressed: 0
+  UIAlt1_held: 0
+  UIAlt1_released: 0
+  UIAlt2_pressed: 0
+  UIAlt2_held: 0
+  UIAlt2_released: 0
+  UIAlt3_pressed: 0
+  UIAlt3_held: 0
+  UIAlt3_released: 0
+  LeftKey_Pressed: 0
+  LeftKey_Held: 0
+  LeftKey_Released: 0
+  RightKey_Pressed: 0
+  RightKey_Held: 0
+  RightKey_Released: 0
+  UpKey_Pressed: 0
+  UpKey_Held: 0
+  UpKey_Released: 0
+  DownKey_Pressed: 0
+  DownKey_Held: 0
+  DownKey_Released: 0
 --- !u!114 &2374169362876929647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,7 +165,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2374169362876929644}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c68a1d8563c3f0f46bcd20a0b8ac306a, type: 3}
   m_Name: 
