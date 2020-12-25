@@ -13,6 +13,9 @@ public class NewAtkMove : MonoBehaviour
     private PlayerControllerNew pCN = null;
     private GroundChecker g = null;
     private Animator anim = null;
+    private float normGravScale;
+    public float playerFloatDur = 1;
+    public float floatGravScale;
     // Start is called before the first frame update
     void Awake()
     {
@@ -21,6 +24,7 @@ public class NewAtkMove : MonoBehaviour
         pCN = GetComponent<PlayerControllerNew>();
         g = GetComponent<GroundChecker>();
         anim = GetComponent<Animator>();
+        normGravScale = r2D.gravityScale;
     }
 
     // Update is called once per frame
@@ -67,14 +71,31 @@ public class NewAtkMove : MonoBehaviour
                 {
                     pCN.SetPState(0);
                 }
-                
+                if(curAtk.moveParam[atkTransfer.moveNum].floats)
+                {
+                    StopAllCoroutines();
+                    r2D.gravityScale = floatGravScale;
+                    StartCoroutine(PlayerFloat());
+                }
+
+
                 break;
             case false:
                 pCN.SetPState(1);
+                if(g.ReturnGroundCheck())
+                {
+                    StopAllCoroutines();
+                    r2D.gravityScale = normGravScale;
+                }
                 AtkName = "Not Attacking";
                 break;
         }
         
+    }
+    IEnumerator PlayerFloat()
+    {
+        yield return new WaitForSeconds(playerFloatDur);
+        r2D.gravityScale = normGravScale;
     }
     void SetNewCurAtk(string _name)
     {
@@ -129,4 +150,5 @@ public class MoveGroup
     public bool hasPause;
     public bool canFollow;
     public int followMoveNum;
+    public bool floats;
 }

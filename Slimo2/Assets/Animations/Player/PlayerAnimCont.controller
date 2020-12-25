@@ -3715,7 +3715,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbf0d7d934bb2c1439fc2317c625f311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyHeldDur: 0.1
+  keyHeldDur: 0.07
 --- !u!1101 &755163251194514426
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
