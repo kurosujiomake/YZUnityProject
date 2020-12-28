@@ -1591,6 +1591,8 @@ GameObject:
   - component: {fileID: 7145002463949802156}
   - component: {fileID: 1108050474}
   - component: {fileID: 1108050485}
+  - component: {fileID: 995318638}
+  - component: {fileID: 995318651}
   m_Layer: 9
   m_Name: PlayerNew
   m_TagString: Player
@@ -1857,6 +1859,7 @@ MonoBehaviour:
       hasPause: 0
       canFollow: 0
       followMoveNum: 0
+      floats: 0
   - Name: Sw_atk2
     moveParam:
     - moveNum: 0
@@ -1865,6 +1868,7 @@ MonoBehaviour:
       hasPause: 0
       canFollow: 0
       followMoveNum: 0
+      floats: 0
   - Name: Sw_atk3
     moveParam:
     - moveNum: 0
@@ -1873,6 +1877,7 @@ MonoBehaviour:
       hasPause: 0
       canFollow: 0
       followMoveNum: 0
+      floats: 0
   - Name: Sw_atk4
     moveParam:
     - moveNum: 0
@@ -1881,34 +1886,39 @@ MonoBehaviour:
       hasPause: 0
       canFollow: 0
       followMoveNum: 0
+      floats: 0
   - Name: SwAir_1
     moveParam:
     - moveNum: 0
       direction: 85
-      velocity: 7
+      velocity: 3.3
       hasPause: 0
       canFollow: 0
       followMoveNum: 0
+      floats: 1
   - Name: SwAir_2
     moveParam:
     - moveNum: 0
       direction: 90
-      velocity: 7
+      velocity: 3.3
       hasPause: 0
       canFollow: 0
       followMoveNum: 0
+      floats: 1
     - moveNum: 1
       direction: 90
-      velocity: 7
+      velocity: 3.3
       hasPause: 0
       canFollow: 0
       followMoveNum: 0
+      floats: 0
     - moveNum: 2
       direction: 90
-      velocity: 21
+      velocity: 4
       hasPause: 0
       canFollow: 0
       followMoveNum: 0
+      floats: 1
   - Name: SwAir_3
     moveParam:
     - moveNum: 0
@@ -1917,6 +1927,7 @@ MonoBehaviour:
       hasPause: 1
       canFollow: 0
       followMoveNum: 0
+      floats: 0
   - Name: SwDashAtk
     moveParam:
     - moveNum: 0
@@ -1925,6 +1936,7 @@ MonoBehaviour:
       hasPause: 0
       canFollow: 0
       followMoveNum: 0
+      floats: 0
   - Name: SwDashFinish
     moveParam:
     - moveNum: 0
@@ -1933,6 +1945,7 @@ MonoBehaviour:
       hasPause: 0
       canFollow: 0
       followMoveNum: 0
+      floats: 0
   - Name: SwKnockUp
     moveParam:
     - moveNum: 0
@@ -1941,12 +1954,14 @@ MonoBehaviour:
       hasPause: 0
       canFollow: 1
       followMoveNum: 1
+      floats: 1
     - moveNum: 1
       direction: 90
-      velocity: 37
+      velocity: 17
       hasPause: 0
       canFollow: 0
       followMoveNum: 0
+      floats: 0
   - Name: SwUlt
     moveParam:
     - moveNum: 0
@@ -1955,6 +1970,7 @@ MonoBehaviour:
       hasPause: 0
       canFollow: 0
       followMoveNum: 0
+      floats: 0
   - Name: SwSp1_a
     moveParam:
     - moveNum: 0
@@ -1963,6 +1979,7 @@ MonoBehaviour:
       hasPause: 0
       canFollow: 0
       followMoveNum: 0
+      floats: 0
   - Name: SwSp1_b
     moveParam:
     - moveNum: 0
@@ -1971,6 +1988,7 @@ MonoBehaviour:
       hasPause: 0
       canFollow: 0
       followMoveNum: 0
+      floats: 0
   - Name: SwSpWindup
     moveParam:
     - moveNum: 0
@@ -1979,6 +1997,7 @@ MonoBehaviour:
       hasPause: 0
       canFollow: 0
       followMoveNum: 0
+      floats: 0
   - Name: SwSpFinish
     moveParam:
     - moveNum: 0
@@ -1987,6 +2006,7 @@ MonoBehaviour:
       hasPause: 0
       canFollow: 0
       followMoveNum: 0
+      floats: 0
   - Name: BowMelee
     moveParam:
     - moveNum: 0
@@ -1995,6 +2015,7 @@ MonoBehaviour:
       hasPause: 0
       canFollow: 0
       followMoveNum: 0
+      floats: 0
   - Name: BowG1
     moveParam:
     - moveNum: 0
@@ -2003,6 +2024,7 @@ MonoBehaviour:
       hasPause: 0
       canFollow: 0
       followMoveNum: 0
+      floats: 0
   - Name: BowG2
     moveParam:
     - moveNum: 0
@@ -2011,6 +2033,7 @@ MonoBehaviour:
       hasPause: 0
       canFollow: 0
       followMoveNum: 0
+      floats: 0
   - Name: BowG3
     moveParam:
     - moveNum: 0
@@ -2019,9 +2042,66 @@ MonoBehaviour:
       hasPause: 0
       canFollow: 0
       followMoveNum: 0
+      floats: 0
+  - Name: BowAirNeutral
+    moveParam:
+    - moveNum: 0
+      direction: 90
+      velocity: 5
+      hasPause: 0
+      canFollow: 0
+      followMoveNum: 0
+      floats: 1
+  - Name: BowAirForward
+    moveParam:
+    - moveNum: 0
+      direction: 89
+      velocity: 3
+      hasPause: 0
+      canFollow: 0
+      followMoveNum: 0
+      floats: 1
+  - Name: BowG3
+    moveParam:
+    - moveNum: 0
+      direction: 0
+      velocity: -5
+      hasPause: 0
+      canFollow: 0
+      followMoveNum: 0
+      floats: 0
+  - Name: BowG3
+    moveParam:
+    - moveNum: 0
+      direction: 0
+      velocity: -5
+      hasPause: 0
+      canFollow: 0
+      followMoveNum: 0
+      floats: 0
+  - Name: BowG3
+    moveParam:
+    - moveNum: 0
+      direction: 0
+      velocity: -5
+      hasPause: 0
+      canFollow: 0
+      followMoveNum: 0
+      floats: 0
+  - Name: BowG3
+    moveParam:
+    - moveNum: 0
+      direction: 0
+      velocity: -5
+      hasPause: 0
+      canFollow: 0
+      followMoveNum: 0
+      floats: 0
   curAtk:
     Name: 
     moveParam: []
+  playerFloatDur: 0.32
+  floatGravScale: 0.8
 --- !u!114 &1499148894918841658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2173,6 +2253,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particleLauncher: {fileID: 0}
+--- !u!114 &995318638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3727145088433499907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea9a6f9b722e5144db2dd070095fdf7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleLauncher: {fileID: 0}
+--- !u!114 &995318651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3727145088433499907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62738eef31f05b3458d31aa78a24c5d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  pCM: {fileID: 0}
+  pCN: {fileID: 0}
 --- !u!1 &3772932790477469332
 GameObject:
   m_ObjectHideFlags: 0

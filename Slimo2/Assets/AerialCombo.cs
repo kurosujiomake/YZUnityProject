@@ -38,7 +38,7 @@ public class AerialCombo : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        switch(isNotAtkState)
+        switch(isNotAtkState) //setting attack triggers for aerial
         {
             case true:
                 pCN.SetPState(1);
@@ -95,6 +95,7 @@ public class AerialCombo : StateMachineBehaviour
                 }
                 break;
         }
+        
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
@@ -102,12 +103,14 @@ public class AerialCombo : StateMachineBehaviour
     {
         comNumSet = false;
         animator.ResetTrigger("GAtt_a");
-        if(!isNotAtkState)
+        if(!isNotAtkState && animator.GetInteger("WepType") == 0) //combo doesnt increase when using bow
         {
             animator.SetInteger("AComboNum", animator.GetInteger("AComboNum") + 1);
+            
         }
         animator.ResetTrigger("DownAtk");
         animator.ResetTrigger("AAtt_a");
+
 
     }
 
