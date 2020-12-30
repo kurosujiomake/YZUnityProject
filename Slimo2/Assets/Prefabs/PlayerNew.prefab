@@ -1860,6 +1860,7 @@ MonoBehaviour:
       canFollow: 0
       followMoveNum: 0
       floats: 0
+      decreaseAirBoost: 0
   - Name: Sw_atk2
     moveParam:
     - moveNum: 0
@@ -1869,6 +1870,7 @@ MonoBehaviour:
       canFollow: 0
       followMoveNum: 0
       floats: 0
+      decreaseAirBoost: 0
   - Name: Sw_atk3
     moveParam:
     - moveNum: 0
@@ -1878,6 +1880,7 @@ MonoBehaviour:
       canFollow: 0
       followMoveNum: 0
       floats: 0
+      decreaseAirBoost: 0
   - Name: Sw_atk4
     moveParam:
     - moveNum: 0
@@ -1887,6 +1890,7 @@ MonoBehaviour:
       canFollow: 0
       followMoveNum: 0
       floats: 0
+      decreaseAirBoost: 0
   - Name: SwAir_1
     moveParam:
     - moveNum: 0
@@ -1896,6 +1900,7 @@ MonoBehaviour:
       canFollow: 0
       followMoveNum: 0
       floats: 1
+      decreaseAirBoost: 0
   - Name: SwAir_2
     moveParam:
     - moveNum: 0
@@ -1905,6 +1910,7 @@ MonoBehaviour:
       canFollow: 0
       followMoveNum: 0
       floats: 1
+      decreaseAirBoost: 0
     - moveNum: 1
       direction: 90
       velocity: 3.3
@@ -1912,6 +1918,7 @@ MonoBehaviour:
       canFollow: 0
       followMoveNum: 0
       floats: 0
+      decreaseAirBoost: 0
     - moveNum: 2
       direction: 90
       velocity: 4
@@ -1919,6 +1926,7 @@ MonoBehaviour:
       canFollow: 0
       followMoveNum: 0
       floats: 1
+      decreaseAirBoost: 0
   - Name: SwAir_3
     moveParam:
     - moveNum: 0
@@ -1928,6 +1936,7 @@ MonoBehaviour:
       canFollow: 0
       followMoveNum: 0
       floats: 0
+      decreaseAirBoost: 0
   - Name: SwDashAtk
     moveParam:
     - moveNum: 0
@@ -1937,6 +1946,7 @@ MonoBehaviour:
       canFollow: 0
       followMoveNum: 0
       floats: 0
+      decreaseAirBoost: 0
   - Name: SwDashFinish
     moveParam:
     - moveNum: 0
@@ -1946,6 +1956,7 @@ MonoBehaviour:
       canFollow: 0
       followMoveNum: 0
       floats: 0
+      decreaseAirBoost: 0
   - Name: SwKnockUp
     moveParam:
     - moveNum: 0
@@ -1955,6 +1966,7 @@ MonoBehaviour:
       canFollow: 1
       followMoveNum: 1
       floats: 1
+      decreaseAirBoost: 0
     - moveNum: 1
       direction: 90
       velocity: 17
@@ -1962,6 +1974,7 @@ MonoBehaviour:
       canFollow: 0
       followMoveNum: 0
       floats: 0
+      decreaseAirBoost: 0
   - Name: SwUlt
     moveParam:
     - moveNum: 0
@@ -1971,6 +1984,7 @@ MonoBehaviour:
       canFollow: 0
       followMoveNum: 0
       floats: 0
+      decreaseAirBoost: 0
   - Name: SwSp1_a
     moveParam:
     - moveNum: 0
@@ -1980,6 +1994,7 @@ MonoBehaviour:
       canFollow: 0
       followMoveNum: 0
       floats: 0
+      decreaseAirBoost: 0
   - Name: SwSp1_b
     moveParam:
     - moveNum: 0
@@ -1989,6 +2004,7 @@ MonoBehaviour:
       canFollow: 0
       followMoveNum: 0
       floats: 0
+      decreaseAirBoost: 0
   - Name: SwSpWindup
     moveParam:
     - moveNum: 0
@@ -1998,6 +2014,7 @@ MonoBehaviour:
       canFollow: 0
       followMoveNum: 0
       floats: 0
+      decreaseAirBoost: 0
   - Name: SwSpFinish
     moveParam:
     - moveNum: 0
@@ -2007,6 +2024,7 @@ MonoBehaviour:
       canFollow: 0
       followMoveNum: 0
       floats: 0
+      decreaseAirBoost: 0
   - Name: BowMelee
     moveParam:
     - moveNum: 0
@@ -2016,6 +2034,7 @@ MonoBehaviour:
       canFollow: 0
       followMoveNum: 0
       floats: 0
+      decreaseAirBoost: 0
   - Name: BowG1
     moveParam:
     - moveNum: 0
@@ -2025,6 +2044,7 @@ MonoBehaviour:
       canFollow: 0
       followMoveNum: 0
       floats: 0
+      decreaseAirBoost: 0
   - Name: BowG2
     moveParam:
     - moveNum: 0
@@ -2034,6 +2054,7 @@ MonoBehaviour:
       canFollow: 0
       followMoveNum: 0
       floats: 0
+      decreaseAirBoost: 0
   - Name: BowG3
     moveParam:
     - moveNum: 0
@@ -2043,6 +2064,7 @@ MonoBehaviour:
       canFollow: 0
       followMoveNum: 0
       floats: 0
+      decreaseAirBoost: 0
   - Name: BowAirNeutral
     moveParam:
     - moveNum: 0
@@ -2052,6 +2074,7 @@ MonoBehaviour:
       canFollow: 0
       followMoveNum: 0
       floats: 1
+      decreaseAirBoost: 1
   - Name: BowAirForward
     moveParam:
     - moveNum: 0
@@ -2061,6 +2084,37 @@ MonoBehaviour:
       canFollow: 0
       followMoveNum: 0
       floats: 1
+      decreaseAirBoost: 1
+  - Name: BowAirUp
+    moveParam:
+    - moveNum: 0
+      direction: 90
+      velocity: 2
+      hasPause: 0
+      canFollow: 0
+      followMoveNum: 0
+      floats: 1
+      decreaseAirBoost: 1
+  - Name: BowAirBack
+    moveParam:
+    - moveNum: 0
+      direction: 90
+      velocity: 3
+      hasPause: 0
+      canFollow: 0
+      followMoveNum: 0
+      floats: 1
+      decreaseAirBoost: 1
+  - Name: BowAirDown
+    moveParam:
+    - moveNum: 0
+      direction: 90
+      velocity: 8
+      hasPause: 0
+      canFollow: 0
+      followMoveNum: 0
+      floats: 1
+      decreaseAirBoost: 1
   - Name: BowG3
     moveParam:
     - moveNum: 0
@@ -2070,38 +2124,15 @@ MonoBehaviour:
       canFollow: 0
       followMoveNum: 0
       floats: 0
-  - Name: BowG3
-    moveParam:
-    - moveNum: 0
-      direction: 0
-      velocity: -5
-      hasPause: 0
-      canFollow: 0
-      followMoveNum: 0
-      floats: 0
-  - Name: BowG3
-    moveParam:
-    - moveNum: 0
-      direction: 0
-      velocity: -5
-      hasPause: 0
-      canFollow: 0
-      followMoveNum: 0
-      floats: 0
-  - Name: BowG3
-    moveParam:
-    - moveNum: 0
-      direction: 0
-      velocity: -5
-      hasPause: 0
-      canFollow: 0
-      followMoveNum: 0
-      floats: 0
+      decreaseAirBoost: 0
   curAtk:
     Name: 
     moveParam: []
   playerFloatDur: 0.32
   floatGravScale: 0.8
+  diminishedAirBoost: 0
+  boostDiminishAmt: 1.7
+  startDiminishing: 0
 --- !u!114 &1499148894918841658
 MonoBehaviour:
   m_ObjectHideFlags: 0

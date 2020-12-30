@@ -19,41 +19,50 @@ public class AnimatorDirectionSet : MonoBehaviour
     {
         switch (pCM.GetDirectionL()) //set the int in the animator so it knows which aerial to trigger
         {
-            case "n":
+            case "n": //neutral
                 animator.SetInteger("AirDirection", 0);
                 break;
-            case "r":
+            case "r": //forwards/right
                 if (pCN.facingRight)
                     animator.SetInteger("AirDirection", 1); //if facing right then right input is forward
                 if (!pCN.facingRight)
                     animator.SetInteger("AirDirection", 2); //if not then left input is forward
                 break;
-            case "l":
+            case "l": //backwards/left
                 if (pCN.facingRight)
                     animator.SetInteger("AirDirection", 2); //see above
                 if (!pCN.facingRight)
                     animator.SetInteger("AirDirection", 1);
                 break;
-            case "u":
+            case "u": //up
                 animator.SetInteger("AirDirection", 3);
                 break;
-            case "d":
+            case "d": //down
                 animator.SetInteger("AirDirection", 4);
                 break;
-            case "ur":
+            case "ur": //up forwards/up right
                 if (pCN.facingRight)
                     animator.SetInteger("AirDirection", 5);
                 if (!pCN.facingRight)
                     animator.SetInteger("AirDirection", 6);
                 break;
-            case "ul":
-                animator.SetInteger("AirDirection", 6);
+            case "ul": //up backwards/up left
+                if (pCN.facingRight)
+                    animator.SetInteger("AirDirection", 6);
+                if (!pCN.facingRight)
+                    animator.SetInteger("AirDirection", 5);
                 break;
-            case "dr":
-                animator.SetInteger("AirDirection", 7);
+            case "dr": //down forwards/down right
+                if (pCN.facingRight)
+                    animator.SetInteger("AirDirection", 7);
+                if (!pCN.facingRight)
+                    animator.SetInteger("AirDirection", 8);
                 break;
-            case "dl":
-                animator.SetInteger("AirDirection", 8);
+            case "dl": //down backwards/down left
+                if (pCN.facingRight)
+                    animator.SetInteger("AirDirection", 8);
+                if (pCN.facingRight)
+                    animator.SetInteger("AirDirection", 7);
                 break;
         }
     }

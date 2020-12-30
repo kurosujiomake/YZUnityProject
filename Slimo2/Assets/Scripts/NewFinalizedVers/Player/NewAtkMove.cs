@@ -16,6 +16,13 @@ public class NewAtkMove : MonoBehaviour
     private float normGravScale;
     public float playerFloatDur = 1;
     public float floatGravScale;
+    [SerializeField]
+    private float diminishedAirBoost = 0;
+    public float boostDiminishAmt = 0;
+    [SerializeField]
+    private bool startDiminishing = false;
+    private bool hasDiminished = false;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -37,7 +44,7 @@ public class NewAtkMove : MonoBehaviour
         switch(isAttacking)
         {
             case true:
-                if(curAtk.moveParam[atkTransfer.moveNum].hasPause)
+                if(curAtk.moveParam[atkTransfer.moveNum].hasPause) //check to see if the attack has a must hit ground to finish condition
                 {
                     if(atkTransfer.canPause)
                     {
@@ -51,7 +58,7 @@ public class NewAtkMove : MonoBehaviour
                         }
                     }
                 }
-                if (atkTransfer.moveActive)
+                if (atkTransfer.moveActive) //calls the function to force move player based on which attack
                 {
                     pCN.SetPState(2);
                     if (atkTransfer.canfollowUpMove && curAtk.moveParam[atkTransfer.moveNum].canFollow) //checks to see if this atk has a conditional followup
@@ -61,17 +68,23 @@ public class NewAtkMove : MonoBehaviour
                             ForcedMovement(curAtk.moveParam[curAtk.moveParam[atkTransfer.moveNum].followMoveNum].direction, curAtk.moveParam[curAtk.moveParam[atkTransfer.moveNum].followMoveNum].velocity);
                         }
                     }
-                    if(!atkTransfer.canfollowUpMove || !curAtk.moveParam[atkTransfer.moveNum].canFollow)
+                    if(!atkTransfer.canfollowUpMove || !curAtk.moveParam[atkTransfer.moveNum].canFollow) //force moves the player normally
                     {
-                        ForcedMovement(curAtk.moveParam[atkTransfer.moveNum].direction, curAtk.moveParam[atkTransfer.moveNum].velocity);
+                        if(curAtk.moveParam[atkTransfer.moveNum].decreaseAirBoost) //if the current attack has diminishing air boost
+                        {
+                            DiminishingReturnsAirBoost(curAtk.moveParam[atkTransfer.moveNum].velocity); //gets the new velocity
+                            ForcedMovement(curAtk.moveParam[atkTransfer.moveNum].direction, diminishedAirBoost); //uses new velocity instead
+                        }
+                        if (!curAtk.moveParam[atkTransfer.moveNum].decreaseAirBoost) //if the current attack does not have diminishing air boost
+                            ForcedMovement(curAtk.moveParam[atkTransfer.moveNum].direction, curAtk.moveParam[atkTransfer.moveNum].velocity);
                     }
                     
                 }
-                if (!atkTransfer.moveActive)
+                if (!atkTransfer.moveActive) //freezes the player when attacking
                 {
                     pCN.SetPState(0);
                 }
-                if(curAtk.moveParam[atkTransfer.moveNum].floats)
+                if(curAtk.moveParam[atkTransfer.moveNum].floats) //check to see if this attack makes the player float in the air for a bit
                 {
                     StopAllCoroutines();
                     r2D.gravityScale = floatGravScale;
@@ -81,23 +94,44 @@ public class NewAtkMove : MonoBehaviour
 
                 break;
             case false:
-                pCN.SetPState(1);
-                if(g.ReturnGroundCheck())
+                pCN.SetPState(1); //gives players back their controls
+                hasDiminished = false; //resets decrement
+                if(g.ReturnGroundCheck()) //resets gravity from float in case the player touches ground before the timer runs out
                 {
                     StopAllCoroutines();
                     r2D.gravityScale = normGravScale;
+                    startDiminishing = false; //turns off and resets diminishing air boost
                 }
-                AtkName = "Not Attacking";
+                AtkName = "Not Attacking"; //not really used
                 break;
         }
         
     }
-    IEnumerator PlayerFloat()
+    void DiminishingReturnsAirBoost(float _baseAirBoost) //for spammable aerial attacks that have diminishing returns the longer you spam them
+    {
+        if (startDiminishing && !hasDiminished) //if this is turned on start lowering the air boost
+        {
+            hasDiminished = true;
+            if (diminishedAirBoost > 0) //doesnt go below 0
+                diminishedAirBoost -= boostDiminishAmt;
+            if (diminishedAirBoost <= 0)
+                diminishedAirBoost = 0; //makes sure it cant go negative
+        }
+        if (!startDiminishing) //checks to see if the player has spammed infinite air moves yet
+        {
+            diminishedAirBoost = _baseAirBoost; //sets o
+            startDiminishing = true;
+        }
+        
+        
+    }
+
+    IEnumerator PlayerFloat() //puts a timer loop for floating after an air attack
     {
         yield return new WaitForSeconds(playerFloatDur);
         r2D.gravityScale = normGravScale;
     }
-    void SetNewCurAtk(string _name)
+    void SetNewCurAtk(string _name) //checks if the players have switched to a new attack, and switches parameters accordingly
     {
         for(int i = 0; i < atkMoves.Length; i++)
         {
@@ -111,10 +145,10 @@ public class NewAtkMove : MonoBehaviour
     {
         AtkName = _name;
     }
-    private void ForcedMovement(float _dir, float _vel)
+    private void ForcedMovement(float _dir, float _vel) //forced movement for the player
     {
         float d = 0;
-        switch(pCN.facingRight)
+        switch(pCN.facingRight) //checks current player facing direction so the force move is based on local direction instead of global
         {
             case true:
                 d = _dir * Mathf.Deg2Rad;
@@ -151,4 +185,5 @@ public class MoveGroup
     public bool canFollow;
     public int followMoveNum;
     public bool floats;
+    public bool decreaseAirBoost;
 }

@@ -42,56 +42,25 @@ public class AerialCombo : StateMachineBehaviour
         {
             case true:
                 pCN.SetPState(1);
-                switch(pCM.GetDirectionL())
+                if (pCM.GetButtonDown("Atk1"))
                 {
-                    case "n":
-                    case "u":
-                    case "l":
-                    case "r":
-                    case "ul":
-                    case "ur":
-                        if (pCM.GetButtonDown("Atk1"))
-                        {
-                            if (animator.GetInteger("AComboNum") <= maxAirCombo)
-                                animator.SetTrigger("AAtt_a");
-                        }
-                        break;
-                    case "d":
-                    case "dl":
-                    case "dr":
-                        if(pCM.GetButtonDown("Atk1"))
-                        {
-                            animator.SetTrigger("DownAtk");
-                            animator.ResetTrigger("AAtt_a");
-                        }
-                        break;
+                    if (animator.GetInteger("AComboNum") <= maxAirCombo && animator.GetInteger("WepType") == 0)
+                        animator.SetTrigger("AAtt_a");
+                    if(animator.GetInteger("WepType") == 1)
+                    {
+                        animator.SetTrigger("AAtt_a");
+                    }
                 }
-                
                 break;
             case false:
-                switch (pCM.GetDirectionL())
+                if (pCM.GetButtonDown("Atk1"))
                 {
-                    case "n":
-                    case "u":
-                    case "l":
-                    case "r":
-                    case "ul":
-                    case "ur":
-                        if (pCM.GetButtonDown("Atk1"))
-                        {
-                            if (animator.GetInteger("AComboNum") <= maxAirCombo)
-                                animator.SetTrigger("AAtt_a");
-                        }
-                        break;
-                    case "d":
-                    case "dl":
-                    case "dr":
-                        if (pCM.GetButtonDown("Atk1"))
-                        {
-                            animator.SetTrigger("DownAtk");
-                            animator.ResetTrigger("AAtt_a");
-                        }
-                        break;
+                    if (animator.GetInteger("AComboNum") <= maxAirCombo && animator.GetInteger("WepType") == 0)
+                        animator.SetTrigger("AAtt_a");
+                    if (animator.GetInteger("WepType") == 1)
+                    {
+                        animator.SetTrigger("AAtt_a");
+                    }
                 }
                 break;
         }
