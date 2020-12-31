@@ -650,7 +650,7 @@ SpriteRenderer:
   m_Size: {x: 0.34, y: 0.3}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &95645850
@@ -756,6 +756,38 @@ PrefabInstance:
       propertyPath: pCM
       value: 
       objectReference: {fileID: 1869710269}
+    - target: {fileID: 1250148313, guid: 16a462e48b7ea5340b1aa2c5627f2e76, type: 3}
+      propertyPath: ProjID
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1250148313, guid: 16a462e48b7ea5340b1aa2c5627f2e76, type: 3}
+      propertyPath: KBNum
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1250148313, guid: 16a462e48b7ea5340b1aa2c5627f2e76, type: 3}
+      propertyPath: OriginPID
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1250148313, guid: 16a462e48b7ea5340b1aa2c5627f2e76, type: 3}
+      propertyPath: angle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1250148313, guid: 16a462e48b7ea5340b1aa2c5627f2e76, type: 3}
+      propertyPath: FireCont
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1250148313, guid: 16a462e48b7ea5340b1aa2c5627f2e76, type: 3}
+      propertyPath: MaxProj
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1250148313, guid: 16a462e48b7ea5340b1aa2c5627f2e76, type: 3}
+      propertyPath: projDelay
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 1250148313, guid: 16a462e48b7ea5340b1aa2c5627f2e76, type: 3}
+      propertyPath: deviation
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3727145088433499904, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4139,7 +4171,7 @@ SpriteRenderer:
   m_Size: {x: 0.01, y: 0.02}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1001 &724087100
@@ -10409,6 +10441,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+    - target: {fileID: 235522906094861356, guid: 71f185ea4be15ab49b8a8bf2820e306f,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2898527578938227098, guid: 71f185ea4be15ab49b8a8bf2820e306f,
         type: 3}
       propertyPath: m_LocalPosition.x

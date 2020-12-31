@@ -40,7 +40,7 @@ public class RangedWepProjSpawn : MonoBehaviour
 
         if(FireOne && !hasFiredOne)
         {
-            StartCoroutine(FireOnce(ProjID, angle));
+            StartCoroutine(FireOnce(ProjID));
             hasFiredOne = true;
         }
         if(FireCont && !hasFiredCont)
@@ -66,21 +66,23 @@ public class RangedWepProjSpawn : MonoBehaviour
         }
         return i;
     }
-    IEnumerator FireOnce(int _projID, float _angle)
+    IEnumerator FireOnce(int _projID)
     {
-        float a = 0;
+        float a = 0, ad = 0;
         float spd = sDB.ReturnBSpeed(_projID);
         switch(GetComponentInParent<PlayerControllerNew>().facingRight) //finds the direction player is facing
         {
             case true:
-                a = _angle;
+                a = (Random.Range(-deviation, deviation) + angle);
+                ad = a * Mathf.Deg2Rad;
                 break;
             case false:
-                a = 180 - _angle;
+                a = (180 - (Random.Range(-deviation, deviation) + angle));
+                ad = a * Mathf.Deg2Rad;
                 break;
         }
         a *= Mathf.Deg2Rad; //converts degrees to radians
-        GameObject clone = Instantiate(sDB.ReturnSpawnObj(_projID), originPoints[OriginPID].position, Quaternion.identity);
+        GameObject clone = Instantiate(sDB.ReturnSpawnObj(_projID), originPoints[OriginPID].position, Quaternion.Euler(0,0,ad));
         clone.GetComponent<KBInfoPass>().Hit_ID = IDRandomizer();
         clone.GetComponent<KBInfoPass>().curKBNum = KBNum;
         switch (clone.GetComponent<ProjType>().Proj_Type)

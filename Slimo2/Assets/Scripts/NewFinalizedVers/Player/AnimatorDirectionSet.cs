@@ -61,7 +61,7 @@ public class AnimatorDirectionSet : MonoBehaviour
             case "dl": //down backwards/down left
                 if (pCN.facingRight)
                     animator.SetInteger("AirDirection", 8);
-                if (pCN.facingRight)
+                if (!pCN.facingRight)
                     animator.SetInteger("AirDirection", 7);
                 break;
         }

@@ -83,6 +83,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &517016309
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 517016310}
+  m_Layer: 9
+  m_Name: originpointBackwardUp
+  m_TagString: Untagged
+  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &517016310
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 517016309}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.71, y: 2.45, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3060304689116764726}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &613159916
 GameObject:
   m_ObjectHideFlags: 0
@@ -577,6 +607,36 @@ Transform:
   m_Father: {fileID: 6834280880968985590}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1589913945
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1589913946}
+  m_Layer: 9
+  m_Name: originpointForwardDown
+  m_TagString: Untagged
+  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1589913946
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1589913945}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.69, y: -2.05, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3060304689116764726}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1712022239
 GameObject:
   m_ObjectHideFlags: 0
@@ -875,6 +935,66 @@ MonoBehaviour:
   _force: 0
   _dmg: 0
   _dmgID: 0
+--- !u!1 &2036108698
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2036108699}
+  m_Layer: 9
+  m_Name: originpointForwardUp
+  m_TagString: Untagged
+  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2036108699
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036108698}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.63, y: 2.41, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3060304689116764726}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2039457049
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2039457050}
+  m_Layer: 9
+  m_Name: originpointBackwardDown
+  m_TagString: Untagged
+  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2039457050
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2039457049}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.49, y: -2.14, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3060304689116764726}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &540348650387715261
 GameObject:
   m_ObjectHideFlags: 0
@@ -1152,7 +1272,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1747524484256335476}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.01, y: -2.09, z: 0}
+  m_LocalPosition: {x: -1.82, y: -4.97, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3060304689116764726}
@@ -1454,6 +1574,10 @@ Transform:
   - {fileID: 7334278326082484492}
   - {fileID: 6428418499019026659}
   - {fileID: 7572402418137801992}
+  - {fileID: 1589913946}
+  - {fileID: 2036108699}
+  - {fileID: 517016310}
+  - {fileID: 2039457050}
   m_Father: {fileID: 5754908070949525643}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1492,18 +1616,22 @@ MonoBehaviour:
   FireCont: 0
   FireAll: 0
   MaxProj: 0
-  projDelay: 0
+  projDelay: 0.02
   sDB: {fileID: 11400000, guid: 04e2a0315ec9dca4aaed6ed3962b0353, type: 2}
   UseSkillID: 0
   ProjID: 0
-  KBNum: 0
+  KBNum: 8
   originPoints:
   - {fileID: 3978954793983986680}
   - {fileID: 7731622815733228646}
   - {fileID: 7334278326082484492}
   - {fileID: 6428418499019026659}
   - {fileID: 7572402418137801992}
-  OriginPID: 0
+  - {fileID: 2036108699}
+  - {fileID: 1589913946}
+  - {fileID: 517016310}
+  - {fileID: 2039457050}
+  OriginPID: 4
   OriginPID2: 0
   useMultipleOrigins: 0
   angle: 0
@@ -2115,16 +2243,46 @@ MonoBehaviour:
       followMoveNum: 0
       floats: 1
       decreaseAirBoost: 1
-  - Name: BowG3
+  - Name: BowAirUpForward
     moveParam:
     - moveNum: 0
-      direction: 0
-      velocity: -5
+      direction: 210
+      velocity: 7
       hasPause: 0
       canFollow: 0
       followMoveNum: 0
-      floats: 0
+      floats: 1
       decreaseAirBoost: 0
+  - Name: BowAirUpBack
+    moveParam:
+    - moveNum: 0
+      direction: 330
+      velocity: 7
+      hasPause: 0
+      canFollow: 0
+      followMoveNum: 0
+      floats: 1
+      decreaseAirBoost: 0
+  - Name: BowAirDownForward
+    moveParam:
+    - moveNum: 0
+      direction: 150
+      velocity: 9
+      hasPause: 0
+      canFollow: 0
+      followMoveNum: 0
+      floats: 1
+      decreaseAirBoost: 1
+  - Name: BowAirDownBack
+    moveParam:
+    - moveNum: 0
+      direction: 30
+      velocity: 9
+      hasPause: 0
+      canFollow: 0
+      followMoveNum: 0
+      floats: 1
+      decreaseAirBoost: 1
   curAtk:
     Name: 
     moveParam: []
@@ -2457,7 +2615,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6227826787547596264}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.07, y: 0.17, z: 0}
+  m_LocalPosition: {x: 0.13, y: -1.34, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3060304689116764726}
