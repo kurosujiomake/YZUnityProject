@@ -576,32 +576,6 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
---- !u!1102 &-7653495560164409646
-AnimatorState:
-  serializedVersion: 5
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Spike
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: ee7fe0a3d1023b5429f4ecf975fab44d, type: 2}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
 --- !u!1101 &-7482201332156116834
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -1291,9 +1265,6 @@ AnimatorStateMachine:
     m_State: {fileID: -5027596880243480229}
     m_Position: {x: -170, y: 40, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: -7653495560164409646}
-    m_Position: {x: -2350, y: 340, z: 0}
-  - serializedVersion: 1
     m_State: {fileID: 931310532527303958}
     m_Position: {x: 3330, y: 730, z: 0}
   - serializedVersion: 1
@@ -1400,7 +1371,7 @@ AnimatorStateMachine:
     m_Position: {x: -1570, y: -800, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6248746084262992145}
-    m_Position: {x: -2350, y: 550, z: 0}
+    m_Position: {x: -2110, y: 580, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -2100015999241244255}
     m_Position: {x: -1120, y: -1470, z: 0}
@@ -1409,7 +1380,13 @@ AnimatorStateMachine:
     m_Position: {x: -1340, y: -1470, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 7584532175077291868}
-    m_Position: {x: -2350, y: 700, z: 0}
+    m_Position: {x: -2110, y: 700, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 6085503305496664090}
+    m_Position: {x: -2110, y: 640, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -3238761284260557282}
+    m_Position: {x: -2110, y: 760, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -2417,6 +2394,32 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!1102 &-3238761284260557282
+AnimatorState:
+  serializedVersion: 5
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: bow_air_UpLeft
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: ec5a2b83b83159345a8303dd0dbcc7a8, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
 --- !u!1101 &-3125758527949299060
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -5846,6 +5849,32 @@ MonoBehaviour:
   HitIDs: 0000000000000000
   hasSetID: 0
   kbInfo: {fileID: 0}
+--- !u!1102 &6085503305496664090
+AnimatorState:
+  serializedVersion: 5
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: bow_air_DownRight
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: 5b0ecedcda5e5c44894e55cb72f51411, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
 --- !u!1101 &6108478445549580013
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -5966,7 +5995,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: bow_air_downAngle
+  m_Name: bow_air_DownLeft
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -6626,7 +6655,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: bow_air_upAngle
+  m_Name: bow_air_UpRight
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
