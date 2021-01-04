@@ -33,12 +33,13 @@ public class PostAttIdle : StateMachineBehaviour
                 break;
         }
         attPressed = false;
-
+        pCN.SetPState(1); //players have free move during post att idle state
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        pCN.SetPState(1); //players should have free movement in this state
         switch (param.AT) //directional influenced triggers
         {
             case Parameters.AtkType.bow: //directional att triggers for bow
@@ -179,7 +180,6 @@ public class PostAttIdle : StateMachineBehaviour
                 if (timer <= 0)
                 {
                     animator.SetTrigger("BackToIdle");
-                    pCN.SetPState(1);
                     if (pCM.ReturnAxis("left", "hori") != 0)
                         animator.SetBool("IsMoving", true);
                 }
@@ -192,7 +192,6 @@ public class PostAttIdle : StateMachineBehaviour
                 {
                     animator.SetTrigger("BackToIdle");
                     animator.SetInteger("ComboNum", 1);
-                    pCN.SetPState(1); //if somehow it skipped enter
                 }
                 if (pCM.GetButtonDown("Atk1") && g.ReturnGroundCheck()) //if there are still combos player can immediately go to the next att
                 {

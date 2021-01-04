@@ -1,6 +1,6 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class NewAtkMove : MonoBehaviour
 {   
@@ -22,8 +22,8 @@ public class NewAtkMove : MonoBehaviour
     [SerializeField]
     private bool startDiminishing = false;
     private bool hasDiminished = false;
-
-    // Start is called before the first frame update
+    private bool hasResetVel = false;
+    public Text DebuggingText;
     void Awake()
     {
         r2D = GetComponent<Rigidbody2D>();
@@ -37,6 +37,7 @@ public class NewAtkMove : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        Debug.Log(isAttacking);
         if (AtkName != curAtk.Name)
         {
             SetNewCurAtk(AtkName);
@@ -44,6 +45,7 @@ public class NewAtkMove : MonoBehaviour
         switch(isAttacking)
         {
             case true:
+                hasResetVel = false; //resets this bool so it can reset the player vel later
                 if(curAtk.moveParam[atkTransfer.moveNum].hasPause) //check to see if the attack has a must hit ground to finish condition
                 {
                     if(atkTransfer.canPause)
@@ -60,7 +62,7 @@ public class NewAtkMove : MonoBehaviour
                 }
                 if (atkTransfer.moveActive) //calls the function to force move player based on which attack
                 {
-                    pCN.SetPState(2);
+                    
                     if (atkTransfer.canfollowUpMove && curAtk.moveParam[atkTransfer.moveNum].canFollow) //checks to see if this atk has a conditional followup
                     {
                         if(atkTransfer.followUpMoveStartEnd)
@@ -94,7 +96,11 @@ public class NewAtkMove : MonoBehaviour
 
                 break;
             case false:
-                pCN.SetPState(1); //gives players back their controls
+                if(!hasResetVel)
+                {
+                    pCN.SetPState(0);
+                    hasResetVel = true;
+                }
                 hasDiminished = false; //resets decrement
                 if(g.ReturnGroundCheck()) //resets gravity from float in case the player touches ground before the timer runs out
                 {
@@ -163,10 +169,12 @@ public class NewAtkMove : MonoBehaviour
     public void ActivateAtk()
     {
         isAttacking = true;
+        pCN.SetPState(2);
     }
     public void DeactivateAtk()
     {
         isAttacking = false;
+        pCN.SetPState(1);
     }
 }
 [System.Serializable]

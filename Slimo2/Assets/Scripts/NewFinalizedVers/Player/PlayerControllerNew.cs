@@ -102,9 +102,11 @@ public class PlayerControllerNew : MonoBehaviour
                     case false:
                         AirMovement();
                         break;
+
                 }
                 break;
             case controlType.noPlayer: //no player is not supposed to run any code from this script
+                
                 break;
             case controlType.freeze:
                 r2D.velocity = Vector2.zero;

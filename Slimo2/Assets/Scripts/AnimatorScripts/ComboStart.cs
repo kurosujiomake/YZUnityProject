@@ -155,6 +155,7 @@ public class ComboStart : StateMachineBehaviour
                 animator.SetTrigger("SpAtk");
             }
         }
+        pCN.SetPState(1); //players should have free movement in this state
 
     }
 

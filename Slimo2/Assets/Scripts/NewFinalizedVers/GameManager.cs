@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
                 Time.timeScale = 1;
                 Player.GetComponent<Animator>().SetBool("IsGamePlay", true);
                 Player.GetComponent<Animator>().speed = 1;
-                Player.GetComponent<PlayerControllerNew>().SetPState(1);
+                //Player.GetComponent<PlayerControllerNew>().SetPState(1);
                 if(pCM.GetButtonDown("Inv"))
                 {
                     ToggleEquipUI();
@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
                 SelectionChangeInput();
                 Player.GetComponent<Animator>().SetBool("IsGamePlay", false);
                 Player.GetComponent<Animator>().speed = 0;
-                Player.GetComponent<PlayerControllerNew>().SetPState(0);
+                //Player.GetComponent<PlayerControllerNew>().SetPState(0);
                 if (pCM.GetButtonDown("Inv"))
                 {
                     ToggleEquipUI();

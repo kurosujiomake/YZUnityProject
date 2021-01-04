@@ -20,7 +20,7 @@ public class MovementAndHitBoxInfo: StateMachineBehaviour
             nAM = animator.GetComponent<NewAtkMove>();
         }
         nAM.SetAtkName(AttackName);
-        nAM.ActivateAtk();
+        
         if(!hasSetID && kbInfo.SetHitID)
         {
             //kbInfo.KB_ID = kbIDs[kbInfo.curKBNum];
@@ -49,15 +49,13 @@ public class MovementAndHitBoxInfo: StateMachineBehaviour
     {
         if(kbInfo.SetHitID && !hasSetID)
         {
-            //kbInfo.KB_ID = kbIDs[kbInfo.curKBNum];
             kbInfo.Hit_ID = IDRandomizer();
-            //Debug.Log("Setting New ID in update");
         }
         if (kbInfo.SetHitID == false)
         {
             hasSetID = false;
-            //Debug.Log("ID has already been set in update");
         }
+        nAM.ActivateAtk();
     }
     
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
