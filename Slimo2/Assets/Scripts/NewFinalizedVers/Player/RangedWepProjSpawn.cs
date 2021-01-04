@@ -7,6 +7,7 @@ public class RangedWepProjSpawn : MonoBehaviour
     public bool FireOne = false;
     public bool FireCont = false;
     public bool FireAll = false;
+    public bool FireAShower = false;
     public int MaxProj = 0;
     public float projDelay = 0;
     public SpawnDatabase sDB;
@@ -24,12 +25,12 @@ public class RangedWepProjSpawn : MonoBehaviour
     private int[] HitIDs = new int[2];
     private bool hasFiredOne = false;
     private bool hasFiredCont = false;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    private bool hasFiredShower = false;
+    public float arrowShowerRandx;
+    public float arrowShowerRandy;
+    public float arrowShowerProjSpd;
+    public float arrowShowerProjDur;
+    public GameObject aShowerSpawner;
     // Update is called once per frame
     void Update()
     {
@@ -37,17 +38,24 @@ public class RangedWepProjSpawn : MonoBehaviour
             hasFiredOne = false;
         if (!FireCont)
             hasFiredCont = false;
-
-        if(FireOne && !hasFiredOne)
+        if (!FireAShower)
+            hasFiredShower = false;
+        if (FireOne && !hasFiredOne)
         {
             StartCoroutine(FireOnce(ProjID));
             hasFiredOne = true;
         }
-        if(FireCont && !hasFiredCont)
+        if (FireCont && !hasFiredCont)
         {
             StartCoroutine(FireMultiple());
             hasFiredCont = true;
         }
+        if(FireAShower && !hasFiredShower)
+        {
+            StartCoroutine(ArrowShower());
+            hasFiredShower = true;
+        }
+        
     }
     int IDRandomizer()
     {
@@ -70,7 +78,7 @@ public class RangedWepProjSpawn : MonoBehaviour
     {
         float a = 0, ad = 0;
         float spd = sDB.ReturnBSpeed(_projID);
-        switch(GetComponentInParent<PlayerControllerNew>().facingRight) //finds the direction player is facing
+        switch (GetComponentInParent<PlayerControllerNew>().facingRight) //finds the direction player is facing
         {
             case true:
                 a = (Random.Range(-deviation, deviation) + angle);
@@ -82,7 +90,7 @@ public class RangedWepProjSpawn : MonoBehaviour
                 break;
         }
         a *= Mathf.Deg2Rad; //converts degrees to radians
-        GameObject clone = Instantiate(sDB.ReturnSpawnObj(_projID), originPoints[OriginPID].position, Quaternion.Euler(0,0,ad));
+        GameObject clone = Instantiate(sDB.ReturnSpawnObj(_projID), originPoints[OriginPID].position, Quaternion.Euler(0, 0, ad));
         clone.GetComponent<KBInfoPass>().Hit_ID = IDRandomizer();
         clone.GetComponent<KBInfoPass>().curKBNum = KBNum;
         switch (clone.GetComponent<ProjType>().Proj_Type)
@@ -98,7 +106,7 @@ public class RangedWepProjSpawn : MonoBehaviour
 
                 break;
         }
-        
+
         yield return new WaitForSeconds(0);
     }
     IEnumerator FireMultiple()
@@ -106,12 +114,12 @@ public class RangedWepProjSpawn : MonoBehaviour
         bool b = true;
         int i = 0;
         int im = MaxProj;
-        while(b)
+        while (b)
         {
             float spd = sDB.ReturnBSpeed(ProjID);
             float d = 0;
             float ed = 0;
-            switch(useMultipleAngles)
+            switch (useMultipleAngles)
             {
                 case false:
                     switch (GetComponentInParent<PlayerControllerNew>().facingRight) //adjusts angle based on player facing direction and adds random deviation
@@ -166,17 +174,22 @@ public class RangedWepProjSpawn : MonoBehaviour
             }
             yield return new WaitForSeconds(projDelay);
             i++;
-            if(i >= im)
+            if (i >= im)
             {
                 b = false;
             }
-            print("i is " + i);
-            print("Max projectiles is " + im);
         }
     }
-    void KBEffectAddon()
+    IEnumerator ArrowShower()
     {
-
+        print("spawning arrow shower");
+        GameObject c = Instantiate(aShowerSpawner, originPoints[OriginPID].position, Quaternion.identity);
+        c.GetComponent<ArrowShowerSpawn>().GetParameters(sDB.ReturnSpawnObj(ProjID), KBNum, MaxProj, arrowShowerRandx,
+            arrowShowerRandy, projDelay, arrowShowerProjSpd, arrowShowerProjDur);
+        yield return new WaitForSeconds(0);
     }
+
+    
+
 }
 

@@ -33,8 +33,8 @@ public class EnemyDamageTake : MonoBehaviour
                 var h = collision.GetComponent<KBInfoPass>();
                 if(h.Hit_ID != HitID)
                 {
-                    print("hit with " + h.Damage + " Damage");
-                    print("hit with " + h.HitCount + " Hits");
+                    //print("hit with " + h.Damage + " Damage");
+                    //print("hit with " + h.HitCount + " Hits");
                     TakeDamage(h.Damage, h.HitCount);
                     HitID = h.Hit_ID;
                 }

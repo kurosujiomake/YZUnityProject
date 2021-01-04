@@ -60,9 +60,9 @@ public class DamageNumberMain : MonoBehaviour
 
     IEnumerator ComboTimer()
     {
-        print("Started fade countdown");
+        //print("Started fade countdown");
         yield return new WaitForSeconds(Duration);
-        print("Fade time reached, turning off all displays");
+        //print("Fade time reached, turning off all displays");
         DeactivateAllText();
         ResetTotalDmg();
         ComboCounter = 0;
