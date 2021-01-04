@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 4957218804782426469, guid: 77de72e7426a32345becb26e06df5a5b,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -159,6 +159,8 @@ MonoBehaviour:
   SetHitID: 0
   curKBNum: 0
   isProj: 1
+  HitCount: 1
+  Damage: 251
 --- !u!114 &4350924799381489657
 MonoBehaviour:
   m_ObjectHideFlags: 0
