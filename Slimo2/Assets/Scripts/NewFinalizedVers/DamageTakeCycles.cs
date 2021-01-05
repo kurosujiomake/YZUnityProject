@@ -53,7 +53,6 @@ public class DamageTakeCycles : MonoBehaviour
     }
     private IEnumerator AerialKB(int _KBID)
     {
-        Debug.Log("AerialKnockback started");
         StopMovement();
         DirectionalKnockBack(kbDatabase.Dir(_KBID), kbDatabase.Vel(_KBID));
         yield return new WaitForSeconds(kbDatabase.KBDur(_KBID));
@@ -62,10 +61,8 @@ public class DamageTakeCycles : MonoBehaviour
     }
     private IEnumerator AerialFloat(int _KBID)
     {
-        Debug.Log("AerialFloat started");
         rig2D.gravityScale = 0;
         yield return new WaitForSeconds(kbDatabase.FloatDur(_KBID));
-        Debug.Log("Aerial Float ended");
         rig2D.gravityScale = 1;
         StopMovement();
     }

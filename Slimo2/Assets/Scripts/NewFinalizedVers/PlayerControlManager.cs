@@ -8,7 +8,6 @@ using UnityEngine.Rendering;
 
 public class PlayerControlManager : MonoBehaviour
 {
-    private Event e;
     private Gamepad pad;
     private Keyboard board;
     public enum ControlType
@@ -45,57 +44,24 @@ public class PlayerControlManager : MonoBehaviour
     public float[] stickDeadzoneR;
 
     [Header("ButtonPressCorolations")]
-    public bool Atk1_pressed;
-    public bool Atk1_held;
-    public bool Atk1_released;
-    public bool Atk2_pressed;
-    public bool Atk2_held;
-    public bool Atk2_released;
-    public bool Atk2_2_pressed;
-    public bool Atk2_2_held;
-    public bool Atk2_2_released;
-    public bool Atk3_pressed;
-    public bool Atk3_held;
-    public bool Atk3_released;
-    public bool Jump_pressed;
-    public bool Jump_held;
-    public bool Jump_released;
-    public bool Dash_pressed;
-    public bool Dash_held;
-    public bool Dash_released;
-    public bool SwapWep_pressed;
-    public bool SwapWep_held;
-    public bool SwapWep_released;
-    public bool Inv_pressed;
-    public bool Inv_held;
-    public bool Inv_released;
-    public bool UIUp_pressed;
-    public bool UIUp_held;
-    public bool UIUp_released;
-    public bool UIDown_pressed;
-    public bool UIDown_held;
-    public bool UIDown_released;
-    public bool UIRight_pressed;
-    public bool UIRight_held;
-    public bool UIRight_released;
-    public bool UILeft_pressed;
-    public bool UILeft_held;
-    public bool UILeft_released;
-    public bool UIAccept_pressed;
-    public bool UIAccept_held;
-    public bool UIAccept_released;
-    public bool UIDecline_pressed;
-    public bool UIDecline_held;
-    public bool UIDecline_released;
-    public bool UIAlt1_pressed;
-    public bool UIAlt1_held;
-    public bool UIAlt1_released;
-    public bool UIAlt2_pressed;
-    public bool UIAlt2_held;
-    public bool UIAlt2_released;
-    public bool UIAlt3_pressed;
-    public bool UIAlt3_held;
-    public bool UIAlt3_released;
+    public bool Atk1_pressed, Atk1_held, Atk1_released;
+    public bool Atk2_pressed, Atk2_held, Atk2_released;
+    public bool Atk2_2_pressed, Atk2_2_held, Atk2_2_released;
+    public bool Atk3_pressed, Atk3_held, Atk3_released;
+    public bool Jump_pressed, Jump_held, Jump_released;
+    public bool Dash_pressed, Dash_held, Dash_released;
+    public bool SwapWep_pressed, SwapWep_held, SwapWep_released;
+    public bool BowRecharge_pressed, BowRecharge_held, BowRecharge_released;
+    public bool Inv_pressed, Inv_held, Inv_released;
+    public bool UIUp_pressed, UIUp_held, UIUp_released;
+    public bool UIDown_pressed, UIDown_held, UIDown_released;
+    public bool UIRight_pressed, UIRight_held, UIRight_released;
+    public bool UILeft_pressed, UILeft_held, UILeft_released;
+    public bool UIAccept_pressed, UIAccept_held, UIAccept_released;
+    public bool UIDecline_pressed, UIDecline_held, UIDecline_released;
+    public bool UIAlt1_pressed, UIAlt1_held, UIAlt1_released;
+    public bool UIAlt2_pressed, UIAlt2_held, UIAlt2_released;
+    public bool UIAlt3_pressed, UIAlt3_held, UIAlt3_released;
     [Header("Analogue stick equvilants for keyboard")]
     public bool LeftKey_Pressed;
     public bool LeftKey_Held;
@@ -248,6 +214,9 @@ public class PlayerControlManager : MonoBehaviour
             case "SwapWep":
                 b = SwapWep_pressed;
                 break;
+            case "BowRecharge":
+                b = BowRecharge_pressed;
+                break;
             case "Inv":
                 b = Inv_pressed;
                 break;
@@ -308,6 +277,9 @@ public class PlayerControlManager : MonoBehaviour
             case "SwapWep":
                 b = SwapWep_released;
                 break;
+            case "BowRecharge":
+                b = BowRecharge_released;
+                break;
             case "Inv":
                 b = Inv_released;
                 break;
@@ -367,6 +339,9 @@ public class PlayerControlManager : MonoBehaviour
                 break;
             case "SwapWep":
                 b = SwapWep_held;
+                break;
+            case "BowRecharge":
+                b = BowRecharge_held;
                 break;
             case "Inv":
                 b = Inv_held;
@@ -571,6 +546,7 @@ public class PlayerControlManager : MonoBehaviour
         Jump_pressed = ((KeyControl)board[kb.Jump_Key]).wasPressedThisFrame;
         Dash_pressed = ((KeyControl)board[kb.Dash_Key]).wasPressedThisFrame;
         SwapWep_pressed = ((KeyControl)board[kb.SwapWep_Key]).wasPressedThisFrame;
+        BowRecharge_pressed = ((KeyControl)board[kb.BowRecharge_Key]).wasPressedThisFrame;
         Inv_pressed = ((KeyControl)board[kb.Inv_Key]).wasPressedThisFrame;
         LeftKey_Pressed = ((KeyControl)board[kb.Directional_Key[1]]).wasPressedThisFrame;
         RightKey_Pressed = ((KeyControl)board[kb.Directional_Key[0]]).wasPressedThisFrame;
@@ -597,6 +573,7 @@ public class PlayerControlManager : MonoBehaviour
         Jump_released = ((KeyControl)board[kb.Jump_Key]).wasReleasedThisFrame;
         Dash_released = ((KeyControl)board[kb.Dash_Key]).wasReleasedThisFrame;
         SwapWep_released = ((KeyControl)board[kb.SwapWep_Key]).wasReleasedThisFrame;
+        BowRecharge_released = ((KeyControl)board[kb.BowRecharge_Key]).wasReleasedThisFrame;
         Inv_released = ((KeyControl)board[kb.Inv_Key]).wasReleasedThisFrame;
         LeftKey_Released = ((KeyControl)board[kb.Directional_Key[1]]).wasReleasedThisFrame;
         RightKey_Released = ((KeyControl)board[kb.Directional_Key[0]]).wasReleasedThisFrame;
@@ -623,6 +600,7 @@ public class PlayerControlManager : MonoBehaviour
         Jump_pressed = ((ButtonControl)pad[kb.Jump_btn]).wasPressedThisFrame;
         Dash_pressed = ((ButtonControl)pad[kb.Dash_btn]).wasPressedThisFrame;
         SwapWep_pressed = ((ButtonControl)pad[kb.SwapWep_btn]).wasPressedThisFrame;
+        BowRecharge_pressed = ((ButtonControl)pad[kb.BowRecharge_btn]).wasPressedThisFrame;
         Inv_pressed = ((ButtonControl)pad[kb.Inv_btn]).wasPressedThisFrame;
         UIUp_pressed = ((ButtonControl)pad[kb.UIUp_btn]).wasPressedThisFrame;
         UIDown_pressed = ((ButtonControl)pad[kb.UIDown_btn]).wasPressedThisFrame;
@@ -646,6 +624,7 @@ public class PlayerControlManager : MonoBehaviour
         Jump_released = ((ButtonControl)pad[kb.Jump_btn]).wasReleasedThisFrame;
         Dash_released = ((ButtonControl)pad[kb.Dash_btn]).wasReleasedThisFrame;
         SwapWep_released = ((ButtonControl)pad[kb.SwapWep_btn]).wasReleasedThisFrame;
+        BowRecharge_released = ((ButtonControl)pad[kb.BowRecharge_btn]).wasReleasedThisFrame;
         Inv_released = ((ButtonControl)pad[kb.Inv_btn]).wasReleasedThisFrame;
         UIUp_released = ((ButtonControl)pad[kb.UIUp_btn]).wasReleasedThisFrame;
         UIDown_released = ((ButtonControl)pad[kb.UIDown_btn]).wasReleasedThisFrame;
@@ -688,6 +667,8 @@ public class PlayerControlManager : MonoBehaviour
             Dash_held = true;
         if (SwapWep_pressed)
             SwapWep_held = true;
+        if (BowRecharge_pressed)
+            BowRecharge_held = true;
         if (Inv_pressed)
             Inv_held = true;
         if (LeftKey_Pressed)
@@ -712,6 +693,8 @@ public class PlayerControlManager : MonoBehaviour
             Dash_held = false;
         if (SwapWep_released)
             SwapWep_held = false;
+        if (BowRecharge_released)
+            BowRecharge_held = false;
         if (Inv_released)
             Inv_held = false;
         if (LeftKey_Released)
@@ -772,6 +755,7 @@ public class KeyBinding
     public string Jump_btn;
     public string Dash_btn;
     public string SwapWep_btn;
+    public string BowRecharge_btn;
     public string Inv_btn;
     public string UIUp_btn;
     public string UIDown_btn;
@@ -791,6 +775,7 @@ public class KeyBinding
     public string Jump_Key;
     public string Dash_Key;
     public string SwapWep_Key;
+    public string BowRecharge_Key;
     public string Inv_Key;
     public string UIUp_Key;
     public string UIDown_Key;

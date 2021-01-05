@@ -114,6 +114,8 @@ public class RangedWepProjSpawn : MonoBehaviour
         bool b = true;
         int i = 0;
         int im = MaxProj;
+        if (im <= 0) //checks if it is to fire anything at all
+            b = false;
         while (b)
         {
             float spd = sDB.ReturnBSpeed(ProjID);

@@ -37,7 +37,6 @@ public class NewAtkMove : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Debug.Log(isAttacking);
         if (AtkName != curAtk.Name)
         {
             SetNewCurAtk(AtkName);
