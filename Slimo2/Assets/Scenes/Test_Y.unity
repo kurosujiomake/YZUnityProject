@@ -3753,7 +3753,7 @@ PrefabInstance:
     - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
         type: 3}
       propertyPath: kb.BowRecharge_Key
-      value: G
+      value: Z
       objectReference: {fileID: 0}
     - target: {fileID: 2374169362876929646, guid: b9d2a7211a311ef458007fdcebcac8b7,
         type: 3}
