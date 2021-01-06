@@ -35,7 +35,6 @@ public class BowAmmoSub : StateMachineBehaviour
             rWPS.MaxProj = 0; //if the charge is completely empty
         }
         bLC.SubShots(bowChargesUsed); //substracts the correct amount of charges, make sure this goes at the bottom, so it goes last
-        Debug.Log(bLC.ReturnCurCharge());
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

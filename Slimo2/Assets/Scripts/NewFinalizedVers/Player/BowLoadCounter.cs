@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class BowLoadCounter : MonoBehaviour
 {
     public Animator anim = null;
     public int BowMax = 0;
     private int BowCurr = 0;
+    public GameObject displayObj;
+    public TextMeshProUGUI text;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +24,15 @@ public class BowLoadCounter : MonoBehaviour
     void SetBowCount()
     {
         anim.SetInteger("BowCharge", BowCurr);
+        if(GetComponent<Parameters>().AT == Parameters.AtkType.bow)
+        {
+            displayObj.SetActive(true);
+            text.SetText("Bow Charge: " + BowCurr.ToString());
+        }
+        if(GetComponent<Parameters>().AT != Parameters.AtkType.bow)
+        {
+            displayObj.SetActive(false);
+        }
     }
 
     public void AddShots(int _amt)

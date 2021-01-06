@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using TMPro;
 public class DamageNumberMain : MonoBehaviour
 {
     public float Duration;
@@ -18,6 +18,7 @@ public class DamageNumberMain : MonoBehaviour
         DeactivateAllText();
     }
     
+    
     public void DisplayUpdate(float hitDmg, int hitCount) //other scripts should call this
     {
         StopAllCoroutines();
@@ -30,17 +31,17 @@ public class DamageNumberMain : MonoBehaviour
     public void TotalDmgUpdate(float input) //updates the display text for total damage
     {
         DisplayDmgText[1].Activate();
-        DisplayDmgText[1].TxtObj.text = Mathf.RoundToInt(input).ToString() + DisplayDmgText[0].DisplayText;
+        DisplayDmgText[1].TextObj.text = Mathf.RoundToInt(input).ToString() + DisplayDmgText[1].DisplayText;
     }
     public void HitDamageUpdate(float dmg) //updates the display text for hit damage
     {
         DisplayDmgText[0].Activate();
-        DisplayDmgText[0].TxtObj.text = Mathf.RoundToInt(dmg).ToString() + DisplayDmgText[0].DisplayText;
+        DisplayDmgText[0].TextObj.text = Mathf.RoundToInt(dmg).ToString() + DisplayDmgText[0].DisplayText;
     }
     public void HitCounterInc(int input)
     {
         DisplayDmgText[2].Activate();
-        DisplayDmgText[2].TxtObj.text = input + DisplayDmgText[2].DisplayText;
+        DisplayDmgText[2].TextObj.text = input + DisplayDmgText[2].DisplayText;
     }
     public void AddTotalDmg(float input)
     {
@@ -60,9 +61,7 @@ public class DamageNumberMain : MonoBehaviour
 
     IEnumerator ComboTimer()
     {
-        //print("Started fade countdown");
         yield return new WaitForSeconds(Duration);
-        //print("Fade time reached, turning off all displays");
         DeactivateAllText();
         ResetTotalDmg();
         ComboCounter = 0;
@@ -86,17 +85,19 @@ public class DmgText
 {
     public string Name;
     public string DisplayText;
-    public Text TxtObj;
+    public TextMeshProUGUI TextObj;
     public bool Active;
 
     public void Activate()
     {
         Active = true;
-        TxtObj.enabled = true;
+        TextObj.enabled = true;
     }
     public void Deactivate()
     {
         Active = false;
-        TxtObj.enabled = false;
+        TextObj.enabled = false;
     }
+    
+
 }
