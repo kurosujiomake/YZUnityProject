@@ -54,7 +54,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 2409a4921308ebd45829e72b9622743c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -97,7 +97,7 @@ Animator:
   m_GameObject: {fileID: 6904058883651388153}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b8bf4c26f42c89d4b9f7399c570f4d78, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -159,6 +159,8 @@ MonoBehaviour:
   SetHitID: 0
   curKBNum: 0
   isProj: 1
+  HitCount: 1
+  Damage: 251
 --- !u!114 &4238584090792187797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,3 +173,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24a13b8d17380aa4b80d9dee984b3c9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Proj_Type: 0
