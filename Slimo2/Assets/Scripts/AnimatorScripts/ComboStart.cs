@@ -140,7 +140,7 @@ public class ComboStart : StateMachineBehaviour
         }
 
         //non-directional att triggers go below (mostly special and ult atts)
-        if(pCM.GetButtonDown("Atk3"))
+        if(pCM.GetButtonDown("Atk3")) //checking if they can use ult
         {
             if(nSP.ReturnCanUse(2))
             {
@@ -148,11 +148,18 @@ public class ComboStart : StateMachineBehaviour
             }
             
         }
-        if(pCM.GetButtonDown("Atk2"))
+        if(pCM.GetButtonDown("Atk2")) //checking if they can use sp atk 1
         {
             if(nSP.ReturnCanUse(0))
             {
                 animator.SetTrigger("SpAtk");
+            }
+        }
+        if(pCM.GetButtonDown("Atk2_2")) //checking if they can use sp atk 2
+        {
+            if(nSP.ReturnCanUse(1))
+            {
+                animator.SetTrigger("SpAtk2");
             }
         }
         pCN.SetPState(1); //players should have free movement in this state

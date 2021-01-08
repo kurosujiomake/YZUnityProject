@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdb8c04c76d16004187227beab46b47c, type: 3}
+  m_Name: PowerShot
+  m_EditorClassIdentifier: 
+  Name: PowerShot
+  UIImage: {fileID: 0}
+  type: 0
+  Description: A charged shot with a bow that knocks enemies up
+  SkillID: 0
+  CD: 4
+  CDModifiers: []
+  BaseDamage: 0
+  DamageModifier: 0
+  canAerial: 1
+  wep: 1
+  useCDMod: 0
+  spawnsProj: 1
+  projID: 6
+  projIDFinisher: 0
+  a_projID: 6
+  a_projIDFinisher: 0
