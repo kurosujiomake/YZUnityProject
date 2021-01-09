@@ -26,11 +26,13 @@ public class RangedWepProjSpawn : MonoBehaviour
     private bool hasFiredOne = false;
     private bool hasFiredCont = false;
     private bool hasFiredShower = false;
+    private bool hasFiredAll = false;
     public float arrowShowerRandx;
     public float arrowShowerRandy;
     public float arrowShowerProjSpd;
     public float arrowShowerProjDur;
     public GameObject aShowerSpawner;
+    public float[] triAngles;
     // Update is called once per frame
     void Update()
     {
@@ -40,6 +42,8 @@ public class RangedWepProjSpawn : MonoBehaviour
             hasFiredCont = false;
         if (!FireAShower)
             hasFiredShower = false;
+        if (!FireAll)
+            hasFiredAll = false;
         if (FireOne && !hasFiredOne)
         {
             StartCoroutine(FireOnce(ProjID));
@@ -54,6 +58,11 @@ public class RangedWepProjSpawn : MonoBehaviour
         {
             StartCoroutine(ArrowShower());
             hasFiredShower = true;
+        }
+        if(FireAll && !hasFiredAll)
+        {
+            StartCoroutine(FireAllAtOnce());
+            hasFiredAll = true;
         }
         
     }
@@ -190,8 +199,32 @@ public class RangedWepProjSpawn : MonoBehaviour
             arrowShowerRandy, projDelay, arrowShowerProjSpd, arrowShowerProjDur);
         yield return new WaitForSeconds(0);
     }
+    IEnumerator FireAllAtOnce()
+    {
+        float a = 0, pa = 0; //a is angle, pa is projectile angle
+        float spd = sDB.ReturnBSpeed(ProjID);
+        for (int i = 0; i < MaxProj; i++)
+        {
+            switch (GetComponentInParent<PlayerControllerNew>().facingRight)
+            {
+                case true:
+                    pa = Random.Range(-deviation, deviation) + triAngles[i];
+                    a = pa * Mathf.Deg2Rad;
+                    break;
+                case false:
+                    pa = 180 - (Random.Range(-deviation, deviation) + triAngles[i]);
+                    a = pa * Mathf.Deg2Rad;
+                    break;
+            }
+            GameObject c = Instantiate(sDB.ReturnSpawnObj(ProjID), originPoints[OriginPID].position, Quaternion.Euler(0, 0, pa));
+            c.GetComponent<KBInfoPass>().Hit_ID = IDRandomizer();
+            c.GetComponent<KBInfoPass>().curKBNum = KBNum;
+            c.GetComponent<KBInfoPass>().StartProjTimer(sDB.ReturnBLifetime(ProjID));
+            c.GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Cos(a) * spd, Mathf.Sin(a) * spd);
+        }
+        yield return new WaitForSeconds(0);
+    }
 
-    
 
 }
 

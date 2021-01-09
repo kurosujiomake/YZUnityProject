@@ -51,6 +51,12 @@ public class AerialCombo : StateMachineBehaviour
                         animator.SetTrigger("AAtt_a");
                     }
                 }
+                if(pCM.GetButtonDown("Atk2_2"))
+                {
+                    animator.SetTrigger("SpAtk2");
+                    animator.ResetTrigger("AAtt_a");
+
+                }
                 break;
             case false:
                 if (pCM.GetButtonDown("Atk1"))

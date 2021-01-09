@@ -8,7 +8,7 @@ public class NewSpUltAktParam : MonoBehaviour
     public SKillBundle[] sk;
     void Awake()
     {
-        SetSkills(0, -1, 1);
+        SetSkills(0, 3, 1);
     }
     public bool ReturnCanUse(int _skill)
     {
