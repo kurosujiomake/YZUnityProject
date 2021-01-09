@@ -12,19 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1365fd900059f6042bba14ccdc18f1de, type: 3}
   m_Name: Hyboria Stone
   m_EditorClassIdentifier: 
-  ID: 6
-  UIImage: {fileID: 8022668286583505587, guid: ccb713a0e1a6f3b4ea54d414dbec81c0, type: 3}
+  UIImage: {fileID: 177031622830169255, guid: c7b660263613a414bae6ea5d44ca5530, type: 3}
   type: 4
   desc: 'A strange piece of ice from the Northern Wastelands.
 
     Empoweres one''s
     attacks with the stinging winds of cold'
-  stBuffs:
-  - statBonus: 0
-    value: 0
-    min: 0
-    max: 0
   Stackable: 0
+  data:
+    Name: 
+    ID: -1
+    Stackable: 0
+    stBuffs: []
   attMods:
   - mod: 0
     modPrefab: {fileID: 0}

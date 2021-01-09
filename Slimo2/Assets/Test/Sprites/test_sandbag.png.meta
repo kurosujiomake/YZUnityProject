@@ -1,13 +1,28 @@
 fileFormatVersion: 2
-guid: d83524211c415c747b1246f714b0f9ad
+guid: e18dbe7d3db124e47b768363c3837b96
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7417960571484606858
-    second: test_punchingBag_idle_0
+      213: -1715184339587294767
+    second: test_sandbag_0
   - first:
-      213: 3188456190900699835
-    second: test_punchingBag_idle_1
+      213: -3285545557462753185
+    second: test_sandbag_1
+  - first:
+      213: 6899923357790258462
+    second: test_sandbag_2
+  - first:
+      213: -2321847338291294523
+    second: test_sandbag_3
+  - first:
+      213: -2057723174573545652
+    second: test_sandbag_4
+  - first:
+      213: 7567286457471447465
+    second: test_sandbag_5
+  - first:
+      213: 1139498610541784065
+    second: test_sandbag_6
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -140,13 +155,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: test_punchingBag_idle_0
+      name: test_sandbag_0
       rect:
         serializedVersion: 2
-        x: 19
-        y: 44
-        width: 121
-        height: 193
+        x: 52
+        y: 647
+        width: 176
+        height: 341
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,20 +169,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a81913576d3e1f660800000000000000
-      internalID: 7417960571484606858
+      spriteID: 1d9169a3ee07238e0800000000000000
+      internalID: -1715184339587294767
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: test_punchingBag_idle_1
+      name: test_sandbag_1
       rect:
         serializedVersion: 2
-        x: 159
-        y: 44
-        width: 118
-        height: 193
+        x: 307
+        y: 647
+        width: 191
+        height: 310
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,8 +190,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bb20880330caf3c20800000000000000
-      internalID: 3188456190900699835
+      spriteID: f50e11a19b56762d0800000000000000
+      internalID: -3285545557462753185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sandbag_2
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 644
+        width: 205
+        height: 293
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e15428e8cb371cf50800000000000000
+      internalID: 6899923357790258462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sandbag_3
+      rect:
+        serializedVersion: 2
+        x: 813
+        y: 642
+        width: 183
+        height: 319
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ce0672c52427cfd0800000000000000
+      internalID: -2321847338291294523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sandbag_4
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 239
+        width: 176
+        height: 341
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c47647dccaf7173e0800000000000000
+      internalID: -2057723174573545652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sandbag_5
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 239
+        width: 233
+        height: 273
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a1b53b90f6640960800000000000000
+      internalID: 7567286457471447465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sandbag_6
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 239
+        width: 278
+        height: 81
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10ce46fe2ff40df00800000000000000
+      internalID: 1139498610541784065
       vertices: []
       indices: 
       edges: []
@@ -190,7 +310,9 @@ TextureImporter:
     indices: 
     edges: []
     weights: []
-    secondaryTextures: []
+    secondaryTextures:
+    - texture: {fileID: 2800000, guid: f67132064e529f24eb8cfd875a952156, type: 3}
+      name: _Emission
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
