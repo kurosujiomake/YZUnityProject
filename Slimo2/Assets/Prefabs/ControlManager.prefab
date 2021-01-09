@@ -49,10 +49,11 @@ MonoBehaviour:
     Atk1_btn: x
     Atk2_btn: leftShoulder
     Atk2_2_btn: rightShoulder
-    Atk3_btn: y
+    Atk3_btn: rightTrigger
     Jump_btn: a
     Dash_btn: b
     SwapWep_btn: leftTrigger
+    BowRecharge_btn: y
     Inv_btn: select
     UIUp_btn: dpad/up
     UIDown_btn: dpad/down
@@ -70,6 +71,7 @@ MonoBehaviour:
     Jump_Key: Space
     Dash_Key: LeftShift
     SwapWep_Key: LeftAlt
+    BowRecharge_Key: Z
     Inv_Key: I
     UIUp_Key: UpArrow
     UIDown_Key: DownArrow
@@ -116,6 +118,9 @@ MonoBehaviour:
   SwapWep_pressed: 0
   SwapWep_held: 0
   SwapWep_released: 0
+  BowRecharge_pressed: 0
+  BowRecharge_held: 0
+  BowRecharge_released: 0
   Inv_pressed: 0
   Inv_held: 0
   Inv_released: 0

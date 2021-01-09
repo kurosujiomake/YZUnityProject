@@ -1988,216 +1988,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ControlManager
       objectReference: {fileID: 0}
-    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
-        type: 3}
-      propertyPath: kb.Directional_Key.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
-        type: 3}
-      propertyPath: kb.Atk1_Key
-      value: J
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
-        type: 3}
-      propertyPath: curControlType
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
-        type: 3}
-      propertyPath: kb.Directional_Key.Array.data[0]
-      value: D
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
-        type: 3}
-      propertyPath: kb.Directional_Key.Array.data[1]
-      value: A
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
-        type: 3}
-      propertyPath: kb.Directional_Key.Array.data[2]
-      value: W
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
-        type: 3}
-      propertyPath: kb.Directional_Key.Array.data[3]
-      value: S
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
-        type: 3}
-      propertyPath: kb.Atk2_Key
-      value: K
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
-        type: 3}
-      propertyPath: kb.Atk3_Key
-      value: R
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
-        type: 3}
-      propertyPath: kb.Jump_Key
-      value: Space
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
-        type: 3}
-      propertyPath: kb.Dash_Key
-      value: LeftShift
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
-        type: 3}
-      propertyPath: kb.SwapWep_Key
-      value: LeftAlt
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
-        type: 3}
-      propertyPath: kb.Inv_Key
-      value: I
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
-        type: 3}
-      propertyPath: kb.Atk3_btn
-      value: y
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
-        type: 3}
-      propertyPath: kb.Dash_btn
-      value: b
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
-        type: 3}
-      propertyPath: kb.Inv_btn
-      value: select
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
-        type: 3}
-      propertyPath: kb.SwapWep_btn
-      value: leftTrigger
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
-        type: 3}
-      propertyPath: kb.Atk1_btn
-      value: x
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
-        type: 3}
-      propertyPath: kb.Atk2_btn
-      value: leftShoulder
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
-        type: 3}
-      propertyPath: kb.Jump_btn
-      value: a
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
-        type: 3}
-      propertyPath: kb.UIUp_btn
-      value: dpad/up
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
-        type: 3}
-      propertyPath: kb.UIDown_btn
-      value: dpad/down
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
-        type: 3}
-      propertyPath: kb.UIRight_btn
-      value: dpad/right
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
-        type: 3}
-      propertyPath: kb.UILeft_btn
-      value: dpad/left
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
-        type: 3}
-      propertyPath: kb.UIAccept_btn
-      value: b
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
-        type: 3}
-      propertyPath: kb.UIDecline_btn
-      value: a
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
-        type: 3}
-      propertyPath: kb.UIAlt1_btn
-      value: leftShoulder
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
-        type: 3}
-      propertyPath: kb.UIAlt2_btn
-      value: rightShoulder
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
-        type: 3}
-      propertyPath: kb.UIAlt3_btn
-      value: rightTrigger
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
-        type: 3}
-      propertyPath: kb.Atk2_2_btn
-      value: rightShoulder
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
-        type: 3}
-      propertyPath: kb.Atk2_2_Key
-      value: E
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
-        type: 3}
-      propertyPath: kb.UIUp_Key
-      value: UpArrow
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
-        type: 3}
-      propertyPath: kb.UIDown_Key
-      value: DownArrow
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
-        type: 3}
-      propertyPath: kb.UIRight_Key
-      value: RightArrow
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
-        type: 3}
-      propertyPath: kb.UILeft_Key
-      value: LeftArrow
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
-        type: 3}
-      propertyPath: kb.UIAccept_Key
-      value: Enter
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
-        type: 3}
-      propertyPath: kb.UIDecline_Key
-      value: P
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
-        type: 3}
-      propertyPath: kb.UIAlt1_Key
-      value: B
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
-        type: 3}
-      propertyPath: kb.UIAlt2_Key
-      value: N
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
-        type: 3}
-      propertyPath: kb.UIAlt3_Key
-      value: M
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
-        type: 3}
-      propertyPath: kb.BowRecharge_btn
-      value: rightTrigger
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
-        type: 3}
-      propertyPath: kb.BowRecharge_Key
-      value: Z
-      objectReference: {fileID: 0}
     - target: {fileID: 2374169362876929646, guid: b9d2a7211a311ef458007fdcebcac8b7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2252,11 +2042,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374169362876929647, guid: b9d2a7211a311ef458007fdcebcac8b7,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9d2a7211a311ef458007fdcebcac8b7, type: 3}
@@ -9963,6 +9748,24 @@ Transform:
   m_Father: {fileID: 741153512}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1783715811 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2095242708, guid: c9526d4bddc5adc449f3a751c86c91e1,
+    type: 3}
+  m_PrefabInstance: {fileID: 2114406935}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1783715815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1783715811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d86ebffd751b8d4284083301d0ad685, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1795775106
 GameObject:
   m_ObjectHideFlags: 0
