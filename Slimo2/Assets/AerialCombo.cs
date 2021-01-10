@@ -53,9 +53,11 @@ public class AerialCombo : StateMachineBehaviour
                 }
                 if(pCM.GetButtonDown("Atk2_2"))
                 {
-                    animator.SetTrigger("SpAtk2");
-                    animator.ResetTrigger("AAtt_a");
-
+                    if(animator.GetComponent<NewSpUltAktParam>().ReturnCanUse(1))
+                    {
+                        animator.SetTrigger("SpAtk2");
+                        animator.ResetTrigger("AAtt_a");
+                    }
                 }
                 break;
             case false:

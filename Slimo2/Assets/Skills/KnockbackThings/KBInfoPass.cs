@@ -11,6 +11,7 @@ public class KBInfoPass : MonoBehaviour
     public bool isProj;
     public int HitCount = 1;
     public float Damage = 251;
+    public int eleType;
     public void StartProjTimer(float dur)
     {
         StartCoroutine(Timer(dur));
