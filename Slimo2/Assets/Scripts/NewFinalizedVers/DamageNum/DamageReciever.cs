@@ -5,6 +5,7 @@ using UnityEngine;
 public class DamageReciever : MonoBehaviour
 {
     public DefensiveStats defStats;
+    public StatusHolder[] status;
     // Start is called before the first frame update
     
     public float CalcDmg(float _dmgInput, int _eleType) //for damage calcs that involve ele type
@@ -14,9 +15,13 @@ public class DamageReciever : MonoBehaviour
         {
             case 0: //neutral, only gets reduced by total armor
                 output = _dmgInput - (defStats.baseDef * (1 + defStats.defMulti));
+                //add bleed activation stuff here when added
                 break;
             case 1: //wind, gets reduced by both res and armor
                 output = (_dmgInput * (1 - defStats.eleRes[5].resAmt)) - (defStats.baseDef * (1 + defStats.defMulti));
+                status[1].isActive = true;
+                StopCoroutine(Timer(1));
+                StartCoroutine(Timer(1));
                 break;
             case 2: //water, the higher armor multi, the more dmg it does
                 output = (_dmgInput * (1 - defStats.eleRes[5].resAmt)) * (1 + defStats.defMulti);
@@ -30,6 +35,10 @@ public class DamageReciever : MonoBehaviour
             case 5: //arcane, the higher base armor, the more dmg it does
                 output = (_dmgInput * (1 - defStats.eleRes[5].resAmt)) + defStats.baseDef;
                 break;
+        }
+        if(status[1].isActive) //if this target has shock applied to it
+        {
+            output *= (1 + status[1].effect.ReturnMagni());
         }
         return output;
     }
@@ -45,6 +54,11 @@ public class DamageReciever : MonoBehaviour
         }
     }
 
+    IEnumerator Timer (int slot)
+    {
+        yield return new WaitForSeconds(status[slot].effect.ReturnDuration());
+        status[slot].isActive = false;
+    }
 }
 [System.Serializable]
 public class DefensiveStats
@@ -59,4 +73,11 @@ public class EleTypes
     public int index;
     public string Name;
     public float resAmt; //% reduction, up to .95 max
+}
+[System.Serializable]
+public class StatusHolder
+{
+    public StatusBase effect;
+    public bool isActive;
+    public int slot;
 }

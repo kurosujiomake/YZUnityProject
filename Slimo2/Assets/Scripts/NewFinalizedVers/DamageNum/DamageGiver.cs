@@ -35,19 +35,19 @@ public class OffensiveStats
                 a = Random.Range(-(baseDmg * dmgRangePercent * (1 + eleMulti)), (baseDmg * dmgRangePercent * (1 + eleMulti)));
                 break;
             case 2: // the mod will always be negative, giving the player only the lower half of dmg rolls
-
+                a = Random.Range(-(baseDmg * dmgRangePercent), 0);
                 break;
-            case 3: //fire, ele dmg multi is doubled, making consistent high hits
-
+            case 3: //fire, the random rolls will always roll the higher number, resulting in more consistent high hits
+                a = Random.Range(0 , (baseDmg * dmgRangePercent));
                 break;
-            case 4:
-
+            case 4: //earth, 
+                a = Random.Range(-(baseDmg * dmgRangePercent), (baseDmg * dmgRangePercent));
                 break;
-            case 5:
-
+            case 5: //arcane, has no dmg variation
+                a = 0;
                 break;
         }
-        if (a + baseDmg <= 0) //if the random dmg range goes below 0
+        if (a + baseDmg < 0) //if the random dmg range goes below 0
             a = -baseDmg + 1; //this way when a is added to base dmg it will output 1
         return a;
     }
@@ -56,23 +56,23 @@ public class OffensiveStats
         float o = 0;
         switch(eleMod) //different elemental type conversions will calc dmg a bit differently
         {
-            case 0: //neutral, no additional mods, just adjusted base times multi
-                
+            case 0: //neutral, no additional mods, just adjusted base times multi, may apply bleed in the future
+                o = (baseDmg + DmgRangeAdjustment(0)) * dmgMulti;
                 break;
-            case 1: //wind, huge dmg range, potential for very high and very low rolls
-
+            case 1: //wind, huge dmg range, potential for very high and very low rolls, applies shock on crit, which is a 15% dmg inc
+                o = (baseDmg + DmgRangeAdjustment(1)) * dmgMulti * eleMulti;
                 break;
-            case 2: //water, will always hit on the lower end of damage rolls
-
+            case 2: //water, will always hit on the lower end of damage rolls, applies a slow on hit, freeze on crit
+                o = (baseDmg + DmgRangeAdjustment(2)) * dmgMulti * eleMulti;
                 break;
-            case 3: //fire, ele dmg multi is doubled, making consistent high hits
-
+            case 3: //fire, ele dmg multi is doubled, making consistent high hits, may apply burn in the future, whidh inc target move spd
+                o = (baseDmg + DmgRangeAdjustment(3)) * dmgMulti * eleMulti;
                 break;
-            case 4:
-
+            case 4: //earth, ele dmg multi is halved, however consecutive hits apply impale, which deals an additional hit of dmg when hit again
+                o = (baseDmg + DmgRangeAdjustment(4)) * dmgMulti * (eleMulti * 0.5f);
                 break;
-            case 5:
-
+            case 5: //arcane, which has no dmg variance
+                o = baseDmg * dmgMulti * eleMulti;
                 break;
         }
         if (o <= 0) //dmg cant be negative
