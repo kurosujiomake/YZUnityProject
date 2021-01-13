@@ -30,14 +30,18 @@ public class Sound
     }
 }
 
+
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
     [SerializeField]
     Sound[] sounds;
 
+    public PlayerControlManager playerControlManager;
+
     void Awake ()
     {
+        playerControlManager = GetComponent<PlayerControlManager>();
         if (instance != null)
         {
             Debug.LogError("More than one AudioManager in the scene.");
@@ -58,6 +62,31 @@ public class AudioManager : MonoBehaviour
             sounds[i].SetSource(_go.AddComponent<AudioSource>());
 
         }
+
+    }
+
+    void Update ()
+    {
+        //PlayerControlManager playerControlManager = GetComponent<PlayerControlManager>;
+        if (playerControlManager)
+        {
+            if (playerControlManager.Jump_held == true)
+            {
+                Debug.Log("It works 3dwadadawdadwadwadada!");
+            }
+        }
+
+        if (GetComponent<PlayerControlManager>())
+        {
+            Debug.Log("It works!");
+            PlaySound("_source");
+            if (GetComponent<PlayerControlManager>().Jump_held == true)
+            {
+                Debug.Log("It works 2dwadadwadwadwadwadwa!");
+            }
+
+           
+        }
     }
 
     public void PlaySound(string _name)
@@ -69,6 +98,13 @@ public class AudioManager : MonoBehaviour
                 sounds[i].Play();
                 return;
             }
+        }
+
+        if (gameObject.GetComponent<PlayerControlManager>())
+        {
+            Debug.Log("It works!");
+            PlaySound("_source");
+            //if (gameObject.GetComponent<PlayerControlManager>().)
         }
 
         // no sound with name
