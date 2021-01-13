@@ -7,7 +7,16 @@ public class DamageReciever : MonoBehaviour
     public DefensiveStats defStats;
     public StatusHolder[] status;
     // Start is called before the first frame update
-    
+    private Coroutine bleedC, shockC, slowC, freezeC, burnC, poisonC;
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            CalcDmg(142, 1);
+        }
+
+    }
+
     public float CalcDmg(float _dmgInput, int _eleType) //for damage calcs that involve ele type
     {
         float output = 0;
@@ -20,8 +29,9 @@ public class DamageReciever : MonoBehaviour
             case 1: //wind, gets reduced by both res and armor
                 output = (_dmgInput * (1 - defStats.eleRes[5].resAmt)) - (defStats.baseDef * (1 + defStats.defMulti));
                 status[1].isActive = true;
-                StopCoroutine(Timer(1));
-                StartCoroutine(Timer(1));
+                if(shockC != null)
+                    StopCoroutine(shockC);
+                shockC = StartCoroutine(Timer(1));
                 break;
             case 2: //water, the higher armor multi, the more dmg it does
                 output = (_dmgInput * (1 - defStats.eleRes[5].resAmt)) * (1 + defStats.defMulti);

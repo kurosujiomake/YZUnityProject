@@ -273,18 +273,18 @@ MonoBehaviour:
   - effect: {fileID: 11400000, guid: 0c3fea04046ca194ea77a1cbadb77229, type: 2}
     isActive: 0
     slot: 1
-  - effect: {fileID: 0}
+  - effect: {fileID: 11400000, guid: c337579244b92ee4880624dfa0796e51, type: 2}
     isActive: 0
-    slot: 0
-  - effect: {fileID: 0}
+    slot: 2
+  - effect: {fileID: 11400000, guid: 22909310b99fe3c41a581b7f819abd1c, type: 2}
     isActive: 0
-    slot: 0
-  - effect: {fileID: 0}
+    slot: 3
+  - effect: {fileID: 11400000, guid: 694c54680fbd3694396c35934e8dcbf8, type: 2}
     isActive: 0
-    slot: 0
-  - effect: {fileID: 0}
+    slot: 4
+  - effect: {fileID: 11400000, guid: a9f90204d0fd5ee46a96c9e8e1f8452d, type: 2}
     isActive: 0
-    slot: 0
-  - effect: {fileID: 0}
+    slot: 5
+  - effect: {fileID: 11400000, guid: 2ddbfe758fc0d2749a347517520d7dd3, type: 2}
     isActive: 0
-    slot: 0
+    slot: 6
