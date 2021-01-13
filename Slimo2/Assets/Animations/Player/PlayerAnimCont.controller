@@ -1359,6 +1359,20 @@ MonoBehaviour:
   HitIDs: 0000000000000000
   hasSetID: 0
   kbInfo: {fileID: 0}
+--- !u!114 &-6335943132678190829
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d17d1db2b972384c8b62db3295a6088, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundName: Woosh
+  audioManager: {fileID: 0}
 --- !u!114 &-6290291519785999852
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2148,6 +2162,7 @@ AnimatorState:
   - {fileID: 2731070628911612310}
   - {fileID: 3332552681643977069}
   - {fileID: 6796177154073986403}
+  - {fileID: -6335943132678190829}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1

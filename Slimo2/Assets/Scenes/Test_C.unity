@@ -1115,6 +1115,16 @@ PrefabInstance:
       propertyPath: curControlType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
+        type: 3}
+      propertyPath: kb.UIAlt2_Key
+      value: M
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
+        type: 3}
+      propertyPath: kb.UIAlt3_Key
+      value: M
+      objectReference: {fileID: 0}
     - target: {fileID: 2374169362876929646, guid: b9d2a7211a311ef458007fdcebcac8b7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3872,7 +3882,7 @@ GameObject:
   - component: {fileID: 1612711281}
   m_Layer: 0
   m_Name: ^GameManager
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3959,6 +3969,9 @@ MonoBehaviour:
     pitch: 0.7
     randomVolume: 0.1
     randomPitch: 0.1
+  playerControllerNew: {fileID: 0}
+  jumpSound: {fileID: 0}
+  playerGroundChecker: {fileID: 0}
   playerControlManager: {fileID: 1569124331}
 --- !u!1001 &1626983940
 PrefabInstance:

@@ -15,6 +15,7 @@ TagManager:
   - pAnimSpriteCont
   - pControlManager
   - HitDisplayCanv
+  - GameManager
   layers:
   - Default
   - TransparentFX

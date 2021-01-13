@@ -37,11 +37,18 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     Sound[] sounds;
 
+    public PlayerControllerNew playerControllerNew;
+    public Parameters jumpSound;
+    public GroundChecker playerGroundChecker;
     public PlayerControlManager playerControlManager;
 
     void Awake ()
     {
-        playerControlManager = GetComponent<PlayerControlManager>();
+        playerControllerNew = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerNew>();
+        jumpSound = GameObject.FindGameObjectWithTag("Player").GetComponent<Parameters>();
+        playerGroundChecker = GameObject.FindGameObjectWithTag("Player").GetComponent<GroundChecker>();
+        playerControlManager = GameObject.FindGameObjectWithTag("pControlManager").GetComponent<PlayerControlManager>();
+
         if (instance != null)
         {
             Debug.LogError("More than one AudioManager in the scene.");
@@ -65,30 +72,6 @@ public class AudioManager : MonoBehaviour
 
     }
 
-    void Update ()
-    {
-        //PlayerControlManager playerControlManager = GetComponent<PlayerControlManager>;
-        if (playerControlManager)
-        {
-            if (playerControlManager.Jump_held == true)
-            {
-                Debug.Log("It works 3dwadadawdadwadwadada!");
-            }
-        }
-
-        if (GetComponent<PlayerControlManager>())
-        {
-            Debug.Log("It works!");
-            PlaySound("_source");
-            if (GetComponent<PlayerControlManager>().Jump_held == true)
-            {
-                Debug.Log("It works 2dwadadwadwadwadwadwa!");
-            }
-
-           
-        }
-    }
-
     public void PlaySound(string _name)
     {
         for (int i = 0; i < sounds.Length; i++)
@@ -104,7 +87,6 @@ public class AudioManager : MonoBehaviour
         {
             Debug.Log("It works!");
             PlaySound("_source");
-            //if (gameObject.GetComponent<PlayerControlManager>().)
         }
 
         // no sound with name
