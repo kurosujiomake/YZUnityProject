@@ -6,18 +6,32 @@ public class DamageReciever : MonoBehaviour
 {
     public DefensiveStats defStats;
     public StatusHolder[] status;
+    public DamageNumberMain dNM = null;
     // Start is called before the first frame update
     private Coroutine bleedC, shockC, slowC, freezeC, burnC, poisonC;
+    
+    void Awake()
+    {
+        dNM = GameObject.FindGameObjectWithTag("HitDisplayCanv").GetComponent<DamageNumberMain>();
+    }
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            CalcDmg(142, 1);
+            CalcDmg(142, 1, false);
         }
 
     }
+    public void TakeDamage(float finalDmg, int element, bool isCrit, int HitCount)
+    {
+        for (int i = 0; i < HitCount; i++)
+        {
+            dNM.DisplayUpdate(CalcDmg(finalDmg, element, isCrit), 1);
+        }
+        
+    }
 
-    public float CalcDmg(float _dmgInput, int _eleType) //for damage calcs that involve ele type
+    public float CalcDmg(float _dmgInput, int _eleType, bool isCrit) //for damage calcs that involve ele type
     {
         float output = 0;
         switch(_eleType)

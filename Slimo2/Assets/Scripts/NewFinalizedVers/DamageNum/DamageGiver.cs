@@ -4,16 +4,12 @@ using UnityEngine;
 
 public class DamageGiver : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public OffensiveStats statBloc;
+    public int hitCount;
 
-    // Update is called once per frame
-    void Update()
+    public void CallDamage(EnemyDamageTake which) //this is the function that the hitbox will call
     {
-        
+        which.TakeDamage(statBloc.OuputDmg(), hitCount, statBloc.eleMod, statBloc.isCrit); 
     }
 }
 [System.Serializable]
@@ -22,6 +18,22 @@ public class OffensiveStats
     public float baseDmg, dmgMulti, dmgRangePercent;
     public int eleMod;
     public float eleMulti;
+    public float baseCrit, critChanceInc, critMulti;
+    public bool isCrit = false;
+
+    public float CritCalc(float dmgInput)
+    {
+        isCrit = false; //resets crit
+        float d = dmgInput;
+        float c = baseCrit * (1 + critChanceInc); //gets crit chance
+        float a = Random.Range(0, 100); //crit roller
+        if(a <= c) //if the random number rolls a crit
+        {
+            isCrit = true;
+            d *= (1 + critMulti); //dmg gets crit multied
+        }
+        return d;
+    }
 
     private float DmgRangeAdjustment(int type)
     {
@@ -77,6 +89,7 @@ public class OffensiveStats
         }
         if (o <= 0) //dmg cant be negative
             o = 0;
+        o = CritCalc(o); //calculates crit
         return o;
     }
 }

@@ -1320,6 +1320,7 @@ GameObject:
   - component: {fileID: 3581208946597028758}
   - component: {fileID: 1096420705386054874}
   - component: {fileID: 8221750487963548666}
+  - component: {fileID: 4514278939508043758}
   m_Layer: 11
   m_Name: Hitbox1
   m_TagString: Untagged
@@ -1387,6 +1388,30 @@ MonoBehaviour:
   isProj: 0
   HitCount: 1
   Damage: 251
+  eleType: 0
+--- !u!114 &4514278939508043758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784586896232657024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 791b1051f46dd304dab204373095d1f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statBloc:
+    baseDmg: 0
+    dmgMulti: 0
+    dmgRangePercent: 0
+    eleMod: 0
+    eleMulti: 0
+    baseCrit: 0
+    critChanceInc: 0
+    critMulti: 0
+    isCrit: 0
+  hitCount: 0
 --- !u!1 &2445274164556844130
 GameObject:
   m_ObjectHideFlags: 0

@@ -27,7 +27,19 @@ public class DamageNumberMain : MonoBehaviour
         HitDamageUpdate(hitDmg);
         StartCoroutine(ComboTimer());
     }
-
+    public void DisplayCrit(bool isCrit)
+    {
+        switch(isCrit)
+        {
+            case true:
+                DisplayDmgText[3].Activate();
+                DisplayDmgText[3].TextObj.text = "CRIT!";
+                break;
+            case false:
+                
+                break;
+        }
+    }
     public void TotalDmgUpdate(float input) //updates the display text for total damage
     {
         DisplayDmgText[1].Activate();

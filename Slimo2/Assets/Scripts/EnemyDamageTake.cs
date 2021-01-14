@@ -21,11 +21,10 @@ public class EnemyDamageTake : MonoBehaviour
         }
     }
 
-    void TakeDamage(float dmg, int hitCount, int _eleType)
+    public void TakeDamage(float dmg, int hitCount, int _eleType, bool isCrit)
     {
         //do health removal here
         
-        DnM.DisplayUpdate(dR.CalcDmg(dmg, _eleType), hitCount);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -35,11 +34,13 @@ public class EnemyDamageTake : MonoBehaviour
             if(collision.GetComponent<KBInfoPass>() != null) //check if its a valid hitbox
             {
                 var h = collision.GetComponent<KBInfoPass>();
+                var d = collision.GetComponent<DamageGiver>();
                 if(h.Hit_ID != HitID)
                 {
                     //print("hit with " + h.Damage + " Damage");
                     //print("hit with " + h.HitCount + " Hits");
-                    TakeDamage(h.Damage, h.HitCount, h.eleType);
+                    //TakeDamage(h.Damage, h.HitCount, h.eleType); instead of this we call the dmg giver script on the attacker
+                    d.CallDamage(this);
                     HitID = h.Hit_ID;
                 }
             }
