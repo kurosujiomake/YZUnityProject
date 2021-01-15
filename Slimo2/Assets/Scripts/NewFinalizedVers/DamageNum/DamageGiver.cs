@@ -6,10 +6,21 @@ public class DamageGiver : MonoBehaviour
 {
     public OffensiveStats statBloc;
     public int hitCount;
+    public EquipDmgCalc equipStats;
 
+    void Awake()
+    {
+        equipStats = GetComponentInParent<EquipDmgCalc>();
+        
+    }
     public void CallDamage(EnemyDamageTake which) //this is the function that the hitbox will call
     {
         which.TakeDamage(statBloc.OuputDmg(), hitCount, statBloc.eleMod, statBloc.isCrit); 
+    }
+    public void DmgPass(float baseDmg, float dmgMulti, float eleMulti, int eleType, float baseCrit, float critChance, float critMulti)
+    {
+        statBloc.baseDmg = baseDmg;
+        statBloc.dmgMulti = dmgMulti;
     }
 }
 [System.Serializable]

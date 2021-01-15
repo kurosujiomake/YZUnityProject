@@ -1373,6 +1373,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundName: Woosh
   audioManager: {fileID: 0}
+--- !u!114 &-6304559540196444533
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8900e44237835cc4db2f2d191a4ef84a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &-6290291519785999852
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4062,6 +4074,7 @@ AnimatorState:
   - {fileID: 7577898448731146921}
   - {fileID: 1193769654578492137}
   - {fileID: -6290291519785999852}
+  - {fileID: -6304559540196444533}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1

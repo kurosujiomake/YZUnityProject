@@ -1412,6 +1412,7 @@ MonoBehaviour:
     critMulti: 0
     isCrit: 0
   hitCount: 0
+  equipStats: {fileID: 0}
 --- !u!1 &2445274164556844130
 GameObject:
   m_ObjectHideFlags: 0
@@ -1790,6 +1791,7 @@ GameObject:
   - component: {fileID: 995318638}
   - component: {fileID: 995318651}
   - component: {fileID: 995318652}
+  - component: {fileID: 5260484921123446815}
   m_Layer: 9
   m_Name: PlayerNew
   m_TagString: Player
@@ -2586,6 +2588,79 @@ MonoBehaviour:
   BowMax: 45
   displayObj: {fileID: 0}
   text: {fileID: 0}
+--- !u!114 &5260484921123446815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3727145088433499907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81249cde466e2f74dafb76b562960804, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  equips:
+  - slotName: Weapon
+    ID: 0
+    EquipID: 0
+    baseAtk: 151
+    baseDef: 0
+    baseCrit: 0
+    critChanceMulti: 0
+    critDmgMulti: 0
+    EleMod: 0
+    AtkMulti: 0.68
+    DefMulti: 0
+    EleMulti: 0.13
+  - slotName: SubWeapon
+    ID: 1
+    EquipID: 0
+    baseAtk: 223
+    baseDef: 0
+    baseCrit: 0
+    critChanceMulti: 0
+    critDmgMulti: 0
+    EleMod: 1
+    AtkMulti: 0.47
+    DefMulti: 0
+    EleMulti: 0.38
+  - slotName: Relic
+    ID: 2
+    EquipID: 0
+    baseAtk: 0
+    baseDef: 0
+    baseCrit: 0
+    critChanceMulti: 0
+    critDmgMulti: 0
+    EleMod: 0
+    AtkMulti: 0
+    DefMulti: 0
+    EleMulti: 0
+  - slotName: Armor
+    ID: 3
+    EquipID: 0
+    baseAtk: 0
+    baseDef: 0
+    baseCrit: 0
+    critChanceMulti: 0
+    critDmgMulti: 0
+    EleMod: 0
+    AtkMulti: 0
+    DefMulti: 0
+    EleMulti: 0
+  - slotName: Accessory
+    ID: 4
+    EquipID: 0
+    baseAtk: 0
+    baseDef: 0
+    baseCrit: 0
+    critChanceMulti: 0
+    critDmgMulti: 0
+    EleMod: 0
+    AtkMulti: 0
+    DefMulti: 0
+    EleMulti: 0
 --- !u!1 &3772932790477469332
 GameObject:
   m_ObjectHideFlags: 0
