@@ -2427,7 +2427,7 @@ PrefabInstance:
     - target: {fileID: 3727145088433499904, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 9.15
       objectReference: {fileID: 0}
     - target: {fileID: 3727145088433499904, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
         type: 3}
@@ -3880,6 +3880,8 @@ GameObject:
   - component: {fileID: 1612711278}
   - component: {fileID: 1612711277}
   - component: {fileID: 1612711281}
+  - component: {fileID: 1612711282}
+  - component: {fileID: 1612711283}
   m_Layer: 0
   m_Name: ^GameManager
   m_TagString: GameManager
@@ -3973,6 +3975,270 @@ MonoBehaviour:
   jumpSound: {fileID: 0}
   playerGroundChecker: {fileID: 0}
   playerControlManager: {fileID: 1569124331}
+--- !u!82 &1612711282
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612711276}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 6c97d31424ac1a244858dec548d3cacf, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.6
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 2
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.002
+      value: 1
+      inSlope: -500.20065
+      outSlope: -500.20065
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.004
+      value: 0.5
+      inSlope: -125.05016
+      outSlope: -125.05016
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.008
+      value: 0.25
+      inSlope: -31.26254
+      outSlope: -31.26254
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.016
+      value: 0.125
+      inSlope: -7.815635
+      outSlope: -7.815635
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.032
+      value: 0.0625
+      inSlope: -1.9539088
+      outSlope: -1.9539088
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.064
+      value: 0.03125
+      inSlope: -0.4884772
+      outSlope: -0.4884772
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.14611219
+      value: 0.012969971
+      inSlope: -0.1221193
+      outSlope: -0.1221193
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.256
+      value: 0.0078125
+      inSlope: -0.030529825
+      outSlope: -0.030529825
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.512
+      value: 0.00390625
+      inSlope: -0.0076324563
+      outSlope: -0.0076324563
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0.002
+      inSlope: -0.002000801
+      outSlope: -0.002000801
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!82 &1612711283
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612711276}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 61633bbf137050c42a29e5f499957233, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.2
+  m_Pitch: 0.9
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &1626983940
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4810,34 +5076,6 @@ CompositeCollider2D:
         Y: 102400000
       - X: 256000000
         Y: 102400000
-    - - X: 153599984
-        Y: 0
-      - X: -76800000
-        Y: 0
-      - X: -76800000
-        Y: 25600000
-      - X: 0
-        Y: 25600000
-      - X: 0
-        Y: 51200000
-      - X: -76800000
-        Y: 51200000
-      - X: -76800000
-        Y: 102400000
-      - X: 76799992
-        Y: 102400000
-      - X: 76799992
-        Y: 51200000
-      - X: 153599984
-        Y: 51200000
-      - X: 153599984
-        Y: 153599984
-      - X: -127999992
-        Y: 153599984
-      - X: -127999992
-        Y: -76800000
-      - X: 153599984
-        Y: -76800000
     - - X: -153600000
         Y: -76800000
       - X: -128000000
@@ -4854,6 +5092,44 @@ CompositeCollider2D:
         Y: -127999992
       - X: -153600000
         Y: -127999992
+    - - X: 153599984
+        Y: 0
+      - X: 100
+        Y: 0
+      - X: 100
+        Y: 51200041
+      - X: 41
+        Y: 51200100
+      - X: -25600041
+        Y: 51200100
+      - X: -25600100
+        Y: 51200041
+      - X: -25600100
+        Y: 51200000
+      - X: -76799900
+        Y: 51200000
+      - X: -76799900
+        Y: 51200041
+      - X: -76799959
+        Y: 51200100
+      - X: -76800000
+        Y: 51200100
+      - X: -76800000
+        Y: 102400000
+      - X: 76799992
+        Y: 102400000
+      - X: 76799992
+        Y: 51200000
+      - X: 153599984
+        Y: 51200000
+      - X: 153599984
+        Y: 153599984
+      - X: -127999992
+        Y: 153599984
+      - X: -127999992
+        Y: -76800000
+      - X: 153599984
+        Y: -76800000
     - - X: 486400068
         Y: -76800041
       - X: 486400068
@@ -4894,14 +5170,6 @@ CompositeCollider2D:
         Y: -76800100
       - X: 486400009
         Y: -76800100
-    - - X: 409599968
-        Y: 0
-      - X: 358400000
-        Y: 0
-      - X: 358400000
-        Y: -76800000
-      - X: 409599968
-        Y: -76800000
     - - X: 332800000
         Y: -76800000
       - X: 358399968
@@ -4918,6 +5186,14 @@ CompositeCollider2D:
         Y: -102400000
       - X: 332800000
         Y: -102400000
+    - - X: 409599968
+        Y: 0
+      - X: 358400000
+        Y: 0
+      - X: 358400000
+        Y: -76800000
+      - X: 409599968
+        Y: -76800000
     - - X: -128000000
         Y: -255999984
       - X: -153600000
@@ -5074,11 +5350,9 @@ CompositeCollider2D:
       - {x: -15.359971, y: -7.6800003}
       - {x: 15.359999, y: -7.6799703}
       - {x: 15.35997, y: 0}
-      - {x: -7.6800003, y: 0.0000294}
-      - {x: -7.6799703, y: 2.56}
-      - {x: 0, y: 2.5600293}
-      - {x: -0.000029300001, y: 5.12}
-      - {x: -7.6800003, y: 5.1200294}
+      - {x: 0.00001, y: 0.0000294}
+      - {x: -0.0000252, y: 5.12001}
+      - {x: -7.6800003, y: 5.1200395}
       - {x: -7.6799703, y: 10.24}
       - {x: 7.6799994, y: 10.23997}
       - {x: 7.680029, y: 5.12}
@@ -6909,8 +7183,8 @@ Tilemap:
   - first: {x: -4, y: -1, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 3
-      m_TileSpriteIndex: 3
+      m_TileIndex: 9
+      m_TileSpriteIndex: 9
       m_TileMatrixIndex: 0
       m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
@@ -6918,8 +7192,8 @@ Tilemap:
   - first: {x: -3, y: -1, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
+      m_TileIndex: 9
+      m_TileSpriteIndex: 9
       m_TileMatrixIndex: 0
       m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
@@ -6927,8 +7201,8 @@ Tilemap:
   - first: {x: -2, y: -1, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
+      m_TileIndex: 9
+      m_TileSpriteIndex: 9
       m_TileMatrixIndex: 0
       m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
@@ -6936,8 +7210,8 @@ Tilemap:
   - first: {x: -1, y: -1, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
+      m_TileIndex: 11
+      m_TileSpriteIndex: 11
       m_TileMatrixIndex: 0
       m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
@@ -7107,6 +7381,33 @@ Tilemap:
   - first: {x: -4, y: 0, z: 0}
     second:
       serializedVersion: 2
+      m_TileIndex: 9
+      m_TileSpriteIndex: 9
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 1
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
+  - first: {x: -3, y: 0, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 9
+      m_TileSpriteIndex: 9
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 1
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
+  - first: {x: -2, y: 0, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 9
+      m_TileSpriteIndex: 9
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 1
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
+  - first: {x: -1, y: 0, z: 0}
+    second:
+      serializedVersion: 2
       m_TileIndex: 1
       m_TileSpriteIndex: 1
       m_TileMatrixIndex: 0
@@ -7170,8 +7471,8 @@ Tilemap:
   - first: {x: -4, y: 1, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 1
-      m_TileSpriteIndex: 1
+      m_TileIndex: 11
+      m_TileSpriteIndex: 11
       m_TileMatrixIndex: 0
       m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
@@ -7197,8 +7498,8 @@ Tilemap:
   - first: {x: -1, y: 1, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
+      m_TileIndex: 10
+      m_TileSpriteIndex: 7
       m_TileMatrixIndex: 0
       m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
@@ -7979,13 +8280,13 @@ Tilemap:
       m_AllTileFlags: 1073741825
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - m_RefCount: 77
+  - m_RefCount: 73
     m_Data: {fileID: 11400000, guid: 76732d3905d9196449af36aec6722fe0, type: 2}
-  - m_RefCount: 35
+  - m_RefCount: 34
     m_Data: {fileID: 11400000, guid: e63d577974be6dd4cb4d2d9b4fb9e1af, type: 2}
   - m_RefCount: 74
     m_Data: {fileID: 11400000, guid: d80949e433842c743b8b74a438bdb058, type: 2}
-  - m_RefCount: 2
+  - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: b8fbe02418eadaa4c9ac9b9983e48e80, type: 2}
   - m_RefCount: 5
     m_Data: {fileID: 11400000, guid: afa8f8760fd5e1a47b9608566c6ddadd, type: 2}
@@ -7997,11 +8298,11 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: cf785ce260b175a46b97acd180e778d4, type: 2}
   - m_RefCount: 8
     m_Data: {fileID: 11400000, guid: 0251749def369d4449de147ae8625d29, type: 2}
-  - m_RefCount: 39
+  - m_RefCount: 45
     m_Data: {fileID: 11400000, guid: ed5f466d9431f5447b11cc832d584285, type: 2}
-  - m_RefCount: 7
+  - m_RefCount: 8
     m_Data: {fileID: 11400000, guid: 5a69e3e2eb9577e45b80e91e06e22290, type: 2}
-  - m_RefCount: 3
+  - m_RefCount: 5
     m_Data: {fileID: 11400000, guid: fc409052eb6db374cae1b00cb5bd4964, type: 2}
   - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 1316752f1853cbd4faa933fd0c203a74, type: 2}
@@ -8012,16 +8313,16 @@ Tilemap:
   - m_RefCount: 0
     m_Data: {fileID: 0}
   m_TileSpriteArray:
-  - m_RefCount: 77
+  - m_RefCount: 73
     m_Data: {fileID: -3043470271263079277, guid: e0590d6f9f3d3e742b67cd39ebd53f19,
       type: 3}
-  - m_RefCount: 35
+  - m_RefCount: 34
     m_Data: {fileID: -8254214428640912694, guid: e0590d6f9f3d3e742b67cd39ebd53f19,
       type: 3}
   - m_RefCount: 74
     m_Data: {fileID: -7466400330408877884, guid: e0590d6f9f3d3e742b67cd39ebd53f19,
       type: 3}
-  - m_RefCount: 2
+  - m_RefCount: 1
     m_Data: {fileID: -3574221708170257392, guid: e0590d6f9f3d3e742b67cd39ebd53f19,
       type: 3}
   - m_RefCount: 5
@@ -8033,19 +8334,19 @@ Tilemap:
   - m_RefCount: 38
     m_Data: {fileID: -2018178041524199790, guid: e0590d6f9f3d3e742b67cd39ebd53f19,
       type: 3}
-  - m_RefCount: 7
+  - m_RefCount: 8
     m_Data: {fileID: 4956849850274410979, guid: e0590d6f9f3d3e742b67cd39ebd53f19,
       type: 3}
   - m_RefCount: 8
     m_Data: {fileID: 3348813664224732479, guid: e0590d6f9f3d3e742b67cd39ebd53f19,
       type: 3}
-  - m_RefCount: 39
+  - m_RefCount: 45
     m_Data: {fileID: -146458656702945114, guid: e0590d6f9f3d3e742b67cd39ebd53f19,
       type: 3}
   - m_RefCount: 5
     m_Data: {fileID: -2594039545032337094, guid: e0590d6f9f3d3e742b67cd39ebd53f19,
       type: 3}
-  - m_RefCount: 3
+  - m_RefCount: 5
     m_Data: {fileID: -6285940916040604982, guid: e0590d6f9f3d3e742b67cd39ebd53f19,
       type: 3}
   - m_RefCount: 2
@@ -8060,7 +8361,7 @@ Tilemap:
   - m_RefCount: 0
     m_Data: {fileID: 0}
   m_TileMatrixArray:
-  - m_RefCount: 308
+  - m_RefCount: 311
     m_Data:
       e00: 1
       e01: 0
@@ -8081,7 +8382,7 @@ Tilemap:
   m_TileColorArray:
   - m_RefCount: 0
     m_Data: {r: 6.108595, g: 6.108595, b: 6.108595, a: 6.108595}
-  - m_RefCount: 308
+  - m_RefCount: 311
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
