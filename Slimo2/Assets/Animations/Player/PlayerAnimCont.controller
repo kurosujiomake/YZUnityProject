@@ -481,6 +481,31 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!1101 &-8220229034351919026
+AnimatorStateTransition:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: Blink
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: -3386848697539834300}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_ExitTime: 0.000000002731782
+  m_HasExitTime: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!1101 &-8187142060438908574
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -544,6 +569,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pCM: {fileID: 0}
+--- !u!114 &-8015759978708255106
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d17d1db2b972384c8b62db3295a6088, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundName: 
+  audioManager: {fileID: 0}
 --- !u!1101 &-8005822497590434056
 AnimatorStateTransition:
   m_ObjectHideFlags: 3
@@ -1039,6 +1078,7 @@ AnimatorState:
   - {fileID: -8387115173810822973}
   - {fileID: -2134392594343993051}
   - {fileID: -232170944042148274}
+  - {fileID: 4930251444058473224}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -1371,7 +1411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d17d1db2b972384c8b62db3295a6088, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundName: Woosh
+  soundName: slime_Jump
   audioManager: {fileID: 0}
 --- !u!114 &-6304559540196444533
 MonoBehaviour:
@@ -2174,7 +2214,7 @@ AnimatorState:
   - {fileID: 2731070628911612310}
   - {fileID: 3332552681643977069}
   - {fileID: 6796177154073986403}
-  - {fileID: -6335943132678190829}
+  - {fileID: 5703406122677533248}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -2273,6 +2313,20 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!114 &-4883761666263969978
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d17d1db2b972384c8b62db3295a6088, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundName: slime_Dash
+  audioManager: {fileID: 0}
 --- !u!1101 &-4854938897462155076
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -2627,6 +2681,20 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!114 &-4154359466162073429
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d17d1db2b972384c8b62db3295a6088, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundName: slime_Run
+  audioManager: {fileID: 0}
 --- !u!114 &-4149965540405027905
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2644,6 +2712,37 @@ MonoBehaviour:
   HitIDs: 0000000000000000
   hasSetID: 0
   kbInfo: {fileID: 0}
+--- !u!1101 &-4116134929287483419
+AnimatorStateTransition:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: OnGround
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: IsADashing
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: IsGamePlay
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 8366155579189787760}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_ExitTime: 1
+  m_HasExitTime: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!114 &-4096866127806866054
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2738,6 +2837,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isNotAtkState: 0
   maxAirCombo: 3
+--- !u!114 &-4005360135245184782
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eec04aea088b60a4b84c3ab2c75577e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1101 &-3933495763266811818
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -3951,6 +4062,7 @@ AnimatorState:
   - {fileID: 8858137993720421307}
   m_StateMachineBehaviours:
   - {fileID: 2952855512383638856}
+  - {fileID: 8873203466845613652}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -4209,6 +4321,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pCM: {fileID: 0}
+--- !u!1101 &-1495699748426682278
+AnimatorStateTransition:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 2
+    m_ConditionEvent: IsADashing
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: OnGround
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: IsTPing
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: -7013969840556517454}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_ExitTime: 1
+  m_HasExitTime: 1
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!1101 &-1472485671935285948
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -6187,6 +6330,20 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!114 &2605652053742919133
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4341ebfb8b8c1dd4d96d6f888cdddaaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundName: slime_Dash
+  audioManager: {fileID: 0}
 --- !u!1102 &2638587629522894623
 AnimatorState:
   serializedVersion: 5
@@ -7050,6 +7207,20 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!114 &4930251444058473224
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de69755fba76d8543922f4a425222c17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundName: 
+  audioManager: {fileID: 0}
 --- !u!1102 &4998484496949307752
 AnimatorState:
   serializedVersion: 5
@@ -7066,6 +7237,7 @@ AnimatorState:
   - {fileID: -951295153977577387}
   m_StateMachineBehaviours:
   - {fileID: -629031593207975355}
+  - {fileID: 8794248363253557136}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -7302,6 +7474,7 @@ AnimatorState:
   - {fileID: -2516230294612082251}
   m_StateMachineBehaviours:
   - {fileID: -2580768385568919142}
+  - {fileID: 2605652053742919133}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -7392,6 +7565,20 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!114 &5703406122677533248
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4341ebfb8b8c1dd4d96d6f888cdddaaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundName: slime_Jump
+  audioManager: {fileID: 0}
 --- !u!1101 &5738449840654404767
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -8125,6 +8312,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isNotAtkState: 0
   maxAirCombo: 3
+--- !u!1102 &6937896235337658555
+AnimatorState:
+  serializedVersion: 5
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: DashAV 0
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours:
+  - {fileID: -4005360135245184782}
+  - {fileID: 7298446850358129165}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: af8af954573371f4b94ad18dd2b95c5e, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
 --- !u!114 &6946174490655471725
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8466,6 +8681,20 @@ MonoBehaviour:
   timer: 0
   isFinalPATT: 1
   attPressed: 0
+--- !u!114 &7298446850358129165
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4341ebfb8b8c1dd4d96d6f888cdddaaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundName: slime_Dash
+  audioManager: {fileID: 0}
 --- !u!1102 &7332900780276400812
 AnimatorState:
   serializedVersion: 5
@@ -9120,6 +9349,20 @@ MonoBehaviour:
   HitIDs: 0000000000000000
   hasSetID: 0
   kbInfo: {fileID: 0}
+--- !u!114 &8794248363253557136
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4341ebfb8b8c1dd4d96d6f888cdddaaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundName: slime_Dash
+  audioManager: {fileID: 0}
 --- !u!1101 &8796728383826179194
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -9232,6 +9475,20 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!114 &8873203466845613652
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4341ebfb8b8c1dd4d96d6f888cdddaaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundName: slime_Dash
+  audioManager: {fileID: 0}
 --- !u!114 &8897961159154552094
 MonoBehaviour:
   m_ObjectHideFlags: 1

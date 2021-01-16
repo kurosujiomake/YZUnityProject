@@ -3880,7 +3880,6 @@ GameObject:
   - component: {fileID: 1612711278}
   - component: {fileID: 1612711277}
   - component: {fileID: 1612711281}
-  - component: {fileID: 1612711282}
   - component: {fileID: 1612711283}
   m_Layer: 0
   m_Name: ^GameManager
@@ -3965,184 +3964,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: Woosh
-    clip: {fileID: 8300000, guid: 229da99f55f87774fb60f85526264cec, type: 3}
+  - name: slime_Run
+    clip: {fileID: 8300000, guid: 09b913ea862cd354c90114c333e496c7, type: 3}
     volume: 1
     pitch: 0.7
     randomVolume: 0.1
     randomPitch: 0.1
+  - name: slime_Jump
+    clip: {fileID: 8300000, guid: b77829f025a679d4cb11e9a2f8ab3130, type: 3}
+    volume: 1
+    pitch: 0.7
+    randomVolume: 0.1
+    randomPitch: 0.1
+  - name: slime_Fall
+    clip: {fileID: 8300000, guid: b77829f025a679d4cb11e9a2f8ab3130, type: 3}
+    volume: 1
+    pitch: 0.7
+    randomVolume: 0.1
+    randomPitch: 0.1
+  - name: slime_Dash
+    clip: {fileID: 8300000, guid: 229da99f55f87774fb60f85526264cec, type: 3}
+    volume: 0.3
+    pitch: 1.2
+    randomVolume: 0.1
+    randomPitch: 0.5
   playerControllerNew: {fileID: 0}
   jumpSound: {fileID: 0}
   playerGroundChecker: {fileID: 0}
   playerControlManager: {fileID: 1569124331}
---- !u!82 &1612711282
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1612711276}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 6c97d31424ac1a244858dec548d3cacf, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 0.6
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 2
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0.002
-      value: 1
-      inSlope: -500.20065
-      outSlope: -500.20065
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 0.004
-      value: 0.5
-      inSlope: -125.05016
-      outSlope: -125.05016
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 0.008
-      value: 0.25
-      inSlope: -31.26254
-      outSlope: -31.26254
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 0.016
-      value: 0.125
-      inSlope: -7.815635
-      outSlope: -7.815635
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 0.032
-      value: 0.0625
-      inSlope: -1.9539088
-      outSlope: -1.9539088
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 0.064
-      value: 0.03125
-      inSlope: -0.4884772
-      outSlope: -0.4884772
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 0.14611219
-      value: 0.012969971
-      inSlope: -0.1221193
-      outSlope: -0.1221193
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 0.256
-      value: 0.0078125
-      inSlope: -0.030529825
-      outSlope: -0.030529825
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 0.512
-      value: 0.00390625
-      inSlope: -0.0076324563
-      outSlope: -0.0076324563
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 0.002
-      inSlope: -0.002000801
-      outSlope: -0.002000801
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!82 &1612711283
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4155,7 +4004,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 61633bbf137050c42a29e5f499957233, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.2
+  m_Volume: 0.1
   m_Pitch: 0.9
   Loop: 1
   Mute: 0
@@ -6149,7 +5998,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 3
-      m_TileSpriteIndex: 3
+      m_TileSpriteIndex: 15
       m_TileMatrixIndex: 0
       m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
@@ -8322,9 +8171,8 @@ Tilemap:
   - m_RefCount: 74
     m_Data: {fileID: -7466400330408877884, guid: e0590d6f9f3d3e742b67cd39ebd53f19,
       type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: -3574221708170257392, guid: e0590d6f9f3d3e742b67cd39ebd53f19,
-      type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 5
     m_Data: {fileID: -9132807170691280177, guid: e0590d6f9f3d3e742b67cd39ebd53f19,
       type: 3}
@@ -8358,8 +8206,9 @@ Tilemap:
   - m_RefCount: 3
     m_Data: {fileID: 8123331171172596930, guid: e0590d6f9f3d3e742b67cd39ebd53f19,
       type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: -3574221708170257392, guid: e0590d6f9f3d3e742b67cd39ebd53f19,
+      type: 3}
   m_TileMatrixArray:
   - m_RefCount: 311
     m_Data:
