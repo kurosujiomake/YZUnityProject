@@ -3966,27 +3966,27 @@ MonoBehaviour:
   sounds:
   - name: slime_Run
     clip: {fileID: 8300000, guid: 09b913ea862cd354c90114c333e496c7, type: 3}
-    volume: 1
+    volume: 0.7
     pitch: 0.7
     randomVolume: 0.1
     randomPitch: 0.1
   - name: slime_Jump
     clip: {fileID: 8300000, guid: b77829f025a679d4cb11e9a2f8ab3130, type: 3}
-    volume: 1
-    pitch: 0.7
-    randomVolume: 0.1
-    randomPitch: 0.1
+    volume: 0.7
+    pitch: 1
+    randomVolume: 0
+    randomPitch: 0
   - name: slime_Fall
     clip: {fileID: 8300000, guid: b77829f025a679d4cb11e9a2f8ab3130, type: 3}
-    volume: 1
+    volume: 0.7
     pitch: 0.7
     randomVolume: 0.1
     randomPitch: 0.1
   - name: slime_Dash
     clip: {fileID: 8300000, guid: 229da99f55f87774fb60f85526264cec, type: 3}
-    volume: 0.3
+    volume: 0.7
     pitch: 1.2
-    randomVolume: 0.1
+    randomVolume: 0
     randomPitch: 0.5
   playerControllerNew: {fileID: 0}
   jumpSound: {fileID: 0}
