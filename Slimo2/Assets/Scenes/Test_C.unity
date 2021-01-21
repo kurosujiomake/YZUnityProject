@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -358,7 +358,7 @@ Transform:
   m_GameObject: {fileID: 303562329}
   m_LocalRotation: {x: -0, y: -0, z: 1, w: 0.00013148783}
   m_LocalPosition: {x: 0, y: 0, z: 16}
-  m_LocalScale: {x: 8168, y: 1600, z: 1}
+  m_LocalScale: {x: 5308.955, y: 1391.8608, z: 1}
   m_Children: []
   m_Father: {fileID: 1430264046}
   m_RootOrder: 1
@@ -1357,6 +1357,44 @@ Transform:
 --- !u!1 &604984012 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3727145088433499907, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
+    type: 3}
+  m_PrefabInstance: {fileID: 1085005385}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &604984013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604984012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abe31a1fd8f797a4ca2edf1ce3100f45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioManager: {fileID: 0}
+  soundName: slime_swordWoosh
+  canAudio01: 0
+  playerAnimator: {fileID: 604984022}
+--- !u!114 &604984014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604984012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 179e2ee26feb00647a319f9f6000dcd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioManager: {fileID: 0}
+  soundName: slime_swordBigWoosh
+  canAudio01: 0
+  playerAnimator: {fileID: 604984022}
+--- !u!95 &604984022 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2029075663, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
     type: 3}
   m_PrefabInstance: {fileID: 1085005385}
   m_PrefabAsset: {fileID: 0}
@@ -2487,6 +2525,27 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 995318638, guid: 16a462e48b7ea5340b1aa2c5627f2e76, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 16a462e48b7ea5340b1aa2c5627f2e76, type: 3}
+--- !u!1 &1085005386 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1320624554, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
+    type: 3}
+  m_PrefabInstance: {fileID: 1085005385}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1085005387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085005386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 418862536e14b824f93a845b61bd0c05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioManager: {fileID: 0}
+  soundName: slime_jump
+  canSound: 0
 --- !u!1001 &1108384463
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3748,6 +3807,129 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1603319029 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5773918536866627635, guid: e986f1c1fe9f7814692fe28026426090,
+    type: 3}
+  m_PrefabInstance: {fileID: 2096282440}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &1603319030
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603319029}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
+--- !u!82 &1603319034
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603319029}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &1606011822
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3882,7 +4064,7 @@ GameObject:
   - component: {fileID: 1612711281}
   - component: {fileID: 1612711283}
   - component: {fileID: 1612711282}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ^GameManager
   m_TagString: GameManager
   m_Icon: {fileID: 0}
@@ -3903,7 +4085,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backgrounds:
   - {fileID: 1409604692}
-  - {fileID: 303562330}
   smoothing: 0.2
   camera: {fileID: 1430264046}
 --- !u!114 &1612711278
@@ -3989,6 +4170,18 @@ MonoBehaviour:
     pitch: 1.2
     randomVolume: 0
     randomPitch: 0.5
+  - name: slime_swordWoosh
+    clip: {fileID: 8300000, guid: 68788fb1b7cb3f84db8049cf78aea30d, type: 3}
+    volume: 0.5
+    pitch: 1.2
+    randomVolume: 0
+    randomPitch: 0.3
+  - name: slime_swordBigWoosh
+    clip: {fileID: 8300000, guid: c716134309770294c91f654f37ad0ce0, type: 3}
+    volume: 0.4
+    pitch: 1.3
+    randomVolume: 0
+    randomPitch: 0.3
   playerControllerNew: {fileID: 0}
   jumpSound: {fileID: 0}
   playerGroundChecker: {fileID: 0}
@@ -4005,7 +4198,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 72180b0a86b7b164a89d9b65d625818f, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.15
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -4101,7 +4294,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 61633bbf137050c42a29e5f499957233, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 0.2
   m_Pitch: 0.9
   Loop: 1
   Mute: 0
@@ -10541,6 +10734,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.y
       value: 2.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5773918536866627639, guid: e986f1c1fe9f7814692fe28026426090,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5773918536866627639, guid: e986f1c1fe9f7814692fe28026426090,
+        type: 3}
+      propertyPath: m_UsedByEffector
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e986f1c1fe9f7814692fe28026426090, type: 3}
