@@ -38,15 +38,15 @@ public class AudioManager : MonoBehaviour
     Sound[] sounds;
 
     public PlayerControllerNew playerControllerNew;
-    public Parameters jumpSound;
-    public GroundChecker playerGroundChecker;
+    //public Parameters jumpSound;
+    //public GroundChecker playerGroundChecker;
     public PlayerControlManager playerControlManager;
 
     void Awake ()
     {
         playerControllerNew = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerNew>();
-        jumpSound = GameObject.FindGameObjectWithTag("Player").GetComponent<Parameters>();
-        playerGroundChecker = GameObject.FindGameObjectWithTag("Player").GetComponent<GroundChecker>();
+        //jumpSound = GameObject.FindGameObjectWithTag("Player").GetComponent<Parameters>();
+        //playerGroundChecker = GameObject.FindGameObjectWithTag("Player").GetComponent<GroundChecker>();
         playerControlManager = GameObject.FindGameObjectWithTag("pControlManager").GetComponent<PlayerControlManager>();
 
         if (instance != null)

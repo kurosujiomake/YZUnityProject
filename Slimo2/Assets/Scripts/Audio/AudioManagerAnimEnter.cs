@@ -18,20 +18,10 @@ public class AudioManagerAnimEnter : StateMachineBehaviour
 {
     public string soundName;
     public AudioManager audioManager;
-    public bool canSound;
-
-    public void Start()
-    {
-        canSound = false;
-    }
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (canSound == true)
-        {
-            Debug.Log("the bool works!");
-        }
         audioManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<AudioManager>();
         audioManager.PlaySound(soundName);
     }
