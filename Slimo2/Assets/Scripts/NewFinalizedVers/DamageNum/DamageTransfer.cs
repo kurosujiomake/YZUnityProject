@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DamageTransfer : MonoBehaviour
 {
-    
+    public DataBundle dmgData;
 }
 [System.Serializable]
 public class DataBundle
