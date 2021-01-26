@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5758279507480997305}
   - component: {fileID: 3143772619783739056}
   - component: {fileID: -909369324568848958}
+  - component: {fileID: 5583794327008845113}
   m_Layer: 0
   m_Name: efx_bow_arrow
   m_TagString: Untagged
@@ -272,3 +273,15 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5583794327008845113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8808439694564921437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8d46f9b6dc19f547b983575be35eda0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
