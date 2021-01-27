@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class DamagePass : StateMachineBehaviour
 {
+    public float attDmgMulti; //certain attacks have damage multi of their own
+    public float dmgInput; //recives base dmg after calculations from the player
+    public float dmgToPass; //passes this info to dmg script on the hitbox, which passes it to the target hit
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     //{
