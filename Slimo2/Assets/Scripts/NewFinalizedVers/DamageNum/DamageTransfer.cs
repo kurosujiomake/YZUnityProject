@@ -10,9 +10,12 @@ public class DamageTransfer : MonoBehaviour
 public class DataBundle
 {
     [SerializeField]
-    private float InputDmg, critChance;
+    private float InputDmg;
     [SerializeField]
-    private int Ele;
+    private int Ele, hitCount;
+    [SerializeField]
+    private bool isACrit;
+
 
     public float ReturnFloatValues(string which)
     {
@@ -22,9 +25,7 @@ public class DataBundle
             case "dmg":
                 a = InputDmg;
                 break;
-            case "crit":
-                a = critChance;
-                break;
+            
         }
         return a;
     }
@@ -36,13 +37,28 @@ public class DataBundle
             case "ele":
                 a = Ele;
                 break;
+            case "hitCount":
+                a = hitCount;
+                break;
         }
         return a;
     }
-    public void SetValues(float dmg, float crit, int ele)
+    public bool ReturnBools(string which)
+    {
+        bool a = false;
+        switch(which)
+        {
+            case "crit":
+                a = isACrit;
+                break;
+        }
+        return a;
+    }
+    public void SetValues(float dmg, bool crit, int ele, int _hitCount)
     {
         InputDmg = dmg;
-        critChance = crit;
+        isACrit = crit;
         Ele = ele;
+        hitCount = _hitCount;
     }
 }

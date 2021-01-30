@@ -7,13 +7,25 @@ public class DamagePass : StateMachineBehaviour
     public float attDmgMulti; //certain attacks have damage multi of their own
     public float dmgInput; //recives base dmg after calculations from the player
     public float dmgToPass; //passes this info to dmg script on the hitbox, which passes it to the target hit
+    public int hitCount;
+    public DamageGiver dmgGive;
+    public DamageTransfer dmgTrans;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-    //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
+    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        dmgTrans = animator.GetComponentInChildren<DamageTransfer>();
+        dmgGive = animator.GetComponent<DamageGiver>();
+        dmgInput = dmgGive.statBloc.OuputDmg();
+        PassInfo();
+    }
 
+    void PassInfo()
+    {
+        
+        dmgToPass = attDmgMulti * dmgInput;
+        dmgTrans.dmgData.SetValues(dmgToPass, dmgGive.statBloc.ReturnIsCrit(), dmgGive.statBloc.ReturnEleMod(), hitCount);
+    }
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     //{

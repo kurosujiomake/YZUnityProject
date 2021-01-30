@@ -35,13 +35,16 @@ public class EnemyDamageTake : MonoBehaviour
             {
                 var h = collision.GetComponent<KBInfoPass>();
                 var d = collision.GetComponent<DamageGiver>();
+                var c = collision.GetComponent<DamageTransfer>();
+                
                 if(h.Hit_ID != HitID)
                 {
                     //print("hit with " + h.Damage + " Damage");
                     //print("hit with " + h.HitCount + " Hits");
                     //TakeDamage(h.Damage, h.HitCount, h.eleType); instead of this we call the dmg giver script on the attacker
-                    d.CallDamage(this);
+                    //d.CallDamage(this);
                     HitID = h.Hit_ID;
+                    //dR.
                 }
             }
         }

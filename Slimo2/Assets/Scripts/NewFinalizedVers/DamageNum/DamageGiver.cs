@@ -13,10 +13,7 @@ public class DamageGiver : MonoBehaviour
         equipStats = GetComponentInParent<EquipDmgCalc>();
         
     }
-    public void CallDamage(EnemyDamageTake which) //this is the function that the hitbox will call
-    {
-        which.TakeDamage(statBloc.OuputDmg(), hitCount, statBloc.eleMod, statBloc.isCrit); 
-    }
+    
     public void DmgPass(float baseDmg, float dmgMulti, float eleMulti, int eleType, float baseCrit, float critChance, float critMulti)
     {
         statBloc.baseDmg = baseDmg;
@@ -43,9 +40,20 @@ public class OffensiveStats
             isCrit = true;
             d *= (1 + critMulti); //dmg gets crit multied
         }
+        if(a > c)
+        {
+            isCrit = false;
+        }
         return d;
     }
-
+    public bool ReturnIsCrit()
+    {
+        return isCrit;
+    }
+    public int ReturnEleMod()
+    {
+        return eleMod;
+    }
     private float DmgRangeAdjustment(int type)
     {
         float a = 0;
