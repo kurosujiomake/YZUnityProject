@@ -1320,7 +1320,6 @@ GameObject:
   - component: {fileID: 3581208946597028758}
   - component: {fileID: 1096420705386054874}
   - component: {fileID: 8221750487963548666}
-  - component: {fileID: 4514278939508043758}
   - component: {fileID: 6674623593403435189}
   m_Layer: 11
   m_Name: Hitbox1
@@ -1390,30 +1389,6 @@ MonoBehaviour:
   HitCount: 1
   Damage: 251
   eleType: 0
---- !u!114 &4514278939508043758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1784586896232657024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 791b1051f46dd304dab204373095d1f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  statBloc:
-    baseDmg: 0
-    dmgMulti: 0
-    dmgRangePercent: 0
-    eleMod: 0
-    eleMulti: 0
-    baseCrit: 0
-    critChanceInc: 0
-    critMulti: 0
-    isCrit: 0
-  hitCount: 0
-  equipStats: {fileID: 0}
 --- !u!114 &6674623593403435189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1426,6 +1401,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8d46f9b6dc19f547b983575be35eda0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dmgData:
+    InputDmg: 0
+    Ele: 0
+    hitCount: 0
+    isACrit: 0
 --- !u!1 &2445274164556844130
 GameObject:
   m_ObjectHideFlags: 0
@@ -1805,6 +1785,7 @@ GameObject:
   - component: {fileID: 995318651}
   - component: {fileID: 995318652}
   - component: {fileID: 5260484921123446815}
+  - component: {fileID: 6773546460337980478}
   m_Layer: 9
   m_Name: PlayerNew
   m_TagString: Player
@@ -2674,6 +2655,29 @@ MonoBehaviour:
     AtkMulti: 0
     DefMulti: 0
     EleMulti: 0
+--- !u!114 &6773546460337980478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3727145088433499907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 791b1051f46dd304dab204373095d1f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statBloc:
+    baseDmg: 0
+    dmgMulti: 0
+    dmgRangePercent: 0
+    eleMod: 0
+    eleMulti: 0
+    baseCrit: 0
+    critChanceInc: 0
+    critMulti: 0
+    isCrit: 0
+  equipStats: {fileID: 0}
 --- !u!1 &3772932790477469332
 GameObject:
   m_ObjectHideFlags: 0

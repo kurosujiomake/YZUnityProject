@@ -17,12 +17,12 @@ public class DamagePass : StateMachineBehaviour
         dmgTrans = animator.GetComponentInChildren<DamageTransfer>();
         dmgGive = animator.GetComponent<DamageGiver>();
         dmgInput = dmgGive.statBloc.OuputDmg();
+        Debug.Log(dmgInput);
         PassInfo();
     }
 
     void PassInfo()
     {
-        
         dmgToPass = attDmgMulti * dmgInput;
         dmgTrans.dmgData.SetValues(dmgToPass, dmgGive.statBloc.ReturnIsCrit(), dmgGive.statBloc.ReturnEleMod(), hitCount);
     }

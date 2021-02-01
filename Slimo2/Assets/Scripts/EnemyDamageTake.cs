@@ -20,13 +20,6 @@ public class EnemyDamageTake : MonoBehaviour
             dR = GetComponent<DamageReciever>();
         }
     }
-
-    public void TakeDamage(float dmg, int hitCount, int _eleType, bool isCrit)
-    {
-        //do health removal here
-        
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(isEnemy)
@@ -36,15 +29,12 @@ public class EnemyDamageTake : MonoBehaviour
                 var h = collision.GetComponent<KBInfoPass>();
                 var d = collision.GetComponent<DamageGiver>();
                 var c = collision.GetComponent<DamageTransfer>();
-                
+                print("detected a hit");
                 if(h.Hit_ID != HitID)
                 {
-                    //print("hit with " + h.Damage + " Damage");
-                    //print("hit with " + h.HitCount + " Hits");
-                    //TakeDamage(h.Damage, h.HitCount, h.eleType); instead of this we call the dmg giver script on the attacker
-                    //d.CallDamage(this);
-                    HitID = h.Hit_ID;
-                    //dR.
+                    HitID = h.Hit_ID; //set hit id so it doesnt get hit by this box again
+                    print("hit ID unique and running dmg pass");
+                    dR.TakeDamage(c.dmgData.ReturnFloatValues("dmg"), c.dmgData.ReturnIntValues("ele"), c.dmgData.ReturnBools("crit"), c.dmgData.ReturnIntValues("hitCount"));
                 }
             }
         }

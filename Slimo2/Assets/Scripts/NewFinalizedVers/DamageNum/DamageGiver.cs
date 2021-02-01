@@ -5,12 +5,12 @@ using UnityEngine;
 public class DamageGiver : MonoBehaviour
 {
     public OffensiveStats statBloc;
-    public int hitCount;
+    //public int hitCount;
     public EquipDmgCalc equipStats;
 
     void Awake()
     {
-        equipStats = GetComponentInParent<EquipDmgCalc>();
+        equipStats = GetComponent<EquipDmgCalc>();
         
     }
     
