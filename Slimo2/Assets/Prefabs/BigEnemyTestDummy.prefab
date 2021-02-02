@@ -245,7 +245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defStats:
-    baseDef: 15
+    baseDef: 2
     defMulti: 1.37
     eleRes:
     - index: 0
@@ -288,3 +288,4 @@ MonoBehaviour:
   - effect: {fileID: 11400000, guid: 2ddbfe758fc0d2749a347517520d7dd3, type: 2}
     isActive: 0
     slot: 6
+  dNM: {fileID: 0}

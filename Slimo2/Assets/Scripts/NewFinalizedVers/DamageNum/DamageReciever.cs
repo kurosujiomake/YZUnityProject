@@ -64,6 +64,10 @@ public class DamageReciever : MonoBehaviour
         {
             output *= (1 + status[1].effect.ReturnMagni());
         }
+        if(output <= 0)
+        {
+            output = 1;
+        }
         return output;
     }
 

@@ -5,19 +5,19 @@ using UnityEngine;
 public class DamageGiver : MonoBehaviour
 {
     public OffensiveStats statBloc;
-    //public int hitCount;
-    public EquipDmgCalc equipStats;
+    public EquipDmgCalc equip;
 
-    void Awake()
+    void Start()
     {
-        equipStats = GetComponent<EquipDmgCalc>();
-        
+        equip = GetComponent<EquipDmgCalc>();
     }
-    
-    public void DmgPass(float baseDmg, float dmgMulti, float eleMulti, int eleType, float baseCrit, float critChance, float critMulti)
+
+    public void GetEquipStats()
     {
-        statBloc.baseDmg = baseDmg;
-        statBloc.dmgMulti = dmgMulti;
+        statBloc.baseDmg = equip.ReturnTotalBaseAtk();
+        statBloc.dmgMulti = equip.ReturnTotalAtkMulti();
+        statBloc.eleMod = equip.ReturnEquipEleMod();
+        statBloc.eleMulti = equip.ReturnTotalEleMulti();
     }
 }
 [System.Serializable]
@@ -82,7 +82,7 @@ public class OffensiveStats
             a = -baseDmg + 1; //this way when a is added to base dmg it will output 1
         return a;
     }
-    public float OuputDmg()
+    public float OuputDmg() //call this from other scripts to get out going damage
     {
         float o = 0;
         switch(eleMod) //different elemental type conversions will calc dmg a bit differently

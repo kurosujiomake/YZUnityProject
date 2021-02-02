@@ -10,21 +10,22 @@ public class DamagePass : StateMachineBehaviour
     public int hitCount;
     public DamageGiver dmgGive;
     public DamageTransfer dmgTrans;
+    public EquipDmgCalc equipStats;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         dmgTrans = animator.GetComponentInChildren<DamageTransfer>();
         dmgGive = animator.GetComponent<DamageGiver>();
-        dmgInput = dmgGive.statBloc.OuputDmg();
-        Debug.Log(dmgInput);
         PassInfo();
     }
 
     void PassInfo()
     {
-        dmgToPass = attDmgMulti * dmgInput;
-        dmgTrans.dmgData.SetValues(dmgToPass, dmgGive.statBloc.ReturnIsCrit(), dmgGive.statBloc.ReturnEleMod(), hitCount);
+        dmgGive.GetEquipStats(); //updates the stats from equipment
+        dmgInput = dmgGive.statBloc.OuputDmg(); //gets the output dmg
+        dmgToPass = attDmgMulti * dmgInput; //gets the atk mod on it
+        dmgTrans.dmgData.SetValues(dmgToPass, dmgGive.statBloc.ReturnIsCrit(), dmgGive.statBloc.ReturnEleMod(), hitCount); //passes to container to pass on to hit targets
     }
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

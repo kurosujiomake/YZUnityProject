@@ -824,6 +824,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerNew
       objectReference: {fileID: 0}
+    - target: {fileID: 6773546460337980478, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
+        type: 3}
+      propertyPath: statBloc.baseDmg
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6773546460337980478, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
+        type: 3}
+      propertyPath: statBloc.dmgMulti
+      value: 1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 6773546460337980478, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
+        type: 3}
+      propertyPath: statBloc.dmgRangePercent
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6773546460337980478, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
+        type: 3}
+      propertyPath: statBloc.eleMod
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6773546460337980478, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
+        type: 3}
+      propertyPath: statBloc.eleMulti
+      value: 1.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6773546460337980478, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
+        type: 3}
+      propertyPath: statBloc.baseCrit
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6773546460337980478, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
+        type: 3}
+      propertyPath: statBloc.critChanceInc
+      value: 1.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 6773546460337980478, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
+        type: 3}
+      propertyPath: statBloc.critMulti
+      value: 1.58
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16a462e48b7ea5340b1aa2c5627f2e76, type: 3}
 --- !u!1001 &115474414
