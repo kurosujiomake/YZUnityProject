@@ -1360,44 +1360,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1085005385}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &604984013
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 604984012}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abe31a1fd8f797a4ca2edf1ce3100f45, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioManager: {fileID: 0}
-  soundName: slime_swordWoosh
-  canAudio01: 0
-  playerAnimator: {fileID: 604984022}
---- !u!114 &604984014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 604984012}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 179e2ee26feb00647a319f9f6000dcd9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioManager: {fileID: 0}
-  soundName: slime_swordBigWoosh
-  canAudio01: 0
-  playerAnimator: {fileID: 604984022}
---- !u!95 &604984022 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 2029075663, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
-    type: 3}
-  m_PrefabInstance: {fileID: 1085005385}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &604984026 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 199465334998370276, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
@@ -2466,14 +2428,6 @@ PrefabInstance:
       propertyPath: text
       value: 
       objectReference: {fileID: 1068432326}
-    - target: {fileID: 1108050474, guid: 16a462e48b7ea5340b1aa2c5627f2e76, type: 3}
-      propertyPath: pCM
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1992590772, guid: 16a462e48b7ea5340b1aa2c5627f2e76, type: 3}
-      propertyPath: DebuggingText
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 3727145088433499904, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2534,30 +2488,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerNew
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 995318638, guid: 16a462e48b7ea5340b1aa2c5627f2e76, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16a462e48b7ea5340b1aa2c5627f2e76, type: 3}
---- !u!1 &1085005386 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1320624554, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
-    type: 3}
-  m_PrefabInstance: {fileID: 1085005385}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1085005387
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1085005386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 418862536e14b824f93a845b61bd0c05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioManager: {fileID: 0}
-  soundName: slime_jump
-  canSound: 0
 --- !u!1001 &1108384463
 PrefabInstance:
   m_ObjectHideFlags: 0
