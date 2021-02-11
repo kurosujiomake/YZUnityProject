@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 4350924799381489657}
   - component: {fileID: -4784637582201258529}
   - component: {fileID: -1570637736180557813}
+  - component: {fileID: -8975868535427118585}
   m_Layer: 0
   m_Name: efx_bow_sp1
   m_TagString: Untagged
@@ -369,3 +370,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-8975868535427118585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658218157092018777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8d46f9b6dc19f547b983575be35eda0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmgData:
+    InputDmg: 0
+    Ele: 0
+    hitCount: 0
+    isACrit: 0
