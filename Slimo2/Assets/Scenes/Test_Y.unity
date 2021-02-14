@@ -5833,6 +5833,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ae929ec6406e574fbc67dd1406ad3a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bloc:
+    dmgToPass: 0
+    isCrit: 0
+    eleMod: 0
+    hitCount: 0
   FireOne: 0
   FireCont: 0
   FireAll: 0

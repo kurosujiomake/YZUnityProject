@@ -5,6 +5,7 @@ using UnityEngine;
 public class ArrowShowerSpawn : MonoBehaviour
 {
     GameObject proj;
+    public DmgBloc sBloc;
     int projKB, projCount;
     float fireDelay, projSpd, projDur, randx, randy;
     int[] HitIDs = new int[2];
@@ -33,7 +34,7 @@ public class ArrowShowerSpawn : MonoBehaviour
         return v;
     }
     public void GetParameters(GameObject _proj, int _projKB, int _projCount, 
-        float _randx, float _randy, float _fireDelay, float _projSpd, float _projDur) //theres gotta be a easier way to pass the parameters
+        float _randx, float _randy, float _fireDelay, float _projSpd, float _projDur, DmgBloc _bloc) //theres gotta be a easier way to pass the parameters
     {
         proj = _proj;
         projKB = _projKB;
@@ -43,6 +44,7 @@ public class ArrowShowerSpawn : MonoBehaviour
         fireDelay = _fireDelay;
         projSpd = _projSpd;
         projDur = _projDur;
+        sBloc = _bloc;
         StartCoroutine(SpawnArrows());
     }
 
@@ -61,6 +63,7 @@ public class ArrowShowerSpawn : MonoBehaviour
             c.curKBNum = projKB;
             c.StartProjTimer(projDur);
             clone.GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Cos(d) * projSpd, Mathf.Sin(d) * projSpd);
+            clone.GetComponent<DamageTransfer>().dmgData.SetValues(sBloc.dmgToPass, sBloc.isCrit, sBloc.eleMod, sBloc.hitCount);
             yield return new WaitForSeconds(fireDelay);
             i++;
             if(i > im)

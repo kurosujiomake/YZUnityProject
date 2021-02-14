@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RangedWepProjSpawn : MonoBehaviour
 {
+    public DmgBloc bloc;
     public bool FireOne = false;
     public bool FireCont = false;
     public bool FireAll = false;
@@ -147,6 +148,7 @@ public class RangedWepProjSpawn : MonoBehaviour
                     GameObject Clone = Instantiate(sDB.ReturnSpawnObj(ProjID), originPoints[OriginPID].position, Quaternion.Euler(0, 0, ed));
                     Clone.GetComponent<KBInfoPass>().Hit_ID = IDRandomizer();
                     Clone.GetComponent<KBInfoPass>().curKBNum = KBNum;
+                    Clone.GetComponent<DamageTransfer>().dmgData.SetValues(bloc.dmgToPass, bloc.isCrit, bloc.eleMod, bloc.hitCount);
                     switch (Clone.GetComponent<ProjType>().Proj_Type)
                     {
                         case ProjType.Type.Bullet:
@@ -196,7 +198,7 @@ public class RangedWepProjSpawn : MonoBehaviour
         print("spawning arrow shower");
         GameObject c = Instantiate(aShowerSpawner, originPoints[OriginPID].position, Quaternion.identity);
         c.GetComponent<ArrowShowerSpawn>().GetParameters(sDB.ReturnSpawnObj(ProjID), KBNum, MaxProj, arrowShowerRandx,
-            arrowShowerRandy, projDelay, arrowShowerProjSpd, arrowShowerProjDur);
+            arrowShowerRandy, projDelay, arrowShowerProjSpd, arrowShowerProjDur, bloc);
         yield return new WaitForSeconds(0);
     }
     IEnumerator FireAllAtOnce()
@@ -221,10 +223,30 @@ public class RangedWepProjSpawn : MonoBehaviour
             c.GetComponent<KBInfoPass>().curKBNum = KBNum;
             c.GetComponent<KBInfoPass>().StartProjTimer(sDB.ReturnBLifetime(ProjID));
             c.GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Cos(a) * spd, Mathf.Sin(a) * spd);
+            c.GetComponent<DamageTransfer>().dmgData.SetValues(bloc.dmgToPass, bloc.isCrit, bloc.eleMod, bloc.hitCount);
         }
         yield return new WaitForSeconds(0);
     }
+    void PassDmgInfo()
+    {
 
+    }
 
 }
+[System.Serializable]
+public class DmgBloc
+{
+    public float dmgToPass;
+    public bool isCrit;
+    public int eleMod;
+    public int hitCount;
 
+    public void SetValues(float dmg, bool crit, int ele, int count)
+    {
+        dmgToPass = dmg;
+        isCrit = crit;
+        eleMod = ele;
+        hitCount = count;
+    }
+    
+}
