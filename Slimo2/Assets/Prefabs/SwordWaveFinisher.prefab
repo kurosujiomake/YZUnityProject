@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 6017023771830098381}
   - component: {fileID: 4223851462772031527}
   - component: {fileID: 1424873476400485540}
+  - component: {fileID: -4884061599693832717}
+  - component: {fileID: 5098547344692110958}
   m_Layer: 0
   m_Name: SwordWaveFinisher
   m_TagString: Untagged
@@ -65,6 +67,9 @@ MonoBehaviour:
   SetHitID: 0
   curKBNum: 0
   isProj: 1
+  HitCount: 1
+  Damage: 251
+  eleType: 0
 --- !u!50 &4223851462772031527
 Rigidbody2D:
   serializedVersion: 4
@@ -102,6 +107,36 @@ CapsuleCollider2D:
   m_Offset: {x: -1.54, y: 0.24}
   m_Size: {x: 4.77, y: 10}
   m_Direction: 0
+--- !u!114 &-4884061599693832717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6579297243224688275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8d46f9b6dc19f547b983575be35eda0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmgData:
+    InputDmg: 0
+    Ele: 0
+    hitCount: 0
+    isACrit: 0
+--- !u!114 &5098547344692110958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6579297243224688275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24a13b8d17380aa4b80d9dee984b3c9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Proj_Type: 0
 --- !u!1001 &2444784263009809611
 PrefabInstance:
   m_ObjectHideFlags: 0

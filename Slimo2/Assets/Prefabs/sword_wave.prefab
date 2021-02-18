@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6882120781818606695}
   - component: {fileID: 6622256873882926206}
   - component: {fileID: 4238584090792187797}
+  - component: {fileID: 4608007474301858876}
   m_Layer: 0
   m_Name: sword_wave
   m_TagString: Untagged
@@ -161,6 +162,7 @@ MonoBehaviour:
   isProj: 1
   HitCount: 1
   Damage: 251
+  eleType: 0
 --- !u!114 &4238584090792187797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,3 +176,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Proj_Type: 0
+--- !u!114 &4608007474301858876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6904058883651388153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8d46f9b6dc19f547b983575be35eda0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmgData:
+    InputDmg: 0
+    Ele: 0
+    hitCount: 0
+    isACrit: 0
