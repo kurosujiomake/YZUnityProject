@@ -28,7 +28,7 @@ TextureImporter:
     second: 8
   - first:
       213: 6270878828668331156
-    second: enemyBasic_eye_idle_8
+    second: 9
   - first:
       213: 6797422506443041384
     second: 10
@@ -347,7 +347,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemyBasic_eye_idle_8
+      name: 9
       rect:
         serializedVersion: 2
         x: 20
