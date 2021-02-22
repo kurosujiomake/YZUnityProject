@@ -9,6 +9,8 @@ public class DamageReciever : MonoBehaviour
     public DamageNumberMain dNM = null;
     // Start is called before the first frame update
     private Coroutine bleedC, shockC, slowC, freezeC, burnC, poisonC;
+    public GameObject[] OnHitEffects;
+    public int hitEffectID;
     
     void Awake()
     {
@@ -27,10 +29,14 @@ public class DamageReciever : MonoBehaviour
         for (int i = 0; i < HitCount; i++)
         {
             dNM.DisplayUpdate(CalcDmg(finalDmg, element, isCrit), 1);
+            SpawnHitEffect();
         }
         
     }
-
+    void SpawnHitEffect()
+    {
+        Instantiate(OnHitEffects[hitEffectID], transform.position, Quaternion.identity);
+    }
     public float CalcDmg(float _dmgInput, int _eleType, bool isCrit) //for damage calcs that involve ele type
     {
         float output = 0;

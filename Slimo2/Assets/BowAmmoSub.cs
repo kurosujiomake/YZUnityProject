@@ -17,6 +17,7 @@ public class BowAmmoSub : StateMachineBehaviour
         if(bLC.ReturnCurCharge() >= bowChargesUsed)
         {
             rWPS.MaxProj = ArrowsUsed; //sets how many arrows to fire
+
         }
         if(bLC.ReturnCurCharge() < bowChargesUsed)
         {
