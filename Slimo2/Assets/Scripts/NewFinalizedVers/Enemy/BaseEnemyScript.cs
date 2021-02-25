@@ -7,12 +7,15 @@ public class BaseEnemyScript : MonoBehaviour
     
     public EnemyStates State;
     public MovementType moveType;
+    public float baseGravityScale; //the grav scale for non-flying enemies
     public WaypointType wayType;
     [Header("If using waypoints set waypoints below")]
     public Transform[] Waypoints;
     [SerializeField]
     private int curWaypoint;
     public float waypointDistBuffer; //how close the enemy needs to be to the waypoint for it to be considered reached
+    public float waypointIncrementBuffer; //how far away before the cur waypoints is allowed to increment again
+    private bool hasIncremented;
     public Rigidbody2D rb2d;
     public Animator anim;
     public float interruptThreshold; //the point where the enemy reacts to a hit
@@ -39,7 +42,16 @@ public class BaseEnemyScript : MonoBehaviour
 
                 break;
             case EnemyStates.Moving: //standard movement
-
+                Moving();
+                switch(moveType)
+                {
+                    case MovementType.Grounded:
+                        rb2d.gravityScale = baseGravityScale;
+                        break;
+                    case MovementType.Flying:
+                        rb2d.gravityScale = 0; //flying enemies are unaffected by gravity unless hurt
+                        break;
+                }
                 break;
             case EnemyStates.Moving2: //if applicable a secondary movement
 
@@ -71,60 +83,47 @@ public class BaseEnemyScript : MonoBehaviour
 
     void Moving()
     {
+        switch(wayType)
+        {
+            case WaypointType.Distance:
 
+                break;
+            case WaypointType.Platform:
+
+                break;
+            case WaypointType.Stationary:
+
+                break;
+            case WaypointType.Waypoint:
+                WaypointMove();
+                break;
+        }
     }
     void WaypointMove()
     {
         float s = speed * Time.deltaTime;
-        if (curWaypoint < Waypoints.Length)
+        
+        if(Mathf.Abs(transform.position.magnitude - Waypoints[curWaypoint].transform.position.magnitude) < waypointDistBuffer)
         {
-            if(transform.position.magnitude - Waypoints[curWaypoint].transform.position.magnitude < waypointDistBuffer)
-            {
-                curWaypoint++; //move to the next waypoint when close enough to current waypoint
-            }
+            curWaypoint++; //move to the next waypoint when close enough to current waypoint
+            hasIncremented = true;
         }
         if(curWaypoint == Waypoints.Length)
         {
             curWaypoint = 0;
         }
-        VelMoveToTarget(Waypoints[curWaypoint], s); //move along the waypoints
-    }
-
-    void VelMoveToTarget(Transform target, float spd) //using this instead of Vector2.movetowards to prevent physics bugs
-    {
-        float x = transform.position.x;
-        float y = transform.position.y;
-        Vector2 vel = rb2d.velocity;
-        if (x > target.position.x) //object is to the right of the target
-        {
-            vel.x = -spd;
-            rb2d.velocity = vel; //move the object to the left
-        }
-        if(x < target.position.x) //object is to the left of the target
-        {
-            vel.x = spd;
-            rb2d.velocity = vel; //move the object to the right
-        }
-        switch(moveType)
-        {
-            case MovementType.Grounded:
-                //do some jump detection here later
-                break;
-            case MovementType.Flying: //only flying enemies will move vertically towards target
-                if (y > target.position.y) //object is above the target
-                {
-                    vel.y = -spd;
-                    rb2d.velocity = vel; //move the object downwards
-                }
-                if (y < target.position.y) //object is below the target
-                {
-                    vel.y = spd;
-                    rb2d.velocity = vel; //move the object upwards
-                }
-                break;
-        }
+        ForceMoveToTarget(Waypoints[curWaypoint], s);
+        
         
     }
+    void ForceMoveToTarget(Transform target, float spd)
+    {
+        var dir = Vector2.zero;
+        dir = target.position - transform.position;
+        rb2d.velocity = dir.normalized * spd;
+    }
+
+    
 }
 
 public enum EnemyStates
