@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6177986475663389862}
   - component: {fileID: 5826097365442007212}
   - component: {fileID: 5826097367196053644}
+  - component: {fileID: 9140281108987288036}
   m_Layer: 10
   m_Name: BigEnemyTestDummyflying
   m_TagString: Enemy
@@ -32,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 6177986475663389880}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -64.41055, y: -16.950012, z: 0}
-  m_LocalScale: {x: 2.0152, y: 2.0152, z: 2.0152}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_Children:
   - {fileID: 6177986476393903338}
   - {fileID: 6177986477270015399}
@@ -78,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 3930623889192355030, guid: ce79926492c801f448a985d1973cc299,
+  m_Sprite: {fileID: -1917575809262483081, guid: 81026842156901845a1c5e31fb4ca4f9,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -107,14 +108,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.9, y: 1.6}
+    oldSize: {x: 4.01, y: 3.15}
     newSize: {x: 1.9, y: 1.6}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.9, y: 1.6}
+  m_Size: {x: 5, y: 4}
   m_EdgeRadius: 0
 --- !u!50 &6177986475663389860
 Rigidbody2D:
@@ -262,6 +263,25 @@ MonoBehaviour:
   interruptThreshold: 0
   isVulnerable: 0
   speed: 45
+--- !u!95 &9140281108987288036
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6177986475663389880}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 151102c47b832fe48b889969af984b8e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6177986476393903341
 GameObject:
   m_ObjectHideFlags: 0
