@@ -97,7 +97,7 @@ Animator:
   m_GameObject: {fileID: 352798947847044591}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1fe4d64d9e6091c47b30aa43a0ed7814, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -161,6 +161,7 @@ MonoBehaviour:
   isProj: 1
   HitCount: 1
   Damage: 251
+  eleType: 0
 --- !u!114 &7054671085688350851
 MonoBehaviour:
   m_ObjectHideFlags: 0
