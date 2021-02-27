@@ -10845,6 +10845,26 @@ PrefabInstance:
       propertyPath: Waypoints.Array.data[2]
       value: 
       objectReference: {fileID: 2032796535}
+    - target: {fileID: 839843541, guid: a93baa20009583f4eaee19f42a7e4bbc, type: 3}
+      propertyPath: baseGravityScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 839843541, guid: a93baa20009583f4eaee19f42a7e4bbc, type: 3}
+      propertyPath: speed
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 839843541, guid: a93baa20009583f4eaee19f42a7e4bbc, type: 3}
+      propertyPath: hurtDuration
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 839843541, guid: a93baa20009583f4eaee19f42a7e4bbc, type: 3}
+      propertyPath: isVulnerable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 839843541, guid: a93baa20009583f4eaee19f42a7e4bbc, type: 3}
+      propertyPath: interruptThreshold
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 389254983349222112, guid: a93baa20009583f4eaee19f42a7e4bbc,
         type: 3}
       propertyPath: m_LocalPosition.x

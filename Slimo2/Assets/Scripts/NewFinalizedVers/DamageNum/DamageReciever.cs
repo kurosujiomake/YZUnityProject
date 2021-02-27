@@ -11,10 +11,11 @@ public class DamageReciever : MonoBehaviour
     private Coroutine bleedC, shockC, slowC, freezeC, burnC, poisonC;
     public GameObject[] OnHitEffects;
     public int hitEffectID;
-    
+    public BaseEnemyScript baseScript;
     void Awake()
     {
         dNM = GameObject.FindGameObjectWithTag("HitDisplayCanv").GetComponent<DamageNumberMain>();
+        baseScript = GetComponent<BaseEnemyScript>();
     }
     void Update()
     {
@@ -30,6 +31,7 @@ public class DamageReciever : MonoBehaviour
         {
             dNM.DisplayUpdate(CalcDmg(finalDmg, element, isCrit), 1);
             SpawnHitEffect();
+            baseScript.GotHurt(finalDmg);
         }
         
     }

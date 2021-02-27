@@ -21,9 +21,14 @@ public class BaseEnemyScript : MonoBehaviour
     public float interruptThreshold; //the point where the enemy reacts to a hit
     public bool isVulnerable; //can the enemy get hit
     public float speed;
+    public bool facingRight = false;
+    public float hurtDuration;
+    public bool gotHurt;
+    private Coroutine hurtLoop;
+    private delegate void CallBack();
     void Start()
     {
-        
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -42,6 +47,7 @@ public class BaseEnemyScript : MonoBehaviour
 
                 break;
             case EnemyStates.Moving: //standard movement
+                anim.SetBool("IsMoving", true);
                 Moving();
                 switch(moveType)
                 {
@@ -60,7 +66,13 @@ public class BaseEnemyScript : MonoBehaviour
 
                 break;
             case EnemyStates.Hurt: //the enemy got hurt 
-
+                anim.SetTrigger("GotHurt");
+                hurtLoop = StartCoroutine(Timer(hurtDuration, () => gotHurt = false));
+                if(!gotHurt)
+                {
+                    Transitioning(EnemyStates.Idle);
+                    anim.SetTrigger("ReturnToMain");
+                }
                 break;
             case EnemyStates.Death: //the enemy is dying
 
@@ -72,6 +84,11 @@ public class BaseEnemyScript : MonoBehaviour
         if(dmg >= interruptThreshold) //if the dmg is above the threshold of interruption, it will swap to hurt state
         {
             Transitioning(EnemyStates.Hurt);
+            gotHurt = true;
+            if(hurtLoop != null)
+            {
+                StopCoroutine(hurtLoop);
+            }
         }
     }
 
@@ -118,11 +135,65 @@ public class BaseEnemyScript : MonoBehaviour
     }
     void ForceMoveToTarget(Transform target, float spd)
     {
-        var dir = Vector2.zero;
-        dir = target.position - transform.position;
-        rb2d.velocity = dir.normalized * spd;
+        FlipSpriteDirection(target);
+        switch(moveType)
+        {
+            case MovementType.Flying:
+                var dir = Vector2.zero;
+                dir = target.position - transform.position;
+                rb2d.velocity = dir.normalized * spd;
+                break;
+            case MovementType.Grounded:
+                var a = target.transform.position;
+                var b = transform.position;
+                Vector2 v = rb2d.velocity;
+                if (a.x - b.x > 0) //target is on the right side
+                {
+                    v.x = spd;
+                    rb2d.velocity = v;
+                }
+                if(a.x - b.x < 0) //target is on the left side
+                {
+                    v.x = -spd;
+                    rb2d.velocity = v;
+                }
+                break;
+        }
+        
     }
-
+    void FlipSpriteDirection(Transform target) //flips the sprite around when enemy is supposed to be facing something else
+    {
+        float a = target.transform.position.x;
+        float b = transform.position.x;
+        switch(facingRight)
+        {
+            case true:
+                if(a-b < 0 && facingRight)
+                {
+                    facingRight = !facingRight;
+                    GetComponent<SpriteRenderer>().flipX = !GetComponent<SpriteRenderer>().flipX;
+                }
+                break;
+            case false:
+                if(a-b > 0 && !facingRight)
+                {
+                    facingRight = !facingRight;
+                    GetComponent<SpriteRenderer>().flipX = !GetComponent<SpriteRenderer>().flipX;
+                }
+                break;
+        }
+    }
+    IEnumerator Timer (float dur, CallBack callBack) //a basic timer to switch a bool
+    {
+        Debug.Log("Started timer");
+        yield return new WaitForSeconds(dur);
+        Debug.Log("Timer Complete");
+        if(callBack != null)
+        {
+            callBack();
+        }
+        yield return null;
+    }
     
 }
 
