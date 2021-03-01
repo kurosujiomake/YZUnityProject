@@ -4,28 +4,41 @@ using UnityEngine;
 
 public class BaseEnemyScript : MonoBehaviour
 {
-    
+    //basic vars and vars related to movement
     public EnemyStates State;
     public MovementType moveType;
     public float baseGravityScale; //the grav scale for non-flying enemies
-    public WaypointType wayType;
+    public WaypointType wayType; //using wat navigation
+    public float speed;
+    public bool facingRight = false;
+
+    //vars for ground check and edge/wall detection
+    public Transform[] gCheckPoints; //raycast targets for ground checking
+    public LayerMask gLayer;
+    public bool isGrounded, nearEdgeR, nearEdgeL; //grounded bool, is near the edge to the right and left respectively
+
+    //waypoint specific vars
     [Header("If using waypoints set waypoints below")]
     public Transform[] Waypoints;
     [SerializeField]
     private int curWaypoint;
     public float waypointDistBuffer; //how close the enemy needs to be to the waypoint for it to be considered reached
     public float waypointIncrementBuffer; //how far away before the cur waypoints is allowed to increment again
-    private bool hasIncremented;
+    
+    //animation related vars
     public Rigidbody2D rb2d;
     public Animator anim;
+    
+    //this is the variables that is used in detection of getting hit by the player
     public float interruptThreshold; //the point where the enemy reacts to a hit
     public bool isVulnerable; //can the enemy get hit
-    public float speed;
-    public bool facingRight = false;
     public float hurtDuration;
     public bool gotHurt;
     private Coroutine hurtLoop;
     private delegate void CallBack();
+    private float t2;
+
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -67,18 +80,24 @@ public class BaseEnemyScript : MonoBehaviour
                 break;
             case EnemyStates.Hurt: //the enemy got hurt 
                 anim.SetTrigger("GotHurt");
-                hurtLoop = StartCoroutine(Timer(hurtDuration, () => gotHurt = false));
-                if(!gotHurt)
-                {
-                    Transitioning(EnemyStates.Idle);
-                    anim.SetTrigger("ReturnToMain");
-                }
+                
+                break;
+            case EnemyStates.Falling:
+
                 break;
             case EnemyStates.Death: //the enemy is dying
 
                 break;
         }
     }
+    private bool GroundCheck()
+    {
+        bool b = false;
+
+
+        return b;
+    }
+
     public void GotHurt(float dmg) //this is called from an outside script
     {
         if(dmg >= interruptThreshold) //if the dmg is above the threshold of interruption, it will swap to hurt state
@@ -96,6 +115,11 @@ public class BaseEnemyScript : MonoBehaviour
     {
         State = EnemyStates.Transitions;
         State = followUp;
+    }
+    void TimerReset()
+    {
+        if (State != EnemyStates.Hurt)
+            t2 = hurtDuration;
     }
 
     void Moving()
@@ -123,7 +147,6 @@ public class BaseEnemyScript : MonoBehaviour
         if(Mathf.Abs(transform.position.magnitude - Waypoints[curWaypoint].transform.position.magnitude) < waypointDistBuffer)
         {
             curWaypoint++; //move to the next waypoint when close enough to current waypoint
-            hasIncremented = true;
         }
         if(curWaypoint == Waypoints.Length)
         {
@@ -205,6 +228,7 @@ public enum EnemyStates
     Moving2,
     Attack,
     Hurt,
+    Falling,
     Death,
     Transitions
 }
