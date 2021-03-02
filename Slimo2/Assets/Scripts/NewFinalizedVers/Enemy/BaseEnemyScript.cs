@@ -15,6 +15,7 @@ public class BaseEnemyScript : MonoBehaviour
     //vars for ground check and edge/wall detection
     public Transform[] gCheckPoints; //raycast targets for ground checking
     public LayerMask gLayer;
+    public float gCheckDist; //distance for ground checking
     public bool isGrounded, nearEdgeR, nearEdgeL; //grounded bool, is near the edge to the right and left respectively
 
     //waypoint specific vars
@@ -80,21 +81,47 @@ public class BaseEnemyScript : MonoBehaviour
                 break;
             case EnemyStates.Hurt: //the enemy got hurt 
                 anim.SetTrigger("GotHurt");
-                
+                if (!GroundCheck())
+                    Transitioning(EnemyStates.Falling);
+                t2 -= Time.deltaTime; //cant use coroutines here due to strange things
+                if(t2 <= 0)
+                {
+                    gotHurt = false;
+                    Transitioning(EnemyStates.Idle);
+                    anim.SetTrigger("ReturnToMain");
+                }
                 break;
             case EnemyStates.Falling:
-
+                anim.SetTrigger("GotHurt"); //may or may not need this
+                if(GroundCheck()) //has hit the ground
+                {
+                    Transitioning(EnemyStates.Hurt);
+                }
                 break;
             case EnemyStates.Death: //the enemy is dying
 
                 break;
         }
+        isGrounded = GroundCheck();
+        TimerReset();
+        
     }
     private bool GroundCheck()
     {
         bool b = false;
-
-
+        Vector2 pos1, pos2, pos3; //uses 3 points of detection to reduce edge cases causing problems, a bit overkill
+        Vector2 dir = Vector2.down;
+        RaycastHit2D hit1, hit2, hit3;
+        pos1 = gCheckPoints[0].position;
+        pos2 = gCheckPoints[1].position;
+        pos3 = gCheckPoints[2].position;
+        hit1 = Physics2D.Raycast(pos1, dir, gCheckDist, gLayer);
+        hit2 = Physics2D.Raycast(pos2, dir, gCheckDist, gLayer);
+        hit3 = Physics2D.Raycast(pos3, dir, gCheckDist, gLayer);
+        if(hit1.collider != null || hit2.collider != null || hit3.collider != null)
+        {
+            b = true;
+        }
         return b;
     }
 
@@ -102,12 +129,8 @@ public class BaseEnemyScript : MonoBehaviour
     {
         if(dmg >= interruptThreshold) //if the dmg is above the threshold of interruption, it will swap to hurt state
         {
-            Transitioning(EnemyStates.Hurt);
+            Transitioning(EnemyStates.Falling);
             gotHurt = true;
-            if(hurtLoop != null)
-            {
-                StopCoroutine(hurtLoop);
-            }
         }
     }
 
@@ -161,12 +184,12 @@ public class BaseEnemyScript : MonoBehaviour
         FlipSpriteDirection(target);
         switch(moveType)
         {
-            case MovementType.Flying:
+            case MovementType.Flying: //will just move in a straight line towards the waypoint
                 var dir = Vector2.zero;
                 dir = target.position - transform.position;
                 rb2d.velocity = dir.normalized * spd;
                 break;
-            case MovementType.Grounded:
+            case MovementType.Grounded: //will move towards the waypoint but along the ground
                 var a = target.transform.position;
                 var b = transform.position;
                 Vector2 v = rb2d.velocity;

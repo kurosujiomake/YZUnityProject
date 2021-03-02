@@ -1,5 +1,95 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &542645162
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 542645163}
+  m_Layer: 10
+  m_Name: GroundCheckVect (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &542645163
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 542645162}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.23, y: 0.02999878, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 389254983349222112}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &856134758
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 856134759}
+  m_Layer: 10
+  m_Name: GroundCheckVect (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &856134759
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856134758}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.23, y: 0.02999878, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 389254983349222112}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1451133004
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1451133005}
+  m_Layer: 10
+  m_Name: GroundCheckVect
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1451133005
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451133004}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.03, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 389254983349222112}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &389254982049856180
 GameObject:
   m_ObjectHideFlags: 0
@@ -97,6 +187,9 @@ Transform:
   m_Children:
   - {fileID: 389254982049856179}
   - {fileID: 389254982791681022}
+  - {fileID: 1451133005}
+  - {fileID: 856134759}
+  - {fileID: 542645163}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -295,6 +388,7 @@ MonoBehaviour:
   - {fileID: 2048862485936091876, guid: 5505453c66843364ba34d85274ede68c, type: 3}
   - {fileID: 6870324990156442171, guid: f4529544cf569ba4ea62effb6559ba9f, type: 3}
   hitEffectID: 1
+  baseScript: {fileID: 0}
 --- !u!114 &839843541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -307,10 +401,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25ed7b38723e1f24d8e975244433cb53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  State: 2
+  State: 1
   moveType: 0
-  baseGravityScale: 0
+  baseGravityScale: 1
   wayType: 1
+  speed: 75
+  facingRight: 0
+  gCheckPoints:
+  - {fileID: 1451133005}
+  - {fileID: 856134759}
+  - {fileID: 542645163}
+  gLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  gCheckDist: 0.1
+  isGrounded: 0
+  nearEdgeR: 0
+  nearEdgeL: 0
   Waypoints:
   - {fileID: 0}
   - {fileID: 0}
@@ -320,9 +427,10 @@ MonoBehaviour:
   waypointIncrementBuffer: 0
   rb2d: {fileID: 389254983349222141}
   anim: {fileID: 0}
-  interruptThreshold: 0
-  isVulnerable: 0
-  speed: 45
+  interruptThreshold: 1
+  isVulnerable: 1
+  hurtDuration: 0.5
+  gotHurt: 0
 --- !u!95 &1251088644599737922
 Animator:
   serializedVersion: 3
