@@ -401,6 +401,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25ed7b38723e1f24d8e975244433cb53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultStates:
+    defaultMain: 2
+    defaultMove: 0
+    defaultPathfind: 1
   State: 1
   moveType: 0
   baseGravityScale: 1
@@ -431,6 +435,8 @@ MonoBehaviour:
   isVulnerable: 1
   hurtDuration: 0.5
   gotHurt: 0
+  hasTarget: 0
+  targetTrans: {fileID: 0}
 --- !u!95 &1251088644599737922
 Animator:
   serializedVersion: 3

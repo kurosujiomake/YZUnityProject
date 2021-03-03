@@ -225,7 +225,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -341,9 +341,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25ed7b38723e1f24d8e975244433cb53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultStates:
+    defaultMain: 1
+    defaultMove: 1
+    defaultPathfind: 3
   State: 2
   moveType: 1
-  baseGravityScale: 0
+  baseGravityScale: 1
   wayType: 1
   speed: 45
   facingRight: 0
@@ -371,6 +375,8 @@ MonoBehaviour:
   isVulnerable: 0
   hurtDuration: 2
   gotHurt: 0
+  hasTarget: 0
+  targetTrans: {fileID: 0}
 --- !u!95 &9140281108987288036
 Animator:
   serializedVersion: 3

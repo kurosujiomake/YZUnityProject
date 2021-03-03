@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class BaseEnemyScript : MonoBehaviour
 {
+    //default states are set in the inspector
+    public DefaultStates defaultStates;
+
     //basic vars and vars related to movement
+    [Header("Basic Vars and Movement/States")]
     public EnemyStates State;
     public MovementType moveType;
     public float baseGravityScale; //the grav scale for non-flying enemies
@@ -13,6 +17,7 @@ public class BaseEnemyScript : MonoBehaviour
     public bool facingRight = false;
 
     //vars for ground check and edge/wall detection
+    [Header("Groundcheck and wall/edge detect")]
     public Transform[] gCheckPoints; //raycast targets for ground checking
     public LayerMask gLayer;
     public float gCheckDist; //distance for ground checking
@@ -31,6 +36,7 @@ public class BaseEnemyScript : MonoBehaviour
     public Animator anim;
     
     //this is the variables that is used in detection of getting hit by the player
+    [Header("Related to getting hurt")]
     public float interruptThreshold; //the point where the enemy reacts to a hit
     public bool isVulnerable; //can the enemy get hit
     public float hurtDuration;
@@ -39,17 +45,25 @@ public class BaseEnemyScript : MonoBehaviour
     private delegate void CallBack();
     private float t2;
 
+    //targetting and attacking vars below
+    [Header("Targeting and attacking")]
+    public bool hasTarget;
+    public Transform targetTrans;
 
     void Start()
     {
         anim = GetComponent<Animator>();
+        State = defaultStates.defaultMain;
+        moveType = defaultStates.defaultMove;
+        wayType = defaultStates.defaultPathfind;
+        rb2d.velocity = Vector2.zero;
     }
 
     void Update()
     {
         switch(State)
         {
-            case EnemyStates.None: //no state, nothing happens here
+            case EnemyStates.None: //no state, nothing happens here, but useful for debugging/exceptions
 
                 break;
             case EnemyStates.Transitions: //do transition stuff like stopping momentum etc here
@@ -58,7 +72,15 @@ public class BaseEnemyScript : MonoBehaviour
 
                 break;
             case EnemyStates.Idle: //enemy is not moving or doing anything
-
+                switch (hasTarget)
+                {
+                    case true:
+                        //do targeting stuff here
+                        break;
+                    case false:
+                        Transitioning(defaultStates.defaultMain); //transition back to watever default you have
+                        break;
+                }
                 break;
             case EnemyStates.Moving: //standard movement
                 anim.SetBool("IsMoving", true);
@@ -104,7 +126,10 @@ public class BaseEnemyScript : MonoBehaviour
         }
         isGrounded = GroundCheck();
         TimerReset();
-        
+        if(moveType == MovementType.Flying)
+        {
+            rb2d.gravityScale = 0;
+        }
     }
     private bool GroundCheck()
     {
@@ -266,4 +291,12 @@ public enum WaypointType
     Waypoint,
     Distance,
     Stationary
+}
+
+[System.Serializable]
+public class DefaultStates
+{
+    public EnemyStates defaultMain;
+    public MovementType defaultMove;
+    public WaypointType defaultPathfind;
 }
