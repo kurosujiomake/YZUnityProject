@@ -21,7 +21,9 @@ public class BaseEnemyScript : MonoBehaviour
     public Transform[] gCheckPoints; //raycast targets for ground checking
     public LayerMask gLayer;
     public float gCheckDist; //distance for ground checking
-    public bool isGrounded, nearEdgeR, nearEdgeL; //grounded bool, is near the edge to the right and left respectively
+    public bool isGrounded, nearEdge; //grounded bool, is near the edge 
+    public Transform[] edgeCheckers;
+    public float edgeCheckDist;
 
     //waypoint specific vars
     [Header("If using waypoints set waypoints below")]
@@ -147,6 +149,21 @@ public class BaseEnemyScript : MonoBehaviour
         {
             b = true;
         }
+        return b;
+    }
+    private bool WallCheck()
+    {
+        bool b = false;
+        switch(facingRight)
+        {
+            case true:
+
+                break;
+            case false:
+
+                break;
+        }
+
         return b;
     }
 
