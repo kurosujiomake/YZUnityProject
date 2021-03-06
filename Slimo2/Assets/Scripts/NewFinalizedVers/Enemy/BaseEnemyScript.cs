@@ -18,12 +18,13 @@ public class BaseEnemyScript : MonoBehaviour
 
     //vars for ground check and edge/wall detection
     [Header("Groundcheck and wall/edge detect")]
-    public Transform[] gCheckPoints; //raycast targets for ground checking
     public LayerMask gLayer;
-    public float gCheckDist; //distance for ground checking
-    public bool isGrounded, nearEdge; //grounded bool, is near the edge 
-    public Transform[] edgeCheckers;
-    public float edgeCheckDist;
+    public float gCheckDist, edgeCheckDist, wallCheckDist; //distance for ground checking
+    public bool isGrounded, nearEdge, nearWall; //grounded bool, is near the edge for debugging only
+    public Transform[] gCheckPoints; //raycast targets for ground checking
+    public Transform[] edgeCheckers; //raycast origins for edge checking
+    public Transform[] wallCheckers; //raycast origins for wall checking
+    
 
     //waypoint specific vars
     [Header("If using waypoints set waypoints below")]
@@ -126,12 +127,7 @@ public class BaseEnemyScript : MonoBehaviour
 
                 break;
         }
-        isGrounded = GroundCheck();
         TimerReset();
-        if(moveType == MovementType.Flying)
-        {
-            rb2d.gravityScale = 0;
-        }
     }
     private bool GroundCheck()
     {
@@ -151,19 +147,61 @@ public class BaseEnemyScript : MonoBehaviour
         }
         return b;
     }
-    private bool WallCheck()
+    private bool EdgeCheck()
     {
         bool b = false;
+        Vector2 pos1, pos2;
+        Vector2 dir1 = Vector2.right;
+        Vector2 dir2 = Vector2.left;
+        RaycastHit2D hit1, hit2;
+        pos1 = edgeCheckers[0].position;
+        pos2 = edgeCheckers[1].position;
+        hit1 = Physics2D.Raycast(pos1, dir1, edgeCheckDist, gLayer);
+        hit2 = Physics2D.Raycast(pos2, dir2, edgeCheckDist, gLayer);
         switch(facingRight)
         {
             case true:
-
+                if(hit1.collider == null)
+                {
+                    b = true;
+                }
                 break;
             case false:
-
+                if(hit2.collider == null)
+                {
+                    b = true;
+                }
                 break;
         }
 
+        return b;
+    }
+    private bool WallCheck()
+    {
+        bool b = false;
+        Vector2 pos1, pos2;
+        Vector2 dir1 = Vector2.right;
+        Vector2 dir2 = Vector2.left;
+        RaycastHit2D hit1, hit2;
+        pos1 = wallCheckers[0].position;
+        pos2 = wallCheckers[1].position;
+        hit1 = Physics2D.Raycast(pos1, dir1, wallCheckDist, gLayer);
+        hit2 = Physics2D.Raycast(pos2, dir2, wallCheckDist, gLayer);
+        switch(facingRight)
+        {
+            case true:
+                if(hit1.collider != null)
+                {
+                    b = true;
+                }
+                break;
+            case false:
+                if(hit2.collider != null)
+                {
+                    b = true;
+                }
+                break;
+        }
         return b;
     }
 
@@ -176,18 +214,18 @@ public class BaseEnemyScript : MonoBehaviour
         }
     }
 
-    public void Transitioning(EnemyStates followUp)
+    public void Transitioning(EnemyStates followUp) //do not set states directly, use this to prevent issues
     {
         State = EnemyStates.Transitions;
         State = followUp;
     }
-    void TimerReset()
+    void TimerReset() //cant use coroutines due to now unity stops coroutines, so old fashioned timer is here
     {
         if (State != EnemyStates.Hurt)
             t2 = hurtDuration;
     }
 
-    void Moving()
+    void Moving() //put the different ways of moving here
     {
         switch(wayType)
         {
@@ -195,7 +233,7 @@ public class BaseEnemyScript : MonoBehaviour
 
                 break;
             case WaypointType.Platform:
-
+                PlatformMove();
                 break;
             case WaypointType.Stationary:
 
@@ -205,7 +243,30 @@ public class BaseEnemyScript : MonoBehaviour
                 break;
         }
     }
-    void WaypointMove()
+
+    void PlatformMove() //this one makes enemies just patrol a platform, and will turn around when encountereing an edge or wall
+    {
+        Vector2 v = rb2d.velocity;
+        float spd = speed * Time.deltaTime;
+        switch(facingRight)
+        {
+            case true:
+                v.x = spd;
+                rb2d.velocity = v;
+                break;
+            case false:
+                v.x = -spd;
+                rb2d.velocity = v;
+                break;
+        }
+        if(EdgeCheck() || WallCheck()) //if the enemy finds a wall/edge, turn around
+        {
+            facingRight = !facingRight;
+            FlipSpriteDirection();
+        }
+    }
+
+    void WaypointMove() //moving between 2 or more waypoints
     {
         float s = speed * Time.deltaTime;
         
@@ -218,8 +279,6 @@ public class BaseEnemyScript : MonoBehaviour
             curWaypoint = 0;
         }
         ForceMoveToTarget(Waypoints[curWaypoint], s);
-        
-        
     }
     void ForceMoveToTarget(Transform target, float spd)
     {
@@ -247,7 +306,6 @@ public class BaseEnemyScript : MonoBehaviour
                 }
                 break;
         }
-        
     }
     void FlipSpriteDirection(Transform target) //flips the sprite around when enemy is supposed to be facing something else
     {
@@ -271,6 +329,10 @@ public class BaseEnemyScript : MonoBehaviour
                 break;
         }
     }
+    void FlipSpriteDirection() //used for non targeted flip
+    {
+        GetComponent<SpriteRenderer>().flipX = !GetComponent<SpriteRenderer>().flipX;
+    }
     IEnumerator Timer (float dur, CallBack callBack) //a basic timer to switch a bool
     {
         Debug.Log("Started timer");
@@ -282,7 +344,6 @@ public class BaseEnemyScript : MonoBehaviour
         }
         yield return null;
     }
-    
 }
 
 public enum EnemyStates
