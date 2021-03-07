@@ -44,14 +44,13 @@ public class BaseEnemyScript : MonoBehaviour
     public bool isVulnerable; //can the enemy get hit
     public float hurtDuration;
     public bool gotHurt;
-    private Coroutine hurtLoop;
-    private delegate void CallBack();
     private float t2;
 
     //targetting and attacking vars below
     [Header("Targeting and attacking")]
     public bool hasTarget;
-    public Transform targetTrans;
+    public Transform targetTrans, SearchOrigin;
+    public float SearchDist;
 
     void Start()
     {
@@ -128,6 +127,7 @@ public class BaseEnemyScript : MonoBehaviour
                 break;
         }
         TimerReset();
+        SearchingForTarget();
     }
     private bool GroundCheck()
     {
@@ -333,16 +333,58 @@ public class BaseEnemyScript : MonoBehaviour
     {
         GetComponent<SpriteRenderer>().flipX = !GetComponent<SpriteRenderer>().flipX;
     }
-    IEnumerator Timer (float dur, CallBack callBack) //a basic timer to switch a bool
+    void SearchingForTarget()
     {
-        Debug.Log("Started timer");
-        yield return new WaitForSeconds(dur);
-        Debug.Log("Timer Complete");
-        if(callBack != null)
+        GameObject pTar = FindClosest("Player");
+        Vector2 pV = pTar.transform.position;
+        Vector2 v = transform.position;
+        switch(facingRight)
         {
-            callBack();
+            case true:
+                if(pV.x > v.x && Mathf.Abs(pV.magnitude - v.magnitude) < SearchDist) //if player is to the right and within aggro range
+                {
+                    hasTarget = true;
+                    targetTrans = pTar.transform;
+                }
+                else
+                {
+                    hasTarget = false;
+                    targetTrans = null;
+                }
+
+                break;
+            case false:
+                if (pV.x < v.x && Mathf.Abs(pV.magnitude - v.magnitude) < SearchDist) //if player is to the right and within aggro range
+                {
+                    hasTarget = true;
+                    targetTrans = pTar.transform;
+                }
+                else
+                {
+                    hasTarget = false;
+                    targetTrans = null;
+                }
+                break;
         }
-        yield return null;
+    }
+
+    private GameObject FindClosest(string tag) //used to find closest gameobject based on tag, completely self contained and only need to be called once to use
+    {
+        GameObject[] gos = GameObject.FindGameObjectsWithTag(tag);
+        GameObject closest = null;
+        float dis = Mathf.Infinity;
+        Vector3 pos = transform.position;
+        foreach (GameObject go in gos)
+        {
+            Vector2 diff = go.transform.position - pos;
+            float curDis = diff.sqrMagnitude;
+            if (curDis < dis)
+            {
+                closest = go;
+                dis = curDis;
+            }
+        }
+        return closest;
     }
 }
 
@@ -369,6 +411,12 @@ public enum WaypointType
     Waypoint,
     Distance,
     Stationary
+}
+public enum AggroState
+{
+    None,
+    Aggro,
+    Passive
 }
 
 [System.Serializable]

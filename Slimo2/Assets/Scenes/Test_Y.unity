@@ -10931,6 +10931,14 @@ PrefabInstance:
       propertyPath: Waypoints.Array.data[2]
       value: 
       objectReference: {fileID: 2032796535}
+    - target: {fileID: 839843541, guid: a93baa20009583f4eaee19f42a7e4bbc, type: 3}
+      propertyPath: defaultStates.defaultMain
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 839843541, guid: a93baa20009583f4eaee19f42a7e4bbc, type: 3}
+      propertyPath: SearchDist
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 389254983349222112, guid: a93baa20009583f4eaee19f42a7e4bbc,
         type: 3}
       propertyPath: m_LocalPosition.x
