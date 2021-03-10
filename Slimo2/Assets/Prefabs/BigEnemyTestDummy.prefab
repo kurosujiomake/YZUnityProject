@@ -567,8 +567,14 @@ MonoBehaviour:
   isVulnerable: 1
   hurtDuration: 0.5
   gotHurt: 0
+  aggro: 2
   hasTarget: 0
   targetTrans: {fileID: 0}
+  SearchOrigin: {fileID: 0}
+  SearchDist: 15
+  DeAggroDist: 20
+  aggroSpdInc: 1.2
+  atkRange: 2
 --- !u!95 &1251088644599737922
 Animator:
   serializedVersion: 3
