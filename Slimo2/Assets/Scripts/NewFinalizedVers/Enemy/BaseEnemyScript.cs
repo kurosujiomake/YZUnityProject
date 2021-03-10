@@ -48,9 +48,13 @@ public class BaseEnemyScript : MonoBehaviour
 
     //targetting and attacking vars below
     [Header("Targeting and attacking")]
+    public AggroState aggro;
     public bool hasTarget;
     public Transform targetTrans, SearchOrigin;
     public float SearchDist;
+    public float DeAggroDist; //the distance where enemy loses aggro
+    public float aggroSpdInc; //how much the enemy speeds up when aggroed
+    public float atkRange; //how close the enemy needs to be to attack the target
 
     void Start()
     {
@@ -86,19 +90,41 @@ public class BaseEnemyScript : MonoBehaviour
                 break;
             case EnemyStates.Moving: //standard movement
                 anim.SetBool("IsMoving", true);
-                Moving();
-                switch(moveType)
+                if(aggro != AggroState.Aggro)
                 {
-                    case MovementType.Grounded:
-                        rb2d.gravityScale = baseGravityScale;
-                        break;
-                    case MovementType.Flying:
-                        rb2d.gravityScale = 0; //flying enemies are unaffected by gravity unless hurt
-                        break;
+                    Moving();
+                    switch (moveType)
+                    {
+                        case MovementType.Grounded:
+                            rb2d.gravityScale = baseGravityScale;
+                            break;
+                        case MovementType.Flying:
+                            rb2d.gravityScale = 0; //flying enemies are unaffected by gravity unless hurt
+                            break;
+                    }
+                }
+                if(aggro == AggroState.Aggro) //if the enemy is aggroed on something, go to move state ver 2
+                {
+                    Transitioning(EnemyStates.Moving2);
                 }
                 break;
-            case EnemyStates.Moving2: //if applicable a secondary movement
-
+            case EnemyStates.Moving2: //secondary movemnt for moving towards player to attack
+                if(aggro == AggroState.Aggro)
+                {
+                    FlipSpriteDirection(targetTrans); //face the target
+                    if(Mathf.Abs(transform.position.magnitude - targetTrans.position.magnitude) <= atkRange) //if target is close enough to atk
+                    {
+                        Transitioning(EnemyStates.Attack);
+                    }
+                    if (Mathf.Abs(transform.position.magnitude - targetTrans.position.magnitude) >= atkRange)
+                    {
+                        ForceMoveToTarget(targetTrans, (speed * Time.deltaTime * aggroSpdInc));
+                    }
+                }
+                if(aggro == AggroState.Passive)
+                {
+                    Transitioning(defaultStates.defaultMain);
+                }
                 break;
             case EnemyStates.Attack: //the attack animation
 
@@ -127,7 +153,30 @@ public class BaseEnemyScript : MonoBehaviour
                 break;
         }
         TimerReset();
-        SearchingForTarget();
+        
+        if(State != EnemyStates.Falling && State != EnemyStates.Hurt && State != EnemyStates.Death) //aggro scripts will not run if enemy is in these states
+        {
+            switch(aggro)
+            {
+                case AggroState.None: //in case of emergencies
+                    break;
+                case AggroState.Aggro:
+                    if(Mathf.Abs(targetTrans.position.magnitude - transform.position.magnitude) > DeAggroDist)
+                    {
+                        hasTarget = false;
+                        targetTrans = null;
+                        aggro = AggroState.Passive;
+                    }
+                    break;
+                case AggroState.Passive:
+                    SearchingForTarget();
+                    if(hasTarget)
+                    {
+                        aggro = AggroState.Aggro;
+                    }
+                    break;
+            }
+        }
     }
     private bool GroundCheck()
     {
