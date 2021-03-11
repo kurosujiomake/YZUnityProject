@@ -575,6 +575,8 @@ MonoBehaviour:
   DeAggroDist: 20
   aggroSpdInc: 1.2
   atkRange: 2
+  hasAtked: 0
+  atkCD: 0
 --- !u!95 &1251088644599737922
 Animator:
   serializedVersion: 3

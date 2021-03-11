@@ -55,6 +55,8 @@ public class BaseEnemyScript : MonoBehaviour
     public float DeAggroDist; //the distance where enemy loses aggro
     public float aggroSpdInc; //how much the enemy speeds up when aggroed
     public float atkRange; //how close the enemy needs to be to attack the target
+    public bool hasAtked;
+    public float atkCD;
 
     void Start()
     {
@@ -78,10 +80,11 @@ public class BaseEnemyScript : MonoBehaviour
 
                 break;
             case EnemyStates.Idle: //enemy is not moving or doing anything
+                anim.SetBool("IsMoving", false);
                 switch (hasTarget)
                 {
                     case true:
-                        //do targeting stuff here
+                        Transitioning(EnemyStates.Moving2);
                         break;
                     case false:
                         Transitioning(defaultStates.defaultMain); //transition back to watever default you have
@@ -109,12 +112,18 @@ public class BaseEnemyScript : MonoBehaviour
                 }
                 break;
             case EnemyStates.Moving2: //secondary movemnt for moving towards player to attack
+                anim.SetBool("IsMoving", true);
                 if(aggro == AggroState.Aggro)
                 {
                     FlipSpriteDirection(targetTrans); //face the target
                     if(Mathf.Abs(transform.position.magnitude - targetTrans.position.magnitude) <= atkRange) //if target is close enough to atk
                     {
-                        Transitioning(EnemyStates.Attack);
+                        if(Mathf.Abs(targetTrans.position.y - transform.position.y) < 3) //make sure the target is not too high or below the enemy
+                        {
+                            Transitioning(EnemyStates.Attack);
+                            anim.SetTrigger("Attack");
+                        }
+                        
                     }
                     if (Mathf.Abs(transform.position.magnitude - targetTrans.position.magnitude) >= atkRange)
                     {
@@ -127,10 +136,14 @@ public class BaseEnemyScript : MonoBehaviour
                 }
                 break;
             case EnemyStates.Attack: //the attack animation
+                
+                break;
+            case EnemyStates.AtkIdle:
 
                 break;
             case EnemyStates.Hurt: //the enemy got hurt 
                 anim.SetTrigger("GotHurt");
+                anim.SetBool("IsMoving", false);
                 if (!GroundCheck())
                     Transitioning(EnemyStates.Falling);
                 t2 -= Time.deltaTime; //cant use coroutines here due to strange things
@@ -143,7 +156,8 @@ public class BaseEnemyScript : MonoBehaviour
                 break;
             case EnemyStates.Falling:
                 anim.SetTrigger("GotHurt"); //may or may not need this
-                if(GroundCheck()) //has hit the ground
+                anim.SetBool("IsMoving", false);
+                if (GroundCheck()) //has hit the ground
                 {
                     Transitioning(EnemyStates.Hurt);
                 }
@@ -161,15 +175,18 @@ public class BaseEnemyScript : MonoBehaviour
                 case AggroState.None: //in case of emergencies
                     break;
                 case AggroState.Aggro:
-                    if(Mathf.Abs(targetTrans.position.magnitude - transform.position.magnitude) > DeAggroDist)
+                    anim.SetBool("IsAggroed", true);
+                    if (Mathf.Abs(targetTrans.position.magnitude - transform.position.magnitude) > DeAggroDist)
                     {
                         hasTarget = false;
                         targetTrans = null;
                         aggro = AggroState.Passive;
+                        
                     }
                     break;
                 case AggroState.Passive:
                     SearchingForTarget();
+                    anim.SetBool("IsAggroed", false);
                     if(hasTarget)
                     {
                         aggro = AggroState.Aggro;
@@ -177,6 +194,12 @@ public class BaseEnemyScript : MonoBehaviour
                     break;
             }
         }
+    }
+    IEnumerator AtkTimer()
+    {
+        anim.SetTrigger("Attack");
+        yield return new WaitForSeconds(atkCD);
+        Transitioning(EnemyStates.Moving2);
     }
     private bool GroundCheck()
     {
@@ -256,7 +279,7 @@ public class BaseEnemyScript : MonoBehaviour
 
     public void GotHurt(float dmg) //this is called from an outside script
     {
-        if(dmg >= interruptThreshold) //if the dmg is above the threshold of interruption, it will swap to hurt state
+        if(dmg >= interruptThreshold && State != EnemyStates.Attack) //if the dmg is above the threshold of interruption, it will swap to hurt state
         {
             Transitioning(EnemyStates.Falling);
             gotHurt = true;
@@ -444,6 +467,7 @@ public enum EnemyStates
     Moving,
     Moving2,
     Attack,
+    AtkIdle,
     Hurt,
     Falling,
     Death,
