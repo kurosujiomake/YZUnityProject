@@ -192,9 +192,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 243
-        y: 1812
+        y: 1799
         width: 138
-        height: 216
+        height: 229
       alignment: 9
       pivot: {x: 0.38, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,9 +213,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 401
-        y: 1895
+        y: 1817
         width: 173
-        height: 133
+        height: 211
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -234,11 +234,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 593
-        y: 1852
+        y: 1774
         width: 348
-        height: 176
+        height: 254
       alignment: 9
-      pivot: {x: 0.92, y: 0.18}
+      pivot: {x: 0.8570725, y: 0.06413394}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -255,9 +255,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 961
-        y: 1834
+        y: 1755
         width: 380
-        height: 195
+        height: 274
       alignment: 9
       pivot: {x: 0.87, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -276,11 +276,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 20
-        y: 1243
+        y: 1233
         width: 1196
-        height: 434
+        height: 444
       alignment: 9
-      pivot: {x: 0.37, y: 0.1}
+      pivot: {x: 0.35779333, y: 0.004690425}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -297,11 +297,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 22
-        y: 849
+        y: 836
         width: 1299
-        height: 374
+        height: 387
       alignment: 9
-      pivot: {x: 0.41, y: 0.12}
+      pivot: {x: 0.40906343, y: 0.032170586}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -318,9 +318,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1342
-        y: 956
+        y: 925
         width: 384
-        height: 268
+        height: 299
       alignment: 9
       pivot: {x: 0.65, y: 0.03}
       border: {x: 0, y: 0, z: 0, w: 0}
