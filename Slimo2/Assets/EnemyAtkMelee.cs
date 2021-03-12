@@ -7,27 +7,24 @@ public class EnemyAtkMelee : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.GetComponent<BaseEnemyScript>().Transitioning(EnemyStates.Attack);
+        animator.GetComponent<BaseEnemyScript>().hasAtked = true;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         animator.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        bool hasTar = animator.GetComponent<BaseEnemyScript>().hasTarget;
-        if(hasTar)
+        if(!animator.GetComponent<BaseEnemyScript>().gotHurt)
         {
-            animator.GetComponent<BaseEnemyScript>().Transitioning(EnemyStates.Moving2);
+            animator.GetComponent<BaseEnemyScript>().Transitioning(EnemyStates.AtkIdle);
         }
-        if(!hasTar)
-        {
-            animator.GetComponent<BaseEnemyScript>().Transitioning(EnemyStates.Idle);
-        }
+        
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

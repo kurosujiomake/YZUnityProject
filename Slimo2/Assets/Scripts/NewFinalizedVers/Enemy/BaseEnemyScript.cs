@@ -57,6 +57,7 @@ public class BaseEnemyScript : MonoBehaviour
     public float atkRange; //how close the enemy needs to be to attack the target
     public bool hasAtked;
     public float atkCD;
+    private float aCD;
 
     void Start()
     {
@@ -120,8 +121,16 @@ public class BaseEnemyScript : MonoBehaviour
                     {
                         if(Mathf.Abs(targetTrans.position.y - transform.position.y) < 3) //make sure the target is not too high or below the enemy
                         {
-                            Transitioning(EnemyStates.Attack);
-                            anim.SetTrigger("Attack");
+                            if(!hasAtked)
+                            {
+                                Transitioning(EnemyStates.Attack);
+                                anim.SetTrigger("Attack");
+                            }
+                            if(hasAtked)
+                            {
+                                Transitioning(EnemyStates.AtkIdle);
+                            }
+                            
                         }
                         
                     }
@@ -139,7 +148,13 @@ public class BaseEnemyScript : MonoBehaviour
                 
                 break;
             case EnemyStates.AtkIdle:
-
+                rb2d.velocity = Vector2.zero;
+                aCD -= Time.deltaTime;
+                if(aCD <= 0)
+                {
+                    Transitioning(EnemyStates.Idle);
+                    hasAtked = false;
+                }
                 break;
             case EnemyStates.Hurt: //the enemy got hurt 
                 anim.SetTrigger("GotHurt");
@@ -195,12 +210,8 @@ public class BaseEnemyScript : MonoBehaviour
             }
         }
     }
-    IEnumerator AtkTimer()
-    {
-        anim.SetTrigger("Attack");
-        yield return new WaitForSeconds(atkCD);
-        Transitioning(EnemyStates.Moving2);
-    }
+    
+    
     private bool GroundCheck()
     {
         bool b = false;
@@ -279,7 +290,7 @@ public class BaseEnemyScript : MonoBehaviour
 
     public void GotHurt(float dmg) //this is called from an outside script
     {
-        if(dmg >= interruptThreshold && State != EnemyStates.Attack) //if the dmg is above the threshold of interruption, it will swap to hurt state
+        if(dmg >= interruptThreshold) //if the dmg is above the threshold of interruption, it will swap to hurt state
         {
             Transitioning(EnemyStates.Falling);
             gotHurt = true;
@@ -295,6 +306,8 @@ public class BaseEnemyScript : MonoBehaviour
     {
         if (State != EnemyStates.Hurt)
             t2 = hurtDuration;
+        if (State != EnemyStates.AtkIdle)
+            aCD = atkCD;
     }
 
     void Moving() //put the different ways of moving here
