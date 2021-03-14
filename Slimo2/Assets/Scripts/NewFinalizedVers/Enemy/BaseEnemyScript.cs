@@ -49,6 +49,7 @@ public class BaseEnemyScript : MonoBehaviour
     //targetting and attacking vars below
     [Header("Targeting and attacking")]
     public AggroState aggro;
+    public AtkType aType;
     public bool hasTarget;
     public Transform targetTrans, SearchOrigin;
     public float SearchDist;
@@ -119,19 +120,33 @@ public class BaseEnemyScript : MonoBehaviour
                     FlipSpriteDirection(targetTrans); //face the target
                     if(Mathf.Abs(transform.position.magnitude - targetTrans.position.magnitude) <= atkRange) //if target is close enough to atk
                     {
-                        if(Mathf.Abs(targetTrans.position.y - transform.position.y) < 3) //make sure the target is not too high or below the enemy
+                        if (!hasAtked)
                         {
-                            if(!hasAtked)
+                            switch (aType)
                             {
-                                Transitioning(EnemyStates.Attack);
-                                anim.SetTrigger("Attack");
+                                case AtkType.None:
+                                    break;
+                                case AtkType.Melee:
+                                    if (Mathf.Abs(targetTrans.position.y - transform.position.y) < 3) //make sure the target is not too high or below the enemy
+                                    {
+                                        Transitioning(EnemyStates.Attack);
+                                        anim.SetTrigger("Attack");
+                                    }
+                                    break;
+                                case AtkType.Ranged:
+
+                                    break;
+                                case AtkType.Magic:
+
+                                    break;
                             }
-                            if(hasAtked)
-                            {
-                                Transitioning(EnemyStates.AtkIdle);
-                            }
-                            
+
                         }
+                        if (hasAtked)
+                        {
+                            Transitioning(EnemyStates.AtkIdle);
+                        }
+                        
                         
                     }
                     if (Mathf.Abs(transform.position.magnitude - targetTrans.position.magnitude) >= atkRange)
@@ -485,6 +500,13 @@ public enum EnemyStates
     Falling,
     Death,
     Transitions
+}
+public enum AtkType
+{
+    None,
+    Ranged,
+    Melee,
+    Magic
 }
 public enum MovementType
 {

@@ -9870,6 +9870,11 @@ PrefabInstance:
       propertyPath: Waypoints.Array.data[2]
       value: 
       objectReference: {fileID: 1116687222}
+    - target: {fileID: 5826097367196053644, guid: 31f10380c2066f24abbad7a6ab597436,
+        type: 3}
+      propertyPath: wayType
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6177986475663389880, guid: 31f10380c2066f24abbad7a6ab597436,
         type: 3}
       propertyPath: m_Name

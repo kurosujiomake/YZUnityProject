@@ -568,6 +568,7 @@ MonoBehaviour:
   hurtDuration: 0.5
   gotHurt: 0
   aggro: 2
+  aType: 2
   hasTarget: 0
   targetTrans: {fileID: 0}
   SearchOrigin: {fileID: 0}
