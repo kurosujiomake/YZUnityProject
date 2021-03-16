@@ -50,6 +50,7 @@ public class BaseEnemyScript : MonoBehaviour
     [Header("Targeting and attacking")]
     public AggroState aggro;
     public AtkType aType;
+    public AtkTarg targetType;
     public bool hasTarget;
     public Transform targetTrans, SearchOrigin;
     public float SearchDist;
@@ -226,7 +227,19 @@ public class BaseEnemyScript : MonoBehaviour
         }
     }
     
-    
+    private void RangedAtk()
+    {
+        switch(targetType)
+        {
+            case AtkTarg.none:
+                break;
+            case AtkTarg.target:
+                break;
+            case AtkTarg.noTar:
+
+                break;
+        }
+    }
     private bool GroundCheck()
     {
         bool b = false;
@@ -507,6 +520,12 @@ public enum AtkType
     Ranged,
     Melee,
     Magic
+}
+public enum AtkTarg
+{
+    none,
+    target,
+    noTar,
 }
 public enum MovementType
 {
