@@ -60,6 +60,8 @@ public class BaseEnemyScript : MonoBehaviour
     public bool hasAtked;
     public float atkCD;
     private float aCD;
+    [Header("If Applicable")]
+    public GameObject proj;
 
     void Start()
     {
@@ -234,11 +236,31 @@ public class BaseEnemyScript : MonoBehaviour
             case AtkTarg.none:
                 break;
             case AtkTarg.target:
+                if(targetTrans != null)
+                {
+                    
+                }
                 break;
             case AtkTarg.noTar:
 
                 break;
         }
+    }
+
+    IEnumerator FireProjTar (int projAmt, float bProjDelay, GameObject proj, Transform tar) //for targeted proj
+    {
+        bool b = true;
+        int i = 0;
+        if(projAmt <= 0)
+            b = false;
+        while(b)
+        {
+            yield return new WaitForSeconds(bProjDelay);
+        }
+    }
+    IEnumerator FireProj (int projAmt, float bProjDelay, GameObject proj) //for no target proj
+    {
+        yield return null;
     }
     private bool GroundCheck()
     {

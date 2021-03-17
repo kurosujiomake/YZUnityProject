@@ -345,23 +345,27 @@ MonoBehaviour:
     defaultMain: 1
     defaultMove: 1
     defaultPathfind: 3
-  State: 2
+  State: 1
   moveType: 1
   baseGravityScale: 1
-  wayType: 1
+  wayType: 3
   speed: 45
   facingRight: 0
-  gCheckPoints:
-  - {fileID: 1765287734}
-  - {fileID: 1677473009}
-  - {fileID: 1344478791}
   gLayer:
     serializedVersion: 2
     m_Bits: 256
   gCheckDist: 0.1
+  edgeCheckDist: 0
+  wallCheckDist: 0
   isGrounded: 0
-  nearEdgeR: 0
-  nearEdgeL: 0
+  nearEdge: 0
+  nearWall: 0
+  gCheckPoints:
+  - {fileID: 1765287734}
+  - {fileID: 1677473009}
+  - {fileID: 1344478791}
+  edgeCheckers: []
+  wallCheckers: []
   Waypoints:
   - {fileID: 0}
   - {fileID: 0}
@@ -375,8 +379,19 @@ MonoBehaviour:
   isVulnerable: 0
   hurtDuration: 2
   gotHurt: 0
+  aggro: 2
+  aType: 1
+  targetType: 1
   hasTarget: 0
   targetTrans: {fileID: 0}
+  SearchOrigin: {fileID: 0}
+  SearchDist: 0
+  DeAggroDist: 0
+  aggroSpdInc: 0
+  atkRange: 0
+  hasAtked: 0
+  atkCD: 0
+  proj: {fileID: 0}
 --- !u!95 &9140281108987288036
 Animator:
   serializedVersion: 3
