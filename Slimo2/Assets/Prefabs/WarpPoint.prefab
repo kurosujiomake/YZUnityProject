@@ -50,7 +50,7 @@ MonoBehaviour:
   useInt: 1
   WarpDest: 
   WarpDestInt: 0
-  WarpCD: 3
+  WarpCD: 1
   canWarp: 0
 --- !u!61 &5773918536866627639
 BoxCollider2D:
