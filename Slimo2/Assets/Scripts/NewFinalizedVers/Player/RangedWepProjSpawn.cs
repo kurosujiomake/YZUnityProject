@@ -4,16 +4,25 @@ using UnityEngine;
 
 public class RangedWepProjSpawn : MonoBehaviour
 {
+    [Header("Database for the projectiles and ID of proj being fired")]
+    public SpawnDatabase sDB;
+    public int ProjID = 0;
+    [Header("All player fired Proj should have Source ID of 0, enemies should have source ID of 1")]
+    public int SourceID = 0;
+    [Header("Does this use a proj listed on skill? usually no")]
+    public bool UseSkillID = false;
+    [Header("Damage info")]
     public DmgBloc bloc;
+    [Header("Toggle These Bools in Animation clip to fire")]
     public bool FireOne = false;
     public bool FireCont = false;
     public bool FireAll = false;
     public bool FireAShower = false;
+    [Header("This int should be changed in a state machine, not here")]
     public int MaxProj = 0;
+    [Header("Delay between each firing")]
     public float projDelay = 0;
-    public SpawnDatabase sDB;
-    public bool UseSkillID = false;
-    public int ProjID = 0;
+    [Header("Knockback info")]
     public int KBNum = 0;
     public Transform[] originPoints;
     public int OriginPID = 0;
@@ -148,7 +157,7 @@ public class RangedWepProjSpawn : MonoBehaviour
                     GameObject Clone = Instantiate(sDB.ReturnSpawnObj(ProjID), originPoints[OriginPID].position, Quaternion.Euler(0, 0, ed));
                     Clone.GetComponent<KBInfoPass>().Hit_ID = IDRandomizer();
                     Clone.GetComponent<KBInfoPass>().curKBNum = KBNum;
-                    Clone.GetComponent<DamageTransfer>().dmgData.SetValues(bloc.dmgToPass, bloc.isCrit, bloc.eleMod, bloc.hitCount);
+                    Clone.GetComponent<DamageTransfer>().dmgData.SetValues(SourceID, bloc.dmgToPass, bloc.isCrit, bloc.eleMod, bloc.hitCount);
                     switch (Clone.GetComponent<ProjType>().Proj_Type)
                     {
                         case ProjType.Type.Bullet:
@@ -197,7 +206,7 @@ public class RangedWepProjSpawn : MonoBehaviour
     {
         print("spawning arrow shower");
         GameObject c = Instantiate(aShowerSpawner, originPoints[OriginPID].position, Quaternion.identity);
-        c.GetComponent<ArrowShowerSpawn>().GetParameters(sDB.ReturnSpawnObj(ProjID), KBNum, MaxProj, arrowShowerRandx,
+        c.GetComponent<ArrowShowerSpawn>().GetParameters(sDB.ReturnSpawnObj(ProjID), SourceID, KBNum, MaxProj, arrowShowerRandx,
             arrowShowerRandy, projDelay, arrowShowerProjSpd, arrowShowerProjDur, bloc);
         yield return new WaitForSeconds(0);
     }
@@ -223,7 +232,7 @@ public class RangedWepProjSpawn : MonoBehaviour
             c.GetComponent<KBInfoPass>().curKBNum = KBNum;
             c.GetComponent<KBInfoPass>().StartProjTimer(sDB.ReturnBLifetime(ProjID));
             c.GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Cos(a) * spd, Mathf.Sin(a) * spd);
-            c.GetComponent<DamageTransfer>().dmgData.SetValues(bloc.dmgToPass, bloc.isCrit, bloc.eleMod, bloc.hitCount);
+            c.GetComponent<DamageTransfer>().dmgData.SetValues(SourceID, bloc.dmgToPass, bloc.isCrit, bloc.eleMod, bloc.hitCount);
         }
         yield return new WaitForSeconds(0);
     }

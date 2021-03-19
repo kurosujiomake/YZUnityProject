@@ -29,12 +29,14 @@ public class EnemyDamageTake : MonoBehaviour
                 var h = collision.GetComponent<KBInfoPass>();
                 var d = collision.GetComponent<DamageGiver>();
                 var c = collision.GetComponent<DamageTransfer>();
-                //print("detected a hit");
-                if(h.Hit_ID != HitID)
+                if(h.Hit_ID != HitID) //check that its not continously hittign the enemy
                 {
-                    HitID = h.Hit_ID; //set hit id so it doesnt get hit by this box again
-                    //print("hit ID unique and running dmg pass");
-                    dR.TakeDamage(c.dmgData.ReturnFloatValues("dmg"), c.dmgData.ReturnIntValues("ele"), c.dmgData.ReturnBools("crit"), c.dmgData.ReturnIntValues("hitCount"));
+                    if(h.SourceID == 0 || h.SourceID == 3) //0 is player source, 3 is hit everything
+                    {
+                        HitID = h.Hit_ID; //set hit id so it doesnt get hit by this box again
+                        dR.TakeDamage(c.dmgData.ReturnFloatValues("dmg"), c.dmgData.ReturnIntValues("ele"), c.dmgData.ReturnBools("crit"), c.dmgData.ReturnIntValues("hitCount"));
+                    }
+                    
                 }
             }
         }

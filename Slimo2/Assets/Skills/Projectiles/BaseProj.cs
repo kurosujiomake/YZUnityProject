@@ -16,5 +16,6 @@ public class BaseProj : ScriptableObject
     public string Description;
     public PType SpawnType;
     public GameObject Prefab;
+    public int SourceID;
 
 }

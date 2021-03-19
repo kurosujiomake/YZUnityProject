@@ -13,6 +13,7 @@ public class DamagePass : StateMachineBehaviour
     public DamageTransfer dmgTrans;
     public EquipDmgCalc equipStats;
     public RangedWepProjSpawn rangedSpawn;
+    public int SourceID; //set this to 0 for player, 1 for enemy
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -35,7 +36,7 @@ public class DamagePass : StateMachineBehaviour
         dmgGive.GetEquipStats(); //updates the stats from equipment
         dmgInput = dmgGive.statBloc.OuputDmg(); //gets the output dmg
         dmgToPass = attDmgMulti * dmgInput; //gets the atk mod on it
-        dmgTrans.dmgData.SetValues(dmgToPass, dmgGive.statBloc.ReturnIsCrit(), dmgGive.statBloc.ReturnEleMod(), hitCount); //passes to container to pass on to hit targets
+        dmgTrans.dmgData.SetValues(SourceID, dmgToPass, dmgGive.statBloc.ReturnIsCrit(), dmgGive.statBloc.ReturnEleMod(), hitCount); //passes to container to pass on to hit targets
     }
     void PassInfoProj()
     {

@@ -6,7 +6,7 @@ public class ArrowShowerSpawn : MonoBehaviour
 {
     GameObject proj;
     public DmgBloc sBloc;
-    int projKB, projCount;
+    int SourceID, projKB, projCount;
     float fireDelay, projSpd, projDur, randx, randy;
     int[] HitIDs = new int[2];
     int IDRandomizer()
@@ -33,7 +33,7 @@ public class ArrowShowerSpawn : MonoBehaviour
         v.y = Random.Range(-randy, randy) + _origin.y;
         return v;
     }
-    public void GetParameters(GameObject _proj, int _projKB, int _projCount, 
+    public void GetParameters(GameObject _proj, int s_ID, int _projKB, int _projCount, 
         float _randx, float _randy, float _fireDelay, float _projSpd, float _projDur, DmgBloc _bloc) //theres gotta be a easier way to pass the parameters
     {
         proj = _proj;
@@ -63,7 +63,7 @@ public class ArrowShowerSpawn : MonoBehaviour
             c.curKBNum = projKB;
             c.StartProjTimer(projDur);
             clone.GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Cos(d) * projSpd, Mathf.Sin(d) * projSpd);
-            clone.GetComponent<DamageTransfer>().dmgData.SetValues(sBloc.dmgToPass, sBloc.isCrit, sBloc.eleMod, sBloc.hitCount);
+            clone.GetComponent<DamageTransfer>().dmgData.SetValues(SourceID, sBloc.dmgToPass, sBloc.isCrit, sBloc.eleMod, sBloc.hitCount);
             yield return new WaitForSeconds(fireDelay);
             i++;
             if(i > im)

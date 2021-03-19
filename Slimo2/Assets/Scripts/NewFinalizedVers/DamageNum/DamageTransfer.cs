@@ -10,11 +10,14 @@ public class DamageTransfer : MonoBehaviour
 public class DataBundle
 {
     [SerializeField]
+    private int SourceID;
+    [SerializeField]
     private float InputDmg;
     [SerializeField]
     private int Ele, hitCount;
     [SerializeField]
     private bool isACrit;
+
 
 
     public float ReturnFloatValues(string which)
@@ -54,8 +57,9 @@ public class DataBundle
         }
         return a;
     }
-    public void SetValues(float dmg, bool crit, int ele, int _hitCount)
+    public void SetValues(int s_ID, float dmg, bool crit, int ele, int _hitCount)
     {
+        SourceID = s_ID;
         InputDmg = dmg;
         isACrit = crit;
         Ele = ele;

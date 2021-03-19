@@ -3450,7 +3450,7 @@ GameObject:
   m_Layer: 0
   m_Name: AirWaypointTest
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -4892,6 +4892,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ae929ec6406e574fbc67dd1406ad3a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sDB: {fileID: 11400000, guid: 04e2a0315ec9dca4aaed6ed3962b0353, type: 2}
+  ProjID: 0
+  SourceID: 0
+  UseSkillID: 0
   bloc:
     dmgToPass: 0
     isCrit: 0
@@ -4903,9 +4907,6 @@ MonoBehaviour:
   FireAShower: 0
   MaxProj: 3
   projDelay: 0.1
-  sDB: {fileID: 11400000, guid: 04e2a0315ec9dca4aaed6ed3962b0353, type: 2}
-  UseSkillID: 0
-  ProjID: 0
   KBNum: 0
   originPoints:
   - {fileID: 1090039027}
@@ -6886,6 +6887,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Hit_ID: 2
+  SourceID: 0
   SetHitID: 1
   curKBNum: 2
   isProj: 0
@@ -7682,6 +7684,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Hit_ID: 3
+  SourceID: 0
   SetHitID: 0
   curKBNum: 0
   isProj: 0
@@ -8762,6 +8765,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Hit_ID: 1
+  SourceID: 0
   SetHitID: 1
   curKBNum: 6
   isProj: 0
@@ -9935,6 +9939,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9214136139348022993, guid: 31f10380c2066f24abbad7a6ab597436,
+        type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000,
+        type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f10380c2066f24abbad7a6ab597436, type: 3}
 --- !u!1001 &5059826141191371415
