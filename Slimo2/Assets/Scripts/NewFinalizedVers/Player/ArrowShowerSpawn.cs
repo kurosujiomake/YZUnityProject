@@ -62,8 +62,9 @@ public class ArrowShowerSpawn : MonoBehaviour
             c.Hit_ID = IDRandomizer();
             c.curKBNum = projKB;
             c.StartProjTimer(projDur);
+            c.SourceID = SourceID;
             clone.GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Cos(d) * projSpd, Mathf.Sin(d) * projSpd);
-            clone.GetComponent<DamageTransfer>().dmgData.SetValues(SourceID, sBloc.dmgToPass, sBloc.isCrit, sBloc.eleMod, sBloc.hitCount);
+            clone.GetComponent<DamageTransfer>().dmgData.SetValues(sBloc.dmgToPass, sBloc.isCrit, sBloc.eleMod, sBloc.hitCount);
             yield return new WaitForSeconds(fireDelay);
             i++;
             if(i > im)

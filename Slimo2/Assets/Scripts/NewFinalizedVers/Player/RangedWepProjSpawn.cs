@@ -112,6 +112,7 @@ public class RangedWepProjSpawn : MonoBehaviour
         GameObject clone = Instantiate(sDB.ReturnSpawnObj(_projID), originPoints[OriginPID].position, Quaternion.Euler(0, 0, ad));
         clone.GetComponent<KBInfoPass>().Hit_ID = IDRandomizer();
         clone.GetComponent<KBInfoPass>().curKBNum = KBNum;
+        clone.GetComponent<KBInfoPass>().SourceID = SourceID;
         switch (clone.GetComponent<ProjType>().Proj_Type)
         {
             case ProjType.Type.Bullet:
@@ -157,7 +158,8 @@ public class RangedWepProjSpawn : MonoBehaviour
                     GameObject Clone = Instantiate(sDB.ReturnSpawnObj(ProjID), originPoints[OriginPID].position, Quaternion.Euler(0, 0, ed));
                     Clone.GetComponent<KBInfoPass>().Hit_ID = IDRandomizer();
                     Clone.GetComponent<KBInfoPass>().curKBNum = KBNum;
-                    Clone.GetComponent<DamageTransfer>().dmgData.SetValues(SourceID, bloc.dmgToPass, bloc.isCrit, bloc.eleMod, bloc.hitCount);
+                    Clone.GetComponent<KBInfoPass>().SourceID = SourceID;
+                    Clone.GetComponent<DamageTransfer>().dmgData.SetValues(bloc.dmgToPass, bloc.isCrit, bloc.eleMod, bloc.hitCount);
                     switch (Clone.GetComponent<ProjType>().Proj_Type)
                     {
                         case ProjType.Type.Bullet:
@@ -232,7 +234,7 @@ public class RangedWepProjSpawn : MonoBehaviour
             c.GetComponent<KBInfoPass>().curKBNum = KBNum;
             c.GetComponent<KBInfoPass>().StartProjTimer(sDB.ReturnBLifetime(ProjID));
             c.GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Cos(a) * spd, Mathf.Sin(a) * spd);
-            c.GetComponent<DamageTransfer>().dmgData.SetValues(SourceID, bloc.dmgToPass, bloc.isCrit, bloc.eleMod, bloc.hitCount);
+            c.GetComponent<DamageTransfer>().dmgData.SetValues(bloc.dmgToPass, bloc.isCrit, bloc.eleMod, bloc.hitCount);
         }
         yield return new WaitForSeconds(0);
     }
