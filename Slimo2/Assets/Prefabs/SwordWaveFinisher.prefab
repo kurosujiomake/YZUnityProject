@@ -65,6 +65,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Hit_ID: 0
+  SourceID: 0
   SetHitID: 0
   curKBNum: 0
   isProj: 1
@@ -174,9 +175,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1610947611
+  m_SortingLayer: 4
+  m_SortingOrder: 2
   m_Sprite: {fileID: -3633960215262246496, guid: 76d125a38f8faf84681cea16e8d7b354,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

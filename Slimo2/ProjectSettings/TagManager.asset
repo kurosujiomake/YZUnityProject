@@ -56,11 +56,11 @@ TagManager:
   - name: Background
     uniqueID: 2062842717
     locked: 0
-  - name: Midground
-    uniqueID: 3171462335
-    locked: 0
   - name: Foreground
     uniqueID: 2026350133
+    locked: 0
+  - name: NPC
+    uniqueID: 3171462335
     locked: 0
   - name: Player
     uniqueID: 2684019685
