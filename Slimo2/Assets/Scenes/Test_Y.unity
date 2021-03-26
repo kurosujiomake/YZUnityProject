@@ -1309,6 +1309,12 @@ Transform:
   m_Father: {fileID: 1660248067}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &196862993 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 766926535305467697, guid: 31f10380c2066f24abbad7a6ab597436,
+    type: 3}
+  m_PrefabInstance: {fileID: 1920500122389931245}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &197589462 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6566249406144528180, guid: 782edf5991210414492f424e7237f055,
@@ -4913,6 +4919,8 @@ MonoBehaviour:
   OriginPID: 0
   OriginPID2: 0
   useMultipleOrigins: 0
+  useTarget: 0
+  target: {fileID: 0}
   angle: 0
   angle2: 0
   useMultipleAngles: 0
@@ -9943,6 +9951,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6876261294917496085, guid: 31f10380c2066f24abbad7a6ab597436,
+        type: 3}
+      propertyPath: originPoints.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6876261294917496085, guid: 31f10380c2066f24abbad7a6ab597436,
+        type: 3}
+      propertyPath: ProjID
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6876261294917496085, guid: 31f10380c2066f24abbad7a6ab597436,
+        type: 3}
+      propertyPath: originPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 196862993}
+    - target: {fileID: 6876261294917496085, guid: 31f10380c2066f24abbad7a6ab597436,
+        type: 3}
+      propertyPath: useTarget
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6876261294917496085, guid: 31f10380c2066f24abbad7a6ab597436,
+        type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 995318637}
+    - target: {fileID: 6876261294917496085, guid: 31f10380c2066f24abbad7a6ab597436,
+        type: 3}
+      propertyPath: MaxProj
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6876261294917496085, guid: 31f10380c2066f24abbad7a6ab597436,
+        type: 3}
+      propertyPath: projDelay
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 9214136139348022993, guid: 31f10380c2066f24abbad7a6ab597436,
         type: 3}

@@ -24,19 +24,26 @@ public class RangedWepProjSpawn : MonoBehaviour
     public float projDelay = 0;
     [Header("Knockback info")]
     public int KBNum = 0;
+    [Header("ProjSpawn point vars")]
     public Transform[] originPoints;
     public int OriginPID = 0;
     public int OriginPID2 = 0;
     public bool useMultipleOrigins = false;
+    [Header("Projectile orientation/targetting")]
+    public bool useTarget = false;
+    public Transform target;
     public float angle = 0;
     public float angle2 = 0;
     public bool useMultipleAngles = false;
     public float deviation = 0;
+
     private int[] HitIDs = new int[2];
     private bool hasFiredOne = false;
     private bool hasFiredCont = false;
     private bool hasFiredShower = false;
     private bool hasFiredAll = false;
+
+    [Header("Arrow Shower stuff")]
     public float arrowShowerRandx;
     public float arrowShowerRandy;
     public float arrowShowerProjSpd;
@@ -141,7 +148,7 @@ public class RangedWepProjSpawn : MonoBehaviour
             float spd = sDB.ReturnBSpeed(ProjID);
             float d = 0;
             float ed = 0;
-            switch (useMultipleAngles)
+            switch (useTarget)
             {
                 case false:
                     switch (GetComponentInParent<PlayerControllerNew>().facingRight) //adjusts angle based on player facing direction and adds random deviation
@@ -175,25 +182,10 @@ public class RangedWepProjSpawn : MonoBehaviour
                     }
                     break;
                 case true:
-                    float d2 = 0;
-                    switch (GetComponent<PlayerControllerNew>().facingRight) //adjusts angle based on player facing direction and adds random deviation
-                    {
-                        case true:
-                            d = (Random.Range(-deviation, deviation) + angle) * Mathf.Deg2Rad;
-                            break;
-                        case false:
-                            d = (180 - (Random.Range(-deviation, deviation) + angle)) * Mathf.Deg2Rad;
-                            break;
-                    }
-                    switch (GetComponent<PlayerControllerNew>().facingRight) //adjusts angle 2
-                    {
-                        case true:
-                            d2 = (Random.Range(-deviation, deviation) + angle) * Mathf.Deg2Rad;
-                            break;
-                        case false:
-                            d2 = (180 - (Random.Range(-deviation, deviation) + angle)) * Mathf.Deg2Rad;
-                            break;
-                    }
+                    var tarangle = Vector3.Angle(transform.right, transform.InverseTransformPoint(target.position));
+                    var a2 = Mathf.Deg2Rad*tarangle;
+                    GameObject clone = Instantiate(sDB.ReturnSpawnObj(ProjID), originPoints[OriginPID].position, Quaternion.Euler(0,0, a2));
+                    
                     break;
             }
             yield return new WaitForSeconds(projDelay);
