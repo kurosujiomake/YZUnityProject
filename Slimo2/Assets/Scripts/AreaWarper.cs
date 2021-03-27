@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,10 +18,19 @@ public class AreaWarper : MonoBehaviour
     [SerializeField] private bool canWarp = false;
     private float timer = 0;
 
+    public GameObject screenWipe;
+
     // Start is called before the first frame update
     void Start()
     {
         canWarp = true;
+        screenWipe.SetActive(false);
+        StartCoroutine(screenWipeCooldown());
+    }
+    IEnumerator screenWipeCooldown()
+    {
+        yield return new WaitForSeconds(1.5f);
+        screenWipe.SetActive(false);
     }
 
     // Update is called once per frame
@@ -64,6 +74,7 @@ public class AreaWarper : MonoBehaviour
         {
             if(canWarp)
             {
+                screenWipe.SetActive(true);
                 Transform tempPlayer = col.GetComponent<Transform>();
                 Transform cFS = GameObject.FindGameObjectWithTag("CamSmoothingTar").transform;
                 if (useInt)
