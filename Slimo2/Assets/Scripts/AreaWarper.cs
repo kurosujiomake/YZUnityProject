@@ -17,20 +17,15 @@ public class AreaWarper : MonoBehaviour
     public float WarpCD = 0;
     [SerializeField] private bool canWarp = false;
     private float timer = 0;
-
-    public GameObject screenWipe;
+    [Header("Screen Transition Effect")]
+    public float screenTransitionTimeToReset = 0;
+    public GameObject screenTransitionEffect;
 
     // Start is called before the first frame update
     void Start()
     {
         canWarp = true;
-        screenWipe.SetActive(false);
-        StartCoroutine(screenWipeCooldown());
-    }
-    IEnumerator screenWipeCooldown()
-    {
-        yield return new WaitForSeconds(1.5f);
-        screenWipe.SetActive(false);
+        screenTransitionEffect.SetActive(false);
     }
 
     // Update is called once per frame
@@ -53,6 +48,7 @@ public class AreaWarper : MonoBehaviour
     }
     void TriggerCD()
     {
+        Invoke("DeactivateThisObject", screenTransitionTimeToReset);
         GameObject[] n = GameObject.FindGameObjectsWithTag("Warp");
         foreach(GameObject p in n)
         {
@@ -68,13 +64,18 @@ public class AreaWarper : MonoBehaviour
         return GameObject.FindGameObjectWithTag(Name).GetComponent<Transform>();
     }
 
+    private void DeactivateThisObject()
+    {
+        screenTransitionEffect.SetActive(false);
+    }
+
     private void OnTriggerEnter2D(Collider2D col)
     {
         if(col.GetComponent<Transform>().tag == "Player")
         {
             if(canWarp)
             {
-                screenWipe.SetActive(true);
+                screenTransitionEffect.SetActive(true);
                 Transform tempPlayer = col.GetComponent<Transform>();
                 Transform cFS = GameObject.FindGameObjectWithTag("CamSmoothingTar").transform;
                 if (useInt)

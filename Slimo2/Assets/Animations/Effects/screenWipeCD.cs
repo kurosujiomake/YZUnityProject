@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class screenWipeCD : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(screenWipeCooldown());
+        Invoke("DeactivateThisObject", 1.0f);
+        //StartCoroutine(screenWipeCooldown());
     }
-    IEnumerator screenWipeCooldown()
+
+    /*IEnumerator screenWipeCooldown()
     {
-        yield return new WaitForSeconds(1.5f);
-        this.gameObject.SetActive(false);
+        yield return new WaitForSecondsRealtime(1);
+        gameObject.SetActive(false);
     }
-
-
+    */
+    private void DeactivateThisObject()
+    {
+        gameObject.SetActive(false);
+    }
 }
