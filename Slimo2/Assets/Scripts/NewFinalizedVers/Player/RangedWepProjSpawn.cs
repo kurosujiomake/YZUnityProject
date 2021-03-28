@@ -182,9 +182,6 @@ public class RangedWepProjSpawn : MonoBehaviour
                     }
                     break;
                 case true:
-                    var tarangle = Vector3.Angle(transform.right, transform.InverseTransformPoint(target.position));
-                    var a2 = Mathf.Deg2Rad*tarangle;
-                    GameObject clone = Instantiate(sDB.ReturnSpawnObj(ProjID), originPoints[OriginPID].position, Quaternion.Euler(0,0, a2));
                     
                     break;
             }
