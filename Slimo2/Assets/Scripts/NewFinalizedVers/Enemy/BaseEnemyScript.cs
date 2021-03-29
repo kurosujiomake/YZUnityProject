@@ -60,8 +60,6 @@ public class BaseEnemyScript : MonoBehaviour
     public bool hasAtked;
     public float atkCD;
     private float aCD;
-    [Header("If Applicable")]
-    public GameObject proj;
 
     void Start()
     {
@@ -137,7 +135,7 @@ public class BaseEnemyScript : MonoBehaviour
                                     }
                                     break;
                                 case AtkType.Ranged:
-
+                                    RangedAtk();
                                     break;
                                 case AtkType.Magic:
 
@@ -238,7 +236,8 @@ public class BaseEnemyScript : MonoBehaviour
             case AtkTarg.target:
                 if(targetTrans != null)
                 {
-                    
+                    GetComponentInChildren<EnemyProjFire>().AddTarget(targetTrans);
+                    anim.SetTrigger("AtkRanged1");
                 }
                 break;
             case AtkTarg.noTar:
@@ -247,21 +246,7 @@ public class BaseEnemyScript : MonoBehaviour
         }
     }
 
-    IEnumerator FireProjTar (int projAmt, float bProjDelay, GameObject proj, Transform tar) //for targeted proj
-    {
-        bool b = true;
-        int i = 0;
-        if(projAmt <= 0)
-            b = false;
-        while(b)
-        {
-            yield return new WaitForSeconds(bProjDelay);
-        }
-    }
-    IEnumerator FireProj (int projAmt, float bProjDelay, GameObject proj) //for no target proj
-    {
-        yield return null;
-    }
+    
     private bool GroundCheck()
     {
         bool b = false;

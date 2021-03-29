@@ -171,7 +171,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1123504961
-  m_SortingLayer: 3
+  m_SortingLayer: -2
   m_SortingOrder: -1
   m_Sprite: {fileID: -1917575809262483081, guid: 81026842156901845a1c5e31fb4ca4f9,
     type: 3}
@@ -386,13 +386,12 @@ MonoBehaviour:
   hasTarget: 0
   targetTrans: {fileID: 0}
   SearchOrigin: {fileID: 0}
-  SearchDist: 0
-  DeAggroDist: 0
+  SearchDist: 15
+  DeAggroDist: 16
   aggroSpdInc: 0
-  atkRange: 0
+  atkRange: 15
   hasAtked: 0
   atkCD: 0
-  proj: {fileID: 0}
 --- !u!95 &9140281108987288036
 Animator:
   serializedVersion: 3
@@ -481,11 +480,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 766926535305467697}
-  - component: {fileID: 6876261294917496085}
+  - component: {fileID: 18413349}
   m_Layer: 10
   m_Name: ProjSpawner
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -503,7 +502,7 @@ Transform:
   m_Father: {fileID: 6177986475663389881}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6876261294917496085
+--- !u!114 &18413349
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -512,36 +511,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 9214136139348022993}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ae929ec6406e574fbc67dd1406ad3a1, type: 3}
+  m_Script: {fileID: 11500000, guid: d410ed30b99a0264a920ee03cb58c750, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sDB: {fileID: 11400000, guid: 04e2a0315ec9dca4aaed6ed3962b0353, type: 2}
-  ProjID: 0
-  SourceID: 1
-  UseSkillID: 0
-  bloc:
-    dmgToPass: 0
-    isCrit: 0
-    eleMod: 0
-    hitCount: 0
-  FireOne: 0
-  FireCont: 0
-  FireAll: 0
-  FireAShower: 0
-  MaxProj: 0
-  projDelay: 0
-  KBNum: 0
-  originPoints: []
-  OriginPID: 0
-  OriginPID2: 0
-  useMultipleOrigins: 0
+  Direction: 0
+  Target: {fileID: 0}
+  UseTarget: 1
   angle: 0
-  angle2: 0
-  useMultipleAngles: 0
-  deviation: 0
-  arrowShowerRandx: 0
-  arrowShowerRandy: 0
-  arrowShowerProjSpd: 0
-  arrowShowerProjDur: 0
-  aShowerSpawner: {fileID: 0}
-  triAngles: []
+  SourceID: 1
+  sDB: {fileID: 11400000, guid: 04e2a0315ec9dca4aaed6ed3962b0353, type: 2}
+  projID: 1
+  projAmt: 1
+  projSpd: 500
+  projLifeTime: 2
+  inBetweenDelay: 0.2
+  projSpawnPoint: {fileID: 766926535305467697}
+  Fire: 0
