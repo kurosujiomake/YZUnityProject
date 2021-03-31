@@ -91,24 +91,28 @@ public class DamageTakeCycles : MonoBehaviour
         if(collision.GetComponent<KBInfoPass>() != null)
         {
             var h = collision.GetComponent<KBInfoPass>();
-            if (collision.GetComponentInParent<PlayerControllerNew>() != null)
+            if(h.SourceID == 0 || h.SourceID == 3) //checks that the hitbox can hit enemies
             {
-                var f = collision.GetComponentInParent<PlayerControllerNew>();
-                enemyFacingRight = f.facingRight;
+                if (collision.GetComponentInParent<PlayerControllerNew>() != null)
+                {
+                    var f = collision.GetComponentInParent<PlayerControllerNew>();
+                    enemyFacingRight = f.facingRight;
+                }
+                if (collision.GetComponentInParent<PlayerControllerNew>() == null)
+                {
+                    var f = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerNew>();
+                    enemyFacingRight = f.facingRight;
+                }
+                if (h.Hit_ID != curHitID) //this object has not been hit already
+                {
+                    //Debug.Log("DetectedHitbox");
+                    KBID = h.curKBNum;
+                    curHitID = h.Hit_ID;
+                    StartKBCycle();
+                    //Debug.Log("Got hit with kb id of " + KBID);
+                }
             }
-            if(collision.GetComponentInParent<PlayerControllerNew>() == null)
-            {
-                var f = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerNew>();
-                enemyFacingRight = f.facingRight;
-            }
-            if(h.Hit_ID != curHitID) //this object has not been hit already
-            {
-                //Debug.Log("DetectedHitbox");
-                KBID = h.curKBNum;
-                curHitID = h.Hit_ID;
-                StartKBCycle();
-                //Debug.Log("Got hit with kb id of " + KBID);
-            }
+            
         }
     }
 }

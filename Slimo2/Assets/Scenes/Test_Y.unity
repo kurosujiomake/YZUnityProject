@@ -4487,6 +4487,45 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 112477574}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &995318638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995318636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63a19657c06602048a5477ee96ead83e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defStats:
+    baseDef: 0
+    defMulti: 0
+    eleRes:
+    - index: 0
+      Name: 
+      resAmt: 0
+    - index: 1
+      Name: 
+      resAmt: 0
+    - index: 2
+      Name: 
+      resAmt: 0
+    - index: 3
+      Name: 
+      resAmt: 0
+    - index: 4
+      Name: 
+      resAmt: 0
+    - index: 5
+      Name: 
+      resAmt: 0
+  status: []
+  dNM: {fileID: 0}
+  OnHitEffects: []
+  hitEffectID: 0
+  baseScript: {fileID: 0}
 --- !u!1001 &1001234414
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9857,7 +9896,7 @@ PrefabInstance:
     - target: {fileID: 389254983349222113, guid: a93baa20009583f4eaee19f42a7e4bbc,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a93baa20009583f4eaee19f42a7e4bbc, type: 3}
