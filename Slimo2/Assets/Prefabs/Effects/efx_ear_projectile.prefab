@@ -12,7 +12,12 @@ GameObject:
   - component: {fileID: 7587254370290894720}
   - component: {fileID: 7587254370290894723}
   - component: {fileID: 7587254370290894726}
-  m_Layer: 0
+  - component: {fileID: -173092955045892848}
+  - component: {fileID: -3915959703848522409}
+  - component: {fileID: 4222063708862233088}
+  - component: {fileID: -8494278830116532749}
+  - component: {fileID: -2862643057293782764}
+  m_Layer: 12
   m_Name: efx_ear_projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -199,3 +204,90 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-173092955045892848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7587254370290894722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8d46f9b6dc19f547b983575be35eda0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmgData:
+    InputDmg: 0
+    Ele: 0
+    hitCount: 0
+    isACrit: 0
+--- !u!114 &-3915959703848522409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7587254370290894722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24a13b8d17380aa4b80d9dee984b3c9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Proj_Type: 0
+--- !u!50 &4222063708862233088
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7587254370290894722}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!58 &-8494278830116532749
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7587254370290894722}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.77
+--- !u!114 &-2862643057293782764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7587254370290894722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88bfae07d120b24d8263c332849c0a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Hit_ID: 0
+  SourceID: 0
+  SetHitID: 0
+  curKBNum: 0
+  isProj: 0
+  HitCount: 1
+  Damage: 251
+  eleType: 0

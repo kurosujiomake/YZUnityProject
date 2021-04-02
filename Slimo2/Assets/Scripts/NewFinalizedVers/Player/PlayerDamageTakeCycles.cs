@@ -28,7 +28,7 @@ public class PlayerDamageTakeCycles : MonoBehaviour
             var kb = collider.GetComponent<KBInfoPass>();
             if(kb.SourceID == 1 || kb.SourceID == 3) //player only takes damage from these sources: 1 = enemy, 3 = all
             {
-
+                print("Player got hit");
             }
         }
     }
