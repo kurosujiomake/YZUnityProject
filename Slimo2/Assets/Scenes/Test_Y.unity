@@ -9925,10 +9925,6 @@ PrefabInstance:
       propertyPath: Target
       value: 
       objectReference: {fileID: 995318637}
-    - target: {fileID: 18413349, guid: 31f10380c2066f24abbad7a6ab597436, type: 3}
-      propertyPath: projID
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 5826097367196053644, guid: 31f10380c2066f24abbad7a6ab597436,
         type: 3}
       propertyPath: Waypoints.Array.data[0]
