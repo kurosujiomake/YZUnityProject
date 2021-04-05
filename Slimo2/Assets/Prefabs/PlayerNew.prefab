@@ -1960,7 +1960,7 @@ MonoBehaviour:
   m_randNoise:
   - 1
   - 0.5
-  hitStunDuration: 0
+  hitStunDuration: 1
   canAerialRecover: 0
 --- !u!114 &199465334998370276
 MonoBehaviour:
@@ -2780,6 +2780,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DR: {fileID: 0}
   pCN: {fileID: 0}
+  anim: {fileID: 0}
+  rb2d: {fileID: 0}
+  kbD: {fileID: 11400000, guid: 8755d63d46f82d348b13a4db7f9f220d, type: 2}
 --- !u!1 &3772932790477469332
 GameObject:
   m_ObjectHideFlags: 0
