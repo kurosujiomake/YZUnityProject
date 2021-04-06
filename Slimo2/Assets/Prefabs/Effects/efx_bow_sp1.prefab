@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: -6923401576923061993}
   - component: {fileID: -4431152839506640160}
   - component: {fileID: 4350924799381489657}
-  - component: {fileID: -4784637582201258529}
-  - component: {fileID: -1570637736180557813}
+  - component: {fileID: -8396513144963993808}
+  - component: {fileID: -7721000785783595120}
   - component: {fileID: -8975868535427118585}
   m_Layer: 0
   m_Name: efx_bow_sp1
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1610947611
-  m_SortingLayer: 4
+  m_SortingLayer: -1
   m_SortingOrder: 2
   m_Sprite: {fileID: 4957218804782426469, guid: 77de72e7426a32345becb26e06df5a5b,
     type: 3}
@@ -179,7 +179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Proj_Type: 0
---- !u!82 &-4784637582201258529
+--- !u!82 &-8396513144963993808
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -189,10 +189,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7dd396b963a0b9a459995942c6164d19, type: 3}
+  m_audioClip: {fileID: 8300000, guid: b059574a772b59d4e99bbfd3fac5a94b, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.3
-  m_Pitch: 1
+  m_Volume: 0.7
+  m_Pitch: 0.9
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -275,7 +275,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!82 &-1570637736180557813
+--- !u!82 &-7721000785783595120
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -285,10 +285,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c716134309770294c91f654f37ad0ce0, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 3f82c64782f517444bdcb699542f4fb6, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 3
+  m_Volume: 0.5
+  m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0

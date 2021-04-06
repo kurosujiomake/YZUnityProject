@@ -75,7 +75,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1610947611
-  m_SortingLayer: 4
+  m_SortingLayer: -1
   m_SortingOrder: 2
   m_Sprite: {fileID: -6593692229323971695, guid: c6d6a5e6c18f1cb4b91c791893911026,
     type: 3}
@@ -188,15 +188,15 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7dd396b963a0b9a459995942c6164d19, type: 3}
+  m_audioClip: {fileID: 8300000, guid: b059574a772b59d4e99bbfd3fac5a94b, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.4
-  m_Pitch: 1.1
+  m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 70
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
