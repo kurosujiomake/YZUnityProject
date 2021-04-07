@@ -11,7 +11,9 @@ public class EnemyProjFire : MonoBehaviour
     public bool UseTarget = true;
     public float angle = 0;
     private bool above = true;
+    [Header("Source ID should be 0 for players, and 1 for enemies")]
     public int SourceID = 1;
+    private int[] HitIDs = new int[2];
 
     [Header("Variables related to projectile")]
     public SpawnDatabase sDB;
@@ -21,7 +23,8 @@ public class EnemyProjFire : MonoBehaviour
     public float projLifeTime = 0;
     public float inBetweenDelay = 0;
     public Transform projSpawnPoint;
-
+    [Header("KB_ID determines the knockback from database")]
+    public int kbID;
     [Header("Use these Bool(s) to fire the proj")]
     public bool Fire = false;
     private bool hasFired = false;
@@ -79,7 +82,23 @@ public class EnemyProjFire : MonoBehaviour
             Direction = angle;
         }
     }
-
+    int IDRandomizer()
+    {
+        int i = 0;
+        bool hasSetID = false;
+        while (!hasSetID)
+        {
+            int j = Random.Range(0, 100);
+            if (j != HitIDs[0] && j != HitIDs[1])
+            {
+                HitIDs[0] = HitIDs[1];
+                HitIDs[1] = j;
+                i = j;
+                hasSetID = true;
+            }
+        }
+        return i;
+    }
     IEnumerator FireProjCycle()
     {
         bool f = true;
@@ -95,6 +114,8 @@ public class EnemyProjFire : MonoBehaviour
             GameObject clone = Instantiate(sDB.ReturnSpawnObj(projID), projSpawnPoint.position, Quaternion.Euler(0,0, Direction));
             
             clone.GetComponent<KBInfoPass>().SourceID = SourceID;
+            clone.GetComponent<KBInfoPass>().Hit_ID = IDRandomizer();
+            clone.GetComponent<KBInfoPass>().curKBNum = kbID;
             switch (clone.GetComponent<ProjType>().Proj_Type)
             {
                 case ProjType.Type.Bullet:

@@ -9,6 +9,8 @@ public class PlayerDamageTakeCycles : MonoBehaviour
     public Animator anim = null;
     public Rigidbody2D rb2d = null;
     public KBDatabase kbD = null;
+    private int curHitID = -1;
+    public float playerKBMulti;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,19 +42,27 @@ public class PlayerDamageTakeCycles : MonoBehaviour
             var kb = collider.GetComponent<KBInfoPass>();
             if(kb.SourceID == 1 || kb.SourceID == 3) //player only takes damage from these sources: 1 = enemy, 3 = all
             {
-                print("Player got hit");
-                pCN.SetPState(0);
-                pCN.SetPState(2);
-                anim.SetTrigger("GotHit");
+                if(kb.Hit_ID != curHitID)
+                {
+                    anim.SetTrigger("GotHit");
+                    StopAllCoroutines();
+                    StartCoroutine(PKB(kb.curKBNum));
+                }
+                
             }
         }
     }
     IEnumerator PKB(int KB_ID)
     {
+        pCN.SetPState(2);
         StopMovement();
-        PKnockback(kbD.Dir(KB_ID), kbD.Vel(KB_ID));
+        rb2d.gravityScale = 1;
+        PKnockback(kbD.Dir(KB_ID) * playerKBMulti, kbD.Vel(KB_ID) * playerKBMulti);
         yield return new WaitForSeconds(kbD.KBDur(KB_ID));
+        rb2d.gravityScale = 5;
         StopMovement();
+        pCN.SetPState(1);
+        anim.SetTrigger("BackToIdle");
     }
     private void StopMovement()
     {
@@ -62,6 +72,7 @@ public class PlayerDamageTakeCycles : MonoBehaviour
     {
         float d = dir * Mathf.Deg2Rad;
         float f = force * Time.deltaTime;
+        
         Vector2 v = new Vector2(Mathf.Cos(d) * f, Mathf.Sin(d) * f);
         rb2d.velocity = v;
     }

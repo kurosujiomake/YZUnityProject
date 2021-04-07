@@ -526,4 +526,5 @@ MonoBehaviour:
   projLifeTime: 2
   inBetweenDelay: 0.2
   projSpawnPoint: {fileID: 766926535305467697}
+  kbID: 4
   Fire: 0
