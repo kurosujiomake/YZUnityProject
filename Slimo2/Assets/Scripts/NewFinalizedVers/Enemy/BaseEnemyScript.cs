@@ -60,6 +60,8 @@ public class BaseEnemyScript : MonoBehaviour
     public bool hasAtked;
     public float atkCD;
     private float aCD;
+    public GameObject meleeAtkHitBox;
+
 
     void Start()
     {
@@ -132,6 +134,18 @@ public class BaseEnemyScript : MonoBehaviour
                                     {
                                         Transitioning(EnemyStates.Attack);
                                         anim.SetTrigger("Attack");
+                                        Quaternion rot = meleeAtkHitBox.transform.localRotation;
+                                        switch (facingRight)
+                                        {
+                                            case true:
+                                                rot.z = 180;
+                                                meleeAtkHitBox.transform.localRotation = rot;
+                                                break;
+                                            case false:
+                                                rot.z = 0;
+                                                meleeAtkHitBox.transform.localRotation = rot;
+                                                break;
+                                        }
                                     }
                                     break;
                                 case AtkType.Ranged:
@@ -438,13 +452,16 @@ public class BaseEnemyScript : MonoBehaviour
                 {
                     facingRight = !facingRight;
                     GetComponent<SpriteRenderer>().flipX = !GetComponent<SpriteRenderer>().flipX;
+                    
                 }
+                
                 break;
             case false:
                 if(a-b > 0 && !facingRight)
                 {
                     facingRight = !facingRight;
                     GetComponent<SpriteRenderer>().flipX = !GetComponent<SpriteRenderer>().flipX;
+                    
                 }
                 break;
         }
