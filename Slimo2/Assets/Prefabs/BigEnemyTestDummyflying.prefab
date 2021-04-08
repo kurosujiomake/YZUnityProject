@@ -392,6 +392,7 @@ MonoBehaviour:
   atkRange: 15
   hasAtked: 0
   atkCD: 0
+  meleeAtkHitBox: {fileID: 0}
 --- !u!95 &9140281108987288036
 Animator:
   serializedVersion: 3

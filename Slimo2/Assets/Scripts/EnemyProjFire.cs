@@ -116,11 +116,14 @@ public class EnemyProjFire : MonoBehaviour
             clone.GetComponent<KBInfoPass>().SourceID = SourceID;
             clone.GetComponent<KBInfoPass>().Hit_ID = IDRandomizer();
             clone.GetComponent<KBInfoPass>().curKBNum = kbID;
+            clone.GetComponent<KBInfoPass>().isEnemyHitBox = true;
             switch (clone.GetComponent<ProjType>().Proj_Type)
             {
                 case ProjType.Type.Bullet:
                     clone.GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Cos(d) * spd, Mathf.Sin(d) * spd);
                     clone.GetComponent<KBInfoPass>().StartProjTimer(projLifeTime);
+
+                    clone.GetComponent<KBInfoPass>().enemySource = this.gameObject;
                     break;
                 case ProjType.Type.Area:
 

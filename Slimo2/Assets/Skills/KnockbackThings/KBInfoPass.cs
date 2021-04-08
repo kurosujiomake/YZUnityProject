@@ -12,6 +12,10 @@ public class KBInfoPass : MonoBehaviour
     public int HitCount = 1;
     public float Damage = 251;
     public int eleType;
+
+    [Header("This section is for enemy use")]
+    public bool isEnemyHitBox = false;
+    public GameObject enemySource;
     public void StartProjTimer(float dur)
     {
         StartCoroutine(Timer(dur));

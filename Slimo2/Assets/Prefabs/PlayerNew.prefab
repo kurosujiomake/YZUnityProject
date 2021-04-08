@@ -1334,7 +1334,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1688448280969379170}
   - component: {fileID: 3581208946597028758}
-  - component: {fileID: 1096420705386054874}
   - component: {fileID: 8221750487963548666}
   - component: {fileID: 6674623593403435189}
   m_Layer: 11
@@ -1374,18 +1373,6 @@ CapsuleCollider2D:
   m_Offset: {x: -2.55, y: 0.38}
   m_Size: {x: 5.86, y: 2.95}
   m_Direction: 1
---- !u!114 &1096420705386054874
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1784586896232657024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4634a6ba2026024f8d6ebc02e8e9134, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8221750487963548666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1406,6 +1393,8 @@ MonoBehaviour:
   HitCount: 1
   Damage: 251
   eleType: 0
+  isEnemyHitBox: 0
+  enemySource: {fileID: 0}
 --- !u!114 &6674623593403435189
 MonoBehaviour:
   m_ObjectHideFlags: 0

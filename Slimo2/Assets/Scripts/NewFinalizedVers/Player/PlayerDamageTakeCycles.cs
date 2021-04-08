@@ -46,18 +46,18 @@ public class PlayerDamageTakeCycles : MonoBehaviour
                 {
                     anim.SetTrigger("GotHit");
                     StopAllCoroutines();
-                    StartCoroutine(PKB(kb.curKBNum));
+                    StartCoroutine(PKB(kb.curKBNum, kb.enemySource.transform));
                 }
                 
             }
         }
     }
-    IEnumerator PKB(int KB_ID)
+    IEnumerator PKB(int KB_ID, Transform enemyPos)
     {
         pCN.SetPState(2);
         StopMovement();
         rb2d.gravityScale = 1;
-        PKnockback(kbD.Dir(KB_ID) * playerKBMulti, kbD.Vel(KB_ID) * playerKBMulti);
+        PKnockback(kbD.Dir(KB_ID) * playerKBMulti, kbD.Vel(KB_ID) * playerKBMulti, enemyPos);
         yield return new WaitForSeconds(kbD.KBDur(KB_ID));
         rb2d.gravityScale = 5;
         StopMovement();
@@ -68,11 +68,18 @@ public class PlayerDamageTakeCycles : MonoBehaviour
     {
         rb2d.velocity = Vector2.zero;
     }
-    void PKnockback(float dir, float force)
+    void PKnockback(float dir, float force, Transform enemyPos)
     {
-        float d = dir * Mathf.Deg2Rad;
+        float d = 0;
         float f = force * Time.deltaTime;
-        
+        if(enemyPos.position.x < transform.position.x) //enemy is to the left side of the player
+        {
+            d = (dir - 90) * Mathf.Deg2Rad;
+        }
+        if(enemyPos.position.x > transform.position.x)
+        {
+            d = dir * Mathf.Deg2Rad;
+        }
         Vector2 v = new Vector2(Mathf.Cos(d) * f, Mathf.Sin(d) * f);
         rb2d.velocity = v;
     }
