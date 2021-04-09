@@ -62,7 +62,8 @@ public class BaseEnemyScript : MonoBehaviour
     private float aCD;
     public GameObject meleeAtkHitBox;
 
-
+    private float FlyingGroundDist = 0; //how far from the ground the enemy should rise to after getting knocked down
+    private float FlyingCeilingDist = 0; //
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -260,6 +261,10 @@ public class BaseEnemyScript : MonoBehaviour
         }
     }
 
+    private void StationaryFlyingPosCheck() //stationary flying enemies will fly straight up above the ground after being knocked down before attacking again
+    {
+
+    }
     
     private bool GroundCheck()
     {
