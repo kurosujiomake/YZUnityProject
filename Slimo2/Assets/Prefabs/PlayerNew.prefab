@@ -2604,25 +2604,25 @@ MonoBehaviour:
   - slotName: Weapon
     ID: 0
     EquipID: 0
-    baseAtk: 151
+    baseAtk: 15
     baseDef: 0
     baseCrit: 0
     critChanceMulti: 0
     critDmgMulti: 0
     EleMod: 0
-    AtkMulti: 0.68
+    AtkMulti: 0.5
     DefMulti: 0
     EleMulti: 0.13
   - slotName: SubWeapon
     ID: 1
     EquipID: 0
-    baseAtk: 223
+    baseAtk: 7
     baseDef: 0
     baseCrit: 0
     critChanceMulti: 0
     critDmgMulti: 0
     EleMod: 1
-    AtkMulti: 0.47
+    AtkMulti: 0.45
     DefMulti: 0
     EleMulti: 0.38
   - slotName: Relic
@@ -2674,7 +2674,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statBloc:
-    baseDmg: 50
+    baseDmg: 5
     dmgMulti: 1.75
     dmgRangePercent: 0.2
     eleMod: 0
@@ -2755,6 +2755,7 @@ MonoBehaviour:
   OnHitEffects: []
   hitEffectID: 0
   baseScript: {fileID: 0}
+  eHP: {fileID: 0}
 --- !u!114 &995318657
 MonoBehaviour:
   m_ObjectHideFlags: 0

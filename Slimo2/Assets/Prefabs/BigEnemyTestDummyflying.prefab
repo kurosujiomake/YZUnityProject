@@ -576,7 +576,7 @@ MonoBehaviour:
   hurtDuration: 2
   gotHurt: 0
   aggro: 2
-  aType: 1
+  aType: 0
   targetType: 1
   hasTarget: 0
   targetTrans: {fileID: 0}
