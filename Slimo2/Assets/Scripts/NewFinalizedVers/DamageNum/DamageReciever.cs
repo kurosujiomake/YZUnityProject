@@ -12,10 +12,12 @@ public class DamageReciever : MonoBehaviour
     public GameObject[] OnHitEffects;
     public int hitEffectID;
     public BaseEnemyScript baseScript;
+    public EnemyHP eHP = null;
     void Awake()
     {
         dNM = GameObject.FindGameObjectWithTag("HitDisplayCanv").GetComponent<DamageNumberMain>();
         baseScript = GetComponent<BaseEnemyScript>();
+        eHP = gameObject.GetComponent<EnemyHP>();
     }
     void Update()
     {
@@ -25,13 +27,14 @@ public class DamageReciever : MonoBehaviour
         }
 
     }
-    public void TakeDamage(float finalDmg, int element, bool isCrit, int HitCount)
+    public void TakeDamage(float finalDmg, int element, bool isCrit, int HitCount) //this actually takes the dmg after calculations
     {
         for (int i = 0; i < HitCount; i++)
         {
             dNM.DisplayUpdate(CalcDmg(finalDmg, element, isCrit), 1);
             SpawnHitEffect();
             baseScript.GotHurt(finalDmg);
+            eHP.TakeDamage(1, finalDmg);
         }
         
     }

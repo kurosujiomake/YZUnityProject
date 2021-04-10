@@ -764,6 +764,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerNew
       objectReference: {fileID: 0}
+    - target: {fileID: 5260484921123446815, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
+        type: 3}
+      propertyPath: equips.Array.data[0].baseAtk
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6773546460337980478, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
+        type: 3}
+      propertyPath: statBloc.baseDmg
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16a462e48b7ea5340b1aa2c5627f2e76, type: 3}
 --- !u!1001 &115474414
@@ -9889,6 +9899,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8563768197498949829, guid: 31f10380c2066f24abbad7a6ab597436,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1639337649}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f10380c2066f24abbad7a6ab597436, type: 3}
 --- !u!1001 &5059826141191371415

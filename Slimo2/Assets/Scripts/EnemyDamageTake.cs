@@ -9,16 +9,24 @@ public class EnemyDamageTake : MonoBehaviour
     public int HitID = -1;
     public DamageNumberMain DnM = null;
     public DamageReciever dR = null;
+    public EnemyHP eHP = null;
+    public BaseHPSet bHS;
     // Start is called before the first frame update
     void Start()
     {
-        
         if(gameObject.GetComponent<Transform>().tag == "Enemy")
         {
             isEnemy = true;
             DnM = GameObject.FindGameObjectWithTag("HitDisplayCanv").GetComponent<DamageNumberMain>();
             dR = GetComponent<DamageReciever>();
+            eHP = GetComponent<EnemyHP>();
+            SetHP();
         }
+    }
+
+    void SetHP()
+    {
+        eHP.SetStartHP(bHS.baseMaxHP * bHS.hpMulti);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -42,4 +50,11 @@ public class EnemyDamageTake : MonoBehaviour
         }
         
     }
+}
+
+[System.Serializable]
+public class BaseHPSet
+{
+    public float baseMaxHP;
+    public float hpMulti;
 }
