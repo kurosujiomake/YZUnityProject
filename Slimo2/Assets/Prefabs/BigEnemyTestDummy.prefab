@@ -502,6 +502,10 @@ MonoBehaviour:
   HitID: -1
   DnM: {fileID: 0}
   dR: {fileID: 0}
+  eHP: {fileID: 0}
+  bHS:
+    baseMaxHP: 0
+    hpMulti: 0
 --- !u!114 &389254983349222143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -584,6 +588,7 @@ MonoBehaviour:
   - {fileID: 6870324990156442171, guid: f4529544cf569ba4ea62effb6559ba9f, type: 3}
   hitEffectID: 1
   baseScript: {fileID: 0}
+  eHP: {fileID: 0}
 --- !u!114 &839843541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -647,7 +652,7 @@ MonoBehaviour:
   SearchDist: 15
   DeAggroDist: 20
   aggroSpdInc: 1.2
-  atkRange: 2
+  atkRange: 1
   hasAtked: 0
   atkCD: 0.2
   meleeAtkHitBox: {fileID: 1818729909}
