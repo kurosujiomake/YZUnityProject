@@ -7599,26 +7599,18 @@ Transform:
   m_Father: {fileID: 608463855}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1569908390 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5059826141286986913, guid: 1031ba9322eed7d4b91cb7a64a544e0c,
+--- !u!114 &1569908397 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1569908397, guid: 1031ba9322eed7d4b91cb7a64a544e0c,
     type: 3}
   m_PrefabInstance: {fileID: 5059826141191371415}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1569908397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1569908390}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 92ff66ca6f8f89a46a2c936b3973006b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DefaultTimescale: 1
-  gTimeStop: 0
 --- !u!1 &1603131814
 GameObject:
   m_ObjectHideFlags: 0
@@ -9933,11 +9925,6 @@ PrefabInstance:
       objectReference: {fileID: 2029370201}
     - target: {fileID: 5059826141286986912, guid: 1031ba9322eed7d4b91cb7a64a544e0c,
         type: 3}
-      propertyPath: backgrounds.Array.data[1]
-      value: 
-      objectReference: {fileID: 710143557}
-    - target: {fileID: 5059826141286986912, guid: 1031ba9322eed7d4b91cb7a64a544e0c,
-        type: 3}
       propertyPath: camera
       value: 
       objectReference: {fileID: 1639337650}
@@ -10021,11 +10008,6 @@ PrefabInstance:
       propertyPath: backgrounds.Array.data[0]
       value: 
       objectReference: {fileID: 2029370201}
-    - target: {fileID: 5059826141286986927, guid: 1031ba9322eed7d4b91cb7a64a544e0c,
-        type: 3}
-      propertyPath: backgrounds.Array.data[1]
-      value: 
-      objectReference: {fileID: 710143557}
     - target: {fileID: 5059826141286986927, guid: 1031ba9322eed7d4b91cb7a64a544e0c,
         type: 3}
       propertyPath: camera
