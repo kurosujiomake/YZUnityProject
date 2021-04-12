@@ -41,7 +41,11 @@ public class AerialCombo : StateMachineBehaviour
         switch(isNotAtkState) //setting attack triggers for aerial
         {
             case true:
-                pCN.SetPState(1);
+                if(!param.m_isADashing)
+                {
+                    pCN.SetPState(1);
+                }
+                
                 if (pCM.GetButtonDown("Atk1"))
                 {
                     if (animator.GetInteger("AComboNum") <= maxAirCombo && animator.GetInteger("WepType") == 0)

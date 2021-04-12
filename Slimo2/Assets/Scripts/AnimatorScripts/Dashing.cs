@@ -7,6 +7,7 @@ public class Dashing : StateMachineBehaviour
     private Parameters m_param = null;
     private GroundChecker g = null;
     private PlayerControlManager pCM = null;
+    private PlayerDamageTakeCycles pDTC = null;
     
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -14,6 +15,16 @@ public class Dashing : StateMachineBehaviour
         pCM = GameObject.FindGameObjectWithTag("pControlManager").GetComponent<PlayerControlManager>();
         m_param = animator.GetComponent<Parameters>();
         g = animator.GetComponent<GroundChecker>();
+        pDTC = animator.GetComponent<PlayerDamageTakeCycles>();
+        switch(g.ReturnGroundCheck())
+        {
+            case true:
+                pDTC.InvincibilityTimer(m_param.m_DashInvinTime);
+                break;
+            case false:
+                pDTC.InvincibilityTimer(m_param.m_ADashInvinTime);
+                break;
+        }
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

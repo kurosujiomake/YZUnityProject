@@ -1789,7 +1789,6 @@ GameObject:
   - component: {fileID: 199465334998370276}
   - component: {fileID: 1389243926}
   - component: {fileID: 2029075663}
-  - component: {fileID: 5066319322877277166}
   - component: {fileID: 1992590772}
   - component: {fileID: 1499148894918841658}
   - component: {fileID: 7145002463949802156}
@@ -1932,11 +1931,13 @@ MonoBehaviour:
   m_GDTime: 0.15
   m_canGDash: 1
   m_isDashing: 0
+  m_DashInvinTime: 1
   m_DashMax: 4
   m_ADSpd: 30
-  m_ADTime: 0.2
+  m_ADTime: 0.25
   m_canADash: 1
   m_isADashing: 0
+  m_ADashInvinTime: 0.2
   m_canBTP: 1
   m_maxTeleDist: 150
   m_teleTargetTag: TeleTarget
@@ -2022,33 +2023,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &5066319322877277166
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3727145088433499907}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07f4e3ecb78ffe84e889effc8adf9500, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SpAtks:
-  - SkillName: 
-    skillID: 0
-    CD: 0
-    CanUseAtk: 0
-  - SkillName: 
-    skillID: 0
-    CD: 0
-    CanUseAtk: 0
-  UltAtk:
-    SkillName: 
-    skillID: 0
-    CD: 0
-    CanUseAtk: 0
-  Data: {fileID: 11400000, guid: 7a145e295caa6e24ebc58788929e4e01, type: 2}
 --- !u!114 &1992590772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2774,6 +2748,8 @@ MonoBehaviour:
   rb2d: {fileID: 0}
   kbD: {fileID: 11400000, guid: 8755d63d46f82d348b13a4db7f9f220d, type: 2}
   playerKBMulti: 50
+  isInvincible: 0
+  hStop: {fileID: 0}
 --- !u!1 &3772932790477469332
 GameObject:
   m_ObjectHideFlags: 0

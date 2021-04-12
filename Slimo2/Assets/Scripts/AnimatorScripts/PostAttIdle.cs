@@ -12,12 +12,10 @@ public class PostAttIdle : StateMachineBehaviour
     private GroundChecker g = null;
     [SerializeField] private bool isFinalPATT = false;
     [SerializeField] private bool attPressed = false;
-    private SpecialAttackParameters spParam;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         pCN = animator.GetComponent<PlayerControllerNew>();
-        spParam = animator.GetComponent<SpecialAttackParameters>();
         pCM = GameObject.FindGameObjectWithTag("pControlManager").GetComponent<PlayerControlManager>();
         g = animator.GetComponent<GroundChecker>();
         //animator.SetBool("IsAttacking", false);
@@ -156,10 +154,7 @@ public class PostAttIdle : StateMachineBehaviour
         }
         if (timer > 0)
             timer -= Time.deltaTime;
-        if (pCM.GetButtonDown("Atk2") && spParam.SpAtks[0].CanUseAtk && animator.GetInteger("ComboNum") >= 4)
-        {
-            animator.SetTrigger("SpAtk");
-        }
+        
         if(pCM.GetButtonDown("Atk3"))
         {
             animator.SetTrigger("SwordUlt");

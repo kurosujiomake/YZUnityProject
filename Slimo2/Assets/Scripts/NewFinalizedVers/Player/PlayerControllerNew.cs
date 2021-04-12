@@ -51,6 +51,7 @@ public class PlayerControllerNew : MonoBehaviour
     }
     void Update()
     {
+        ResetGroundAtkTriggers();
         switch(pContC)
         {
             case cutsceneC.player:
@@ -240,9 +241,9 @@ public class PlayerControllerNew : MonoBehaviour
     void AirDash()
     {
         m_param.m_isADashing = true;
+        pControl = controlType.noPlayer;
         sp.StartTrail(facingRight);
         StartCoroutine(DashCycle(pCM.GetDirectionL(), m_param.m_ADSpd, m_param.m_ADTime, 1));
-        pControl = controlType.noPlayer;
         r2D.gravityScale = 0;
     }
     void BlinkTeleport()
@@ -464,5 +465,14 @@ public class PlayerControllerNew : MonoBehaviour
     public void InterruptDash()
     {
         StopAllCoroutines();
+    }
+    void ResetGroundAtkTriggers()
+    {
+        if(!g.ReturnGroundCheck())
+        {
+            anim.ResetTrigger("GDashAtk");
+            anim.ResetTrigger("SwKnockUp");
+            anim.SetBool("GDashAtkF", false);
+        }
     }
 }

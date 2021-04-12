@@ -249,10 +249,18 @@ public class BaseEnemyScript : MonoBehaviour
             case AtkTarg.none:
                 break;
             case AtkTarg.target:
-                if(targetTrans != null)
+                if(!hasAtked)
                 {
-                    GetComponentInChildren<EnemyProjFire>().AddTarget(targetTrans);
-                    anim.SetTrigger("AtkRanged1");
+                    if (targetTrans != null)
+                    {
+                        GetComponentInChildren<EnemyProjFire>().AddTarget(targetTrans);
+                        anim.SetTrigger("AtkRanged1");
+                        hasAtked = true;
+                    }
+                }
+                if(hasAtked)
+                {
+                    Transitioning(EnemyStates.AtkIdle);
                 }
                 break;
             case AtkTarg.noTar:

@@ -40,12 +40,14 @@ public class Parameters : MonoBehaviour
     public float m_GDTime = 0;
     public bool m_canGDash = true;
     public bool m_isDashing = false;
+    public float m_DashInvinTime = 0;
     [Header("Variables Related to Aerial Dash")]
     public int m_DashMax = 0;
     public float m_ADSpd = 0;
     public float m_ADTime = 0;
     public bool m_canADash = true;
     public bool m_isADashing = false;
+    public float m_ADashInvinTime = 0;
     [Header("Variables Related to Blink Teleport")]
     public bool m_canBTP = true;
     public float m_maxTeleDist = 0;

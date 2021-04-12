@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public GameObject EquipUI;
     public GameObject Player;
     public PlayerControlManager pCM;
+    public HitStop hStop = null;
     public enum GameState
     {
         Gameplay,
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour
         EquipUI.GetComponent<EquipUINew>().UpdateCursor();
         EquipUI.GetComponent<EquipUINew>().SlotIDSet();
         EquipUI.SetActive(false);
+        hStop = GetComponent<HitStop>();
     }
 
     // Update is called once per frame
@@ -28,10 +30,12 @@ public class GameManager : MonoBehaviour
         switch(gState)
         {
             case GameState.Gameplay:
-                Time.timeScale = 1;
+                if (!hStop.gTimeStop)
+                {
+                    Time.timeScale = 1;
+                }
                 Player.GetComponent<Animator>().SetBool("IsGamePlay", true);
                 Player.GetComponent<Animator>().speed = 1;
-                //Player.GetComponent<PlayerControllerNew>().SetPState(1);
                 if(pCM.GetButtonDown("Inv"))
                 {
                     ToggleEquipUI();
@@ -44,7 +48,6 @@ public class GameManager : MonoBehaviour
                 SelectionChangeInput();
                 Player.GetComponent<Animator>().SetBool("IsGamePlay", false);
                 Player.GetComponent<Animator>().speed = 0;
-                //Player.GetComponent<PlayerControllerNew>().SetPState(0);
                 if (pCM.GetButtonDown("Inv"))
                 {
                     ToggleEquipUI();
