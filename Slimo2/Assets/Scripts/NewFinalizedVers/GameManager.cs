@@ -35,7 +35,10 @@ public class GameManager : MonoBehaviour
                     Time.timeScale = 1;
                 }
                 Player.GetComponent<Animator>().SetBool("IsGamePlay", true);
-                Player.GetComponent<Animator>().speed = 1;
+                if(!hStop.uTimeStop)
+                {
+                    Player.GetComponent<Animator>().speed = 1;
+                }
                 if(pCM.GetButtonDown("Inv"))
                 {
                     ToggleEquipUI();

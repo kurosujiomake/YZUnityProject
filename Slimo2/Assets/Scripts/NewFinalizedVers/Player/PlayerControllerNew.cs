@@ -25,6 +25,7 @@ public class PlayerControllerNew : MonoBehaviour
     private float disty = 100;
     public GameObject dashEffect= null;
     private int wepSwapID;
+    public PlayerDamageTakeCycles pDTC = null;
     public enum controlType
     {
         player,
@@ -42,6 +43,7 @@ public class PlayerControllerNew : MonoBehaviour
     void Awake()
     {
         pCM = GameObject.FindGameObjectWithTag("pControlManager").GetComponent<PlayerControlManager>();
+        pDTC = GetComponent<PlayerDamageTakeCycles>();
         m_param = GetComponent<Parameters>();
         r2D = GetComponent<Rigidbody2D>();
         g = GetComponent<GroundChecker>();
@@ -227,6 +229,7 @@ public class PlayerControllerNew : MonoBehaviour
             m_param.m_isDashing = true;
             sp.StartTrail(facingRight);
             pControl = controlType.noPlayer;
+            pDTC.InvincibilityTimer(m_param.m_DashInvinTime);
             switch (facingRight)
             {
                 case true:
@@ -242,6 +245,7 @@ public class PlayerControllerNew : MonoBehaviour
     {
         m_param.m_isADashing = true;
         pControl = controlType.noPlayer;
+        pDTC.InvincibilityTimer(m_param.m_ADashInvinTime);
         sp.StartTrail(facingRight);
         StartCoroutine(DashCycle(pCM.GetDirectionL(), m_param.m_ADSpd, m_param.m_ADTime, 1));
         r2D.gravityScale = 0;

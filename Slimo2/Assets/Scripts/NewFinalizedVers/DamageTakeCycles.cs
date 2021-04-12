@@ -105,11 +105,13 @@ public class DamageTakeCycles : MonoBehaviour
                 }
                 if (h.Hit_ID != curHitID) //this object has not been hit already
                 {
-                    //Debug.Log("DetectedHitbox");
                     KBID = h.curKBNum;
                     curHitID = h.Hit_ID;
+                    if(collision.GetComponentInParent<HeavyAttHitStop>() != null)
+                    {
+                        collision.GetComponentInParent<HeavyAttHitStop>().CheckIfHitStop();
+                    }
                     StartKBCycle();
-                    //Debug.Log("Got hit with kb id of " + KBID);
                 }
             }
             

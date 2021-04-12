@@ -33,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 7587254370290894722}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.52735, y: 0.52735, z: 0.52735}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -291,3 +291,5 @@ MonoBehaviour:
   HitCount: 1
   Damage: 251
   eleType: 0
+  isEnemyHitBox: 0
+  enemySource: {fileID: 0}

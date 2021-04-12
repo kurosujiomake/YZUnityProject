@@ -1802,6 +1802,7 @@ GameObject:
   - component: {fileID: 604984014}
   - component: {fileID: 995318638}
   - component: {fileID: 995318657}
+  - component: {fileID: 6578931868720093782}
   m_Layer: 9
   m_Name: PlayerNew
   m_TagString: Player
@@ -1908,7 +1909,7 @@ MonoBehaviour:
   wepTypeID: 0
   AttButtonName: Fire1
   enemyProx: 5
-  AT: 1
+  AT: 3
   AttackDamage: 0
   PrevHitBoxID: 0000000000000000
   m_projOrigin: {fileID: 8785769305542989578}
@@ -1937,7 +1938,7 @@ MonoBehaviour:
   m_ADTime: 0.25
   m_canADash: 1
   m_isADashing: 0
-  m_ADashInvinTime: 0.2
+  m_ADashInvinTime: 0.3
   m_canBTP: 1
   m_maxTeleDist: 150
   m_teleTargetTag: TeleTarget
@@ -1976,6 +1977,7 @@ MonoBehaviour:
   c: {fileID: 0}
   dashEffect: {fileID: 4181417876005420660, guid: d1ff9dcd336ebc34a9d99b2f7cf26898,
     type: 3}
+  pDTC: {fileID: 0}
   pControl: 0
   pContC: 0
 --- !u!61 &1389243926
@@ -2750,6 +2752,21 @@ MonoBehaviour:
   playerKBMulti: 50
   isInvincible: 0
   hStop: {fileID: 0}
+--- !u!114 &6578931868720093782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3727145088433499907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c28f4857c46635048be7a092e7dc032f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isHeavyAtkOn: 0
+  hStop: {fileID: 0}
+  heavyHitStopDur: 0.1
 --- !u!1 &3772932790477469332
 GameObject:
   m_ObjectHideFlags: 0

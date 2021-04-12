@@ -246,3 +246,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DefaultTimescale: 1
   gTimeStop: 0
+  uTimeStop: 0

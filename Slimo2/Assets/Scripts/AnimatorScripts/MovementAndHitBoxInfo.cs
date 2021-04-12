@@ -10,10 +10,13 @@ public class MovementAndHitBoxInfo: StateMachineBehaviour
     public int[] HitIDs = new int[2];
     public bool hasSetID = false;
     public KBInfoPass kbInfo = null;
+    public bool isHeavyAtk = false;
+    public HeavyAttHitStop hHS = null;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         kbInfo = animator.GetComponentInChildren<KBInfoPass>();
+        hHS = animator.GetComponent<HeavyAttHitStop>();
         hasSetID = false;
         if(nAM == null)
         {
@@ -26,6 +29,7 @@ public class MovementAndHitBoxInfo: StateMachineBehaviour
             //kbInfo.KB_ID = kbIDs[kbInfo.curKBNum];
             kbInfo.Hit_ID = IDRandomizer();
         }
+        hHS.HeavyAtkSet(isHeavyAtk);
     }
     
     int IDRandomizer()
@@ -62,6 +66,7 @@ public class MovementAndHitBoxInfo: StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         nAM.DeactivateAtk();
+        hHS.HeavyAtkSet(false);
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
