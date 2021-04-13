@@ -52,6 +52,8 @@ MonoBehaviour:
   WarpDestInt: 0
   WarpCD: 1
   canWarp: 0
+  screenTransitionTimeToReset: 0.85
+  screenTransitionEffect: {fileID: 0}
 --- !u!61 &5773918536866627639
 BoxCollider2D:
   m_ObjectHideFlags: 0
