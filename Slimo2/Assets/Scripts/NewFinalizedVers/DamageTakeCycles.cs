@@ -6,11 +6,9 @@ public class DamageTakeCycles : MonoBehaviour
 {
     [SerializeField]
     private Rigidbody2D rig2D = null;
-    public GameObject hitParticles = null;
     public Transform point = null;
     [SerializeField]
     private int curHitID = 0;
-    public float particleDuration = 0;
     public KBDatabase kbDatabase = null;
     public int KBID;
     private bool enemyFacingRight = true;
@@ -38,12 +36,7 @@ public class DamageTakeCycles : MonoBehaviour
             StartCoroutine(AerialKB(KBID));
         }
     }
-    private IEnumerator particleSpawn(float _dur)
-    {
-        GameObject clone = Instantiate(hitParticles, point.position, Quaternion.identity) as GameObject; //spawns hit particle
-        yield return new WaitForSeconds(_dur);
-        Destroy(clone);
-    }
+    
     private IEnumerator GroundedKB(int _KBID)
     {
         //Debug.Log("Knockback is being applied");

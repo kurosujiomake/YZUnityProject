@@ -287,9 +287,10 @@ MonoBehaviour:
   SourceID: 0
   SetHitID: 0
   curKBNum: 0
-  isProj: 0
+  isProj: 1
   HitCount: 1
   Damage: 251
   eleType: 0
+  hType: 0
   isEnemyHitBox: 0
   enemySource: {fileID: 0}

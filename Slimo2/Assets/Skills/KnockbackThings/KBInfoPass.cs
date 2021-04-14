@@ -12,6 +12,7 @@ public class KBInfoPass : MonoBehaviour
     public int HitCount = 1;
     public float Damage = 251;
     public int eleType;
+    public HitType hType;
 
     [Header("This section is for enemy use")]
     public bool isEnemyHitBox = false;
@@ -28,4 +29,11 @@ public class KBInfoPass : MonoBehaviour
             Destroy(gameObject);
     }
     
+}
+[System.Serializable]
+public enum HitType
+{
+    Generic,
+    Slashing,
+    Piercing
 }

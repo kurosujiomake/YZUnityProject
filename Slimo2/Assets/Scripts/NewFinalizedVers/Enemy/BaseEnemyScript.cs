@@ -258,6 +258,7 @@ public class BaseEnemyScript : MonoBehaviour
                         hasAtked = true;
                     }
                 }
+                
                 if(hasAtked)
                 {
                     Transitioning(EnemyStates.AtkIdle);

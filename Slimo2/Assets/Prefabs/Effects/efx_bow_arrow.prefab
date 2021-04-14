@@ -162,6 +162,9 @@ MonoBehaviour:
   HitCount: 1
   Damage: 251
   eleType: 0
+  hType: 2
+  isEnemyHitBox: 0
+  enemySource: {fileID: 0}
 --- !u!70 &3143772619783739056
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

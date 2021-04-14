@@ -11,8 +11,10 @@ public class DamageReciever : MonoBehaviour
     private Coroutine bleedC, shockC, slowC, freezeC, burnC, poisonC;
     public GameObject[] OnHitEffects;
     public int hitEffectID;
+    public float[] slashRotRand = new float[2];
     public BaseEnemyScript baseScript;
     public EnemyHP eHP = null;
+    public Transform particleSpawnPoint = null;
     void Awake()
     {
         dNM = GameObject.FindGameObjectWithTag("HitDisplayCanv").GetComponent<DamageNumberMain>();
@@ -27,20 +29,31 @@ public class DamageReciever : MonoBehaviour
         }
 
     }
-    public void TakeDamage(float finalDmg, int element, bool isCrit, int HitCount) //this actually takes the dmg after calculations
+    public void TakeDamage(float finalDmg, int element, bool isCrit, int HitCount, HitType _hType) //this actually takes the dmg after calculations
     {
         for (int i = 0; i < HitCount; i++)
         {
             dNM.DisplayUpdate(CalcDmg(finalDmg, element, isCrit), 1);
-            SpawnHitEffect();
+            SpawnHitEffect(_hType);
             baseScript.GotHurt(finalDmg);
-            eHP.TakeDamage(1, finalDmg);
+            eHP.TakeDamage(1, CalcDmg(finalDmg, element, isCrit));
         }
         
     }
-    void SpawnHitEffect()
+    void SpawnHitEffect(HitType hType)
     {
-        Instantiate(OnHitEffects[hitEffectID], transform.position, Quaternion.identity);
+        switch(hType)
+        {
+            case HitType.Generic:
+                break;
+            case HitType.Slashing:
+                Vector3 r = new Vector3(0, 0, Random.Range(slashRotRand[0], slashRotRand[1]));
+                Instantiate(OnHitEffects[1], particleSpawnPoint.position, Quaternion.Euler(r));
+                break;
+            case HitType.Piercing:
+                Instantiate(OnHitEffects[2], particleSpawnPoint.position, Quaternion.identity);
+                break;
+        }
     }
     public float CalcDmg(float _dmgInput, int _eleType, bool isCrit) //for damage calcs that involve ele type
     {

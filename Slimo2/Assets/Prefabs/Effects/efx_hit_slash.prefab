@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 182018733527812644}
   - component: {fileID: 182018733527812645}
   - component: {fileID: 182018733527812646}
+  - component: {fileID: -2481460095792204688}
   m_Layer: 0
   m_Name: efx_hit_slash
   m_TagString: Untagged
@@ -4817,3 +4818,16 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &-2481460095792204688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 182018733527812647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 601f6e131c069774ab07fdcfb4044aed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 2

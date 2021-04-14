@@ -166,6 +166,9 @@ MonoBehaviour:
   HitCount: 1
   Damage: 251
   eleType: 0
+  hType: 2
+  isEnemyHitBox: 0
+  enemySource: {fileID: 0}
 --- !u!114 &4350924799381489657
 MonoBehaviour:
   m_ObjectHideFlags: 0

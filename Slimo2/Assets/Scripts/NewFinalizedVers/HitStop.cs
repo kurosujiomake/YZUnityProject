@@ -32,7 +32,6 @@ public class HitStop : MonoBehaviour
     }
     IEnumerator GlobalTimer(float dur)
     {
-        print("running global hitstop for " + dur + " seconds");
         yield return new WaitForSecondsRealtime(dur);
         Time.timeScale = DefaultTimescale;
         gTimeStop = false;

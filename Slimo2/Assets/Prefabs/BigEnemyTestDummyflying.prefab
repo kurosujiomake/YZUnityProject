@@ -455,11 +455,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rig2D: {fileID: 0}
-  hitParticles: {fileID: 2048862485936091876, guid: 5505453c66843364ba34d85274ede68c,
-    type: 3}
   point: {fileID: 6177986477270015399}
   curHitID: 0
-  particleDuration: 0.05
   kbDatabase: {fileID: 11400000, guid: 8755d63d46f82d348b13a4db7f9f220d, type: 2}
   KBID: 0
 --- !u!114 &5826097365442007212
@@ -521,10 +518,15 @@ MonoBehaviour:
   dNM: {fileID: 0}
   OnHitEffects:
   - {fileID: 2048862485936091876, guid: 5505453c66843364ba34d85274ede68c, type: 3}
+  - {fileID: 182018733527812647, guid: d6727429621a2d44eabac37ad9d321d7, type: 3}
   - {fileID: 6870324990156442171, guid: f4529544cf569ba4ea62effb6559ba9f, type: 3}
   hitEffectID: 1
+  slashRotRand:
+  - 0
+  - 360
   baseScript: {fileID: 0}
   eHP: {fileID: 0}
+  particleSpawnPoint: {fileID: 6177986477270015399}
 --- !u!114 &5826097367196053644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -735,7 +737,7 @@ MonoBehaviour:
   projID: 7
   projAmt: 1
   projSpd: 350
-  projLifeTime: 2
+  projLifeTime: 1
   inBetweenDelay: 0.2
   projSpawnPoint: {fileID: 766926535305467697}
   kbID: 4

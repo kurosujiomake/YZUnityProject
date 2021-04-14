@@ -393,6 +393,7 @@ MonoBehaviour:
   HitCount: 1
   Damage: 251
   eleType: 0
+  hType: 0
   isEnemyHitBox: 1
   enemySource: {fileID: 389254983349222113}
 --- !u!1 &1847553249
@@ -522,7 +523,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 389254982791681023}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.24}
+  m_LocalPosition: {x: 0, y: 1.19, z: -0.24}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 389254983349222112}
@@ -709,11 +710,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rig2D: {fileID: 0}
-  hitParticles: {fileID: 2048862485936091876, guid: 5505453c66843364ba34d85274ede68c,
-    type: 3}
   point: {fileID: 389254982791681022}
   curHitID: 0
-  particleDuration: 0.05
   kbDatabase: {fileID: 11400000, guid: 8755d63d46f82d348b13a4db7f9f220d, type: 2}
   KBID: 0
 --- !u!114 &1518558965
@@ -775,10 +773,15 @@ MonoBehaviour:
   dNM: {fileID: 0}
   OnHitEffects:
   - {fileID: 2048862485936091876, guid: 5505453c66843364ba34d85274ede68c, type: 3}
+  - {fileID: 182018733527812647, guid: d6727429621a2d44eabac37ad9d321d7, type: 3}
   - {fileID: 6870324990156442171, guid: f4529544cf569ba4ea62effb6559ba9f, type: 3}
   hitEffectID: 1
+  slashRotRand:
+  - 0
+  - 360
   baseScript: {fileID: 0}
   eHP: {fileID: 0}
+  particleSpawnPoint: {fileID: 389254982791681022}
 --- !u!114 &839843541
 MonoBehaviour:
   m_ObjectHideFlags: 0

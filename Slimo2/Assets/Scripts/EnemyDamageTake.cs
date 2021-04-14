@@ -42,7 +42,7 @@ public class EnemyDamageTake : MonoBehaviour
                     if(h.SourceID == 0 || h.SourceID == 3) //0 is player source, 3 is hit everything
                     {
                         HitID = h.Hit_ID; //set hit id so it doesnt get hit by this box again
-                        dR.TakeDamage(c.dmgData.ReturnFloatValues("dmg"), c.dmgData.ReturnIntValues("ele"), c.dmgData.ReturnBools("crit"), c.dmgData.ReturnIntValues("hitCount"));
+                        dR.TakeDamage(c.dmgData.ReturnFloatValues("dmg"), c.dmgData.ReturnIntValues("ele"), c.dmgData.ReturnBools("crit"), c.dmgData.ReturnIntValues("hitCount"), h.hType);
                     }
                     
                 }

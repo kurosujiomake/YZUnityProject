@@ -74,7 +74,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1610947611
-  m_SortingLayer: 4
+  m_SortingLayer: -1
   m_SortingOrder: 2
   m_Sprite: {fileID: -5052097712636932969, guid: a57e9a78b1c066541ae5ff7063039686,
     type: 3}
@@ -164,6 +164,9 @@ MonoBehaviour:
   HitCount: 1
   Damage: 251
   eleType: 0
+  hType: 1
+  isEnemyHitBox: 0
+  enemySource: {fileID: 0}
 --- !u!114 &4238584090792187797
 MonoBehaviour:
   m_ObjectHideFlags: 0

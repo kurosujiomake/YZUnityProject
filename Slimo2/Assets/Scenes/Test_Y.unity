@@ -9255,6 +9255,7 @@ MonoBehaviour:
   HitCount: 1
   Damage: 251
   eleType: 0
+  hType: 0
   isEnemyHitBox: 0
   enemySource: {fileID: 0}
 --- !u!70 &1448279059
@@ -9881,6 +9882,7 @@ MonoBehaviour:
   HitCount: 1
   Damage: 251
   eleType: 0
+  hType: 0
   isEnemyHitBox: 0
   enemySource: {fileID: 0}
 --- !u!70 &1603131816
@@ -10623,6 +10625,7 @@ MonoBehaviour:
   HitCount: 1
   Damage: 251
   eleType: 0
+  hType: 0
   isEnemyHitBox: 0
   enemySource: {fileID: 0}
 --- !u!70 &1923409975
