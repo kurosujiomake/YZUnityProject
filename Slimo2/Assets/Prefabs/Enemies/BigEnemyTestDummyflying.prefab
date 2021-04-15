@@ -577,6 +577,8 @@ MonoBehaviour:
   isVulnerable: 0
   hurtDuration: 2
   gotHurt: 0
+  deathDuration: 1
+  isDead: 0
   aggro: 2
   aType: 1
   targetType: 1
@@ -625,6 +627,7 @@ MonoBehaviour:
   CurHP: 0
   isDead: 0
   hpBar: {fileID: 0}
+  isActive: 0
 --- !u!1 &6177986476393903341
 GameObject:
   m_ObjectHideFlags: 0

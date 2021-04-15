@@ -45,6 +45,8 @@ public class BaseEnemyScript : MonoBehaviour
     public float hurtDuration;
     public bool gotHurt;
     private float t2;
+    public float deathDuration;
+    public bool isDead = false;
 
     //targetting and attacking vars below
     [Header("Targeting and attacking")]
@@ -209,7 +211,10 @@ public class BaseEnemyScript : MonoBehaviour
                 }
                 break;
             case EnemyStates.Death: //the enemy is dying
-
+                isDead = true;
+                anim.SetTrigger("IsDying");
+                StartCoroutine(DeathTime());
+                rb2d.velocity = Vector2.zero;
                 break;
         }
         TimerReset();
@@ -274,7 +279,18 @@ public class BaseEnemyScript : MonoBehaviour
     {
 
     }
-    
+    public void IsDead()
+    {
+        print("enemy is dead");
+        StopAllCoroutines();
+        Transitioning(EnemyStates.Death);
+    }
+    IEnumerator DeathTime()
+    {
+        yield return new WaitForSeconds(deathDuration);
+        Destroy(this.gameObject);
+    }
+
     private bool GroundCheck()
     {
         bool b = false;

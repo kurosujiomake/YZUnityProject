@@ -778,7 +778,7 @@ MonoBehaviour:
   hitEffectID: 1
   slashRotRand:
   - 0
-  - 360
+  - 0
   baseScript: {fileID: 0}
   eHP: {fileID: 0}
   particleSpawnPoint: {fileID: 389254982791681022}
@@ -836,6 +836,8 @@ MonoBehaviour:
   isVulnerable: 1
   hurtDuration: 0.5
   gotHurt: 0
+  deathDuration: 1
+  isDead: 0
   aggro: 2
   aType: 2
   targetType: 0
@@ -884,3 +886,4 @@ MonoBehaviour:
   CurHP: 0
   isDead: 0
   hpBar: {fileID: 0}
+  isActive: 0

@@ -1393,6 +1393,7 @@ MonoBehaviour:
   HitCount: 1
   Damage: 251
   eleType: 0
+  hType: 1
   isEnemyHitBox: 0
   enemySource: {fileID: 0}
 --- !u!114 &6674623593403435189
@@ -2730,8 +2731,12 @@ MonoBehaviour:
   dNM: {fileID: 0}
   OnHitEffects: []
   hitEffectID: 0
+  slashRotRand:
+  - 0
+  - 0
   baseScript: {fileID: 0}
   eHP: {fileID: 0}
+  particleSpawnPoint: {fileID: 0}
 --- !u!114 &995318657
 MonoBehaviour:
   m_ObjectHideFlags: 0

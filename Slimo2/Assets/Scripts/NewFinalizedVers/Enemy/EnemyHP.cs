@@ -11,6 +11,7 @@ public class EnemyHP : MonoBehaviour
     [SerializeField]
     private bool isDead;
     public HPBar hpBar;
+    public bool isActive = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +21,11 @@ public class EnemyHP : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(isActive && isDead)
+        {
+            GetComponent<BaseEnemyScript>().IsDead();
+            isActive = false;
+        }
     }
     public bool ReturnIsDead()
     {
@@ -79,7 +84,8 @@ public class EnemyHP : MonoBehaviour
         MaxHP = value;
         CurHP = value;
         isDead = false;
-        hpBar.SetHP(MaxHP, CurHP); 
+        hpBar.SetHP(MaxHP, CurHP);
+        isActive = true;
     }
     private void DeathCheck()
     {

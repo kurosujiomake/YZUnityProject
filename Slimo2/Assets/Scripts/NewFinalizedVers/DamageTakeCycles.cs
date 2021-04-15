@@ -81,7 +81,7 @@ public class DamageTakeCycles : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.GetComponent<KBInfoPass>() != null)
+        if(collision.GetComponent<KBInfoPass>() != null && !GetComponent<BaseEnemyScript>().isDead)
         {
             var h = collision.GetComponent<KBInfoPass>();
             if(h.SourceID == 0 || h.SourceID == 3) //checks that the hitbox can hit enemies
