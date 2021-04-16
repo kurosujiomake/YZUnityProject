@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61d33558bbcc8a844bb628ef61dfcd81, type: 3}
   m_Name: BasicAirEnemy1
   m_EditorClassIdentifier: 
-  name: 
+  name: Basic Air enemy
   e_ID: 0
   prefab: {fileID: 6177986475663389880, guid: 31f10380c2066f24abbad7a6ab597436, type: 3}

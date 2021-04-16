@@ -885,5 +885,5 @@ MonoBehaviour:
   MaxHP: 0
   CurHP: 0
   isDead: 0
-  hpBar: {fileID: 0}
+  hpBar: {fileID: 1655512886}
   isActive: 0

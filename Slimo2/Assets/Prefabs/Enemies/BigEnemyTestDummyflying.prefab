@@ -626,7 +626,7 @@ MonoBehaviour:
   MaxHP: 0
   CurHP: 0
   isDead: 0
-  hpBar: {fileID: 0}
+  hpBar: {fileID: 1427176699958132784}
   isActive: 0
 --- !u!1 &6177986476393903341
 GameObject:
