@@ -7,7 +7,14 @@ public class HitStop : MonoBehaviour
     public float DefaultTimescale;
     public bool gTimeStop = false;
     public bool uTimeStop = false;
+    [Header("Hit-stop Effect")]
+    public float effectTimeToReset = 0;
+    public GameObject hitStopEffect;
 
+    void Start()      
+    {
+        hitStopEffect.SetActive(false); // hitstop effect
+    }
     public void UnitSpecificHitStop(GameObject unit, float dur)
     {
         uTimeStop = true;
@@ -17,6 +24,7 @@ public class HitStop : MonoBehaviour
 
     public void GlobalHitStop(float dur, float slowdownRate)
     {
+        hitStopEffect.SetActive(true); // hitstop effect
         StopAllCoroutines();
         Time.timeScale = slowdownRate;
         gTimeStop = true;
@@ -35,5 +43,6 @@ public class HitStop : MonoBehaviour
         yield return new WaitForSecondsRealtime(dur);
         Time.timeScale = DefaultTimescale;
         gTimeStop = false;
+        hitStopEffect.SetActive(false);
     }
 }
