@@ -247,3 +247,5 @@ MonoBehaviour:
   DefaultTimescale: 1
   gTimeStop: 0
   uTimeStop: 0
+  effectTimeToReset: 1
+  hitStopEffect: {fileID: 0}
