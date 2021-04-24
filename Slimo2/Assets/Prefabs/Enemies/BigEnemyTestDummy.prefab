@@ -547,6 +547,7 @@ GameObject:
   - component: {fileID: 839843541}
   - component: {fileID: 1251088644599737922}
   - component: {fileID: 1957649898}
+  - component: {fileID: 1105123136022376626}
   m_Layer: 10
   m_Name: BigEnemyTestDummy
   m_TagString: Enemy
@@ -887,3 +888,19 @@ MonoBehaviour:
   isDead: 0
   hpBar: {fileID: 1655512886}
   isActive: 0
+--- !u!114 &1105123136022376626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389254983349222113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0bf8aba881c7ac4ca29f1b2553d728b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb2d: {fileID: 389254983349222141}
+  hStopTime: 0.2
+  originalVel: {x: 0, y: 0, z: 0}
+  anim: {fileID: 1251088644599737922}

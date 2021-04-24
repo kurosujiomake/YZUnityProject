@@ -45,6 +45,10 @@ public class EnemyDamageTake : MonoBehaviour
                         {
                             HitID = h.Hit_ID; //set hit id so it doesnt get hit by this box again
                             dR.TakeDamage(c.dmgData.ReturnFloatValues("dmg"), c.dmgData.ReturnIntValues("ele"), c.dmgData.ReturnBools("crit"), c.dmgData.ReturnIntValues("hitCount"), h.hType);
+                            if(GetComponent<EnemySpecificHitStop>() != null)
+                            {
+                                GetComponent<EnemySpecificHitStop>().CheckforHitStop(collision);
+                            }
                         }
                     }
                     

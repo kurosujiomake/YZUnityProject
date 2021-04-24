@@ -296,6 +296,7 @@ GameObject:
   - component: {fileID: 5826097367196053644}
   - component: {fileID: 9140281108987288036}
   - component: {fileID: 1009215463228336170}
+  - component: {fileID: 2552593301697923816}
   m_Layer: 10
   m_Name: BigEnemyTestDummyflying
   m_TagString: Enemy
@@ -628,6 +629,22 @@ MonoBehaviour:
   isDead: 0
   hpBar: {fileID: 1427176699958132784}
   isActive: 0
+--- !u!114 &2552593301697923816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6177986475663389880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0bf8aba881c7ac4ca29f1b2553d728b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb2d: {fileID: 6177986475663389860}
+  hStopTime: 0.4
+  originalVel: {x: 0, y: 0}
+  anim: {fileID: 9140281108987288036}
 --- !u!1 &6177986476393903341
 GameObject:
   m_ObjectHideFlags: 0
