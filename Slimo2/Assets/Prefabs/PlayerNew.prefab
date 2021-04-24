@@ -528,8 +528,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1610947611
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 5463189583543264802, guid: fcb3d2d4e96ab1b4eafd77a7d2d97c1a,
     type: 3}
@@ -1927,7 +1927,7 @@ MonoBehaviour:
   facingRight: 1
   m_jumpPressed: 0
   m_canJump: 0
-  VerticalSpeed: 16
+  VerticalSpeed: 18
   m_GDCD: 2
   m_GDSpd: 45
   m_GDTime: 0.15
@@ -1936,7 +1936,7 @@ MonoBehaviour:
   m_DashInvinTime: 1
   m_DashMax: 4
   m_ADSpd: 30
-  m_ADTime: 0.25
+  m_ADTime: 0.15
   m_canADash: 1
   m_isADashing: 0
   m_ADashInvinTime: 0.3
