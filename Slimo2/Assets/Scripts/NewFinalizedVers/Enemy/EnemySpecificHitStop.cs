@@ -9,6 +9,7 @@ public class EnemySpecificHitStop : MonoBehaviour
     public float hStopTime = 0;
     public Vector2 originalVel;
     public Animator anim = null;
+    public BaseEnemyScript script = null;
 
     public void CheckforHitStop(Collider2D hBox)
     {
@@ -33,12 +34,12 @@ public class EnemySpecificHitStop : MonoBehaviour
     IEnumerator HitStopTimer()
     {
         print("enemy's own hitstop activated");
-        originalVel = rb2d.velocity;
-        rb2d.velocity = Vector2.zero;
+        script.HitStopCall(0);
         anim.speed = 0;
         yield return new WaitForSeconds(hStopTime);
         anim.speed = 1;
-        rb2d.velocity = originalVel;
+        script.HitStopCall(1);
+        GetComponent<DamageTakeCycles>().StartKBCycle();
         hStop = null;
     }
 }

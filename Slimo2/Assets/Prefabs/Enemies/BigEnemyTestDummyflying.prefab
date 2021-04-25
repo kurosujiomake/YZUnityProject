@@ -583,6 +583,7 @@ MonoBehaviour:
   aggro: 2
   aType: 1
   targetType: 1
+  eHS: 0
   hasTarget: 0
   targetTrans: {fileID: 0}
   SearchOrigin: {fileID: 0}
@@ -642,9 +643,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb2d: {fileID: 6177986475663389860}
-  hStopTime: 0.4
+  hStopTime: 0.15
   originalVel: {x: 0, y: 0}
   anim: {fileID: 9140281108987288036}
+  script: {fileID: 5826097367196053644}
 --- !u!1 &6177986476393903341
 GameObject:
   m_ObjectHideFlags: 0

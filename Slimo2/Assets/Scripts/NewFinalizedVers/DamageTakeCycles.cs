@@ -21,7 +21,7 @@ public class DamageTakeCycles : MonoBehaviour
     //hitCount = how many times it hits, hitDelay = delay between hits
     //dir = direction of knockback in degrees
     
-    void StartKBCycle()
+    public void StartKBCycle()
     {
         if(!kbDatabase.Aerial(KBID)) //the kb is not a knockup float type
         {
@@ -103,8 +103,16 @@ public class DamageTakeCycles : MonoBehaviour
                     if(collision.GetComponentInParent<HeavyAttHitStop>() != null)
                     {
                         collision.GetComponentInParent<HeavyAttHitStop>().CheckIfHitStop();
+                        if(!collision.GetComponentInParent<HeavyAttHitStop>().isHeavyAtkOn)
+                        {
+                            StartKBCycle();
+                        }
                     }
-                    StartKBCycle();
+                    if(collision.GetComponentInParent<HeavyAttHitStop>() == null)
+                    {
+                        StartKBCycle();
+                    }
+                    
                 }
             }
             

@@ -842,6 +842,7 @@ MonoBehaviour:
   aggro: 2
   aType: 2
   targetType: 0
+  eHS: 1
   hasTarget: 0
   targetTrans: {fileID: 0}
   SearchOrigin: {fileID: 0}
@@ -901,6 +902,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb2d: {fileID: 389254983349222141}
-  hStopTime: 0.2
-  originalVel: {x: 0, y: 0, z: 0}
+  hStopTime: 0.15
+  originalVel: {x: 0, y: 0}
   anim: {fileID: 1251088644599737922}
+  script: {fileID: 839843541}

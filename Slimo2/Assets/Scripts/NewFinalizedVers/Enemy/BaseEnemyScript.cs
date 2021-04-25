@@ -53,6 +53,7 @@ public class BaseEnemyScript : MonoBehaviour
     public AggroState aggro;
     public AtkType aType;
     public AtkTarg targetType;
+    public EHitStopState eHS;
     public bool hasTarget;
     public Transform targetTrans, SearchOrigin;
     public float SearchDist;
@@ -77,176 +78,195 @@ public class BaseEnemyScript : MonoBehaviour
 
     void Update()
     {
-        switch(State)
+        switch(eHS)
         {
-            case EnemyStates.None: //no state, nothing happens here, but useful for debugging/exceptions
+            case EHitStopState.go:
+                switch (State)
+                {
+                    case EnemyStates.None: //no state, nothing happens here, but useful for debugging/exceptions
 
-                break;
-            case EnemyStates.Transitions: //do transition stuff like stopping momentum etc here
-                rb2d.velocity = Vector2.zero;
-                //reset animator variables here too
+                        break;
+                    case EnemyStates.Transitions: //do transition stuff like stopping momentum etc here
+                        rb2d.velocity = Vector2.zero;
+                        //reset animator variables here too
 
-                break;
-            case EnemyStates.Idle: //enemy is not moving or doing anything
-                anim.SetBool("IsMoving", false);
-                switch (hasTarget)
-                {
-                    case true:
-                        Transitioning(EnemyStates.Moving2);
                         break;
-                    case false:
-                        Transitioning(defaultStates.defaultMain); //transition back to watever default you have
-                        break;
-                }
-                break;
-            case EnemyStates.Moving: //standard movement
-                anim.SetBool("IsMoving", true);
-                if(aggro != AggroState.Aggro)
-                {
-                    Moving();
-                    switch (moveType)
-                    {
-                        case MovementType.Grounded:
-                            rb2d.gravityScale = baseGravityScale;
-                            break;
-                        case MovementType.Flying:
-                            rb2d.gravityScale = 0; //flying enemies are unaffected by gravity unless hurt
-                            break;
-                    }
-                }
-                if(aggro == AggroState.Aggro) //if the enemy is aggroed on something, go to move state ver 2
-                {
-                    Transitioning(EnemyStates.Moving2);
-                }
-                break;
-            case EnemyStates.Moving2: //secondary movemnt for moving towards player to attack
-                anim.SetBool("IsMoving", true);
-                if(aggro == AggroState.Aggro)
-                {
-                    FlipSpriteDirection(targetTrans); //face the target
-                    if(Mathf.Abs(transform.position.magnitude - targetTrans.position.magnitude) <= atkRange) //if target is close enough to atk
-                    {
-                        if (!hasAtked)
+                    case EnemyStates.Idle: //enemy is not moving or doing anything
+                        anim.SetBool("IsMoving", false);
+                        switch (hasTarget)
                         {
-                            switch (aType)
+                            case true:
+                                Transitioning(EnemyStates.Moving2);
+                                break;
+                            case false:
+                                Transitioning(defaultStates.defaultMain); //transition back to watever default you have
+                                break;
+                        }
+                        break;
+                    case EnemyStates.Moving: //standard movement
+                        anim.SetBool("IsMoving", true);
+                        if (aggro != AggroState.Aggro)
+                        {
+                            Moving();
+                            switch (moveType)
                             {
-                                case AtkType.None:
+                                case MovementType.Grounded:
+                                    rb2d.gravityScale = baseGravityScale;
                                     break;
-                                case AtkType.Melee:
-                                    if (Mathf.Abs(targetTrans.position.y - transform.position.y) < 3) //make sure the target is not too high or below the enemy
-                                    {
-                                        Transitioning(EnemyStates.Attack);
-                                        anim.SetTrigger("Attack");
-                                        Quaternion rot = meleeAtkHitBox.transform.localRotation;
-                                        switch (facingRight)
-                                        {
-                                            case true:
-                                                rot.z = 180;
-                                                meleeAtkHitBox.transform.localRotation = rot;
-                                                break;
-                                            case false:
-                                                rot.z = 0;
-                                                meleeAtkHitBox.transform.localRotation = rot;
-                                                break;
-                                        }
-                                    }
-                                    break;
-                                case AtkType.Ranged:
-                                    RangedAtk();
-                                    break;
-                                case AtkType.Magic:
-
+                                case MovementType.Flying:
+                                    rb2d.gravityScale = 0; //flying enemies are unaffected by gravity unless hurt
                                     break;
                             }
-
                         }
-                        if (hasAtked)
+                        if (aggro == AggroState.Aggro) //if the enemy is aggroed on something, go to move state ver 2
                         {
-                            Transitioning(EnemyStates.AtkIdle);
+                            Transitioning(EnemyStates.Moving2);
                         }
-                        
-                        
-                    }
-                    if (Mathf.Abs(transform.position.magnitude - targetTrans.position.magnitude) >= atkRange)
+                        break;
+                    case EnemyStates.Moving2: //secondary movemnt for moving towards player to attack
+                        anim.SetBool("IsMoving", true);
+                        if (aggro == AggroState.Aggro)
+                        {
+                            FlipSpriteDirection(targetTrans); //face the target
+                            if (Mathf.Abs(transform.position.magnitude - targetTrans.position.magnitude) <= atkRange) //if target is close enough to atk
+                            {
+                                if (!hasAtked)
+                                {
+                                    switch (aType)
+                                    {
+                                        case AtkType.None:
+                                            break;
+                                        case AtkType.Melee:
+                                            if (Mathf.Abs(targetTrans.position.y - transform.position.y) < 3) //make sure the target is not too high or below the enemy
+                                            {
+                                                Transitioning(EnemyStates.Attack);
+                                                anim.SetTrigger("Attack");
+                                                Quaternion rot = meleeAtkHitBox.transform.localRotation;
+                                                switch (facingRight)
+                                                {
+                                                    case true:
+                                                        rot.z = 180;
+                                                        meleeAtkHitBox.transform.localRotation = rot;
+                                                        break;
+                                                    case false:
+                                                        rot.z = 0;
+                                                        meleeAtkHitBox.transform.localRotation = rot;
+                                                        break;
+                                                }
+                                            }
+                                            break;
+                                        case AtkType.Ranged:
+                                            RangedAtk();
+                                            break;
+                                        case AtkType.Magic:
+
+                                            break;
+                                    }
+
+                                }
+                                if (hasAtked)
+                                {
+                                    Transitioning(EnemyStates.AtkIdle);
+                                }
+
+
+                            }
+                            if (Mathf.Abs(transform.position.magnitude - targetTrans.position.magnitude) >= atkRange)
+                            {
+                                ForceMoveToTarget(targetTrans, (speed * Time.deltaTime * aggroSpdInc));
+                            }
+                        }
+                        if (aggro == AggroState.Passive)
+                        {
+                            Transitioning(defaultStates.defaultMain);
+                        }
+                        break;
+                    case EnemyStates.Attack: //the attack animation
+
+                        break;
+                    case EnemyStates.AtkIdle:
+                        rb2d.velocity = Vector2.zero;
+                        aCD -= Time.deltaTime;
+                        if (aCD <= 0)
+                        {
+                            Transitioning(EnemyStates.Idle);
+                            hasAtked = false;
+                        }
+                        break;
+                    case EnemyStates.Hurt: //the enemy got hurt 
+                        anim.SetTrigger("GotHurt");
+                        anim.SetBool("IsMoving", false);
+                        if (!GroundCheck())
+                            Transitioning(EnemyStates.Falling);
+                        t2 -= Time.deltaTime; //cant use coroutines here due to strange things
+                        if (t2 <= 0)
+                        {
+                            gotHurt = false;
+                            Transitioning(EnemyStates.Idle);
+                            anim.SetTrigger("ReturnToMain");
+                        }
+                        break;
+                    case EnemyStates.Falling:
+                        anim.SetTrigger("GotHurt"); //may or may not need this
+                        anim.SetBool("IsMoving", false);
+                        if (GroundCheck()) //has hit the ground
+                        {
+                            Transitioning(EnemyStates.Hurt);
+                        }
+                        break;
+                    case EnemyStates.Death: //the enemy is dying
+                        isDead = true;
+                        anim.SetTrigger("IsDying");
+                        StartCoroutine(DeathTime());
+                        rb2d.velocity = Vector2.zero;
+                        break;
+                }
+                TimerReset();
+                if (State != EnemyStates.Falling && State != EnemyStates.Hurt && State != EnemyStates.Death) //aggro scripts will not run if enemy is in these states
+                {
+                    switch (aggro)
                     {
-                        ForceMoveToTarget(targetTrans, (speed * Time.deltaTime * aggroSpdInc));
+                        case AggroState.None: //in case of emergencies
+                            break;
+                        case AggroState.Aggro:
+                            anim.SetBool("IsAggroed", true);
+                            if (Mathf.Abs(targetTrans.position.magnitude - transform.position.magnitude) > DeAggroDist)
+                            {
+                                hasTarget = false;
+                                targetTrans = null;
+                                aggro = AggroState.Passive;
+
+                            }
+                            break;
+                        case AggroState.Passive:
+                            SearchingForTarget();
+                            anim.SetBool("IsAggroed", false);
+                            if (hasTarget)
+                            {
+                                aggro = AggroState.Aggro;
+                            }
+                            break;
                     }
                 }
-                if(aggro == AggroState.Passive)
-                {
-                    Transitioning(defaultStates.defaultMain);
-                }
                 break;
-            case EnemyStates.Attack: //the attack animation
-                
-                break;
-            case EnemyStates.AtkIdle:
-                rb2d.velocity = Vector2.zero;
-                aCD -= Time.deltaTime;
-                if(aCD <= 0)
-                {
-                    Transitioning(EnemyStates.Idle);
-                    hasAtked = false;
-                }
-                break;
-            case EnemyStates.Hurt: //the enemy got hurt 
-                anim.SetTrigger("GotHurt");
-                anim.SetBool("IsMoving", false);
-                if (!GroundCheck())
-                    Transitioning(EnemyStates.Falling);
-                t2 -= Time.deltaTime; //cant use coroutines here due to strange things
-                if(t2 <= 0)
-                {
-                    gotHurt = false;
-                    Transitioning(EnemyStates.Idle);
-                    anim.SetTrigger("ReturnToMain");
-                }
-                break;
-            case EnemyStates.Falling:
-                anim.SetTrigger("GotHurt"); //may or may not need this
-                anim.SetBool("IsMoving", false);
-                if (GroundCheck()) //has hit the ground
-                {
-                    Transitioning(EnemyStates.Hurt);
-                }
-                break;
-            case EnemyStates.Death: //the enemy is dying
-                isDead = true;
-                anim.SetTrigger("IsDying");
-                StartCoroutine(DeathTime());
+            case EHitStopState.stop:
                 rb2d.velocity = Vector2.zero;
                 break;
         }
-        TimerReset();
         
-        if(State != EnemyStates.Falling && State != EnemyStates.Hurt && State != EnemyStates.Death) //aggro scripts will not run if enemy is in these states
+    }
+    public void HitStopCall(int state)
+    {
+        switch(state)
         {
-            switch(aggro)
-            {
-                case AggroState.None: //in case of emergencies
-                    break;
-                case AggroState.Aggro:
-                    anim.SetBool("IsAggroed", true);
-                    if (Mathf.Abs(targetTrans.position.magnitude - transform.position.magnitude) > DeAggroDist)
-                    {
-                        hasTarget = false;
-                        targetTrans = null;
-                        aggro = AggroState.Passive;
-                        
-                    }
-                    break;
-                case AggroState.Passive:
-                    SearchingForTarget();
-                    anim.SetBool("IsAggroed", false);
-                    if(hasTarget)
-                    {
-                        aggro = AggroState.Aggro;
-                    }
-                    break;
-            }
+            case 0: //hitstop freeze is active
+                eHS = EHitStopState.stop;
+                break;
+            case 1: //return to normal
+                eHS = EHitStopState.go;
+                break;
         }
     }
-    
     private void RangedAtk()
     {
         switch(targetType)
@@ -599,7 +619,11 @@ public enum AggroState
     Aggro,
     Passive
 }
-
+public enum EHitStopState
+{
+    stop,
+    go
+}
 [System.Serializable]
 public class DefaultStates
 {
