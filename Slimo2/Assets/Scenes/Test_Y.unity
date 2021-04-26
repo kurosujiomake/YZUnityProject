@@ -12671,6 +12671,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BigEnemyTestDummyflying
       objectReference: {fileID: 0}
+    - target: {fileID: 6177986475663389880, guid: 31f10380c2066f24abbad7a6ab597436,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6177986475663389881, guid: 31f10380c2066f24abbad7a6ab597436,
         type: 3}
       propertyPath: m_LocalPosition.x

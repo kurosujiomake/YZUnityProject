@@ -15,7 +15,15 @@ public class EnemySpecificHitStop : MonoBehaviour
     {
         if (hBox.GetComponentInParent<HeavyAttHitStop>() == null)
         {
-            hStop = null;
+            if(hBox.GetComponent<HeavyAttHitStop>() == null)
+            {
+                hStop = null;
+            }
+            if(hBox.GetComponent<HeavyAttHitStop>() != null)
+            {
+                hStop = hBox.GetComponent<HeavyAttHitStop>();
+            }
+            
         }
         if (hBox.GetComponentInParent<HeavyAttHitStop>() != null)
         {

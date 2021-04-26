@@ -14,55 +14,77 @@ public class GameManager : MonoBehaviour
         EquipUIOpen,
         Cutscene
     }
+    public enum SceneState
+    {
+        Title,
+        Levels,
+        Special,
+        Others,
+        ETC
+    }
     public GameState gState;
+    public SceneState sState;
     // Start is called before the first frame update
     void Awake()
     {
-        EquipUI.GetComponent<EquipUINew>().UpdateCursor();
-        EquipUI.GetComponent<EquipUINew>().SlotIDSet();
-        EquipUI.SetActive(false);
-        hStop = GetComponent<HitStop>();
+        if(sState == SceneState.Levels)
+        {
+            EquipUI.GetComponent<EquipUINew>().UpdateCursor();
+            EquipUI.GetComponent<EquipUINew>().SlotIDSet();
+            EquipUI.SetActive(false);
+            hStop = GetComponent<HitStop>();
+        }
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        switch(gState)
+        switch(sState)
         {
-            case GameState.Gameplay:
-                if (!hStop.gTimeStop)
-                {
-                    Time.timeScale = 1;
-                }
-                Player.GetComponent<Animator>().SetBool("IsGamePlay", true);
-                if(!hStop.uTimeStop)
-                {
-                    Player.GetComponent<Animator>().speed = 1;
-                }
-                if(pCM.GetButtonDown("Inv"))
-                {
-                    ToggleEquipUI();
-                    gState = GameState.EquipUIOpen;
-                    print("toggling On");
-                }
-                break;
-            case GameState.EquipUIOpen:
-                Time.timeScale = 0;
-                SelectionChangeInput();
-                Player.GetComponent<Animator>().SetBool("IsGamePlay", false);
-                Player.GetComponent<Animator>().speed = 0;
-                if (pCM.GetButtonDown("Inv"))
-                {
-                    ToggleEquipUI();
-                    gState = GameState.Gameplay;
-                    print("toggling off");
-                    ResetAllTriggers();
-                }
-                break;
-            case GameState.Cutscene:
+            case SceneState.Title:
 
                 break;
+            case SceneState.Levels:
+                switch (gState)
+                {
+                    case GameState.Gameplay:
+                        if (!hStop.gTimeStop)
+                        {
+                            Time.timeScale = 1;
+                        }
+                        Player.GetComponent<Animator>().SetBool("IsGamePlay", true);
+                        if (!hStop.uTimeStop)
+                        {
+                            Player.GetComponent<Animator>().speed = 1;
+                        }
+                        if (pCM.GetButtonDown("Inv"))
+                        {
+                            ToggleEquipUI();
+                            gState = GameState.EquipUIOpen;
+                            print("toggling On");
+                        }
+                        break;
+                    case GameState.EquipUIOpen:
+                        Time.timeScale = 0;
+                        SelectionChangeInput();
+                        Player.GetComponent<Animator>().SetBool("IsGamePlay", false);
+                        Player.GetComponent<Animator>().speed = 0;
+                        if (pCM.GetButtonDown("Inv"))
+                        {
+                            ToggleEquipUI();
+                            gState = GameState.Gameplay;
+                            print("toggling off");
+                            ResetAllTriggers();
+                        }
+                        break;
+                    case GameState.Cutscene:
+
+                        break;
+                }
+                break;
         }
+        
     }
 
     void ResetAllTriggers() // remember to add any new triggers here

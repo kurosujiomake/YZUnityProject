@@ -29,6 +29,7 @@ public class PlayerDamageTakeCycles : MonoBehaviour
             anim = GetComponent<Animator>();
         }
         rb2d = GetComponent<Rigidbody2D>();
+        hStop = GameObject.FindGameObjectWithTag("GameManager").GetComponent<HitStop>();
     }
 
     // Update is called once per frame

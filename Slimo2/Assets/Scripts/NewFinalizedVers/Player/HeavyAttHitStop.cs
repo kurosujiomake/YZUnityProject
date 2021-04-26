@@ -7,10 +7,15 @@ public class HeavyAttHitStop : MonoBehaviour
     public bool isHeavyAtkOn = false;
     public HitStop hStop = null;
     public float heavyHitStopDur = 0.2f;
+    public bool isDetachedFromPlayer = false;
     
+    void Awake()
+    {
+         hStop = GameObject.FindGameObjectWithTag("GameManager").GetComponent<HitStop>();
+    }
     public void CheckIfHitStop()
     {
-        if(isHeavyAtkOn)
+        if(isHeavyAtkOn && !isDetachedFromPlayer)
         {
             hStop.UnitSpecificHitStop(this.gameObject, heavyHitStopDur);
         }

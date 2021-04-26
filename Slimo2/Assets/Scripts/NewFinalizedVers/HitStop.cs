@@ -33,9 +33,19 @@ public class HitStop : MonoBehaviour
 
     IEnumerator UnitTimer(float dur, GameObject unit)
     {
+        Vector2 v = Vector2.zero;
         unit.GetComponent<Animator>().speed = 0; //pauses the animation
+        if(unit.GetComponent<HeavyAttHitStop>().isDetachedFromPlayer)
+        {
+            v = unit.GetComponent<Rigidbody2D>().velocity;
+            unit.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        }
         yield return new WaitForSeconds(dur);
         unit.GetComponent<Animator>().speed = 1; //unpauses the animation
+        if(unit.GetComponent<HeavyAttHitStop>().isDetachedFromPlayer)
+        {
+            unit.GetComponent<Rigidbody2D>().velocity = v;
+        }
         uTimeStop = false;
     }
     IEnumerator GlobalTimer(float dur)

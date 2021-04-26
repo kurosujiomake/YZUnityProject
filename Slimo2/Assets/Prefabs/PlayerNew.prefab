@@ -2772,6 +2772,7 @@ MonoBehaviour:
   isHeavyAtkOn: 0
   hStop: {fileID: 0}
   heavyHitStopDur: 0.15
+  isDetachedFromPlayer: 0
 --- !u!1 &3772932790477469332
 GameObject:
   m_ObjectHideFlags: 0
