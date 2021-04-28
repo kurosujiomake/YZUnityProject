@@ -771,7 +771,28 @@ public class PlayerControlManager : MonoBehaviour
     bool AnyControllerButtonInput()
     {
         bool b = false;
-        if(pad.aButton.wasPressedThisFrame ||
+        if (pad != null)
+        {
+            if (pad.aButton.wasPressedThisFrame ||
+            pad.bButton.wasPressedThisFrame ||
+            pad.xButton.wasPressedThisFrame ||
+            pad.yButton.wasPressedThisFrame ||
+            pad.leftShoulder.wasPressedThisFrame ||
+            pad.rightShoulder.wasPressedThisFrame ||
+            pad.leftTrigger.wasPressedThisFrame ||
+            pad.rightTrigger.wasPressedThisFrame ||
+            pad.dpad.up.wasPressedThisFrame ||
+            pad.dpad.down.wasPressedThisFrame ||
+            pad.dpad.left.wasPressedThisFrame ||
+            pad.dpad.right.wasPressedThisFrame ||
+            pad.startButton.wasPressedThisFrame ||
+            pad.selectButton.wasPressedThisFrame
+            )
+            {
+                b = true;
+            }
+        }
+        /*if(pad.aButton.wasPressedThisFrame ||
             pad.bButton.wasPressedThisFrame ||
             pad.xButton.wasPressedThisFrame ||
             pad.yButton.wasPressedThisFrame ||
@@ -789,6 +810,7 @@ public class PlayerControlManager : MonoBehaviour
         {
             b = true;
         }
+        */
         return b;
     }
 }

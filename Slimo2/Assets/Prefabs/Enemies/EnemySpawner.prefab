@@ -83,7 +83,7 @@ MonoBehaviour:
     spType: 0
     SpawnPoints:
     - {fileID: 529312993}
-  startSpawn: 0
+  startSpawn: 1
 --- !u!212 &6044410485681320457
 SpriteRenderer:
   m_ObjectHideFlags: 0
