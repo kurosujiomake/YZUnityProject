@@ -649,6 +649,12 @@ public class PlayerControlManager : MonoBehaviour
                 KeyPresses();
                 KeyReleases();
                 break;
+            case ControlType.both:
+                ButtonPresses();
+                ButtonReleases();
+                KeyPresses();
+                KeyReleases();
+                break;
         }
     }
     void Held()
@@ -741,6 +747,49 @@ public class PlayerControlManager : MonoBehaviour
             UIAlt2_held = false;
         if (UIAlt3_released)
             UIAlt3_held = false;
+    }
+    public bool GetAnyKey()
+    {
+        bool b = false;
+        switch(curControlType)
+        {
+            case ControlType.both:
+                if(AnyControllerButtonInput() || board.anyKey.wasPressedThisFrame)
+                {
+                    b = true;
+                }
+                break;
+            case ControlType.controller:
+                b = AnyControllerButtonInput();
+                break;
+            case ControlType.keyboard:
+                b = board.anyKey.wasPressedThisFrame;
+                break;
+        }
+        return b;
+    }
+    bool AnyControllerButtonInput()
+    {
+        bool b = false;
+        if(pad.aButton.wasPressedThisFrame ||
+            pad.bButton.wasPressedThisFrame ||
+            pad.xButton.wasPressedThisFrame ||
+            pad.yButton.wasPressedThisFrame ||
+            pad.leftShoulder.wasPressedThisFrame ||
+            pad.rightShoulder.wasPressedThisFrame ||
+            pad.leftTrigger.wasPressedThisFrame ||
+            pad.rightTrigger.wasPressedThisFrame ||
+            pad.dpad.up.wasPressedThisFrame ||
+            pad.dpad.down.wasPressedThisFrame ||
+            pad.dpad.left.wasPressedThisFrame ||
+            pad.dpad.right.wasPressedThisFrame ||
+            pad.startButton.wasPressedThisFrame ||
+            pad.selectButton.wasPressedThisFrame
+            )
+        {
+            b = true;
+        }
+        return b;
     }
 }
 

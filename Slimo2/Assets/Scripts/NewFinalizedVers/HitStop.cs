@@ -10,10 +10,11 @@ public class HitStop : MonoBehaviour
     [Header("Hit-stop Effect")]
     public float effectTimeToReset = 0;
     public GameObject hitStopEffect;
-
+    public bool inTitleScreen = false;
     void Start()      
     {
-        hitStopEffect.SetActive(false); // hitstop effect
+        if(!inTitleScreen)
+            hitStopEffect.SetActive(false); // hitstop effect
     }
     public void UnitSpecificHitStop(GameObject unit, float dur)
     {

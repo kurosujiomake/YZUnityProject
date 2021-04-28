@@ -36,6 +36,7 @@ public class AudioManager : MonoBehaviour
     public static AudioManager instance;
     [SerializeField]
     Sound[] sounds;
+    public bool inTitleScreen = false;
 
     public PlayerControllerNew playerControllerNew;
     //public Parameters jumpSound;
@@ -44,10 +45,15 @@ public class AudioManager : MonoBehaviour
 
     void Awake ()
     {
-        playerControllerNew = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerNew>();
+        if(!inTitleScreen)
+        {
+            playerControllerNew = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerNew>();
+            playerControlManager = GameObject.FindGameObjectWithTag("pControlManager").GetComponent<PlayerControlManager>();
+        }
+        
         //jumpSound = GameObject.FindGameObjectWithTag("Player").GetComponent<Parameters>();
         //playerGroundChecker = GameObject.FindGameObjectWithTag("Player").GetComponent<GroundChecker>();
-        playerControlManager = GameObject.FindGameObjectWithTag("pControlManager").GetComponent<PlayerControlManager>();
+        
 
         if (instance != null)
         {

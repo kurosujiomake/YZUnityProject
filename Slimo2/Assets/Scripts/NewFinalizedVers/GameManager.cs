@@ -8,6 +8,9 @@ public class GameManager : MonoBehaviour
     public GameObject Player;
     public PlayerControlManager pCM;
     public HitStop hStop = null;
+    public int cType = 0; //default keyboard, 1 is controller
+    private bool anyKeyPressed = false;
+    public int titleStage = -1;
     public enum GameState
     {
         Gameplay,
@@ -33,7 +36,20 @@ public class GameManager : MonoBehaviour
             EquipUI.GetComponent<EquipUINew>().SlotIDSet();
             EquipUI.SetActive(false);
             hStop = GetComponent<HitStop>();
+            if(pCM != null) //sets up the control type based on user selection
+            {
+                switch(cType)
+                {
+                    case 0:
+                        pCM.curControlType = PlayerControlManager.ControlType.keyboard;
+                        break;
+                    case 1:
+                        pCM.curControlType = PlayerControlManager.ControlType.controller;
+                        break;
+                }
+            }
         }
+        titleStage = -1;
         
     }
 
@@ -43,6 +59,11 @@ public class GameManager : MonoBehaviour
         switch(sState)
         {
             case SceneState.Title:
+                AdvanceTitle();
+                if(!pCM.GetAnyKey())
+                {
+                    anyKeyPressed = false;
+                }
 
                 break;
             case SceneState.Levels:
@@ -87,6 +108,41 @@ public class GameManager : MonoBehaviour
         
     }
 
+    void AdvanceTitle()
+    {
+        switch(titleStage)
+        {
+            case -1:
+                if(pCM.GetAnyKey() && !anyKeyPressed)
+                {
+                    titleStage++;
+                }
+                break;
+            case 0: //add control type prompt here
+                if(pCM.GetButtonDown("UIRight") || pCM.GetButtonDown("UILeft"))
+                {
+                    ToggleControlSelection();
+                }
+                break;
+            case 1:
+
+                break;
+        }
+        
+    }
+    public void ToggleControlSelection()
+    {
+        switch(cType)
+        {
+            case 0:
+                cType = 1;
+                break;
+            case 1:
+                cType = 0;
+                break;
+        }
+    }
+    
     void ResetAllTriggers() // remember to add any new triggers here
     {
         Animator anim = Player.GetComponent<Animator>();
