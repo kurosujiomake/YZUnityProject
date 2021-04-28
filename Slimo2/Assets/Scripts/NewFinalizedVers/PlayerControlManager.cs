@@ -539,102 +539,113 @@ public class PlayerControlManager : MonoBehaviour
     void KeyPresses()
     {
         Held();
-        Atk1_pressed = ((KeyControl)board[kb.Atk1_Key]).wasPressedThisFrame;
-        Atk2_pressed = ((KeyControl)board[kb.Atk2_Key]).wasPressedThisFrame;
-        Atk2_2_pressed = ((KeyControl)board[kb.Atk2_2_Key]).wasPressedThisFrame;
-        Atk3_pressed = ((KeyControl)board[kb.Atk3_Key]).wasPressedThisFrame;
-        Jump_pressed = ((KeyControl)board[kb.Jump_Key]).wasPressedThisFrame;
-        Dash_pressed = ((KeyControl)board[kb.Dash_Key]).wasPressedThisFrame;
-        SwapWep_pressed = ((KeyControl)board[kb.SwapWep_Key]).wasPressedThisFrame;
-        BowRecharge_pressed = ((KeyControl)board[kb.BowRecharge_Key]).wasPressedThisFrame;
-        Inv_pressed = ((KeyControl)board[kb.Inv_Key]).wasPressedThisFrame;
-        LeftKey_Pressed = ((KeyControl)board[kb.Directional_Key[1]]).wasPressedThisFrame;
-        RightKey_Pressed = ((KeyControl)board[kb.Directional_Key[0]]).wasPressedThisFrame;
-        UpKey_Pressed = ((KeyControl)board[kb.Directional_Key[2]]).wasPressedThisFrame;
-        DownKey_Pressed = ((KeyControl)board[kb.Directional_Key[3]]).wasPressedThisFrame;
-        UIUp_pressed = ((KeyControl)board[kb.UIUp_Key]).wasPressedThisFrame;
-        UIDown_pressed = ((KeyControl)board[kb.UIDown_Key]).wasPressedThisFrame;
-        UIRight_pressed = ((KeyControl)board[kb.UIRight_Key]).wasPressedThisFrame;
-        UILeft_pressed = ((KeyControl)board[kb.UILeft_Key]).wasPressedThisFrame;
-        UIAccept_pressed = ((KeyControl)board[kb.UIAccept_Key]).wasPressedThisFrame;
-        UIDecline_pressed = ((KeyControl)board[kb.UIDecline_Key]).wasPressedThisFrame;
-        UIAlt1_pressed = ((KeyControl)board[kb.UIAlt1_Key]).wasPressedThisFrame;
-        UIAlt2_pressed = ((KeyControl)board[kb.UIAlt2_Key]).wasPressedThisFrame;
-        UIAlt3_pressed = ((KeyControl)board[kb.UIAlt3_Key]).wasPressedThisFrame;
+        if(board != null)
+        {
+            Atk1_pressed = ((KeyControl)board[kb.Atk1_Key]).wasPressedThisFrame;
+            Atk2_pressed = ((KeyControl)board[kb.Atk2_Key]).wasPressedThisFrame;
+            Atk2_2_pressed = ((KeyControl)board[kb.Atk2_2_Key]).wasPressedThisFrame;
+            Atk3_pressed = ((KeyControl)board[kb.Atk3_Key]).wasPressedThisFrame;
+            Jump_pressed = ((KeyControl)board[kb.Jump_Key]).wasPressedThisFrame;
+            Dash_pressed = ((KeyControl)board[kb.Dash_Key]).wasPressedThisFrame;
+            SwapWep_pressed = ((KeyControl)board[kb.SwapWep_Key]).wasPressedThisFrame;
+            BowRecharge_pressed = ((KeyControl)board[kb.BowRecharge_Key]).wasPressedThisFrame;
+            Inv_pressed = ((KeyControl)board[kb.Inv_Key]).wasPressedThisFrame;
+            LeftKey_Pressed = ((KeyControl)board[kb.Directional_Key[1]]).wasPressedThisFrame;
+            RightKey_Pressed = ((KeyControl)board[kb.Directional_Key[0]]).wasPressedThisFrame;
+            UpKey_Pressed = ((KeyControl)board[kb.Directional_Key[2]]).wasPressedThisFrame;
+            DownKey_Pressed = ((KeyControl)board[kb.Directional_Key[3]]).wasPressedThisFrame;
+            UIUp_pressed = ((KeyControl)board[kb.UIUp_Key]).wasPressedThisFrame;
+            UIDown_pressed = ((KeyControl)board[kb.UIDown_Key]).wasPressedThisFrame;
+            UIRight_pressed = ((KeyControl)board[kb.UIRight_Key]).wasPressedThisFrame;
+            UILeft_pressed = ((KeyControl)board[kb.UILeft_Key]).wasPressedThisFrame;
+            UIAccept_pressed = ((KeyControl)board[kb.UIAccept_Key]).wasPressedThisFrame;
+            UIDecline_pressed = ((KeyControl)board[kb.UIDecline_Key]).wasPressedThisFrame;
+            UIAlt1_pressed = ((KeyControl)board[kb.UIAlt1_Key]).wasPressedThisFrame;
+            UIAlt2_pressed = ((KeyControl)board[kb.UIAlt2_Key]).wasPressedThisFrame;
+            UIAlt3_pressed = ((KeyControl)board[kb.UIAlt3_Key]).wasPressedThisFrame;
+        }
         Held();
     }
     void KeyReleases()
     {
         Held();
-        Atk1_released = ((KeyControl)board[kb.Atk1_Key]).wasReleasedThisFrame;
-        Atk2_released = ((KeyControl)board[kb.Atk2_Key]).wasReleasedThisFrame;
-        Atk2_2_released = ((KeyControl)board[kb.Atk2_Key]).wasReleasedThisFrame;
-        Atk3_released = ((KeyControl)board[kb.Atk3_Key]).wasReleasedThisFrame;
-        Jump_released = ((KeyControl)board[kb.Jump_Key]).wasReleasedThisFrame;
-        Dash_released = ((KeyControl)board[kb.Dash_Key]).wasReleasedThisFrame;
-        SwapWep_released = ((KeyControl)board[kb.SwapWep_Key]).wasReleasedThisFrame;
-        BowRecharge_released = ((KeyControl)board[kb.BowRecharge_Key]).wasReleasedThisFrame;
-        Inv_released = ((KeyControl)board[kb.Inv_Key]).wasReleasedThisFrame;
-        LeftKey_Released = ((KeyControl)board[kb.Directional_Key[1]]).wasReleasedThisFrame;
-        RightKey_Released = ((KeyControl)board[kb.Directional_Key[0]]).wasReleasedThisFrame;
-        UpKey_Released = ((KeyControl)board[kb.Directional_Key[2]]).wasReleasedThisFrame;
-        DownKey_Released = ((KeyControl)board[kb.Directional_Key[3]]).wasReleasedThisFrame;
-        UIUp_released = ((KeyControl)board[kb.UIUp_Key]).wasReleasedThisFrame;
-        UIDown_released = ((KeyControl)board[kb.UIDown_Key]).wasReleasedThisFrame;
-        UIRight_released = ((KeyControl)board[kb.UIRight_Key]).wasReleasedThisFrame;
-        UILeft_released = ((KeyControl)board[kb.UILeft_Key]).wasReleasedThisFrame;
-        UIAccept_released = ((KeyControl)board[kb.UIAccept_Key]).wasReleasedThisFrame;
-        UIDecline_released = ((KeyControl)board[kb.UIDecline_Key]).wasReleasedThisFrame;
-        UIAlt1_released = ((KeyControl)board[kb.UIAlt1_Key]).wasReleasedThisFrame;
-        UIAlt2_released = ((KeyControl)board[kb.UIAlt2_Key]).wasReleasedThisFrame;
-        UIAlt3_released = ((KeyControl)board[kb.UIAlt3_Key]).wasReleasedThisFrame;
+        if(board != null)
+        {
+            Atk1_released = ((KeyControl)board[kb.Atk1_Key]).wasReleasedThisFrame;
+            Atk2_released = ((KeyControl)board[kb.Atk2_Key]).wasReleasedThisFrame;
+            Atk2_2_released = ((KeyControl)board[kb.Atk2_Key]).wasReleasedThisFrame;
+            Atk3_released = ((KeyControl)board[kb.Atk3_Key]).wasReleasedThisFrame;
+            Jump_released = ((KeyControl)board[kb.Jump_Key]).wasReleasedThisFrame;
+            Dash_released = ((KeyControl)board[kb.Dash_Key]).wasReleasedThisFrame;
+            SwapWep_released = ((KeyControl)board[kb.SwapWep_Key]).wasReleasedThisFrame;
+            BowRecharge_released = ((KeyControl)board[kb.BowRecharge_Key]).wasReleasedThisFrame;
+            Inv_released = ((KeyControl)board[kb.Inv_Key]).wasReleasedThisFrame;
+            LeftKey_Released = ((KeyControl)board[kb.Directional_Key[1]]).wasReleasedThisFrame;
+            RightKey_Released = ((KeyControl)board[kb.Directional_Key[0]]).wasReleasedThisFrame;
+            UpKey_Released = ((KeyControl)board[kb.Directional_Key[2]]).wasReleasedThisFrame;
+            DownKey_Released = ((KeyControl)board[kb.Directional_Key[3]]).wasReleasedThisFrame;
+            UIUp_released = ((KeyControl)board[kb.UIUp_Key]).wasReleasedThisFrame;
+            UIDown_released = ((KeyControl)board[kb.UIDown_Key]).wasReleasedThisFrame;
+            UIRight_released = ((KeyControl)board[kb.UIRight_Key]).wasReleasedThisFrame;
+            UILeft_released = ((KeyControl)board[kb.UILeft_Key]).wasReleasedThisFrame;
+            UIAccept_released = ((KeyControl)board[kb.UIAccept_Key]).wasReleasedThisFrame;
+            UIDecline_released = ((KeyControl)board[kb.UIDecline_Key]).wasReleasedThisFrame;
+            UIAlt1_released = ((KeyControl)board[kb.UIAlt1_Key]).wasReleasedThisFrame;
+            UIAlt2_released = ((KeyControl)board[kb.UIAlt2_Key]).wasReleasedThisFrame;
+            UIAlt3_released = ((KeyControl)board[kb.UIAlt3_Key]).wasReleasedThisFrame;
+        }
         Held();
     }
     void ButtonPresses()
     {
         Held();
-        Atk1_pressed = ((ButtonControl)pad[kb.Atk1_btn]).wasPressedThisFrame;
-        Atk2_pressed = ((ButtonControl)pad[kb.Atk2_btn]).wasPressedThisFrame;
-        Atk2_2_pressed = ((ButtonControl)pad[kb.Atk2_2_btn]).wasPressedThisFrame;
-        Atk3_pressed = ((ButtonControl)pad[kb.Atk3_btn]).wasPressedThisFrame;
-        Jump_pressed = ((ButtonControl)pad[kb.Jump_btn]).wasPressedThisFrame;
-        Dash_pressed = ((ButtonControl)pad[kb.Dash_btn]).wasPressedThisFrame;
-        SwapWep_pressed = ((ButtonControl)pad[kb.SwapWep_btn]).wasPressedThisFrame;
-        BowRecharge_pressed = ((ButtonControl)pad[kb.BowRecharge_btn]).wasPressedThisFrame;
-        Inv_pressed = ((ButtonControl)pad[kb.Inv_btn]).wasPressedThisFrame;
-        UIUp_pressed = ((ButtonControl)pad[kb.UIUp_btn]).wasPressedThisFrame;
-        UIDown_pressed = ((ButtonControl)pad[kb.UIDown_btn]).wasPressedThisFrame;
-        UIRight_pressed = ((ButtonControl)pad[kb.UIRight_btn]).wasPressedThisFrame;
-        UILeft_pressed = ((ButtonControl)pad[kb.UILeft_btn]).wasPressedThisFrame;
-        UIAccept_pressed = ((ButtonControl)pad[kb.UIAccept_btn]).wasPressedThisFrame;
-        UIDecline_pressed = ((ButtonControl)pad[kb.UIDecline_btn]).wasPressedThisFrame;
-        UIAlt1_pressed = ((ButtonControl)pad[kb.UIAlt1_btn]).wasPressedThisFrame;
-        UIAlt2_pressed = ((ButtonControl)pad[kb.UIAlt2_btn]).wasPressedThisFrame;
-        UIAlt3_pressed = ((ButtonControl)pad[kb.UIAlt3_btn]).wasPressedThisFrame;
-
+        if(pad != null)
+        {
+            Atk1_pressed = ((ButtonControl)pad[kb.Atk1_btn]).wasPressedThisFrame;
+            Atk2_pressed = ((ButtonControl)pad[kb.Atk2_btn]).wasPressedThisFrame;
+            Atk2_2_pressed = ((ButtonControl)pad[kb.Atk2_2_btn]).wasPressedThisFrame;
+            Atk3_pressed = ((ButtonControl)pad[kb.Atk3_btn]).wasPressedThisFrame;
+            Jump_pressed = ((ButtonControl)pad[kb.Jump_btn]).wasPressedThisFrame;
+            Dash_pressed = ((ButtonControl)pad[kb.Dash_btn]).wasPressedThisFrame;
+            SwapWep_pressed = ((ButtonControl)pad[kb.SwapWep_btn]).wasPressedThisFrame;
+            BowRecharge_pressed = ((ButtonControl)pad[kb.BowRecharge_btn]).wasPressedThisFrame;
+            Inv_pressed = ((ButtonControl)pad[kb.Inv_btn]).wasPressedThisFrame;
+            UIUp_pressed = ((ButtonControl)pad[kb.UIUp_btn]).wasPressedThisFrame;
+            UIDown_pressed = ((ButtonControl)pad[kb.UIDown_btn]).wasPressedThisFrame;
+            UIRight_pressed = ((ButtonControl)pad[kb.UIRight_btn]).wasPressedThisFrame;
+            UILeft_pressed = ((ButtonControl)pad[kb.UILeft_btn]).wasPressedThisFrame;
+            UIAccept_pressed = ((ButtonControl)pad[kb.UIAccept_btn]).wasPressedThisFrame;
+            UIDecline_pressed = ((ButtonControl)pad[kb.UIDecline_btn]).wasPressedThisFrame;
+            UIAlt1_pressed = ((ButtonControl)pad[kb.UIAlt1_btn]).wasPressedThisFrame;
+            UIAlt2_pressed = ((ButtonControl)pad[kb.UIAlt2_btn]).wasPressedThisFrame;
+            UIAlt3_pressed = ((ButtonControl)pad[kb.UIAlt3_btn]).wasPressedThisFrame;
+        }
         Held();
     }
     void ButtonReleases()
     {
         Held();
-        Atk1_released = ((ButtonControl)pad[kb.Atk1_btn]).wasReleasedThisFrame;
-        Atk2_released = ((ButtonControl)pad[kb.Atk2_btn]).wasReleasedThisFrame;
-        Atk2_2_released = ((ButtonControl)pad[kb.Atk2_2_btn]).wasReleasedThisFrame;
-        Atk3_released = ((ButtonControl)pad[kb.Atk3_btn]).wasReleasedThisFrame;
-        Jump_released = ((ButtonControl)pad[kb.Jump_btn]).wasReleasedThisFrame;
-        Dash_released = ((ButtonControl)pad[kb.Dash_btn]).wasReleasedThisFrame;
-        SwapWep_released = ((ButtonControl)pad[kb.SwapWep_btn]).wasReleasedThisFrame;
-        BowRecharge_released = ((ButtonControl)pad[kb.BowRecharge_btn]).wasReleasedThisFrame;
-        Inv_released = ((ButtonControl)pad[kb.Inv_btn]).wasReleasedThisFrame;
-        UIUp_released = ((ButtonControl)pad[kb.UIUp_btn]).wasReleasedThisFrame;
-        UIDown_released = ((ButtonControl)pad[kb.UIDown_btn]).wasReleasedThisFrame;
-        UIRight_released = ((ButtonControl)pad[kb.UIRight_btn]).wasReleasedThisFrame;
-        UILeft_released = ((ButtonControl)pad[kb.UILeft_btn]).wasReleasedThisFrame;
-        UIAccept_released = ((ButtonControl)pad[kb.UIAccept_btn]).wasReleasedThisFrame;
-        UIDecline_released = ((ButtonControl)pad[kb.UIDecline_btn]).wasReleasedThisFrame;
-        UIAlt1_released = ((ButtonControl)pad[kb.UIAlt1_btn]).wasReleasedThisFrame;
-        UIAlt2_released = ((ButtonControl)pad[kb.UIAlt2_btn]).wasReleasedThisFrame;
-        UIAlt3_released = ((ButtonControl)pad[kb.UIAlt3_btn]).wasReleasedThisFrame;
+        if(pad != null)
+        {
+            Atk1_released = ((ButtonControl)pad[kb.Atk1_btn]).wasReleasedThisFrame;
+            Atk2_released = ((ButtonControl)pad[kb.Atk2_btn]).wasReleasedThisFrame;
+            Atk2_2_released = ((ButtonControl)pad[kb.Atk2_2_btn]).wasReleasedThisFrame;
+            Atk3_released = ((ButtonControl)pad[kb.Atk3_btn]).wasReleasedThisFrame;
+            Jump_released = ((ButtonControl)pad[kb.Jump_btn]).wasReleasedThisFrame;
+            Dash_released = ((ButtonControl)pad[kb.Dash_btn]).wasReleasedThisFrame;
+            SwapWep_released = ((ButtonControl)pad[kb.SwapWep_btn]).wasReleasedThisFrame;
+            BowRecharge_released = ((ButtonControl)pad[kb.BowRecharge_btn]).wasReleasedThisFrame;
+            Inv_released = ((ButtonControl)pad[kb.Inv_btn]).wasReleasedThisFrame;
+            UIUp_released = ((ButtonControl)pad[kb.UIUp_btn]).wasReleasedThisFrame;
+            UIDown_released = ((ButtonControl)pad[kb.UIDown_btn]).wasReleasedThisFrame;
+            UIRight_released = ((ButtonControl)pad[kb.UIRight_btn]).wasReleasedThisFrame;
+            UILeft_released = ((ButtonControl)pad[kb.UILeft_btn]).wasReleasedThisFrame;
+            UIAccept_released = ((ButtonControl)pad[kb.UIAccept_btn]).wasReleasedThisFrame;
+            UIDecline_released = ((ButtonControl)pad[kb.UIDecline_btn]).wasReleasedThisFrame;
+            UIAlt1_released = ((ButtonControl)pad[kb.UIAlt1_btn]).wasReleasedThisFrame;
+            UIAlt2_released = ((ButtonControl)pad[kb.UIAlt2_btn]).wasReleasedThisFrame;
+            UIAlt3_released = ((ButtonControl)pad[kb.UIAlt3_btn]).wasReleasedThisFrame;
+        }
         Held();
     }
     void KeyHelds()
@@ -792,25 +803,6 @@ public class PlayerControlManager : MonoBehaviour
                 b = true;
             }
         }
-        /*if(pad.aButton.wasPressedThisFrame ||
-            pad.bButton.wasPressedThisFrame ||
-            pad.xButton.wasPressedThisFrame ||
-            pad.yButton.wasPressedThisFrame ||
-            pad.leftShoulder.wasPressedThisFrame ||
-            pad.rightShoulder.wasPressedThisFrame ||
-            pad.leftTrigger.wasPressedThisFrame ||
-            pad.rightTrigger.wasPressedThisFrame ||
-            pad.dpad.up.wasPressedThisFrame ||
-            pad.dpad.down.wasPressedThisFrame ||
-            pad.dpad.left.wasPressedThisFrame ||
-            pad.dpad.right.wasPressedThisFrame ||
-            pad.startButton.wasPressedThisFrame ||
-            pad.selectButton.wasPressedThisFrame
-            )
-        {
-            b = true;
-        }
-        */
         return b;
     }
 }
