@@ -1,14 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
-using UnityEngine.Rendering;
+using UnityEngine.InputSystem.LowLevel;
 
 public class PlayerControlManager : MonoBehaviour
 {
-    private Gamepad pad;
+    private Gamepad pad = new Gamepad();
     private Keyboard board;
     public enum ControlType
     {
@@ -662,8 +663,8 @@ public class PlayerControlManager : MonoBehaviour
                 break;
             case ControlType.both:
                 ButtonPresses();
-                ButtonReleases();
                 KeyPresses();
+                ButtonReleases();
                 KeyReleases();
                 break;
         }
@@ -782,7 +783,7 @@ public class PlayerControlManager : MonoBehaviour
     bool AnyControllerButtonInput()
     {
         bool b = false;
-        if (pad != null)
+        /*if (pad != null)
         {
             if (pad.aButton.wasPressedThisFrame ||
             pad.bButton.wasPressedThisFrame ||
@@ -801,6 +802,14 @@ public class PlayerControlManager : MonoBehaviour
             )
             {
                 b = true;
+            }
+        }*/
+        foreach(GamepadButton i in Enum.GetValues(typeof(GamepadButton)))
+        {
+            if(pad[i].wasPressedThisFrame)
+            {
+                b = true;
+                print(pad[i]);
             }
         }
         return b;
