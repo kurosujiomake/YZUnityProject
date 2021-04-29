@@ -13,8 +13,9 @@ public class InputSystemShell : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        Assign();
         pad = Gamepad.current;
+        Assign();
+        
     }
 
     void Update()
