@@ -5,7 +5,7 @@ using UnityEngine;
 public class ComboPass : StateMachineBehaviour
 {
     private bool numInc = false;
-    private PlayerControlManager pCM;
+    private InputSystemShell pCM;
     private SpecialAttackParameters spParam;
     [SerializeField] private bool isFinalAtk = false;
     [SerializeField] private bool isRegularAtk = false;
@@ -20,7 +20,7 @@ public class ComboPass : StateMachineBehaviour
     {
         numInc = false;
         nSP = animator.GetComponent<NewSpUltAktParam>();
-        pCM = GameObject.FindGameObjectWithTag("pControlManager").GetComponent<PlayerControlManager>();
+        pCM = GameObject.FindGameObjectWithTag("pControlManager").GetComponent<InputSystemShell>();
         spParam = animator.GetComponent<SpecialAttackParameters>();
         param = animator.GetComponent<Parameters>();
         animator.ResetTrigger("SwordUlt");

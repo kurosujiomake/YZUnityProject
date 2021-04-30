@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public GameObject EquipUI;
     public GameObject Player;
-    public PlayerControlManager pCM;
+    public InputSystemShell pCM;
     public HitStop hStop = null;
     public int cType = 0; //default keyboard, 1 is controller
     private bool anyKeyPressed = false;
@@ -41,10 +41,10 @@ public class GameManager : MonoBehaviour
                 switch(cType)
                 {
                     case 0:
-                        pCM.curControlType = PlayerControlManager.ControlType.keyboard;
+                        pCM.SetControls(1);
                         break;
                     case 1:
-                        pCM.curControlType = PlayerControlManager.ControlType.controller;
+                        pCM.SetControls(2);
                         break;
                 }
             }

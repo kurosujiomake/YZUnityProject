@@ -5,14 +5,14 @@ using UnityEngine;
 public class DashAtkFollowUp : StateMachineBehaviour
 {
     private Parameters param = null;
-    private PlayerControlManager pCM = null;
+    private InputSystemShell pCM = null;
     private float timer = 0;
     [SerializeField]
     private float heldTimeToTrigger = 0.07f;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        pCM = GameObject.FindGameObjectWithTag("pControlManager").GetComponent<PlayerControlManager>();
+        pCM = GameObject.FindGameObjectWithTag("pControlManager").GetComponent<InputSystemShell>();
         param = animator.GetComponent<Parameters>();
     }
 

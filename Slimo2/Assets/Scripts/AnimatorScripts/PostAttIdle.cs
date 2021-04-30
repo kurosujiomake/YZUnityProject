@@ -7,7 +7,7 @@ public class PostAttIdle : StateMachineBehaviour
 {
     public Parameters param = null; //gets info from parameter script so you dont have to set every single one here
     public float timer = 0;
-    private PlayerControlManager pCM = null;
+    private InputSystemShell pCM = null;
     private PlayerControllerNew pCN = null;
     private GroundChecker g = null;
     [SerializeField] private bool isFinalPATT = false;
@@ -16,7 +16,7 @@ public class PostAttIdle : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         pCN = animator.GetComponent<PlayerControllerNew>();
-        pCM = GameObject.FindGameObjectWithTag("pControlManager").GetComponent<PlayerControlManager>();
+        pCM = GameObject.FindGameObjectWithTag("pControlManager").GetComponent<InputSystemShell>();
         g = animator.GetComponent<GroundChecker>();
         //animator.SetBool("IsAttacking", false);
         param = animator.GetComponent<Parameters>();

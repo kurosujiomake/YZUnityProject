@@ -41,7 +41,6 @@ public class EnemySpecificHitStop : MonoBehaviour
 
     IEnumerator HitStopTimer()
     {
-        print("enemy's own hitstop activated");
         script.HitStopCall(0);
         anim.speed = 0;
         yield return new WaitForSeconds(hStopTime);

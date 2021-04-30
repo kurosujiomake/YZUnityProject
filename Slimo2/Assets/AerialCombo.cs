@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AerialCombo : StateMachineBehaviour
 {
-    private PlayerControlManager pCM;
+    private InputSystemShell pCM;
     private PlayerControllerNew pCN;
     private Parameters param;
     private NewAtkMove nAM;
@@ -17,7 +17,7 @@ public class AerialCombo : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         comNumSet = false;
-        pCM = GameObject.FindGameObjectWithTag("pControlManager").GetComponent<PlayerControlManager>();
+        pCM = GameObject.FindGameObjectWithTag("pControlManager").GetComponent<InputSystemShell>();
         pCN = animator.GetComponent<PlayerControllerNew>();
         param = animator.GetComponent<Parameters>();
         if(nAM == null)

@@ -6,12 +6,12 @@ public class KUBehavior : StateMachineBehaviour
 {
     public float keyHeldDur = 0.1f;
     private float timer = 0;
-    private PlayerControlManager pCM = null;
+    private InputSystemShell pCM = null;
     private AtkMoveTransferScript atkT = null;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        pCM = GameObject.FindGameObjectWithTag("pControlManager").GetComponent<PlayerControlManager>();
+        pCM = GameObject.FindGameObjectWithTag("pControlManager").GetComponent<InputSystemShell>();
         timer = 0;
         atkT = animator.GetComponentInChildren<AtkMoveTransferScript>();
     }

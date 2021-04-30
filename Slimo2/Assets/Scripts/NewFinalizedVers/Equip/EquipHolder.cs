@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EquipHolder : MonoBehaviour
 {
-    public PlayerControlManager pCM = null;
+    public InputSystemShell pCM = null;
     public BaseObj[] inv;
 
     public WepObject mainWep;

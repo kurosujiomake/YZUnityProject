@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpAtk : StateMachineBehaviour
 {
-    private PlayerControlManager pCM;
+    private InputSystemShell pCM;
     private NewSpUltAktParam nSP;
     public float heldTime = 0;
     private float timer = 0;
@@ -14,7 +14,7 @@ public class SpAtk : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        pCM = GameObject.FindGameObjectWithTag("pControlManager").GetComponent<PlayerControlManager>();
+        pCM = GameObject.FindGameObjectWithTag("pControlManager").GetComponent<InputSystemShell>();
         nSP = animator.GetComponent<NewSpUltAktParam>();
         timer = 0;
         setFinisher = false;

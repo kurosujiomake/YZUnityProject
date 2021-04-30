@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerControllerNew : MonoBehaviour
 {
-    public PlayerControlManager pCM;
+    public InputSystemShell pCM;
     private Parameters m_param;
     private Rigidbody2D r2D;
     private GroundChecker g;
@@ -42,7 +42,7 @@ public class PlayerControllerNew : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        pCM = GameObject.FindGameObjectWithTag("pControlManager").GetComponent<PlayerControlManager>();
+        pCM = GameObject.FindGameObjectWithTag("pControlManager").GetComponent<InputSystemShell>();
         pDTC = GetComponent<PlayerDamageTakeCycles>();
         m_param = GetComponent<Parameters>();
         r2D = GetComponent<Rigidbody2D>();

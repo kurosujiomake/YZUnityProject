@@ -5,13 +5,13 @@ using UnityEngine;
 public class AnimatorDirectionSet : MonoBehaviour
 {
     public Animator animator = null;
-    public PlayerControlManager pCM = null;
+    public InputSystemShell pCM = null;
     public PlayerControllerNew pCN = null;
     void Awake()
     {
         animator = GetComponent<Animator>();
         pCN = GetComponent<PlayerControllerNew>();
-        pCM = GameObject.FindGameObjectWithTag("pControlManager").GetComponent<PlayerControlManager>();
+        pCM = GameObject.FindGameObjectWithTag("pControlManager").GetComponent<InputSystemShell>();
     }
 
     // Update is called once per frame

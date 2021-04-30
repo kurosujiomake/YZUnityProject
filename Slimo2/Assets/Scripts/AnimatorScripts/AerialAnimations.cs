@@ -5,13 +5,13 @@ using UnityEngine;
 public class AerialAnimations : StateMachineBehaviour
 {
     public Parameters m_param = null;
-    private PlayerControlManager pCM = null;
+    private InputSystemShell pCM = null;
     private GroundChecker g = null;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         m_param = animator.GetComponent<Parameters>();
-        pCM = GameObject.FindGameObjectWithTag("pControlManager").GetComponent<PlayerControlManager>();
+        pCM = GameObject.FindGameObjectWithTag("pControlManager").GetComponent<InputSystemShell>();
         g = animator.GetComponent<GroundChecker>();
     }
 

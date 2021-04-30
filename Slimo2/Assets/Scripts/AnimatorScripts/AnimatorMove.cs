@@ -7,12 +7,12 @@ public class AnimatorMove : StateMachineBehaviour
     //private pMove move = null;
     private Parameters param = null;
     private GroundChecker g = null;
-    public PlayerControlManager pCM = null;
+    public InputSystemShell pCM = null;
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         param = animator.GetComponent<Parameters>();
         g = animator.GetComponent<GroundChecker>();
-        pCM = GameObject.FindGameObjectWithTag("pControlManager").GetComponent<PlayerControlManager>();
+        pCM = GameObject.FindGameObjectWithTag("pControlManager").GetComponent<InputSystemShell>();
         //reset variables, this should only be called once whenever it gets into this state
         animator.SetBool("IsMoving", false); //double make sure if player is idle then ismoving is false
         animator.SetBool("IsDashing", false); //double make sure player is not dashing

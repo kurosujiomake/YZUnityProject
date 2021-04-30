@@ -41,14 +41,14 @@ public class AudioManager : MonoBehaviour
     public PlayerControllerNew playerControllerNew;
     //public Parameters jumpSound;
     //public GroundChecker playerGroundChecker;
-    public PlayerControlManager playerControlManager;
+    public InputSystemShell playerControlManager;
 
     void Awake ()
     {
         if(!inTitleScreen)
         {
             playerControllerNew = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerNew>();
-            playerControlManager = GameObject.FindGameObjectWithTag("pControlManager").GetComponent<PlayerControlManager>();
+            playerControlManager = GameObject.FindGameObjectWithTag("pControlManager").GetComponent<InputSystemShell>();
         }
         
         //jumpSound = GameObject.FindGameObjectWithTag("Player").GetComponent<Parameters>();
@@ -89,7 +89,7 @@ public class AudioManager : MonoBehaviour
             }
         }
 
-        if (gameObject.GetComponent<PlayerControlManager>())
+        if (gameObject.GetComponent<InputSystemShell>())
         {
             Debug.Log("It works!");
             PlaySound("_source");

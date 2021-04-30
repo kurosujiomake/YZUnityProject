@@ -18,8 +18,6 @@ public class InputSystemShell : MonoBehaviour
     [Header("Analogue Stick Vars")]
     Dictionary<Direction, string> DirReturn = new Dictionary<Direction, string>();
     public DirMapping[] DirectionMap;
-    public Direction curLStickDir;
-    public Direction curRStickDir;
     public Vector2 leftStickRead;
     public Vector2 rightStickRead;
     public float[] stickDeadzoneL;
@@ -36,24 +34,6 @@ public class InputSystemShell : MonoBehaviour
         AutoAssign();
         KeyDirectionAssign();
     }
-
-    void Update()
-    {
-        if(GetButtonDown("Jump"))
-        {
-            print("Jump Pressed");
-        }
-        if(GetButtonHeld("Jump"))
-        {
-            print("Jump is held");
-        }
-        curLStickDir = ReturnDir(0);
-        if (GetButtonHeld("left"))
-            print("left is held");
-        if (GetButtonHeld("down"))
-            print("down is held");
-    }
-
     public bool GetButtonDown(string which)
     {
         bool b = false;
@@ -149,7 +129,6 @@ public class InputSystemShell : MonoBehaviour
                 s.keyMapping = board[m.kKey];
             Input[m.ButtonName] = s;
         }
-        
     }
     void DirAssign()
     {
@@ -174,8 +153,6 @@ public class InputSystemShell : MonoBehaviour
     {
         switch(control)
         {
-            case ControlType.none:
-                break;
             case ControlType.Controller:
                 StickRead();
                 leftStickRead.x = cx;
@@ -189,27 +166,9 @@ public class InputSystemShell : MonoBehaviour
             case ControlType.Both:
                 StickRead();
                 KeyRead();
-                if(Mathf.Abs(cx) > x) //if the controller value is higher, then sets the left stick output to controller
-                {
-                    leftStickRead.x = cx;
-                }
-                if(Mathf.Abs(cx) <= x) //if the keyboard value is higher, then sets the left stick output to keyboard
-                {
-                    leftStickRead.x = x;
-                }
-                if(Mathf.Abs(cy) > y) //same as above but for y
-                {
-                    leftStickRead.y = cy;
-                }
-                if(Mathf.Abs(cy) <= y) //same as above but for y
-                {
-                    leftStickRead.y = y;
-                }
+                DuoControlChecks();
                 break;
         }
-        
-        
-
     }
     void StickRead()
     {
@@ -220,23 +179,58 @@ public class InputSystemShell : MonoBehaviour
             rightStickRead = pad.rightStick.ReadValue();
         }
     }
+    void DuoControlChecks()
+    {
+        if(Mathf.Abs(cx) > Mathf.Abs(x)) //if controller's input is greater, aka keyboard not recieveing anything
+        {
+            leftStickRead.x = cx;
+        }
+        if(Mathf.Abs(x) > Mathf.Abs(cx))
+        {
+            leftStickRead.x = x;
+        }
+        if(cx == 0 && x == 0)
+        {
+            leftStickRead.x = 0;
+        }
+        if(Mathf.Abs(cy) > Mathf.Abs(y))
+        {
+            leftStickRead.y = cy;
+        }
+        if(Mathf.Abs(y) > Mathf.Abs(cy))
+        {
+            leftStickRead.y = y;
+        }
+        if(cy == 0 && y == 0)
+        {
+            leftStickRead.y = 0;
+        }
+    }
     void KeyRead()
     {
-        float fx = 0,fy = 0;
         if (board != null)
         {
-            if (GetButtonHeld("left"))
-                fx = -1;
-            if (GetButtonHeld("right"))
-                fx = 1;
-            if (GetButtonHeld("up"))
-                fy = 1;
-            if (GetButtonHeld("down"))
-                fy = -1;
-            
+            x = hortCheck();
+            y = vertCheck();
         }
-        x = fx;
-        y = fy;
+    }
+    float hortCheck()
+    {
+        float f = 0;
+        if (GetButtonHeld("left"))
+            f = -1f;
+        if (GetButtonHeld("right"))
+            f = 1;
+        return f;
+    }
+    float vertCheck()
+    {
+        float f = 0;
+        if (GetButtonHeld("down"))
+            f = -1f;
+        if (GetButtonHeld("up"))
+            f = 1;
+        return f;
     }
     Direction ReturnDir(int which)
     {
@@ -344,6 +338,77 @@ public class InputSystemShell : MonoBehaviour
                 break;
         }
         return d;
+    }
+    public string GetDirectionL()
+    {
+        return DirReturn[ReturnDir(0)];
+    }
+    public bool GetAnyKey()
+    {
+        bool b = false;
+        switch(control)
+        {
+            case ControlType.Controller:
+                b = AnyButton();
+                break;
+            case ControlType.Keyboard:
+                b = board.anyKey.wasPressedThisFrame;
+                break;
+            case ControlType.Both:
+                if (AnyButton() || board.anyKey.wasPressedThisFrame)
+                    b = true;
+                break;
+        }
+        return b;
+    }
+    bool AnyButton() //a function that checks if any controller button was pressed.
+    {
+        bool b = false;
+        foreach (GamepadButton g in Enum.GetValues(typeof(GamepadButton)))
+        {
+            if (pad[g].wasPressedThisFrame)
+                b = true;
+        }
+        return b;
+    }
+    public float ReturnAxis(string which, string axis)
+    {
+        float f = 0;
+        StickReads();
+        switch(which)
+        {
+            case "left":
+                if (axis == "hori")
+                    f = leftStickRead.x;
+                if (axis == "vert")
+                    f = leftStickRead.y;
+                break;
+            case "right":
+                if (axis == "hori")
+                    f = rightStickRead.x;
+                if (axis == "vert")
+                    f = rightStickRead.y;
+                break;
+        }
+        return f;
+    }
+    public void SetControls(int type)
+    {
+        switch(type)
+        {
+            case 0:
+                control = ControlType.none;
+                break;
+            case 1:
+                control = ControlType.Keyboard;
+                break;
+            case 2:
+                control = ControlType.Controller;
+                break;
+            case 3:
+                control = ControlType.Both;
+                break;
+        }
     }
 }
 [Serializable]

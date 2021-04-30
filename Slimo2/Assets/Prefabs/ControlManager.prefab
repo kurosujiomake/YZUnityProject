@@ -9,8 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2374169362876929646}
-  - component: {fileID: 2374169362876929645}
-  - component: {fileID: 2374169362876929647}
+  - component: {fileID: 3223418182532373444}
   m_Layer: 0
   m_Name: ControlManager
   m_TagString: pControlManager
@@ -32,7 +31,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2374169362876929645
+--- !u!114 &3223418182532373444
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,138 +40,102 @@ MonoBehaviour:
   m_GameObject: {fileID: 2374169362876929644}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7db7a1c59bd7cf4d914c72e36de2072, type: 3}
+  m_Script: {fileID: 11500000, guid: 455059698878ac1469e64a3ec005d84b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  curControlType: 0
-  kb:
-    Atk1_btn: x
-    Atk2_btn: leftShoulder
-    Atk2_2_btn: rightShoulder
-    Atk3_btn: rightTrigger
-    Jump_btn: a
-    Dash_btn: b
-    SwapWep_btn: leftTrigger
-    BowRecharge_btn: y
-    Inv_btn: select
-    UIUp_btn: dpad/up
-    UIDown_btn: dpad/down
-    UIRight_btn: dpad/right
-    UILeft_btn: dpad/left
-    UIAccept_btn: b
-    UIDecline_btn: a
-    UIAlt1_btn: leftShoulder
-    UIAlt2_btn: rightShoulder
-    UIAlt3_btn: rightTrigger
-    Atk1_Key: J
-    Atk2_Key: K
-    Atk2_2_Key: E
-    Atk3_Key: R
-    Jump_Key: Space
-    Dash_Key: LeftShift
-    SwapWep_Key: LeftAlt
-    BowRecharge_Key: Z
-    Inv_Key: I
-    UIUp_Key: UpArrow
-    UIDown_Key: DownArrow
-    UIRight_Key: RightArrow
-    UILeft_Key: LeftArrow
-    UIAccept_Key: Enter
-    UIDecline_Key: P
-    UIAlt1_Key: B
-    UIAlt2_Key: N
-    UIAlt3_Key: M
-    Directional_Key:
-    - D
-    - A
-    - W
-    - S
-  curLStickDir: 0
-  curRStickDir: 0
+  control: 3
+  InputMap:
+  - ButtonName: Atk1
+    gButton: 7
+    kKey: 24
+  - ButtonName: Atk2
+    gButton: 10
+    kKey: 20
+  - ButtonName: Atk2_2
+    gButton: 11
+    kKey: 20
+  - ButtonName: Atk3
+    gButton: 4
+    kKey: 20
+  - ButtonName: Jump
+    gButton: 6
+    kKey: 20
+  - ButtonName: Dash
+    gButton: 5
+    kKey: 20
+  - ButtonName: SwapWep
+    gButton: 32
+    kKey: 20
+  - ButtonName: BowRecharge
+    gButton: 33
+    kKey: 20
+  - ButtonName: Inv
+    gButton: 12
+    kKey: 20
+  - ButtonName: UIUp
+    gButton: 0
+    kKey: 20
+  - ButtonName: UIDown
+    gButton: 1
+    kKey: 20
+  - ButtonName: UIRight
+    gButton: 3
+    kKey: 62
+  - ButtonName: UILeft
+    gButton: 2
+    kKey: 61
+  - ButtonName: UIAccept
+    gButton: 5
+    kKey: 2
+  - ButtonName: UIDecline
+    gButton: 6
+    kKey: 65
+  - ButtonName: UIAlt1
+    gButton: 10
+    kKey: 20
+  - ButtonName: UIAlt2
+    gButton: 11
+    kKey: 20
+  - ButtonName: UIAlt3
+    gButton: 33
+    kKey: 20
+  KeyBoardDirection:
+  - ButtonName: left
+    gButton: 2
+    kKey: 15
+  - ButtonName: right
+    gButton: 3
+    kKey: 18
+  - ButtonName: up
+    gButton: 0
+    kKey: 37
+  - ButtonName: down
+    gButton: 1
+    kKey: 33
+  DirectionMap:
+  - returnString: n
+    direction: 0
+  - returnString: u
+    direction: 1
+  - returnString: d
+    direction: 2
+  - returnString: r
+    direction: 4
+  - returnString: l
+    direction: 3
+  - returnString: ul
+    direction: 5
+  - returnString: ur
+    direction: 6
+  - returnString: dl
+    direction: 7
+  - returnString: dr
+    direction: 8
   leftStickRead: {x: 0, y: 0}
   rightStickRead: {x: 0, y: 0}
   stickDeadzoneL:
-  - 0.25
-  - 0.25
+  - 0.03
+  - 0.03
   stickDeadzoneR:
-  - 0.25
-  - 0.25
-  Atk1_pressed: 0
-  Atk1_held: 0
-  Atk1_released: 0
-  Atk2_pressed: 0
-  Atk2_held: 0
-  Atk2_released: 0
-  Atk2_2_pressed: 0
-  Atk2_2_held: 0
-  Atk2_2_released: 0
-  Atk3_pressed: 0
-  Atk3_held: 0
-  Atk3_released: 0
-  Jump_pressed: 0
-  Jump_held: 0
-  Jump_released: 0
-  Dash_pressed: 0
-  Dash_held: 0
-  Dash_released: 0
-  SwapWep_pressed: 0
-  SwapWep_held: 0
-  SwapWep_released: 0
-  BowRecharge_pressed: 0
-  BowRecharge_held: 0
-  BowRecharge_released: 0
-  Inv_pressed: 0
-  Inv_held: 0
-  Inv_released: 0
-  UIUp_pressed: 0
-  UIUp_held: 0
-  UIUp_released: 0
-  UIDown_pressed: 0
-  UIDown_held: 0
-  UIDown_released: 0
-  UIRight_pressed: 0
-  UIRight_held: 0
-  UIRight_released: 0
-  UILeft_pressed: 0
-  UILeft_held: 0
-  UILeft_released: 0
-  UIAccept_pressed: 0
-  UIAccept_held: 0
-  UIAccept_released: 0
-  UIDecline_pressed: 0
-  UIDecline_held: 0
-  UIDecline_released: 0
-  UIAlt1_pressed: 0
-  UIAlt1_held: 0
-  UIAlt1_released: 0
-  UIAlt2_pressed: 0
-  UIAlt2_held: 0
-  UIAlt2_released: 0
-  UIAlt3_pressed: 0
-  UIAlt3_held: 0
-  UIAlt3_released: 0
-  LeftKey_Pressed: 0
-  LeftKey_Held: 0
-  LeftKey_Released: 0
-  RightKey_Pressed: 0
-  RightKey_Held: 0
-  RightKey_Released: 0
-  UpKey_Pressed: 0
-  UpKey_Held: 0
-  UpKey_Released: 0
-  DownKey_Pressed: 0
-  DownKey_Held: 0
-  DownKey_Released: 0
---- !u!114 &2374169362876929647
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2374169362876929644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c68a1d8563c3f0f46bcd20a0b8ac306a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ct: {fileID: 2374169362876929645}
+  - 0.05
+  - 0.05

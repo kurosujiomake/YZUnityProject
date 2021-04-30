@@ -778,147 +778,6 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
---- !u!1 &565844307
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 565844309}
-  - component: {fileID: 565844308}
-  m_Layer: 0
-  m_Name: InputShellTest
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &565844308
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 565844307}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 455059698878ac1469e64a3ec005d84b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  control: 3
-  InputMap:
-  - ButtonName: Atk1
-    gButton: 7
-    kKey: 24
-  - ButtonName: Atk2
-    gButton: 10
-    kKey: 20
-  - ButtonName: Atk2_2
-    gButton: 11
-    kKey: 20
-  - ButtonName: Atk3
-    gButton: 33
-    kKey: 20
-  - ButtonName: Jump
-    gButton: 6
-    kKey: 20
-  - ButtonName: Dash
-    gButton: 5
-    kKey: 20
-  - ButtonName: SwapWep
-    gButton: 0
-    kKey: 20
-  - ButtonName: BowRecharge
-    gButton: 0
-    kKey: 20
-  - ButtonName: Inv
-    gButton: 0
-    kKey: 20
-  - ButtonName: UIUp
-    gButton: 0
-    kKey: 20
-  - ButtonName: UIDown
-    gButton: 1
-    kKey: 20
-  - ButtonName: UIRight
-    gButton: 3
-    kKey: 20
-  - ButtonName: UILeft
-    gButton: 2
-    kKey: 20
-  - ButtonName: UIAccept
-    gButton: 5
-    kKey: 20
-  - ButtonName: UIDecline
-    gButton: 6
-    kKey: 20
-  - ButtonName: UIAlt1
-    gButton: 10
-    kKey: 20
-  - ButtonName: UIAlt2
-    gButton: 11
-    kKey: 20
-  - ButtonName: UIAlt3
-    gButton: 33
-    kKey: 20
-  KeyBoardDirection:
-  - ButtonName: left
-    gButton: 2
-    kKey: 15
-  - ButtonName: right
-    gButton: 3
-    kKey: 18
-  - ButtonName: up
-    gButton: 0
-    kKey: 37
-  - ButtonName: down
-    gButton: 1
-    kKey: 33
-  DirectionMap:
-  - returnString: n
-    direction: 0
-  - returnString: u
-    direction: 1
-  - returnString: d
-    direction: 2
-  - returnString: r
-    direction: 4
-  - returnString: l
-    direction: 3
-  - returnString: ul
-    direction: 5
-  - returnString: ur
-    direction: 6
-  - returnString: dl
-    direction: 7
-  - returnString: dr
-    direction: 8
-  curLStickDir: 0
-  curRStickDir: 0
-  leftStickRead: {x: 0, y: 0}
-  rightStickRead: {x: 0, y: 0}
-  stickDeadzoneL:
-  - 0.03
-  - 0.03
-  stickDeadzoneR:
-  - 0.05
-  - 0.05
---- !u!4 &565844309
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 565844307}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.896715, y: -0.015851181, z: 455.28067}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &699981823
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1013,7 +872,7 @@ PrefabInstance:
         type: 3}
       propertyPath: pCM
       value: 
-      objectReference: {fileID: 1728451060}
+      objectReference: {fileID: 1889199695}
     - target: {fileID: 5059826141286986927, guid: 1031ba9322eed7d4b91cb7a64a544e0c,
         type: 3}
       propertyPath: camera
@@ -1542,16 +1401,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ControlManager
       objectReference: {fileID: 0}
-    - target: {fileID: 2374169362876929644, guid: b9d2a7211a311ef458007fdcebcac8b7,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
-        type: 3}
-      propertyPath: curControlType
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 2374169362876929646, guid: b9d2a7211a311ef458007fdcebcac8b7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1802,15 +1651,15 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1728451060 stripped
+--- !u!114 &1889199695 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2374169362876929645, guid: b9d2a7211a311ef458007fdcebcac8b7,
+  m_CorrespondingSourceObject: {fileID: 3223418182532373444, guid: b9d2a7211a311ef458007fdcebcac8b7,
     type: 3}
   m_PrefabInstance: {fileID: 1486671661}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7db7a1c59bd7cf4d914c72e36de2072, type: 3}
+  m_Script: {fileID: 11500000, guid: 455059698878ac1469e64a3ec005d84b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

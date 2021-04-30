@@ -6,12 +6,12 @@ public class Dashing : StateMachineBehaviour
 {
     private Parameters m_param = null;
     private GroundChecker g = null;
-    private PlayerControlManager pCM = null;
+    private InputSystemShell pCM = null;
     
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        pCM = GameObject.FindGameObjectWithTag("pControlManager").GetComponent<PlayerControlManager>();
+        pCM = GameObject.FindGameObjectWithTag("pControlManager").GetComponent<InputSystemShell>();
         m_param = animator.GetComponent<Parameters>();
         g = animator.GetComponent<GroundChecker>();
         

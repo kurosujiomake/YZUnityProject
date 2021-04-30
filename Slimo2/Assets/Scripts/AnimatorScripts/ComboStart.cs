@@ -5,7 +5,7 @@ using UnityEngine;
 public class ComboStart : StateMachineBehaviour
 {
     public Parameters param = null;
-    public PlayerControlManager pCM = null;
+    public InputSystemShell pCM = null;
     public PlayerControllerNew pCN = null;
     public SpecialAttackParameters spParam = null;
     public NewSpUltAktParam nSP = null;
@@ -15,7 +15,7 @@ public class ComboStart : StateMachineBehaviour
     {
         param = animator.GetComponent<Parameters>();
         nSP = animator.GetComponent<NewSpUltAktParam>();
-        pCM = GameObject.FindGameObjectWithTag("pControlManager").GetComponent<PlayerControlManager>();
+        pCM = GameObject.FindGameObjectWithTag("pControlManager").GetComponent<InputSystemShell>();
         pCN = animator.GetComponent<PlayerControllerNew>();
         spParam = animator.GetComponent<SpecialAttackParameters>();
         animator.SetInteger("ComboNum", 1);
@@ -24,7 +24,7 @@ public class ComboStart : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        switch(param.AT)
+        switch (param.AT)
         {
             case Parameters.AtkType.bow: //directional att triggers for bow
                 switch (pCM.GetDirectionL())
@@ -32,8 +32,6 @@ public class ComboStart : StateMachineBehaviour
                     case "d":
                     case "dl":
                     case "dr":
-                        //jumpback att goes here
-                        break;
                     case "n":
                     case "l":
                     case "r":
@@ -56,6 +54,7 @@ public class ComboStart : StateMachineBehaviour
                     case "n":
                         if (pCM.GetButtonDown("Atk1"))
                         {
+                            Debug.Log("Atk1 pressed");
                             animator.SetTrigger("GAtt_a");
                         }
                         break;
