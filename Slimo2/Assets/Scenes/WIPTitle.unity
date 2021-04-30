@@ -807,8 +807,104 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 455059698878ac1469e64a3ec005d84b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IMap:
+  control: 3
+  InputMap:
+  - ButtonName: Atk1
+    gButton: 7
+    kKey: 24
+  - ButtonName: Atk2
+    gButton: 10
+    kKey: 20
+  - ButtonName: Atk2_2
+    gButton: 11
+    kKey: 20
+  - ButtonName: Atk3
+    gButton: 33
+    kKey: 20
+  - ButtonName: Jump
     gButton: 6
+    kKey: 20
+  - ButtonName: Dash
+    gButton: 5
+    kKey: 20
+  - ButtonName: SwapWep
+    gButton: 0
+    kKey: 20
+  - ButtonName: BowRecharge
+    gButton: 0
+    kKey: 20
+  - ButtonName: Inv
+    gButton: 0
+    kKey: 20
+  - ButtonName: UIUp
+    gButton: 0
+    kKey: 20
+  - ButtonName: UIDown
+    gButton: 1
+    kKey: 20
+  - ButtonName: UIRight
+    gButton: 3
+    kKey: 20
+  - ButtonName: UILeft
+    gButton: 2
+    kKey: 20
+  - ButtonName: UIAccept
+    gButton: 5
+    kKey: 20
+  - ButtonName: UIDecline
+    gButton: 6
+    kKey: 20
+  - ButtonName: UIAlt1
+    gButton: 10
+    kKey: 20
+  - ButtonName: UIAlt2
+    gButton: 11
+    kKey: 20
+  - ButtonName: UIAlt3
+    gButton: 33
+    kKey: 20
+  KeyBoardDirection:
+  - ButtonName: left
+    gButton: 2
+    kKey: 15
+  - ButtonName: right
+    gButton: 3
+    kKey: 18
+  - ButtonName: up
+    gButton: 0
+    kKey: 37
+  - ButtonName: down
+    gButton: 1
+    kKey: 33
+  DirectionMap:
+  - returnString: n
+    direction: 0
+  - returnString: u
+    direction: 1
+  - returnString: d
+    direction: 2
+  - returnString: r
+    direction: 4
+  - returnString: l
+    direction: 3
+  - returnString: ul
+    direction: 5
+  - returnString: ur
+    direction: 6
+  - returnString: dl
+    direction: 7
+  - returnString: dr
+    direction: 8
+  curLStickDir: 0
+  curRStickDir: 0
+  leftStickRead: {x: 0, y: 0}
+  rightStickRead: {x: 0, y: 0}
+  stickDeadzoneL:
+  - 0.03
+  - 0.03
+  stickDeadzoneR:
+  - 0.05
+  - 0.05
 --- !u!4 &565844309
 Transform:
   m_ObjectHideFlags: 0
