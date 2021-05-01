@@ -123,6 +123,10 @@ public class GameManager : MonoBehaviour
                 {
                     ToggleControlSelection();
                 }
+                if (pCM.GetButtonDown("UIAccept"))
+                {
+
+                }
                 break;
             case 1:
 

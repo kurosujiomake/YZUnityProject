@@ -785,33 +785,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 644291757, guid: 1031ba9322eed7d4b91cb7a64a544e0c, type: 3}
-      propertyPath: inTitleScreen
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1569908397, guid: 1031ba9322eed7d4b91cb7a64a544e0c, type: 3}
-      propertyPath: inTitleScreen
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5059826141286986912, guid: 1031ba9322eed7d4b91cb7a64a544e0c,
         type: 3}
       propertyPath: camera
       value: 
       objectReference: {fileID: 910321742}
-    - target: {fileID: 5059826141286986912, guid: 1031ba9322eed7d4b91cb7a64a544e0c,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5059826141286986913, guid: 1031ba9322eed7d4b91cb7a64a544e0c,
         type: 3}
       propertyPath: m_Name
       value: ^GM
-      objectReference: {fileID: 0}
-    - target: {fileID: 5059826141286986913, guid: 1031ba9322eed7d4b91cb7a64a544e0c,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5059826141286986925, guid: 1031ba9322eed7d4b91cb7a64a544e0c,
         type: 3}
@@ -878,11 +860,6 @@ PrefabInstance:
       propertyPath: camera
       value: 
       objectReference: {fileID: 910321742}
-    - target: {fileID: 5059826141286986927, guid: 1031ba9322eed7d4b91cb7a64a544e0c,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1031ba9322eed7d4b91cb7a64a544e0c, type: 3}
 --- !u!1 &835023231
