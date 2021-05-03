@@ -2458,6 +2458,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3223418182532373444, guid: b9d2a7211a311ef458007fdcebcac8b7,
+        type: 3}
+      propertyPath: control
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9d2a7211a311ef458007fdcebcac8b7, type: 3}
 --- !u!1 &608463854
@@ -12460,11 +12465,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BigEnemyTestDummyflying
       objectReference: {fileID: 0}
-    - target: {fileID: 6177986475663389880, guid: 31f10380c2066f24abbad7a6ab597436,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6177986475663389881, guid: 31f10380c2066f24abbad7a6ab597436,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12711,6 +12711,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EnemySpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 6315021299371522901, guid: b4bfc6c5ca1b03f41ae4d28462f98afb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4bfc6c5ca1b03f41ae4d28462f98afb, type: 3}

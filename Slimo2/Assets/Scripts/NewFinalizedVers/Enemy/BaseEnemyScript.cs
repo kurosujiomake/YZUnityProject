@@ -74,6 +74,7 @@ public class BaseEnemyScript : MonoBehaviour
         moveType = defaultStates.defaultMove;
         wayType = defaultStates.defaultPathfind;
         rb2d.velocity = Vector2.zero;
+        SearchOrigin = this.transform;
     }
 
     void Update()
@@ -528,7 +529,7 @@ public class BaseEnemyScript : MonoBehaviour
         switch(facingRight)
         {
             case true:
-                if(pV.x > v.x && Mathf.Abs(pV.magnitude - v.magnitude) < SearchDist) //if player is to the right and within aggro range
+                if(pV.x > v.x && (pV.magnitude - v.magnitude) < SearchDist) //if player is to the right and within aggro range
                 {
                     hasTarget = true;
                     targetTrans = pTar.transform;
@@ -541,7 +542,7 @@ public class BaseEnemyScript : MonoBehaviour
 
                 break;
             case false:
-                if (pV.x < v.x && Mathf.Abs(pV.magnitude - v.magnitude) < SearchDist) //if player is to the right and within aggro range
+                if (pV.x < v.x && (pV.magnitude - v.magnitude) < SearchDist) //if player is to the right and within aggro range
                 {
                     hasTarget = true;
                     targetTrans = pTar.transform;

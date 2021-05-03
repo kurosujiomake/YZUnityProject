@@ -36,13 +36,18 @@ public class EnemyProjFire : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        TargetConversion();
+        if (Target != null)
+            TargetConversion();
         FireReset();
-        if(Fire && !hasFired)
+        if(UseTarget && Target != null)
         {
-            StartCoroutine(FireProjCycle());
-            hasFired = true;
+            if (Fire && !hasFired)
+            {
+                StartCoroutine(FireProjCycle());
+                hasFired = true;
+            }
         }
+        
     }
     public void AddTarget(Transform tar)
     {
