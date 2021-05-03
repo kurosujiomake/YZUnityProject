@@ -30,15 +30,26 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        if(sState == SceneState.Levels)
+        switch(GetComponent<SceneManage>().ReturnSceneStateType())
+        {
+            case 0: //this scene is a title type scene
+                sState = SceneState.Title;
+                break;
+            case 1:
+                sState = SceneState.Levels;
+                break;
+        }
+        
+        if (sState == SceneState.Levels)
         {
             EquipUI.GetComponent<EquipUINew>().UpdateCursor();
             EquipUI.GetComponent<EquipUINew>().SlotIDSet();
             EquipUI.SetActive(false);
             hStop = GetComponent<HitStop>();
-            if(pCM != null) //sets up the control type based on user selection
+            pCM = GameObject.FindGameObjectWithTag("pControlManager").GetComponent<InputSystemShell>();
+            if(pCM != null && GameObject.FindGameObjectWithTag("cTypeHolder").GetComponent<ControlTypeScriptHolder>() != null) //sets up the control type based on user selection
             {
-                switch(cType)
+                switch(GameObject.FindGameObjectWithTag("cTypeHolder").GetComponent<ControlTypeScriptHolder>().cType)
                 {
                     case 0:
                         pCM.SetControls(1);
@@ -125,7 +136,12 @@ public class GameManager : MonoBehaviour
                 }
                 if (pCM.GetButtonDown("UIAccept"))
                 {
-
+                    if (GameObject.FindGameObjectWithTag("cTypeHolder").GetComponent<ControlTypeScriptHolder>() != null)
+                    {
+                        GameObject.FindGameObjectWithTag("cTypeHolder").GetComponent<ControlTypeScriptHolder>().cType = cType;
+                    }
+                    GetComponent<SceneManage>().ChangeLevel(1);
+                    
                 }
                 break;
             case 1:

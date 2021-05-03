@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 644291758}
   - component: {fileID: 644291757}
   - component: {fileID: 1569908397}
-  - component: {fileID: -4341084833669861882}
   - component: {fileID: 338154300571953269}
   m_Layer: 0
   m_Name: ^GM
@@ -254,20 +253,9 @@ MonoBehaviour:
   gTimeStop: 0
   uTimeStop: 0
   effectTimeToReset: 1
-  hitStopEffect: {fileID: 0}
+  hitStopEffect: {fileID: 1934709224521877566, guid: 2542cc3fd783f614392f49e1f898be68,
+    type: 3}
   inTitleScreen: 1
---- !u!114 &-4341084833669861882
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5059826141286986913}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66e6fda77b7d8ea4680031844b878d3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &338154300571953269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -280,3 +268,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2992812012ab2c438a8aab2fe07dca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scenes:
+  - sceneName: Title
+    sceneID: 0
+    sceneStateType: 0
+  - sceneName: DemoLevel_alpha
+    sceneID: 1
+    sceneStateType: 1

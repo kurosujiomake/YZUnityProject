@@ -16,6 +16,7 @@ TagManager:
   - pControlManager
   - HitDisplayCanv
   - GameManager
+  - cTypeHolder
   layers:
   - Default
   - TransparentFX
