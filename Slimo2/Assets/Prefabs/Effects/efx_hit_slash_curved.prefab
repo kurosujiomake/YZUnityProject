@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 182018733527812646}
   - component: {fileID: -2481460095792204688}
   m_Layer: 0
-  m_Name: efx_hit_slash
+  m_Name: efx_hit_slash_curved
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +73,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -120,7 +120,7 @@ ParticleSystem:
   startDelay:
     serializedVersion: 2
     minMaxState: 0
-    scalar: 0
+    scalar: 0.01
     minScalar: 0
     maxCurve:
       serializedVersion: 2
@@ -731,7 +731,7 @@ ParticleSystem:
     radiusThickness: 1
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
-    m_Rotation: {x: 90, y: 0, z: 0}
+    m_Rotation: {x: 180, y: 0, z: 0}
     m_Scale: {x: 1.1, y: 1.1, z: 0.5}
     placementMode: 0
     m_MeshMaterialIndex: 0
@@ -809,9 +809,9 @@ ParticleSystem:
     m_TextureBilinearFiltering: 0
     randomDirectionAmount: 0
     sphericalDirectionAmount: 0
-    randomPositionAmount: 0
+    randomPositionAmount: 0.75
     radius:
-      value: 1
+      value: 1.5
       mode: 0
       spread: 0
       speed:
@@ -1099,7 +1099,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 3
       scalar: 5
-      minScalar: 2
+      minScalar: 3
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1366,7 +1366,7 @@ ParticleSystem:
     curve:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.43633232
+      scalar: 0.2617994
       minScalar: 0.7853982
       maxCurve:
         serializedVersion: 2
@@ -1603,11 +1603,11 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: 6759573374637503290, guid: ef4bf704bd6705e4f8eecab4a5b0db80,
+    - sprite: {fileID: -7194547072652176977, guid: 95f6dfb595ad65e4d99a0c9d03baa061,
         type: 3}
-    - sprite: {fileID: 8915625999266964501, guid: ef4bf704bd6705e4f8eecab4a5b0db80,
+    - sprite: {fileID: -2376111897987655263, guid: 95f6dfb595ad65e4d99a0c9d03baa061,
         type: 3}
-    - sprite: {fileID: 7861430424674846095, guid: ef4bf704bd6705e4f8eecab4a5b0db80,
+    - sprite: {fileID: 7268019027102127168, guid: 95f6dfb595ad65e4d99a0c9d03baa061,
         type: 3}
     flipU: 0
     flipV: 0
