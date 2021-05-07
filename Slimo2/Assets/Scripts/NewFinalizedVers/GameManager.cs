@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     public int cType = 0; //default keyboard, 1 is controller
     private bool anyKeyPressed = false;
     public int titleStage = -1;
+    public float transitionDelay;
+    public GameObject fadeEffect;
     public enum GameState
     {
         Gameplay,
@@ -61,6 +63,10 @@ public class GameManager : MonoBehaviour
             }
         }
         titleStage = -1;
+        if(fadeEffect != null)
+        {
+            fadeEffect.SetActive(false);
+        }
         
     }
 
@@ -119,6 +125,11 @@ public class GameManager : MonoBehaviour
         
     }
 
+    IEnumerator TitleScreenTransitionTimer()
+    {
+        yield return new WaitForSeconds(transitionDelay);
+        GetComponent<SceneManage>().ChangeLevel(1);
+    }
     void AdvanceTitle()
     {
         switch(titleStage)
@@ -140,12 +151,17 @@ public class GameManager : MonoBehaviour
                     {
                         GameObject.FindGameObjectWithTag("cTypeHolder").GetComponent<ControlTypeScriptHolder>().cType = cType;
                     }
-                    GetComponent<SceneManage>().ChangeLevel(1);
+                    if(fadeEffect != null)
+                    {
+                        fadeEffect.SetActive(true);
+                    }
+                    titleStage++;
+                    
                     
                 }
                 break;
             case 1:
-
+                StartCoroutine(TitleScreenTransitionTimer());
                 break;
         }
         

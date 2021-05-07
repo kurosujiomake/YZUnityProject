@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -778,6 +778,12 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!1 &397560107 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1311771204433213278, guid: 704dcee6e185b6b48b2b5ea35a80407c,
+    type: 3}
+  m_PrefabInstance: {fileID: 965313988}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &699981823
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -855,6 +861,16 @@ PrefabInstance:
       propertyPath: pCM
       value: 
       objectReference: {fileID: 1889199695}
+    - target: {fileID: 5059826141286986926, guid: 1031ba9322eed7d4b91cb7a64a544e0c,
+        type: 3}
+      propertyPath: fadeEffect
+      value: 
+      objectReference: {fileID: 397560107}
+    - target: {fileID: 5059826141286986926, guid: 1031ba9322eed7d4b91cb7a64a544e0c,
+        type: 3}
+      propertyPath: transitionDelay
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5059826141286986927, guid: 1031ba9322eed7d4b91cb7a64a544e0c,
         type: 3}
       propertyPath: camera
@@ -1233,7 +1249,7 @@ PrefabInstance:
     - target: {fileID: 1311771204433213278, guid: 704dcee6e185b6b48b2b5ea35a80407c,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 704dcee6e185b6b48b2b5ea35a80407c, type: 3}
