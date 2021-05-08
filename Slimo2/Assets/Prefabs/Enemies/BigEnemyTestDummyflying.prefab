@@ -503,7 +503,7 @@ MonoBehaviour:
   dR: {fileID: 0}
   eHP: {fileID: 0}
   bHS:
-    baseMaxHP: 100
+    baseMaxHP: 15
     hpMulti: 10
 --- !u!114 &6177986475663389862
 MonoBehaviour:

@@ -50,34 +50,34 @@ MonoBehaviour:
     kKey: 24
   - ButtonName: Atk2
     gButton: 10
-    kKey: 20
+    kKey: 25
   - ButtonName: Atk2_2
     gButton: 11
-    kKey: 20
+    kKey: 26
   - ButtonName: Atk3
     gButton: 4
-    kKey: 20
+    kKey: 6
   - ButtonName: Jump
     gButton: 6
-    kKey: 20
+    kKey: 1
   - ButtonName: Dash
     gButton: 5
-    kKey: 20
+    kKey: 28
   - ButtonName: SwapWep
     gButton: 32
-    kKey: 20
+    kKey: 53
   - ButtonName: BowRecharge
     gButton: 33
-    kKey: 20
+    kKey: 32
   - ButtonName: Inv
     gButton: 12
-    kKey: 20
+    kKey: 23
   - ButtonName: UIUp
     gButton: 0
-    kKey: 20
+    kKey: 63
   - ButtonName: UIDown
     gButton: 1
-    kKey: 20
+    kKey: 64
   - ButtonName: UIRight
     gButton: 3
     kKey: 62
@@ -89,16 +89,16 @@ MonoBehaviour:
     kKey: 2
   - ButtonName: UIDecline
     gButton: 6
-    kKey: 65
+    kKey: 60
   - ButtonName: UIAlt1
     gButton: 10
-    kKey: 20
+    kKey: 41
   - ButtonName: UIAlt2
     gButton: 11
-    kKey: 20
+    kKey: 42
   - ButtonName: UIAlt3
     gButton: 33
-    kKey: 20
+    kKey: 43
   KeyBoardDirection:
   - ButtonName: left
     gButton: 2

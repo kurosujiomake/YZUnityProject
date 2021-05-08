@@ -696,7 +696,7 @@ MonoBehaviour:
   dR: {fileID: 0}
   eHP: {fileID: 0}
   bHS:
-    baseMaxHP: 100
+    baseMaxHP: 25
     hpMulti: 10
 --- !u!114 &389254983349222143
 MonoBehaviour:
