@@ -26,6 +26,7 @@ public class PlayerControllerNew : MonoBehaviour
     public GameObject dashEffect= null;
     private int wepSwapID;
     public PlayerDamageTakeCycles pDTC = null;
+    public DashDisplay dDisplay = null;
     public enum controlType
     {
         player,
@@ -86,7 +87,8 @@ public class PlayerControllerNew : MonoBehaviour
         if(isGrounded)
         {
             m_param.m_canJump = true;
-            cADash = 0;
+            cADash = m_param.m_DashMax;
+            dDisplay.UpdateDashAmt(cADash);
             m_param.m_canADash = true;
         }
         if(pCM.GetButtonUp("Jump"))
@@ -177,14 +179,19 @@ public class PlayerControllerNew : MonoBehaviour
                 BlinkTeleport();
             else
             {
-                cADash++;
                 //print(cADash);
-                if(cADash <= m_param.m_DashMax)
+                if(cADash > 0)
                 {
                     m_param.m_canADash = true;
                     AirDash();
+                    cADash--;
+                    if (dDisplay != null)
+                    {
+                        dDisplay.UpdateDashAmt(cADash);
+                    }
+                    
                 }
-                if(cADash > m_param.m_DashMax)
+                if(cADash <= 0)
                 {
                     m_param.m_canADash = false;
                 }
