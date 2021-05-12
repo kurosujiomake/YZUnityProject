@@ -652,7 +652,7 @@ MonoBehaviour:
   SearchDist: 20
   DeAggroDist: 21
   aggroSpdInc: 0
-  atkRange: 19
+  atkRange: 25
   hasAtked: 0
   atkCD: 2
   meleeAtkHitBox: {fileID: 0}
