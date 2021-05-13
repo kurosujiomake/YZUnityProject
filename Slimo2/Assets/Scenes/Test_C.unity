@@ -9352,12 +9352,12 @@ PrefabInstance:
     - target: {fileID: 3727145088433499904, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 14.1
+      value: 20.3
       objectReference: {fileID: 0}
     - target: {fileID: 3727145088433499904, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -23.4
+      value: 54.5
       objectReference: {fileID: 0}
     - target: {fileID: 3727145088433499904, guid: 16a462e48b7ea5340b1aa2c5627f2e76,
         type: 3}
@@ -138953,6 +138953,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: efx_screenFadeOut
+      objectReference: {fileID: 0}
+    - target: {fileID: 3039936132581507372, guid: b6e0eeb17fe4f504788f3f3240e52adf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3039936132581507375, guid: b6e0eeb17fe4f504788f3f3240e52adf,
         type: 3}
