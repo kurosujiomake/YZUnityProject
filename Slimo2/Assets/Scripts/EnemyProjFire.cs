@@ -23,6 +23,7 @@ public class EnemyProjFire : MonoBehaviour
     public float projLifeTime = 0;
     public float inBetweenDelay = 0;
     public Transform projSpawnPoint;
+    public float enemyProjDmg = 1;
     [Header("KB_ID determines the knockback from database")]
     public int kbID;
     [Header("Use these Bool(s) to fire the proj")]
@@ -122,6 +123,7 @@ public class EnemyProjFire : MonoBehaviour
             clone.GetComponent<KBInfoPass>().Hit_ID = IDRandomizer();
             clone.GetComponent<KBInfoPass>().curKBNum = kbID;
             clone.GetComponent<KBInfoPass>().isEnemyHitBox = true;
+            clone.GetComponent<KBInfoPass>().Damage = enemyProjDmg;
             switch (clone.GetComponent<ProjType>().Proj_Type)
             {
                 case ProjType.Type.Bullet:
