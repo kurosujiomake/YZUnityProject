@@ -391,7 +391,7 @@ MonoBehaviour:
   curKBNum: 4
   isProj: 0
   HitCount: 1
-  Damage: 251
+  Damage: 1
   eleType: 0
   hType: 0
   isEnemyHitBox: 1
@@ -783,6 +783,8 @@ MonoBehaviour:
   baseScript: {fileID: 0}
   eHP: {fileID: 0}
   particleSpawnPoint: {fileID: 389254982791681022}
+  isPlayer: 0
+  pHP: {fileID: 0}
 --- !u!114 &839843541
 MonoBehaviour:
   m_ObjectHideFlags: 0
