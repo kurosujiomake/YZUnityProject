@@ -88,7 +88,7 @@ public class PlayerControllerNew : MonoBehaviour
         {
             m_param.m_canJump = true;
             cADash = m_param.m_DashMax;
-            dDisplay.UpdateDashAmt(cADash);
+            dDisplay.ResetDashDisplay(cADash);
             m_param.m_canADash = true;
         }
         if(pCM.GetButtonUp("Jump"))

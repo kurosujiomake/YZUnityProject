@@ -15,29 +15,42 @@ public class DamageReciever : MonoBehaviour
     public BaseEnemyScript baseScript;
     public EnemyHP eHP = null;
     public Transform particleSpawnPoint = null;
+    public bool isPlayer = false;
+    public PlayerHP pHP = null;
     void Awake()
     {
-        dNM = GameObject.FindGameObjectWithTag("HitDisplayCanv").GetComponent<DamageNumberMain>();
-        baseScript = GetComponent<BaseEnemyScript>();
-        eHP = gameObject.GetComponent<EnemyHP>();
-    }
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(!isPlayer)
         {
-            CalcDmg(142, 1, false);
+            dNM = GameObject.FindGameObjectWithTag("HitDisplayCanv").GetComponent<DamageNumberMain>();
+            baseScript = GetComponent<BaseEnemyScript>();
+            eHP = gameObject.GetComponent<EnemyHP>();
         }
-
+        if(isPlayer)
+        {
+            pHP = GetComponent<PlayerHP>();
+        }
     }
     public void TakeDamage(float finalDmg, int element, bool isCrit, int HitCount, HitType _hType) //this actually takes the dmg after calculations
     {
-        for (int i = 0; i < HitCount; i++)
+        switch(isPlayer)
         {
-            dNM.DisplayUpdate(CalcDmg(finalDmg, element, isCrit), 1);
-            SpawnHitEffect(_hType);
-            baseScript.GotHurt(finalDmg);
-            eHP.TakeDamage(1, CalcDmg(finalDmg, element, isCrit));
+            case true:
+                for (int i = 0; i < HitCount; i++)
+                {
+                    pHP.PlayerTakeDamage(CalcDmg(finalDmg, element, isCrit));
+                }
+                break;
+            case false:
+                for (int i = 0; i < HitCount; i++)
+                {
+                    dNM.DisplayUpdate(CalcDmg(finalDmg, element, isCrit), 1);
+                    SpawnHitEffect(_hType);
+                    baseScript.GotHurt(finalDmg);
+                    eHP.TakeDamage(1, CalcDmg(finalDmg, element, isCrit));
+                }
+                break;
         }
+        
         
     }
     void SpawnHitEffect(HitType hType)

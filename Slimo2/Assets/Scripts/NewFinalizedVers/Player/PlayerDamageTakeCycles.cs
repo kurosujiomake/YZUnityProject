@@ -32,12 +32,7 @@ public class PlayerDamageTakeCycles : MonoBehaviour
         hStop = GameObject.FindGameObjectWithTag("GameManager").GetComponent<HitStop>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    //Here is where the player takes damage
     private void OnTriggerEnter2D (Collider2D collider)
     {
         if(collider.GetComponent<KBInfoPass>() != null)
@@ -51,6 +46,7 @@ public class PlayerDamageTakeCycles : MonoBehaviour
                     hStop.GlobalHitStop(1, 0);
                     StopAllCoroutines();
                     StartCoroutine(PKB(kb.curKBNum, kb.enemySource.transform));
+                    DR.TakeDamage(kb.Damage, kb.eleType, false, kb.HitCount, kb.hType);
                     curHitID = kb.Hit_ID;
                 }
                 

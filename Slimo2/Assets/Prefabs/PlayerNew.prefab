@@ -948,6 +948,8 @@ MonoBehaviour:
   - iconID: 4
     icon: {fileID: 959387495}
   curDashAmt: 5
+  displayTimer: 2
+  allDisplay: 0
 --- !u!1 &1320624554
 GameObject:
   m_ObjectHideFlags: 0
@@ -1533,6 +1535,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1836578671}
+  - component: {fileID: 199919961}
   m_Layer: 9
   m_Name: HPDisplay
   m_TagString: Untagged
@@ -1560,6 +1563,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &199919961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1836578670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c6771be99b25eb46b2b7adfb41d4bde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayTime: 2
+  HpDisplay: {fileID: 520836294}
+  hpMax: 0
+  hpCur: 0
 --- !u!1 &1948362888
 GameObject:
   m_ObjectHideFlags: 0
@@ -2479,6 +2498,7 @@ GameObject:
   - component: {fileID: 995318638}
   - component: {fileID: 995318657}
   - component: {fileID: 6578931868720093782}
+  - component: {fileID: 995318658}
   m_Layer: 9
   m_Name: PlayerNew
   m_TagString: Player
@@ -3383,37 +3403,60 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defStats:
-    baseDef: 0
-    defMulti: 0
+    baseDef: 2
+    defMulti: 1.37
     eleRes:
     - index: 0
-      Name: 
+      Name: Neutral
       resAmt: 0
     - index: 1
-      Name: 
+      Name: Wind
       resAmt: 0
     - index: 2
-      Name: 
+      Name: Water
       resAmt: 0
     - index: 3
-      Name: 
+      Name: Fire
       resAmt: 0
     - index: 4
-      Name: 
+      Name: Earth
       resAmt: 0
     - index: 5
-      Name: 
+      Name: Arcane
       resAmt: 0
-  status: []
+  status:
+  - effect: {fileID: 11400000, guid: dac081cbcc1c2dd428cd3accbb52ba74, type: 2}
+    isActive: 0
+    slot: 0
+  - effect: {fileID: 11400000, guid: 0c3fea04046ca194ea77a1cbadb77229, type: 2}
+    isActive: 0
+    slot: 1
+  - effect: {fileID: 11400000, guid: c337579244b92ee4880624dfa0796e51, type: 2}
+    isActive: 0
+    slot: 2
+  - effect: {fileID: 11400000, guid: 22909310b99fe3c41a581b7f819abd1c, type: 2}
+    isActive: 0
+    slot: 3
+  - effect: {fileID: 11400000, guid: 694c54680fbd3694396c35934e8dcbf8, type: 2}
+    isActive: 0
+    slot: 4
+  - effect: {fileID: 11400000, guid: a9f90204d0fd5ee46a96c9e8e1f8452d, type: 2}
+    isActive: 0
+    slot: 5
+  - effect: {fileID: 11400000, guid: 2ddbfe758fc0d2749a347517520d7dd3, type: 2}
+    isActive: 0
+    slot: 6
   dNM: {fileID: 0}
   OnHitEffects: []
-  hitEffectID: 0
+  hitEffectID: 1
   slashRotRand:
   - 0
   - 0
   baseScript: {fileID: 0}
   eHP: {fileID: 0}
   particleSpawnPoint: {fileID: 0}
+  isPlayer: 1
+  pHP: {fileID: 0}
 --- !u!114 &995318657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3450,6 +3493,21 @@ MonoBehaviour:
   hStop: {fileID: 0}
   heavyHitStopDur: 0.15
   isDetachedFromPlayer: 0
+--- !u!114 &995318658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3727145088433499907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62278b336a0267b4d9d1c86993f8d5e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pHPMax: 10
+  pHPCur: 0
+  pHPDisplay: {fileID: 0}
 --- !u!1 &3772932790477469332
 GameObject:
   m_ObjectHideFlags: 0
