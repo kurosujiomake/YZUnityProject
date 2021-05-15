@@ -13,6 +13,7 @@ public class PlayerDamageTakeCycles : MonoBehaviour
     public float playerKBMulti = 50;
     public bool isInvincible = false;
     public HitStop hStop = null;
+    public GameManager gm = null;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +31,7 @@ public class PlayerDamageTakeCycles : MonoBehaviour
         }
         rb2d = GetComponent<Rigidbody2D>();
         hStop = GameObject.FindGameObjectWithTag("GameManager").GetComponent<HitStop>();
+        gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     }
 
     //Here is where the player takes damage
@@ -40,7 +42,7 @@ public class PlayerDamageTakeCycles : MonoBehaviour
             var kb = collider.GetComponent<KBInfoPass>();
             if(kb.SourceID == 1 || kb.SourceID == 3) //player only takes damage from these sources: 1 = enemy, 3 = all
             {
-                if(kb.Hit_ID != curHitID && !isInvincible)
+                if(kb.Hit_ID != curHitID && !isInvincible && !anim.GetBool("IsDead"))
                 {
                     anim.SetTrigger("GotHit");
                     hStop.GlobalHitStop(1, 0);
@@ -58,16 +60,29 @@ public class PlayerDamageTakeCycles : MonoBehaviour
         pCN.SetPState(2);
         StopMovement();
         rb2d.gravityScale = 1;
-        PKnockback(kbD.Dir(KB_ID) * playerKBMulti, kbD.Vel(KB_ID) * playerKBMulti, enemyPos);
-        yield return new WaitForSeconds(kbD.KBDur(KB_ID));
-        rb2d.gravityScale = 5;
-        StopMovement();
-        if(!GetComponent<Parameters>().m_isDashing && !GetComponent<Parameters>().m_isADashing)
+        if (GetComponent<PlayerHP>().pHPCur > 0)
         {
-            pCN.SetPState(1);
+            PKnockback(kbD.Dir(KB_ID) * playerKBMulti, kbD.Vel(KB_ID) * playerKBMulti, enemyPos);
+            yield return new WaitForSeconds(kbD.KBDur(KB_ID));
+            rb2d.gravityScale = 5;
+            StopMovement();
+            if (!GetComponent<Parameters>().m_isDashing && !GetComponent<Parameters>().m_isADashing)
+            {
+                pCN.SetPState(1);
+            }
+            anim.SetTrigger("BackToIdle");
+        }
+        if(GetComponent<PlayerHP>().pHPCur <= 0)
+        {
+            gm.StartDeathTimer();
+            gm.SwapGameState(2);
+            anim.SetTrigger("IsDying");
+            anim.SetBool("IsDead", true);
+            yield return new WaitForSeconds(kbD.KBDur(KB_ID));
         }
         
-        anim.SetTrigger("BackToIdle");
+        
+        
     }
     private void StopMovement()
     {

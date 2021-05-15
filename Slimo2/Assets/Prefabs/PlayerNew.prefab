@@ -3477,6 +3477,7 @@ MonoBehaviour:
   playerKBMulti: 50
   isInvincible: 0
   hStop: {fileID: 0}
+  gm: {fileID: 0}
 --- !u!114 &6578931868720093782
 MonoBehaviour:
   m_ObjectHideFlags: 0

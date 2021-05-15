@@ -12564,6 +12564,11 @@ PrefabInstance:
       propertyPath: camera
       value: 
       objectReference: {fileID: 1639337650}
+    - target: {fileID: 5059826141286986912, guid: 1031ba9322eed7d4b91cb7a64a544e0c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5059826141286986913, guid: 1031ba9322eed7d4b91cb7a64a544e0c,
         type: 3}
       propertyPath: m_Name
@@ -12649,6 +12654,11 @@ PrefabInstance:
       propertyPath: cType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5059826141286986926, guid: 1031ba9322eed7d4b91cb7a64a544e0c,
+        type: 3}
+      propertyPath: pDeathTime
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5059826141286986927, guid: 1031ba9322eed7d4b91cb7a64a544e0c,
         type: 3}
       propertyPath: backgrounds.Array.data[0]
@@ -12659,6 +12669,11 @@ PrefabInstance:
       propertyPath: camera
       value: 
       objectReference: {fileID: 1639337650}
+    - target: {fileID: 5059826141286986927, guid: 1031ba9322eed7d4b91cb7a64a544e0c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1031ba9322eed7d4b91cb7a64a544e0c, type: 3}
 --- !u!1001 &6044410485681320455

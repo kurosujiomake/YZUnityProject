@@ -717,6 +717,11 @@ PrefabInstance:
       propertyPath: transitionDelay
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5059826141286986926, guid: 1031ba9322eed7d4b91cb7a64a544e0c,
+        type: 3}
+      propertyPath: DeathUI
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5059826141286986927, guid: 1031ba9322eed7d4b91cb7a64a544e0c,
         type: 3}
       propertyPath: camera

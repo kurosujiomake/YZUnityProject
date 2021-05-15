@@ -54,69 +54,82 @@ public class PlayerControllerNew : MonoBehaviour
     }
     void Update()
     {
-        ResetGroundAtkTriggers();
-        switch(pContC)
+        switch(anim.GetBool("IsDead"))
         {
-            case cutsceneC.player:
-                if(pCM.GetButtonDown("SwapWep"))
+            case true:
+                if(g.ReturnGroundCheck())
                 {
-                    SwapWeps();
-                    anim.SetInteger("ComboNum", 1);
-                    anim.SetInteger("AComboNum", 1);
+                    StopAllCoroutines();
+                    r2D.velocity = Vector2.zero;
                 }
                 break;
-            case cutsceneC.noPlayer:
-
-                break;
-        }
-        IsNearEnemy();
-        switch(m_param.AT)
-        {
-            case Parameters.AtkType.sword:
-                anim.SetInteger("WepType", 0);
-                wepSwapID = 0;
-                break;
-            case Parameters.AtkType.bow:
-                anim.SetInteger("WepType", 1);
-                wepSwapID = 1;
-                break;
-        }
-        isGrounded = g.ReturnGroundCheck();
-        GetComponent<Animator>().SetBool("OnGround", isGrounded);
-        m_param.facingRight = facingRight;
-        if(isGrounded)
-        {
-            m_param.m_canJump = true;
-            cADash = m_param.m_DashMax;
-            dDisplay.ResetDashDisplay(cADash);
-            m_param.m_canADash = true;
-        }
-        if(pCM.GetButtonUp("Jump"))
-        {
-            m_param.m_jumpPressed = false;
-        }
-        switch(pControl)
-        {
-            case controlType.player:
-                switch(isGrounded)
+            case false:
+                ResetGroundAtkTriggers();
+                switch (pContC)
                 {
-                    case true:
-                        GroundMovement();
-                        Jump();
+                    case cutsceneC.player:
+                        if (pCM.GetButtonDown("SwapWep"))
+                        {
+                            SwapWeps();
+                            anim.SetInteger("ComboNum", 1);
+                            anim.SetInteger("AComboNum", 1);
+                        }
                         break;
-                    case false:
-                        AirMovement();
-                        break;
+                    case cutsceneC.noPlayer:
 
+                        break;
+                }
+                IsNearEnemy();
+                switch (m_param.AT)
+                {
+                    case Parameters.AtkType.sword:
+                        anim.SetInteger("WepType", 0);
+                        wepSwapID = 0;
+                        break;
+                    case Parameters.AtkType.bow:
+                        anim.SetInteger("WepType", 1);
+                        wepSwapID = 1;
+                        break;
+                }
+                isGrounded = g.ReturnGroundCheck();
+                GetComponent<Animator>().SetBool("OnGround", isGrounded);
+                m_param.facingRight = facingRight;
+                if (isGrounded)
+                {
+                    m_param.m_canJump = true;
+                    cADash = m_param.m_DashMax;
+                    dDisplay.ResetDashDisplay(cADash);
+                    m_param.m_canADash = true;
+                }
+                if (pCM.GetButtonUp("Jump"))
+                {
+                    m_param.m_jumpPressed = false;
+                }
+                switch (pControl)
+                {
+                    case controlType.player:
+                        switch (isGrounded)
+                        {
+                            case true:
+                                GroundMovement();
+                                Jump();
+                                break;
+                            case false:
+                                AirMovement();
+                                break;
+
+                        }
+                        break;
+                    case controlType.noPlayer: //no player is not supposed to run any code from this script
+
+                        break;
+                    case controlType.freeze:
+                        r2D.velocity = Vector2.zero;
+                        break;
                 }
                 break;
-            case controlType.noPlayer: //no player is not supposed to run any code from this script
-                
-                break;
-            case controlType.freeze:
-                r2D.velocity = Vector2.zero;
-                break;
         }
+        
     }
     void SwapWeps()//change this later when equip detection is working
     {
@@ -486,4 +499,5 @@ public class PlayerControllerNew : MonoBehaviour
             anim.SetBool("GDashAtkF", false);
         }
     }
+    
 }

@@ -13,11 +13,15 @@ public class GameManager : MonoBehaviour
     public int titleStage = -1;
     public float transitionDelay;
     public GameObject fadeEffect;
+    public float pDeathTime = 0;
+    private bool canAdvBackToTitle = false;
+    public GameObject DeathUI;
     public enum GameState
     {
         Gameplay,
         EquipUIOpen,
-        Cutscene
+        Cutscene,
+        PDeath
     }
     public enum SceneState
     {
@@ -39,6 +43,11 @@ public class GameManager : MonoBehaviour
                 break;
             case 1:
                 sState = SceneState.Levels;
+                canAdvBackToTitle = false;
+                if(DeathUI != null)
+                {
+                    DeathUI.SetActive(false);
+                }
                 break;
         }
         
@@ -119,12 +128,30 @@ public class GameManager : MonoBehaviour
                     case GameState.Cutscene:
 
                         break;
+                    case GameState.PDeath:
+                        if(DeathUI != null)
+                        {
+                            DeathUI.SetActive(true);
+                        }
+                        if(pCM.GetAnyKey() && canAdvBackToTitle)
+                        {
+                            GetComponent<SceneManage>().ChangeLevel(0);
+                        }
+                        break;
                 }
                 break;
         }
         
     }
-
+    public void StartDeathTimer()
+    {
+        StartCoroutine(PlayerDeathTimer());
+    }
+    IEnumerator PlayerDeathTimer()
+    {
+        yield return new WaitForSeconds(pDeathTime);
+        canAdvBackToTitle = true;
+    }
     IEnumerator TitleScreenTransitionTimer()
     {
         yield return new WaitForSeconds(transitionDelay);
@@ -234,5 +261,20 @@ public class GameManager : MonoBehaviour
             e.ChangeSelection("l");
         
 
+    }
+    public void SwapGameState(int which)
+    {
+        switch(which)
+        {
+            case 0:
+                gState = GameState.Gameplay;
+                break;
+            case 1:
+                gState = GameState.Cutscene;
+                break;
+            case 2:
+                gState = GameState.PDeath;
+                break;
+        }
     }
 }
