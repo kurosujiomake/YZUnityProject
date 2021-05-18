@@ -2648,7 +2648,7 @@ MonoBehaviour:
   m_randNoise:
   - 1
   - 0.5
-  hitStunDuration: 1
+  hitStunDuration: 0.75
   canAerialRecover: 0
 --- !u!114 &199465334998370276
 MonoBehaviour:
@@ -3290,13 +3290,13 @@ MonoBehaviour:
   - slotName: SubWeapon
     ID: 1
     EquipID: 0
-    baseAtk: 7
+    baseAtk: 20
     baseDef: 0
     baseCrit: 0
     critChanceMulti: 0
     critDmgMulti: 0
     EleMod: 1
-    AtkMulti: 0.45
+    AtkMulti: 0.65
     DefMulti: 0
     EleMulti: 0.38
   - slotName: Relic
