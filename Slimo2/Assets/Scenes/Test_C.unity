@@ -9651,6 +9651,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8626573471752847682, guid: b02fbe8f9a4acb04897395e854c07d69,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1430264045}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b02fbe8f9a4acb04897395e854c07d69, type: 3}
 --- !u!1 &1473595956 stripped
@@ -144434,31 +144439,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1311771203193451431, guid: 25f226a2d96fffb488a9daf0becbc23e,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 610.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1311771203193451431, guid: 25f226a2d96fffb488a9daf0becbc23e,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 366.06
-      objectReference: {fileID: 0}
-    - target: {fileID: 1311771203193451431, guid: 25f226a2d96fffb488a9daf0becbc23e,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 12.202
-      objectReference: {fileID: 0}
     - target: {fileID: 2121188722232678788, guid: 25f226a2d96fffb488a9daf0becbc23e,
         type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1430264045}
-    - target: {fileID: 2121188722232678788, guid: 25f226a2d96fffb488a9daf0becbc23e,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 101
-      objectReference: {fileID: 0}
     - target: {fileID: 2121188722629029897, guid: 25f226a2d96fffb488a9daf0becbc23e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -144519,94 +144504,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EndingGroup
       objectReference: {fileID: 0}
-    - target: {fileID: 2121188722943003220, guid: 25f226a2d96fffb488a9daf0becbc23e,
-        type: 3}
-      propertyPath: m_fontStyle
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2121188722943003220, guid: 25f226a2d96fffb488a9daf0becbc23e,
-        type: 3}
-      propertyPath: m_firstOverflowCharacterIndex
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2121188722943003220, guid: 25f226a2d96fffb488a9daf0becbc23e,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 2121188722943003220, guid: 25f226a2d96fffb488a9daf0becbc23e,
-        type: 3}
-      propertyPath: m_fontSizeBase
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 2121188722943003220, guid: 25f226a2d96fffb488a9daf0becbc23e,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 2121188722943003220, guid: 25f226a2d96fffb488a9daf0becbc23e,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
-    - target: {fileID: 2121188722943003220, guid: 25f226a2d96fffb488a9daf0becbc23e,
-        type: 3}
-      propertyPath: m_text
-      value: "Thanks for playing our pre-alpha!\r\n\r\nIf you have any feedback or
-        questions, please let us know. Keep in mind that none of the visuals are
-        final, but we're more than happy to receive comments on them. We are most
-        interested in your feedback of the gameplay. Thank you.\r"
-      objectReference: {fileID: 0}
-    - target: {fileID: 2121188722943003220, guid: 25f226a2d96fffb488a9daf0becbc23e,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 268
-      objectReference: {fileID: 0}
-    - target: {fileID: 2121188722943003220, guid: 25f226a2d96fffb488a9daf0becbc23e,
-        type: 3}
-      propertyPath: m_textInfo.spaceCount
-      value: 48
-      objectReference: {fileID: 0}
-    - target: {fileID: 2121188722943003220, guid: 25f226a2d96fffb488a9daf0becbc23e,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 48
-      objectReference: {fileID: 0}
-    - target: {fileID: 2121188722943003221, guid: 25f226a2d96fffb488a9daf0becbc23e,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 150
-      objectReference: {fileID: 0}
-    - target: {fileID: 2121188722943003221, guid: 25f226a2d96fffb488a9daf0becbc23e,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 230
-      objectReference: {fileID: 0}
     - target: {fileID: 2121188724104073278, guid: 25f226a2d96fffb488a9daf0becbc23e,
         type: 3}
       propertyPath: GM
       value: 
       objectReference: {fileID: 686109426}
-    - target: {fileID: 2121188724104073279, guid: 25f226a2d96fffb488a9daf0becbc23e,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 290.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2121188724104073279, guid: 25f226a2d96fffb488a9daf0becbc23e,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -195.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 2121188724104073279, guid: 25f226a2d96fffb488a9daf0becbc23e,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 13.179173
-      objectReference: {fileID: 0}
-    - target: {fileID: 2121188724104073279, guid: 25f226a2d96fffb488a9daf0becbc23e,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 7.0458703
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25f226a2d96fffb488a9daf0becbc23e, type: 3}
 --- !u!1001 &2051458545
