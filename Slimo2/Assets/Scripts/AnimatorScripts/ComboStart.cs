@@ -54,7 +54,6 @@ public class ComboStart : StateMachineBehaviour
                     case "n":
                         if (pCM.GetButtonDown("Atk1"))
                         {
-                            Debug.Log("Atk1 pressed");
                             animator.SetTrigger("GAtt_a");
                         }
                         break;
@@ -161,7 +160,11 @@ public class ComboStart : StateMachineBehaviour
                 animator.SetTrigger("SpAtk2");
             }
         }
-        pCN.SetPState(1); //players should have free movement in this state
+        if(GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().gState == GameManager.GameState.Gameplay) //make sure the player can input controls
+        {
+            pCN.SetPState(1); //players should have free movement in this state
+        }
+        
 
     }
 

@@ -302,7 +302,6 @@ public class BaseEnemyScript : MonoBehaviour
     }
     public void IsDead()
     {
-        print("enemy is dead");
         StopAllCoroutines();
         Transitioning(EnemyStates.Death);
     }

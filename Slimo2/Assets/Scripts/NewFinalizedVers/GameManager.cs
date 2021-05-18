@@ -126,7 +126,14 @@ public class GameManager : MonoBehaviour
                         }
                         break;
                     case GameState.Cutscene:
-
+                        print("setting player state to no control");
+                        Player.GetComponent<PlayerControllerNew>().SetPState(0);
+                        Player.GetComponent<Animator>().SetBool("IsGamePlay", false);
+                        //Player.GetComponent<PlayerControllerNew>().SetPState(2);
+                        if(canAdvBackToTitle && pCM.GetAnyKey())
+                        {
+                            GetComponent<SceneManage>().ChangeLevel(0);
+                        }
                         break;
                     case GameState.PDeath:
                         if(DeathUI != null)
@@ -151,6 +158,10 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(pDeathTime);
         canAdvBackToTitle = true;
+    }
+    public void SetReturnToTitle(bool b)
+    {
+        canAdvBackToTitle = b;
     }
     IEnumerator TitleScreenTransitionTimer()
     {
