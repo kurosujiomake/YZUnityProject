@@ -9667,6 +9667,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DeathCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2046899047232790095, guid: b02fbe8f9a4acb04897395e854c07d69,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7750679710150764251, guid: b02fbe8f9a4acb04897395e854c07d69,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -144630,6 +144635,16 @@ PrefabInstance:
       propertyPath: GM
       value: 
       objectReference: {fileID: 686109426}
+    - target: {fileID: 2121188724104073279, guid: 25f226a2d96fffb488a9daf0becbc23e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 290.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2121188724104073279, guid: 25f226a2d96fffb488a9daf0becbc23e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -196.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25f226a2d96fffb488a9daf0becbc23e, type: 3}
 --- !u!1001 &2051458545
