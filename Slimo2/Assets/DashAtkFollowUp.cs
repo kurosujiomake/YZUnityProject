@@ -14,7 +14,6 @@ public class DashAtkFollowUp : StateMachineBehaviour
     {
         pCM = GameObject.FindGameObjectWithTag("pControlManager").GetComponent<InputSystemShell>();
         param = animator.GetComponent<Parameters>();
-        timer = 0;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -24,17 +23,9 @@ public class DashAtkFollowUp : StateMachineBehaviour
         switch(param.AT)
         {
             case Parameters.AtkType.sword:
-                //Debug.Log("SwordState");
-                switch(pCM.GetButtonHeld("Atk1"))
+                if(pCM.GetButtonHeld("Atk1") && pCM.GetDirectionL() != "u")
                 {
-                    case true:
-                        //Debug.Log("Atk is held");
-                        timer += Time.deltaTime;
-                        break;
-                    case false:
-                        //Debug.Log("Atk is not held");
-                        timer = 0;
-                        break;
+                    timer += Time.deltaTime;
                 }
                 if (pCM.GetDirectionL() == "u")
                 {
@@ -47,7 +38,7 @@ public class DashAtkFollowUp : StateMachineBehaviour
         {
             animator.SetBool("GDashAtkF", true);
         }
-        //Debug.Log(timer);
+        
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state

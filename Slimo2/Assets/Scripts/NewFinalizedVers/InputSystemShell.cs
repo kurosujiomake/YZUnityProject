@@ -34,22 +34,36 @@ public class InputSystemShell : MonoBehaviour
         AutoAssign();
         KeyDirectionAssign();
     }
-    void Update()
-    {
-        ResetIsHeld();
-    }
     public bool GetButtonDown(string which)
     {
         bool b = false;
-        InputState s = Input[which];
         switch (control)
+        {
+            case ControlType.Both:
+                if (Input[which].buttonMapping.wasPressedThisFrame || Input[which].keyMapping.wasPressedThisFrame)
+                    b = true;
+                break;
+            case ControlType.Controller:
+                if (Input[which].buttonMapping.wasPressedThisFrame)
+                    b = true;
+                break;
+            case ControlType.Keyboard:
+                if (Input[which].keyMapping.wasPressedThisFrame)
+                    b = true;
+                break;
+        }
+        return b;
+    }
+    public bool GetButtonHeld(string which)
+    {
+        InputState s = Input[which];
+        switch(control)
         {
             case ControlType.Both:
                 if (Input[which].buttonMapping.wasPressedThisFrame || Input[which].keyMapping.wasPressedThisFrame)
                 {
                     s.isHeld = true;
                     Input[which] = s;
-                    b = true;
                 }
                 if (Input[which].buttonMapping.wasReleasedThisFrame || Input[which].keyMapping.wasReleasedThisFrame)
                 {
@@ -62,76 +76,44 @@ public class InputSystemShell : MonoBehaviour
                 {
                     s.isHeld = true;
                     Input[which] = s;
-                    b = true;
                 }
                 if (Input[which].buttonMapping.wasReleasedThisFrame)
                 {
                     s.isHeld = false;
                     Input[which] = s;
                 }
-
                 break;
             case ControlType.Keyboard:
-                if (Input[which].keyMapping.wasPressedThisFrame)
+                if(Input[which].keyMapping.wasPressedThisFrame)
                 {
                     s.isHeld = true;
                     Input[which] = s;
-                    b = true;
                 }
-                if (Input[which].keyMapping.wasReleasedThisFrame)
+                if(Input[which].keyMapping.wasReleasedThisFrame)
                 {
                     s.isHeld = false;
                     Input[which] = s;
                 }
                 break;
         }
-        return b;
+        return Input[which].isHeld;
     }
-    public bool GetButtonHeld(string which)
-    {
-        bool b = false;
-        GetButtonDown(which);
-        if(Input[which].isHeld)
-        {
-            b = true;
-        }
-        else if(GetButtonUp(which))
-        {
-            b = false;
-        }
-        return b;
-    }
-    
     public bool GetButtonUp(string which)
     {
         bool b = false;
-        InputState s = Input[which];
         switch (control)
         {
             case ControlType.Both:
                 if (Input[which].buttonMapping.wasReleasedThisFrame || Input[which].keyMapping.wasReleasedThisFrame)
-                {
-                    s.isHeld = false;
-                    Input[which] = s;
                     b = true;
-                }
                 break;
             case ControlType.Controller:
                 if (Input[which].buttonMapping.wasReleasedThisFrame)
-                {
-                    s.isHeld = false;
-                    Input[which] = s;
                     b = true;
-                }
-                    
                 break;
             case ControlType.Keyboard:
                 if (Input[which].keyMapping.wasReleasedThisFrame)
-                {
-                    s.isHeld = false;
-                    Input[which] = s;
                     b = true;
-                }
                 break;
         }
         return b;
@@ -427,15 +409,6 @@ public class InputSystemShell : MonoBehaviour
                 control = ControlType.Both;
                 break;
         }
-    }
-    void ResetIsHeld()
-    {
-        GetButtonUp("Atk1");
-        GetButtonUp("Atk2");
-        GetButtonUp("Atk2_2");
-        GetButtonUp("Atk3");
-        GetButtonUp("Jump");
-        GetButtonUp("Dash");
     }
 }
 [Serializable]

@@ -12610,11 +12610,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: EndingGroup
       objectReference: {fileID: 0}
-    - target: {fileID: 2121188722629029898, guid: 25f226a2d96fffb488a9daf0becbc23e,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25f226a2d96fffb488a9daf0becbc23e, type: 3}
 --- !u!1001 &5059826141191371415
