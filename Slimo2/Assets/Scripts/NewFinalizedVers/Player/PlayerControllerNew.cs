@@ -479,7 +479,7 @@ public class PlayerControllerNew : MonoBehaviour
                 pControl = controlType.freeze;
                 break;
             case 1:
-                print("player is given control");
+                //print("player is given control");
                 pControl = controlType.player;
                 break;
             case 2:
